@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>别人总结的各种各样的正则表达式 | 吕嘉文的小栈</title>
+  <meta name="keywords" content=" 临时 ">
+  <meta name="description" content="别人总结的各种各样的正则表达式 | 吕嘉文的小栈">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
+<meta property="og:type" content="article">
+<meta property="og:title" content="debounce 防抖">
+<meta property="og:url" content="http://yoursite.com/2020/06/01/code-section/debounce/index.html">
+<meta property="og:site_name" content="吕嘉文的小栈">
+<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-06-01T10:07:26.410Z">
+<meta property="article:modified_time" content="2020-06-01T10:07:52.819Z">
+<meta property="article:author" content="吕嘉文">
+<meta property="article:tag" content="javascript">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>吕嘉文</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="github" href="https://github.com/daughlas" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="weibo" href="http://weibo.com/u/2307534817" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="jianshu" href="https://www.jianshu.com/u/ff56736de7cf" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-jianshu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:daughlas@gmail.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=806004005&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(23)</small></div></li>
+    
+        
+            
+            <li><div data-rel="一段代码">一段代码<small>(8)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="临时">临时<small>(9)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="纯前端">纯前端<small>(5)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="23">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color1">javascript</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">临时</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">vue</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">vue-router</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">vue-cli</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">angular</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">Node.js</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="一段代码 "
+           href="/2020/02/20/code-section/js-new/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="JS - new">JS - new</span>
+            <span class="post-date" title="2020-02-20 15:40:32">2020/02/20</span>
+        </a>
+        
+        <a  class="一段代码 "
+           href="/2020/02/19/code-section/%E6%B7%B1%E6%8B%B7%E8%B4%9D/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="JS 深拷贝">JS 深拷贝</span>
+            <span class="post-date" title="2020-02-19 09:39:56">2020/02/19</span>
+        </a>
+        
+        <a  class="一段代码 "
+           href="/2020/02/19/code-section/JS%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="JS 数据类型">JS 数据类型</span>
+            <span class="post-date" title="2020-02-19 11:15:20">2020/02/19</span>
+        </a>
+        
+        <a  class="一段代码 "
+           href="/2020/06/01/code-section/debounce/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="debounce 防抖">debounce 防抖</span>
+            <span class="post-date" title="2020-06-01 18:07:26">2020/06/01</span>
+        </a>
+        
+        <a  class="一段代码 "
+           href="/2020/06/01/code-section/%E8%8A%82%E6%B5%81%E5%87%BD%E6%95%B0/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="throttle 节流函数">throttle 节流函数</span>
+            <span class="post-date" title="2020-06-01 17:48:06">2020/06/01</span>
+        </a>
+        
+        <a  class="一段代码 "
+           href="/2020/02/19/code-section/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E7%89%88/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="JS 深拷贝性能优化版">JS 深拷贝性能优化版</span>
+            <span class="post-date" title="2020-02-19 11:07:44">2020/02/19</span>
+        </a>
+        
+        <a  class="一段代码 "
+           href="/2020/06/01/code-section/%E8%8E%B7%E5%8F%96%E5%9C%B0%E5%9D%80%E6%A0%8F/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="获取地址栏参数">获取地址栏参数</span>
+            <span class="post-date" title="2020-06-01 17:30:03">2020/06/01</span>
+        </a>
+        
+        <a  class="临时 "
+           href="/2020/06/01/temp/vs%20code%20%E4%BD%BF%E7%94%A8/"
+           data-tag="临时"
+           data-author="" >
+            <span class="post-title" title="VS code 使用">VS code 使用</span>
+            <span class="post-date" title="2020-06-01 17:51:56">2020/06/01</span>
+        </a>
+        
+        <a  class="一段代码 "
+           href="/2020/06/01/code-section/%E7%AE%80%E6%98%93%E6%A8%A1%E5%9D%97%E7%AE%A1%E7%90%86/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="简易模块管理">简易模块管理</span>
+            <span class="post-date" title="2020-06-01 17:56:46">2020/06/01</span>
+        </a>
+        
+        <a  class="临时 "
+           href="/2020/06/01/temp/%E5%AD%A6%E4%B9%A0%20MyBatis/"
+           data-tag="临时"
+           data-author="" >
+            <span class="post-title" title="学习 MyBatis">学习 MyBatis</span>
+            <span class="post-date" title="2020-06-01 18:05:08">2020/06/01</span>
+        </a>
+        
+        <a  class="临时 "
+           href="/2020/06/01/temp/%E5%AD%A6%E4%B9%A0%20MongoDB/"
+           data-tag="临时"
+           data-author="" >
+            <span class="post-title" title="学习 MongoDB">学习 MongoDB</span>
+            <span class="post-date" title="2020-06-01 18:04:32">2020/06/01</span>
+        </a>
+        
+        <a  class="临时 "
+           href="/2020/06/01/temp/%E5%AD%A6%E4%B9%A0%20typescript/"
+           data-tag="临时"
+           data-author="" >
+            <span class="post-title" title="学习 TypeScript">学习 TypeScript</span>
+            <span class="post-date" title="2020-06-01 17:48:56">2020/06/01</span>
+        </a>
+        
+        <a  class="纯前端 "
+           href="/2020/02/20/vue/vue%20%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/"
+           data-tag="vue,vue-router"
+           data-author="" >
+            <span class="post-title" title="vue 最佳实践">vue 最佳实践</span>
+            <span class="post-date" title="2020-02-20 14:15:21">2020/02/20</span>
+        </a>
+        
+        <a  class="纯前端 "
+           href="/2020/02/18/vue/vue-router%20%E4%BD%BF%E7%94%A8/"
+           data-tag="vue,vue-router"
+           data-author="" >
+            <span class="post-title" title="vue-router 使用">vue-router 使用</span>
+            <span class="post-date" title="2020-02-18 11:23:11">2020/02/18</span>
+        </a>
+        
+        <a  class="纯前端 "
+           href="/2020/02/20/vue/vue%20%E6%89%93%E5%8C%85%E4%BC%98%E5%8C%96/"
+           data-tag="vue,vue-cli"
+           data-author="" >
+            <span class="post-title" title="vue-cli3 打包优化">vue-cli3 打包优化</span>
+            <span class="post-date" title="2020-02-20 14:15:50">2020/02/20</span>
+        </a>
+        
+        <a  class="纯前端 "
+           href="/2020/02/18/vue/vue-router%20%E5%8E%9F%E7%90%86%EF%BC%88%E4%B8%80%EF%BC%89/"
+           data-tag="vue,vue-router"
+           data-author="" >
+            <span class="post-title" title="vue-router 原理（一）">vue-router 原理（一）</span>
+            <span class="post-date" title="2020-02-18 11:23:45">2020/02/18</span>
+        </a>
+        
+        <a  class="临时 "
+           href="/2020/06/01/temp/%E5%88%AB%E4%BA%BA%E6%80%BB%E7%BB%93%E7%9A%84%E5%BE%88%E5%A4%9A%E6%AD%A3%E5%88%99/"
+           data-tag="临时"
+           data-author="" >
+            <span class="post-title" title="别人总结的各种各样的正则表达式">别人总结的各种各样的正则表达式</span>
+            <span class="post-date" title="2020-06-01 17:54:05">2020/06/01</span>
+        </a>
+        
+        <a  class="临时 "
+           href="/2020/06/01/temp/%E5%AD%A6%E4%B9%A0%20HTTP%20%E5%8D%8F%E8%AE%AE/"
+           data-tag="临时"
+           data-author="" >
+            <span class="post-title" title="学习 HTTP 协议">学习 HTTP 协议</span>
+            <span class="post-date" title="2020-06-01 17:33:15">2020/06/01</span>
+        </a>
+        
+        <a  class="临时 "
+           href="/2020/06/01/temp/%E5%AD%A6%E4%B9%A0%20MySQL/"
+           data-tag="临时"
+           data-author="" >
+            <span class="post-title" title="学习 MySQL">学习 MySQL</span>
+            <span class="post-date" title="2020-06-01 18:03:06">2020/06/01</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/06/01/temp/%E5%AD%A6%E4%B9%A0%20Rxjs/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="temp/学习 Rxjs">temp/学习 Rxjs</span>
+            <span class="post-date" title="2020-06-01 17:43:52">2020/06/01</span>
+        </a>
+        
+        <a  class="纯前端 "
+           href="/2020/06/01/temp/%E5%AD%A6%E4%B9%A0%20angular/"
+           data-tag="angular"
+           data-author="" >
+            <span class="post-title" title="学习 angular">学习 angular</span>
+            <span class="post-date" title="2020-06-01 17:38:22">2020/06/01</span>
+        </a>
+        
+        <a  class="临时 "
+           href="/2020/06/01/temp/%E6%85%95%E8%AF%BE%E7%BD%91%20Node.js%20%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%8F%91%20web%20server%E5%8D%9A%E5%AE%A2%E9%A1%B9%E7%AC%94%E8%AE%B0/"
+           data-tag="Node.js"
+           data-author="" >
+            <span class="post-title" title="慕课网 Node.js 从零开发 web server博客项笔记">慕课网 Node.js 从零开发 web server博客项笔记</span>
+            <span class="post-date" title="2020-06-01 17:55:35">2020/06/01</span>
+        </a>
+        
+        <a  class="临时 "
+           href="/2020/06/01/temp/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0/"
+           data-tag="临时"
+           data-author="" >
+            <span class="post-title" title="设计模式学习">设计模式学习</span>
+            <span class="post-date" title="2020-06-01 17:57:57">2020/06/01</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-temp/别人总结的很多正则" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">别人总结的各种各样的正则表达式</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="临时">临时</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color3">临时</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-06-01 17:55:06'>2020-06-01 17:54</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、是否合法IP地址"><span class="toc-text">1、是否合法IP地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、是否手机号码或者固话"><span class="toc-text">2、是否手机号码或者固话</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、是否固话"><span class="toc-text">3、是否固话</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、是否手机号码"><span class="toc-text">4、是否手机号码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、是否身份证号码"><span class="toc-text">5、是否身份证号码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、是否邮箱"><span class="toc-text">6、是否邮箱</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、合法url"><span class="toc-text">7、合法url</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8、验证内容是否包含英文数字以及下划线"><span class="toc-text">8、验证内容是否包含英文数字以及下划线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9、自动检验数值的范围"><span class="toc-text">9、自动检验数值的范围</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10、验证数字输入框最大数值"><span class="toc-text">10、验证数字输入框最大数值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11、验证是否1-99之间"><span class="toc-text">11、验证是否1-99之间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12、验证是否整数"><span class="toc-text">12、验证是否整数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13、验证是否整数-非必填"><span class="toc-text">13、验证是否整数,非必填</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14、-验证是否是-0-1-的小数"><span class="toc-text">14、 验证是否是[0-1]的小数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15、-验证是否是-1-10-的小数-即不可以等于0"><span class="toc-text">15、 验证是否是[1-10]的小数,即不可以等于0</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16、验证是否是-1-100-的小数-即不可以等于0"><span class="toc-text">16、验证是否是[1-100]的小数,即不可以等于0</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17、验证是否是-0-100-的小数"><span class="toc-text">17、验证是否是[0-100]的小数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18、验证端口是否在-0-65535-之间"><span class="toc-text">18、验证端口是否在[0,65535]之间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#19、验证端口是否在-0-65535-之间，非必填-isMust表示是否必填"><span class="toc-text">19、验证端口是否在[0,65535]之间，非必填,isMust表示是否必填</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#20、小写字母"><span class="toc-text">20、小写字母</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22、两位小数验证"><span class="toc-text">22、两位小数验证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#23、是否大写字母"><span class="toc-text">23、是否大写字母</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#24、是否大小写字母"><span class="toc-text">24、是否大小写字母</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#25、密码校验"><span class="toc-text">25、密码校验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#26、中文校验"><span class="toc-text">26、中文校验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#27、-账号校验"><span class="toc-text">27、 账号校验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#28-、纯数字校验"><span class="toc-text">28 、纯数字校验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#29、最多一位小数"><span class="toc-text">29、最多一位小数</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>** 别人总结的，之后补全出处 **</p>
+<h3 id="1、是否合法IP地址"><a href="#1、是否合法IP地址" class="headerlink" title="1、是否合法IP地址"></a>1、是否合法IP地址</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">export function validateIP(rule, value,callback) &#123;</span><br><span class="line">  if(value&#x3D;&#x3D;&#39;&#39;||value&#x3D;&#x3D;undefined||value&#x3D;&#x3D;null)&#123;</span><br><span class="line">    callback();</span><br><span class="line">  &#125;else &#123;</span><br><span class="line">    const reg &#x3D; &#x2F;^(\d&#123;1,2&#125;|1\d\d|2[0-4]\d|25[0-5])\.(\d&#123;1,2&#125;|1\d\d|2[0-4]\d|25[0-5])\</span><br><span class="line">![](https:&#x2F;&#x2F;user-gold-cdn.xitu.io&#x2F;2019&#x2F;11&#x2F;22&#x2F;16e9182103044230?w&#x3D;900&amp;h&#x3D;500&amp;f&#x3D;gif&amp;s&#x3D;662884).(\d&#123;1,2&#125;|1\d\d|2[0-4]\d|25[0-5])\.(\d&#123;1,2&#125;|1\d\d|2[0-4]\d|25[0-5])$&#x2F;;</span><br><span class="line">    if ((!reg.test(value)) &amp;&amp; value !&#x3D; &#39;&#39;) &#123;</span><br><span class="line">      callback(new Error(&#39;请输入正确的IP地址&#39;));</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      callback();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、是否手机号码或者固话"><a href="#2、是否手机号码或者固话" class="headerlink" title="2、是否手机号码或者固话"></a>2、是否手机号码或者固话</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">export function validatePhoneTwo(rule, value, callback) &#123;</span><br><span class="line">  const reg &#x3D; &#x2F;^((0\d&#123;2,3&#125;-\d&#123;7,8&#125;)|(1[34578]\d&#123;9&#125;))$&#x2F;;;</span><br><span class="line">  if (value &#x3D;&#x3D; &#39;&#39; || value &#x3D;&#x3D; undefined || value &#x3D;&#x3D; null) &#123;</span><br><span class="line">    callback();</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    if ((!reg.test(value)) &amp;&amp; value !&#x3D; &#39;&#39;) &#123;</span><br><span class="line">      callback(new Error(&#39;请输入正确的电话号码或者固话号码&#39;));</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      callback();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3、是否固话"><a href="#3、是否固话" class="headerlink" title="3、是否固话"></a>3、是否固话</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">export function validateTelphone(rule, value,callback) &#123;</span><br><span class="line">  const reg &#x3D;&#x2F;0\d&#123;2,3&#125;-\d&#123;7,8&#125;&#x2F;;</span><br><span class="line">  if(value&#x3D;&#x3D;&#39;&#39;||value&#x3D;&#x3D;undefined||value&#x3D;&#x3D;null)&#123;</span><br><span class="line">    callback();</span><br><span class="line">  &#125;else &#123;</span><br><span class="line">    if ((!reg.test(value)) &amp;&amp; value !&#x3D; &#39;&#39;) &#123;</span><br><span class="line">      callback(new Error(&#39;请输入正确的固定电话）&#39;));</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      callback();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4、是否手机号码"><a href="#4、是否手机号码" class="headerlink" title="4、是否手机号码"></a>4、是否手机号码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">export function validatePhone(rule, value,callback) &#123;</span><br><span class="line">  const reg &#x3D;&#x2F;^[1][3-9][0-9]&#123;9&#125;$&#x2F;;</span><br><span class="line">  if(value&#x3D;&#x3D;&#39;&#39;||value&#x3D;&#x3D;undefined||value&#x3D;&#x3D;null)&#123;</span><br><span class="line">    callback();</span><br><span class="line">  &#125;else &#123;</span><br><span class="line">    if ((!reg.test(value)) &amp;&amp; value !&#x3D; &#39;&#39;) &#123;</span><br><span class="line">      callback(new Error(&#39;请输入正确的电话号码&#39;));</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      callback();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5、是否身份证号码"><a href="#5、是否身份证号码" class="headerlink" title="5、是否身份证号码"></a>5、是否身份证号码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">export function validateIdNo(rule, value,callback) &#123;</span><br><span class="line">  const reg &#x3D; &#x2F;(^\d&#123;15&#125;$)|(^\d&#123;18&#125;$)|(^\d&#123;17&#125;(\d|X|x)$)&#x2F;;</span><br><span class="line">  if(value&#x3D;&#x3D;&#39;&#39;||value&#x3D;&#x3D;undefined||value&#x3D;&#x3D;null)&#123;</span><br><span class="line">    callback();</span><br><span class="line">  &#125;else &#123;</span><br><span class="line">    if ((!reg.test(value)) &amp;&amp; value !&#x3D; &#39;&#39;) &#123;</span><br><span class="line">      callback(new Error(&#39;请输入正确的身份证号码&#39;));</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      callback();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="6、是否邮箱"><a href="#6、是否邮箱" class="headerlink" title="6、是否邮箱"></a>6、是否邮箱</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">export function validateEMail(rule, value,callback) &#123;</span><br><span class="line">  const reg &#x3D;&#x2F;^([a-zA-Z0-9]+[-_\.]?)+@[a-zA-Z0-9]+\.[a-z]+$&#x2F;;</span><br><span class="line">  if(value&#x3D;&#x3D;&#39;&#39;||value&#x3D;&#x3D;undefined||value&#x3D;&#x3D;null)&#123;</span><br><span class="line">    callback();</span><br><span class="line">  &#125;else&#123;</span><br><span class="line">    if (!reg.test(value))&#123;</span><br><span class="line">      callback(new Error(&#39;请输入正确的邮箱&#39;));</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      callback();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="7、合法url"><a href="#7、合法url" class="headerlink" title="7、合法url"></a>7、合法url</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export function validateURL(url) &#123;</span><br><span class="line">  const urlregex &#x3D; &#x2F;^(https?|ftp):\&#x2F;\&#x2F;([a-zA-Z0-9.-]+(:[a-zA-Z0-9.&amp;%$-]+)*@)*((25[0-5]|2[0-4][0-9]|1[0-9]&#123;2&#125;|[1-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|1[0-9]&#123;2&#125;|[1-9]?[0-9]))&#123;3&#125;|([a-zA-Z0-9-]+\.)*[a-zA-Z0-9-]+\.(com|edu|gov|int|mil|net|org|biz|arpa|info|name|pro|aero|coop|museum|[a-zA-Z]&#123;2&#125;))(:[0-9]+)*(\&#x2F;($|[a-zA-Z0-9.,?&#39;\\+&amp;%$#&#x3D;~_-]+))*$&#x2F;;</span><br><span class="line">  return urlregex.test(url);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="8、验证内容是否包含英文数字以及下划线"><a href="#8、验证内容是否包含英文数字以及下划线" class="headerlink" title="8、验证内容是否包含英文数字以及下划线"></a>8、验证内容是否包含英文数字以及下划线</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">export function isPassword(rule, value, callback) &#123;</span><br><span class="line">  const reg &#x3D;&#x2F;^[_a-zA-Z0-9]+$&#x2F;;</span><br><span class="line">  if(value&#x3D;&#x3D;&#39;&#39;||value&#x3D;&#x3D;undefined||value&#x3D;&#x3D;null)&#123;</span><br><span class="line">    callback();</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    if (!reg.test(value))&#123;</span><br><span class="line">      callback(new Error(&#39;仅由英文字母，数字以及下划线组成&#39;));</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      callback();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="9、自动检验数值的范围"><a href="#9、自动检验数值的范围" class="headerlink" title="9、自动检验数值的范围"></a>9、自动检验数值的范围</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">export function checkMax20000(rule, value, callback) &#123;</span><br><span class="line">  if (value &#x3D;&#x3D; &#39;&#39; || value &#x3D;&#x3D; undefined || value &#x3D;&#x3D; null) &#123;</span><br><span class="line">    callback();</span><br><span class="line">  &#125; else if (!Number(value)) &#123;</span><br><span class="line">    callback(new Error(&#39;请输入[1,20000]之间的数字&#39;));</span><br><span class="line">  &#125; else if (value &lt; 1 || value &gt; 20000) &#123;</span><br><span class="line">    callback(new Error(&#39;请输入[1,20000]之间的数字&#39;));</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    callback();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="10、验证数字输入框最大数值"><a href="#10、验证数字输入框最大数值" class="headerlink" title="10、验证数字输入框最大数值"></a>10、验证数字输入框最大数值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">export function checkMaxVal(rule, value,callback) &#123;</span><br><span class="line">  if (value &lt; 0 || value &gt; 最大值) &#123;</span><br><span class="line">    callback(new Error(&#39;请输入[0,最大值]之间的数字&#39;));</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    callback();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="11、验证是否1-99之间"><a href="#11、验证是否1-99之间" class="headerlink" title="11、验证是否1-99之间"></a>11、验证是否1-99之间</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">export function isOneToNinetyNine(rule, value, callback) &#123;</span><br><span class="line">  if (!value) &#123;</span><br><span class="line">    return callback(new Error(&#39;输入不可以为空&#39;));</span><br><span class="line">  &#125;</span><br><span class="line">  setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">    if (!Number(value)) &#123;</span><br><span class="line">      callback(new Error(&#39;请输入正整数&#39;));</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      const re &#x3D; &#x2F;^[1-9][0-9]&#123;0,1&#125;$&#x2F;;</span><br><span class="line">      const rsCheck &#x3D; re.test(value);</span><br><span class="line">      if (!rsCheck) &#123;</span><br><span class="line">        callback(new Error(&#39;请输入正整数，值为【1,99】&#39;));</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        callback();</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, 0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="12、验证是否整数"><a href="#12、验证是否整数" class="headerlink" title="12、验证是否整数"></a>12、验证是否整数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">export function isInteger(rule, value, callback) &#123;</span><br><span class="line">  if (!value) &#123;</span><br><span class="line">    return callback(new Error(&#39;输入不可以为空&#39;));</span><br><span class="line">  &#125;</span><br><span class="line">  setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">    if (!Number(value)) &#123;</span><br><span class="line">      callback(new Error(&#39;请输入正整数&#39;));</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      const re &#x3D; &#x2F;^[0-9]*[1-9][0-9]*$&#x2F;;</span><br><span class="line">      const rsCheck &#x3D; re.test(value);</span><br><span class="line">      if (!rsCheck) &#123;</span><br><span class="line">        callback(new Error(&#39;请输入正整数&#39;));</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        callback();</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, 0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="13、验证是否整数-非必填"><a href="#13、验证是否整数-非必填" class="headerlink" title="13、验证是否整数,非必填"></a>13、验证是否整数,非必填</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">export function isIntegerNotMust(rule, value, callback) &#123;</span><br><span class="line">  if (!value) &#123;</span><br><span class="line">    callback();</span><br><span class="line">  &#125;</span><br><span class="line">  setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">    if (!Number(value)) &#123;</span><br><span class="line">      callback(new Error(&#39;请输入正整数&#39;));</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      const re &#x3D; &#x2F;^[0-9]*[1-9][0-9]*$&#x2F;;</span><br><span class="line">      const rsCheck &#x3D; re.test(value);</span><br><span class="line">      if (!rsCheck) &#123;</span><br><span class="line">        callback(new Error(&#39;请输入正整数&#39;));</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        callback();</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, 1000);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="14、-验证是否是-0-1-的小数"><a href="#14、-验证是否是-0-1-的小数" class="headerlink" title="14、 验证是否是[0-1]的小数"></a>14、 验证是否是[0-1]的小数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">export function isDecimal(rule, value, callback) &#123;</span><br><span class="line">  if (!value) &#123;</span><br><span class="line">    return callback(new Error(&#39;输入不可以为空&#39;));</span><br><span class="line">  &#125;</span><br><span class="line">  setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">    if (!Number(value)) &#123;</span><br><span class="line">      callback(new Error(&#39;请输入[0,1]之间的数字&#39;));</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      if (value &lt; 0 || value &gt; 1) &#123;</span><br><span class="line">        callback(new Error(&#39;请输入[0,1]之间的数字&#39;));</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        callback();</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, 100);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="15、-验证是否是-1-10-的小数-即不可以等于0"><a href="#15、-验证是否是-1-10-的小数-即不可以等于0" class="headerlink" title="15、 验证是否是[1-10]的小数,即不可以等于0"></a>15、 验证是否是[1-10]的小数,即不可以等于0</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">export function isBtnOneToTen(rule, value, callback) &#123;</span><br><span class="line">  if (typeof value &#x3D;&#x3D; &#39;undefined&#39;) &#123;</span><br><span class="line">    return callback(new Error(&#39;输入不可以为空&#39;));</span><br><span class="line">  &#125;</span><br><span class="line">  setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">    if (!Number(value)) &#123;</span><br><span class="line">      callback(new Error(&#39;请输入正整数，值为[1,10]&#39;));</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      if (!(value &#x3D;&#x3D; &#39;1&#39; || value &#x3D;&#x3D; &#39;2&#39; || value &#x3D;&#x3D; &#39;3&#39; || value &#x3D;&#x3D; &#39;4&#39; || value &#x3D;&#x3D; &#39;5&#39; || value &#x3D;&#x3D; &#39;6&#39; || value &#x3D;&#x3D; &#39;7&#39; || value &#x3D;&#x3D; &#39;8&#39; || value &#x3D;&#x3D; &#39;9&#39; || value &#x3D;&#x3D; &#39;10&#39;)) &#123;</span><br><span class="line">        callback(new Error(&#39;请输入正整数，值为[1,10]&#39;));</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        callback();</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, 100);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="16、验证是否是-1-100-的小数-即不可以等于0"><a href="#16、验证是否是-1-100-的小数-即不可以等于0" class="headerlink" title="16、验证是否是[1-100]的小数,即不可以等于0"></a>16、验证是否是[1-100]的小数,即不可以等于0</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">export function isBtnOneToHundred(rule, value, callback) &#123;</span><br><span class="line">  if (!value) &#123;</span><br><span class="line">    return callback(new Error(&#39;输入不可以为空&#39;));</span><br><span class="line">  &#125;</span><br><span class="line">  setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">    if (!Number(value)) &#123;</span><br><span class="line">      callback(new Error(&#39;请输入整数，值为[1,100]&#39;));</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      if (value &lt; 1 || value &gt; 100) &#123;</span><br><span class="line">        callback(new Error(&#39;请输入整数，值为[1,100]&#39;));</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        callback();</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, 100);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="17、验证是否是-0-100-的小数"><a href="#17、验证是否是-0-100-的小数" class="headerlink" title="17、验证是否是[0-100]的小数"></a>17、验证是否是[0-100]的小数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">export function isBtnZeroToHundred(rule, value, callback) &#123;</span><br><span class="line">  if (!value) &#123;</span><br><span class="line">    return callback(new Error(&#39;输入不可以为空&#39;));</span><br><span class="line">  &#125;</span><br><span class="line">  setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">    if (!Number(value)) &#123;</span><br><span class="line">      callback(new Error(&#39;请输入[1,100]之间的数字&#39;));</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      if (value &lt; 0 || value &gt; 100) &#123;</span><br><span class="line">        callback(new Error(&#39;请输入[1,100]之间的数字&#39;));</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        callback();</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, 100);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="18、验证端口是否在-0-65535-之间"><a href="#18、验证端口是否在-0-65535-之间" class="headerlink" title="18、验证端口是否在[0,65535]之间"></a>18、验证端口是否在[0,65535]之间</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">export function isPort(rule, value, callback) &#123;</span><br><span class="line">  if (!value) &#123;</span><br><span class="line">    return callback(new Error(&#39;输入不可以为空&#39;));</span><br><span class="line">  &#125;</span><br><span class="line">  setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">    if (value &#x3D;&#x3D; &#39;&#39; || typeof(value) &#x3D;&#x3D; undefined) &#123;</span><br><span class="line">      callback(new Error(&#39;请输入端口值&#39;));</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      const re &#x3D; &#x2F;^([0-9]|[1-9]\d|[1-9]\d&#123;2&#125;|[1-9]\d&#123;3&#125;|[1-5]\d&#123;4&#125;|6[0-4]\d&#123;3&#125;|65[0-4]\d&#123;2&#125;|655[0-2]\d|6553[0-5])$&#x2F;;</span><br><span class="line">      const rsCheck &#x3D; re.test(value);</span><br><span class="line">      if (!rsCheck) &#123;</span><br><span class="line">        callback(new Error(&#39;请输入在[0-65535]之间的端口值&#39;));</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        callback();</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, 100);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="19、验证端口是否在-0-65535-之间，非必填-isMust表示是否必填"><a href="#19、验证端口是否在-0-65535-之间，非必填-isMust表示是否必填" class="headerlink" title="19、验证端口是否在[0,65535]之间，非必填,isMust表示是否必填"></a>19、验证端口是否在[0,65535]之间，非必填,isMust表示是否必填</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">export function isCheckPort(rule, value, callback) &#123;</span><br><span class="line">  if (!value) &#123;</span><br><span class="line">    callback();</span><br><span class="line">  &#125;</span><br><span class="line">  setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">    if (value &#x3D;&#x3D; &#39;&#39; || typeof(value) &#x3D;&#x3D; undefined) &#123;</span><br><span class="line">      &#x2F;&#x2F;callback(new Error(&#39;请输入端口值&#39;));</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      const re &#x3D; &#x2F;^([0-9]|[1-9]\d|[1-9]\d&#123;2&#125;|[1-9]\d&#123;3&#125;|[1-5]\d&#123;4&#125;|6[0-4]\d&#123;3&#125;|65[0-4]\d&#123;2&#125;|655[0-2]\d|6553[0-5])$&#x2F;;</span><br><span class="line">      const rsCheck &#x3D; re.test(value);</span><br><span class="line">      if (!rsCheck) &#123;</span><br><span class="line">        callback(new Error(&#39;请输入在[0-65535]之间的端口值&#39;));</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        callback();</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, 100);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="20、小写字母"><a href="#20、小写字母" class="headerlink" title="20、小写字母"></a>20、小写字母</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export function validateLowerCase(val) &#123;</span><br><span class="line">  const reg &#x3D; &#x2F;^[a-z]+$&#x2F;;</span><br><span class="line">  return reg.test(val);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="22、两位小数验证"><a href="#22、两位小数验证" class="headerlink" title="22、两位小数验证"></a>22、两位小数验证</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const validateValidity &#x3D; (rule, value, callback) &#x3D;&gt; &#123;</span><br><span class="line">  if (!&#x2F;(^[1-9]([0-9]+)?(\.[0-9]&#123;1,2&#125;)?$)|(^(0)&#123;1&#125;$)|(^[0-9]\.[0-9]([0-9])?$)&#x2F;.test(value)) &#123;</span><br><span class="line">    callback(new Error(&#39;最多两位小数！！！&#39;));</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    callback();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="23、是否大写字母"><a href="#23、是否大写字母" class="headerlink" title="23、是否大写字母"></a>23、是否大写字母</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export function validateUpperCase(val) &#123;</span><br><span class="line">  const reg &#x3D; &#x2F;^[A-Z]+$&#x2F;;</span><br><span class="line">  return reg.test(val);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="24、是否大小写字母"><a href="#24、是否大小写字母" class="headerlink" title="24、是否大小写字母"></a>24、是否大小写字母</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export function validatAlphabets(val) &#123;</span><br><span class="line">  const reg &#x3D; &#x2F;^[A-Za-z]+$&#x2F;;</span><br><span class="line">  return reg.test(val);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="25、密码校验"><a href="#25、密码校验" class="headerlink" title="25、密码校验"></a>25、密码校验</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">export const validatePsdReg &#x3D; (rule, value, callback) &#x3D;&gt; &#123;</span><br><span class="line">  if (!value) &#123;</span><br><span class="line">    return callback(new Error(&#39;请输入密码&#39;))</span><br><span class="line">  &#125;</span><br><span class="line">  if (!&#x2F;^(?![\d]+$)(?![a-zA-Z]+$)(?![^\da-zA-Z]+$)([^\u4e00-\u9fa5\s])&#123;6,20&#125;$&#x2F;.test(value)) &#123;</span><br><span class="line">    callback(new Error(&#39;请输入6-20位英文字母、数字或者符号（除空格），且字母、数字和标点符号至少包含两种&#39;))</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    callback()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="26、中文校验"><a href="#26、中文校验" class="headerlink" title="26、中文校验"></a>26、中文校验</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">export const validateContacts &#x3D; (rule, value, callback) &#x3D;&gt; &#123;</span><br><span class="line">  if (!value) &#123;</span><br><span class="line">    return callback(new Error(&#39;请输入中文&#39;))</span><br><span class="line">  &#125;</span><br><span class="line">  if (!&#x2F;^[\u0391-\uFFE5A-Za-z]+$&#x2F;.test(value)) &#123;</span><br><span class="line">    callback(new Error(&#39;不可输入特殊字符&#39;))</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    callback()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="27、-账号校验"><a href="#27、-账号校验" class="headerlink" title="27、 账号校验"></a>27、 账号校验</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">export const validateCode &#x3D; (rule, value, callback) &#x3D;&gt; &#123;</span><br><span class="line">  if (!value) &#123;</span><br><span class="line">    return callback(new Error(&#39;请输入账号&#39;))</span><br><span class="line">  &#125;</span><br><span class="line">  if (!&#x2F;^(?![0-9]*$)(?![a-zA-Z]*$)[a-zA-Z0-9]&#123;6,20&#125;$&#x2F;.test(value)) &#123;</span><br><span class="line">    callback(new Error(&#39;账号必须为6-20位字母和数字组合&#39;))</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    callback()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="28-、纯数字校验"><a href="#28-、纯数字校验" class="headerlink" title="28 、纯数字校验"></a>28 、纯数字校验</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">export const validateNumber &#x3D; (rule, value, callback) &#x3D;&gt; &#123;</span><br><span class="line">    let numberReg &#x3D; &#x2F;^\d+$|^\d+[.]?\d+$&#x2F;</span><br><span class="line">    if (value !&#x3D;&#x3D; &#39;&#39;) &#123;</span><br><span class="line">        if (!numberReg.test(value)) &#123;</span><br><span class="line">            callback(new Error(&#39;请输入数字&#39;))</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            callback()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        callback(new Error(&#39;请输入值&#39;))</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="29、最多一位小数"><a href="#29、最多一位小数" class="headerlink" title="29、最多一位小数"></a>29、最多一位小数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const onePoint &#x3D; (rule, value, callback) &#x3D;&gt; &#123;</span><br><span class="line">  if (!&#x2F;^[0-9]+([.]&#123;1&#125;[0-9]&#123;1&#125;)?$&#x2F;.test(value)) &#123;</span><br><span class="line">    callback(new Error(&#39;最多一位小数！！！&#39;));</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    callback();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 daughlas@gmail.com </span>
+    </div>
+</article>
+
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>别人总结的各种各样的正则表达式</p>
+    
+    <p><span class="copy-title">本文作者:</span><a  title="吕嘉文">吕嘉文</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-06-01, 17:54:05</p>
+    <p><span class="copy-title">最后更新:</span>2020-06-01, 17:55:06</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/06/01/temp/%E5%88%AB%E4%BA%BA%E6%80%BB%E7%BB%93%E7%9A%84%E5%BE%88%E5%A4%9A%E6%AD%A3%E5%88%99/" title="别人总结的各种各样的正则表达式">http://yoursite.com/2020/06/01/temp/%E5%88%AB%E4%BA%BA%E6%80%BB%E7%BB%93%E7%9A%84%E5%BE%88%E5%A4%9A%E6%AD%A3%E5%88%99/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2016-2020 daughlas</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#javascript','#临时','#vue','#vue-router','#vue-cli','#angular','#Node.js',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

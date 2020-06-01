@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>学习 angular | 吕嘉文的小栈</title>
+  <meta name="keywords" content=" angular ">
+  <meta name="description" content="学习 angular | 吕嘉文的小栈">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
+<meta property="og:type" content="article">
+<meta property="og:title" content="debounce 防抖">
+<meta property="og:url" content="http://yoursite.com/2020/06/01/code-section/debounce/index.html">
+<meta property="og:site_name" content="吕嘉文的小栈">
+<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-06-01T10:07:26.410Z">
+<meta property="article:modified_time" content="2020-06-01T10:07:52.819Z">
+<meta property="article:author" content="吕嘉文">
+<meta property="article:tag" content="javascript">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>吕嘉文</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="github" href="https://github.com/daughlas" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="weibo" href="http://weibo.com/u/2307534817" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="jianshu" href="https://www.jianshu.com/u/ff56736de7cf" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-jianshu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:daughlas@gmail.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=806004005&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(23)</small></div></li>
+    
+        
+            
+            <li><div data-rel="一段代码">一段代码<small>(8)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="临时">临时<small>(9)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="纯前端">纯前端<small>(5)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="23">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color1">javascript</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">临时</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">vue</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">vue-router</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">vue-cli</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">angular</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">Node.js</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="一段代码 "
+           href="/2020/02/20/code-section/js-new/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="JS - new">JS - new</span>
+            <span class="post-date" title="2020-02-20 15:40:32">2020/02/20</span>
+        </a>
+        
+        <a  class="一段代码 "
+           href="/2020/02/19/code-section/%E6%B7%B1%E6%8B%B7%E8%B4%9D/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="JS 深拷贝">JS 深拷贝</span>
+            <span class="post-date" title="2020-02-19 09:39:56">2020/02/19</span>
+        </a>
+        
+        <a  class="一段代码 "
+           href="/2020/02/19/code-section/JS%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="JS 数据类型">JS 数据类型</span>
+            <span class="post-date" title="2020-02-19 11:15:20">2020/02/19</span>
+        </a>
+        
+        <a  class="一段代码 "
+           href="/2020/06/01/code-section/debounce/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="debounce 防抖">debounce 防抖</span>
+            <span class="post-date" title="2020-06-01 18:07:26">2020/06/01</span>
+        </a>
+        
+        <a  class="一段代码 "
+           href="/2020/06/01/code-section/%E8%8A%82%E6%B5%81%E5%87%BD%E6%95%B0/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="throttle 节流函数">throttle 节流函数</span>
+            <span class="post-date" title="2020-06-01 17:48:06">2020/06/01</span>
+        </a>
+        
+        <a  class="一段代码 "
+           href="/2020/02/19/code-section/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E7%89%88/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="JS 深拷贝性能优化版">JS 深拷贝性能优化版</span>
+            <span class="post-date" title="2020-02-19 11:07:44">2020/02/19</span>
+        </a>
+        
+        <a  class="一段代码 "
+           href="/2020/06/01/code-section/%E8%8E%B7%E5%8F%96%E5%9C%B0%E5%9D%80%E6%A0%8F/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="获取地址栏参数">获取地址栏参数</span>
+            <span class="post-date" title="2020-06-01 17:30:03">2020/06/01</span>
+        </a>
+        
+        <a  class="临时 "
+           href="/2020/06/01/temp/vs%20code%20%E4%BD%BF%E7%94%A8/"
+           data-tag="临时"
+           data-author="" >
+            <span class="post-title" title="VS code 使用">VS code 使用</span>
+            <span class="post-date" title="2020-06-01 17:51:56">2020/06/01</span>
+        </a>
+        
+        <a  class="一段代码 "
+           href="/2020/06/01/code-section/%E7%AE%80%E6%98%93%E6%A8%A1%E5%9D%97%E7%AE%A1%E7%90%86/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="简易模块管理">简易模块管理</span>
+            <span class="post-date" title="2020-06-01 17:56:46">2020/06/01</span>
+        </a>
+        
+        <a  class="临时 "
+           href="/2020/06/01/temp/%E5%AD%A6%E4%B9%A0%20MyBatis/"
+           data-tag="临时"
+           data-author="" >
+            <span class="post-title" title="学习 MyBatis">学习 MyBatis</span>
+            <span class="post-date" title="2020-06-01 18:05:08">2020/06/01</span>
+        </a>
+        
+        <a  class="临时 "
+           href="/2020/06/01/temp/%E5%AD%A6%E4%B9%A0%20MongoDB/"
+           data-tag="临时"
+           data-author="" >
+            <span class="post-title" title="学习 MongoDB">学习 MongoDB</span>
+            <span class="post-date" title="2020-06-01 18:04:32">2020/06/01</span>
+        </a>
+        
+        <a  class="临时 "
+           href="/2020/06/01/temp/%E5%AD%A6%E4%B9%A0%20typescript/"
+           data-tag="临时"
+           data-author="" >
+            <span class="post-title" title="学习 TypeScript">学习 TypeScript</span>
+            <span class="post-date" title="2020-06-01 17:48:56">2020/06/01</span>
+        </a>
+        
+        <a  class="纯前端 "
+           href="/2020/02/20/vue/vue%20%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/"
+           data-tag="vue,vue-router"
+           data-author="" >
+            <span class="post-title" title="vue 最佳实践">vue 最佳实践</span>
+            <span class="post-date" title="2020-02-20 14:15:21">2020/02/20</span>
+        </a>
+        
+        <a  class="纯前端 "
+           href="/2020/02/18/vue/vue-router%20%E4%BD%BF%E7%94%A8/"
+           data-tag="vue,vue-router"
+           data-author="" >
+            <span class="post-title" title="vue-router 使用">vue-router 使用</span>
+            <span class="post-date" title="2020-02-18 11:23:11">2020/02/18</span>
+        </a>
+        
+        <a  class="纯前端 "
+           href="/2020/02/20/vue/vue%20%E6%89%93%E5%8C%85%E4%BC%98%E5%8C%96/"
+           data-tag="vue,vue-cli"
+           data-author="" >
+            <span class="post-title" title="vue-cli3 打包优化">vue-cli3 打包优化</span>
+            <span class="post-date" title="2020-02-20 14:15:50">2020/02/20</span>
+        </a>
+        
+        <a  class="纯前端 "
+           href="/2020/02/18/vue/vue-router%20%E5%8E%9F%E7%90%86%EF%BC%88%E4%B8%80%EF%BC%89/"
+           data-tag="vue,vue-router"
+           data-author="" >
+            <span class="post-title" title="vue-router 原理（一）">vue-router 原理（一）</span>
+            <span class="post-date" title="2020-02-18 11:23:45">2020/02/18</span>
+        </a>
+        
+        <a  class="临时 "
+           href="/2020/06/01/temp/%E5%88%AB%E4%BA%BA%E6%80%BB%E7%BB%93%E7%9A%84%E5%BE%88%E5%A4%9A%E6%AD%A3%E5%88%99/"
+           data-tag="临时"
+           data-author="" >
+            <span class="post-title" title="别人总结的各种各样的正则表达式">别人总结的各种各样的正则表达式</span>
+            <span class="post-date" title="2020-06-01 17:54:05">2020/06/01</span>
+        </a>
+        
+        <a  class="临时 "
+           href="/2020/06/01/temp/%E5%AD%A6%E4%B9%A0%20HTTP%20%E5%8D%8F%E8%AE%AE/"
+           data-tag="临时"
+           data-author="" >
+            <span class="post-title" title="学习 HTTP 协议">学习 HTTP 协议</span>
+            <span class="post-date" title="2020-06-01 17:33:15">2020/06/01</span>
+        </a>
+        
+        <a  class="临时 "
+           href="/2020/06/01/temp/%E5%AD%A6%E4%B9%A0%20MySQL/"
+           data-tag="临时"
+           data-author="" >
+            <span class="post-title" title="学习 MySQL">学习 MySQL</span>
+            <span class="post-date" title="2020-06-01 18:03:06">2020/06/01</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/06/01/temp/%E5%AD%A6%E4%B9%A0%20Rxjs/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="temp/学习 Rxjs">temp/学习 Rxjs</span>
+            <span class="post-date" title="2020-06-01 17:43:52">2020/06/01</span>
+        </a>
+        
+        <a  class="纯前端 "
+           href="/2020/06/01/temp/%E5%AD%A6%E4%B9%A0%20angular/"
+           data-tag="angular"
+           data-author="" >
+            <span class="post-title" title="学习 angular">学习 angular</span>
+            <span class="post-date" title="2020-06-01 17:38:22">2020/06/01</span>
+        </a>
+        
+        <a  class="临时 "
+           href="/2020/06/01/temp/%E6%85%95%E8%AF%BE%E7%BD%91%20Node.js%20%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%8F%91%20web%20server%E5%8D%9A%E5%AE%A2%E9%A1%B9%E7%AC%94%E8%AE%B0/"
+           data-tag="Node.js"
+           data-author="" >
+            <span class="post-title" title="慕课网 Node.js 从零开发 web server博客项笔记">慕课网 Node.js 从零开发 web server博客项笔记</span>
+            <span class="post-date" title="2020-06-01 17:55:35">2020/06/01</span>
+        </a>
+        
+        <a  class="临时 "
+           href="/2020/06/01/temp/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0/"
+           data-tag="临时"
+           data-author="" >
+            <span class="post-title" title="设计模式学习">设计模式学习</span>
+            <span class="post-date" title="2020-06-01 17:57:57">2020/06/01</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-temp/学习 angular" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">学习 angular</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="纯前端">纯前端</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color3">angular</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-06-01 17:43:02'>2020-06-01 17:38</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第-1-部分-ChangeDetection"><span class="toc-text">第 1 部分 ChangeDetection</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第-2-部分-angular-依赖注入"><span class="toc-text">第 2 部分 angular 依赖注入</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-依赖注入之前的写法"><span class="toc-text">2.1 依赖注入之前的写法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-依赖注入的写法"><span class="toc-text">2.2 依赖注入的写法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-利用-angular-的依赖注入"><span class="toc-text">2.3 利用 angular 的依赖注入</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第-3-部分-animation"><span class="toc-text">第 3 部分 animation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#路由动画"><span class="toc-text">路由动画</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#group"><span class="toc-text">group</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Query-amp-Stagger"><span class="toc-text">Query &amp; Stagger</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他"><span class="toc-text">其他</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第-4-部分-属性型指令"><span class="toc-text">第 4 部分 属性型指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第-5-部分-自定义组件"><span class="toc-text">第 5 部分 自定义组件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#导入模块"><span class="toc-text">导入模块</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第-6-部分-angular"><span class="toc-text">第 6 部分 angular</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#定义带参数的路由"><span class="toc-text">定义带参数的路由</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取路由的参数"><span class="toc-text">获取路由的参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#子路由的例子"><span class="toc-text">子路由的例子</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="第-1-部分-ChangeDetection"><a href="#第-1-部分-ChangeDetection" class="headerlink" title="第 1 部分 ChangeDetection"></a>第 1 部分 ChangeDetection</h2><p>检测程序内部状态，然后反映到 UI 上</p>
+<p>引起状态变化的东西包括：Events、XHR、Timers</p>
+<p>ApplicationRef 监听 NgZone 的 onTurnDone，然后执行检测</p>
+<p>angular CD 有两种策略，默认策略（把整个树跑一遍），OnPush策略（除非我的属性发生变化，否则不用来检查我了，大的应用可以显著提高应用性能）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@Component(&#123;</span><br><span class="line">  ...</span><br><span class="line">  changeDetection: ChangeDetectionsStrategy.Default</span><br><span class="line">  changeDetection: ChangeDetectionsStrategy.OnPush</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>如何主动告诉 angular 来检查我</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">constructor(</span><br><span class="line">	private cd: ChangeDetectorRef</span><br><span class="line">) &#123;</span><br><span class="line">  this.cd.markForCheck();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">doSomethingNeedChangeDetection() &#123;</span><br><span class="line">  ...</span><br><span class="line">  this.cd.markForCheck();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="第-2-部分-angular-依赖注入"><a href="#第-2-部分-angular-依赖注入" class="headerlink" title="第 2 部分 angular 依赖注入"></a>第 2 部分 angular 依赖注入</h2><h3 id="2-1-依赖注入之前的写法"><a href="#2-1-依赖注入之前的写法" class="headerlink" title="2.1 依赖注入之前的写法"></a>2.1 依赖注入之前的写法</h3><p>问题 Person 类，需要清清楚楚知道 Id 和 Address 的细节和构造方式，Id 或者 Address 重构之后，很麻烦<br>而且以后用的多了之后，重构修改起来很麻烦</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">class Id &#123;</span><br><span class="line">  static getInstance(type: string) &#123;</span><br><span class="line">    &#x2F;&#x2F; 省略了一些设置</span><br><span class="line">    return new Id();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Address &#123;</span><br><span class="line">  provice: string;</span><br><span class="line">  city: string;</span><br><span class="line">  district: string;</span><br><span class="line">  street: string;</span><br><span class="line">  constructor(province, city, district, street) &#123;</span><br><span class="line">    this.provice &#x3D; province;</span><br><span class="line">    this.city &#x3D; city;</span><br><span class="line">    this.district  &#x3D; district;</span><br><span class="line">    this.street &#x3D; street;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Person &#123;</span><br><span class="line">  id: Id;</span><br><span class="line">  address: Address;</span><br><span class="line">  constructor() &#123;</span><br><span class="line">    this.id &#x3D;  Id.getInstance(&#39;idcard&#39;);</span><br><span class="line">    this.address &#x3D;  new Address(&#39;北京&#39;, &#39;北京&#39;, &#39;朝阳区&#39;, &#39;某某街道&#39;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-依赖注入的写法"><a href="#2-2-依赖注入的写法" class="headerlink" title="2.2 依赖注入的写法"></a>2.2 依赖注入的写法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">class Id &#123;</span><br><span class="line">  static getInstance(type: string) &#123;</span><br><span class="line">    &#x2F;&#x2F; 省略了一些设置</span><br><span class="line">    return new Id();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Address &#123;</span><br><span class="line">  provice: string;</span><br><span class="line">  city: string;</span><br><span class="line">  district: string;</span><br><span class="line">  street: string;</span><br><span class="line">  constructor(province, city, district, street) &#123;</span><br><span class="line">    this.provice &#x3D; province;</span><br><span class="line">    this.city &#x3D; city;</span><br><span class="line">    this.district  &#x3D; district;</span><br><span class="line">    this.street &#x3D; street;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Person &#123;</span><br><span class="line">  id: Id;</span><br><span class="line">  address: Address;</span><br><span class="line">  constructor(id: Id, address: Address) &#123;</span><br><span class="line">    this.id &#x3D;  id;</span><br><span class="line">    this.address &#x3D;  address;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F;</span><br></pre></td></tr></table></figure>
+
+<p>伪代码，原理就是一级一级向上推，把责任推给入口函数，依赖注入框架可以帮我们处理这个事情</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">main() &#123;</span><br><span class="line">	const id &#x3D; Id.getInstance(&#39;idcard&#39;);</span><br><span class="line">    const address &#x3D; new Address(&#39;北京&#39;, &#39;北京&#39;, &#39;朝阳区&#39;, &#39;某某街道&#39;);</span><br><span class="line">    const person &#x3D; new PersonDI(id, address);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3-利用-angular-的依赖注入"><a href="#2-3-利用-angular-的依赖注入" class="headerlink" title="2.3 利用 angular 的依赖注入"></a>2.3 利用 angular 的依赖注入</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">class PersonAngularDI &#123;</span><br><span class="line">  constructor(private oc: OverlayContainer) &#123;</span><br><span class="line">    const injector &#x3D; ReflectiveInjector.resolveAndCreate([</span><br><span class="line">      &#123;provide: Person, useClass: PersonAngularDIInstance&#125;,</span><br><span class="line">      &#123;provide: Address, useFactory: () &#x3D;&gt; &#123;</span><br><span class="line">        if (environment.production) &#123;</span><br><span class="line">          return new Address(&#39;北京&#39;, &#39;北京&#39;, &#39;朝阳区&#39;, &#39;某某街道&#39;);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">          return new Address(&#39;上海&#39;, &#39;上海&#39;, &#39;闵行区&#39;, &#39;某某街道&#39;);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;&#125;,</span><br><span class="line">      &#123;provide: Id, useFactory: () &#x3D;&gt; &#123;</span><br><span class="line">        return Id.getInstance(&#39;idcard&#39;);</span><br><span class="line">      &#125;&#125;,</span><br><span class="line">    ]);</span><br><span class="line"></span><br><span class="line">    const person &#x3D; injector.get(Person);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class PersonAngularDIInstance &#123;</span><br><span class="line">  id;</span><br><span class="line">  address;</span><br><span class="line">  constructor(</span><br><span class="line">    @Inject(Id) id,</span><br><span class="line">    @Inject(Address) address</span><br><span class="line">  ) &#123;</span><br><span class="line">    this.id &#x3D; id;</span><br><span class="line">    this.address &#x3D; address;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在任意组件中注入 <code>providers: [{provide: &#39;BASE_CONFIG&#39;, useValue: &#39;http://localhost:3000&#39;}]</code><br>// 在其他组件中可以在consturctor 中得到他， <code>constructor(@Inject(&#39;BASE_CONFIG&#39;) config)</code><br>// 默认情况下，注入之后变成单件，大家取到的以来都是一样的<br>// 在那个injector 的函数里边，useFactory 返回一个方法，而不是值可以每次创建一个新的实例<br>// 写一个 <code>childInjector = injector.resolveAndCreateChild([Person]); const personFromChild = childInjector.get(Person)</code>;</p>
+<h2 id="第-3-部分-animation"><a href="#第-3-部分-animation" class="headerlink" title="第 3 部分 animation"></a>第 3 部分 animation</h2><p>BrowserAnimationModule 放在最后导入，先导入可能会引起异常</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">trigger(</span><br><span class="line">&#39;square&#39;, [</span><br><span class="line">state(&#39;green&#39;, style(&#123;</span><br><span class="line">&#39;background-color&#39;: &#39;green&#39;,</span><br><span class="line">&#39;transform&#39;: &#39;translateX(0)&#39;</span><br><span class="line">&#125;)),</span><br><span class="line">state(&#39;red&#39;, style(&#123;</span><br><span class="line">&#39;background-color&#39;: &#39;red&#39;,</span><br><span class="line">&#39;width&#39;: &#39;50px&#39;,</span><br><span class="line">&#39;height&#39;: &#39;50px&#39;,</span><br><span class="line">&#39;transform&#39;: &#39;translateX(200%)&#39;</span><br><span class="line">&#125;)),</span><br><span class="line">transition(&#39;green &#x3D;&gt; red&#39;, animate(1000)),</span><br><span class="line">transition(&#39;red &#x3D;&gt; green&#39;, animate(1000)),</span><br><span class="line">]</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>animate的参数，第一个持续时间，第二个延续时间，第三个参数是缓动函数（动画效果执行时的速度，例如，先加速后减速）。</p>
+<h2 id="路由动画"><a href="#路由动画" class="headerlink" title="路由动画"></a>路由动画</h2><p>Void 空状态</p>
+<p>路由动画需要在 host 元数据中指定触发器。</p>
+<p>动画不要太多，否则适得其反。引导用户去注意一些东西，内容、服务优先。</p>
+<h2 id="group"><a href="#group" class="headerlink" title="group"></a>group</h2><p>同时进行一组的动画变换。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">group([animate(...), animate(...) ...])</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Query-amp-Stagger"><a href="#Query-amp-Stagger" class="headerlink" title="Query &amp; Stagger"></a>Query &amp; Stagger</h2><p>Query 用于父节点寻找子节点，然后把动画应用到你选中的这些元素上</p>
+<p>Stagger 指定有多个满足 Query 的元素的动画分别播放，每个的动画之间有间隔</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>新增一项</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.projects &#x3D; [...this.projects, &#123;id: 3, name: &#39;新增&#39;&#125;]</span><br></pre></td></tr></table></figure>
+
+<p>删除一项</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.projects &#x3D; this.projects.filter(p &#x3D;&gt; p.id !&#x3D;&#x3D; project.id)</span><br></pre></td></tr></table></figure>
+
+<h2 id="第-4-部分-属性型指令"><a href="#第-4-部分-属性型指令" class="headerlink" title="第 4 部分 属性型指令"></a>第 4 部分 属性型指令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Directive, ElementRef &#125; from &#39;@angular&#x2F;core&#39;;</span><br><span class="line">@Directive(&#123;selector: &#39;[highlight]&#39;&#125;)</span><br><span class="line">export class HighlightDirective &#123;</span><br><span class="line">    constructor(el: ElementRef) &#123;</span><br><span class="line">        el.nativeElement.style.backgroundColor &#x3D; &#39;gold&#39;;</span><br><span class="line">        console.log(&#96;</span><br><span class="line">        * AppRoot highlight called for $&#123;el.nativeElement.tagName&#125;&#96;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 使用</span><br><span class="line">&lt;h1 highlight&gt;&#123;&#123;title&#125;&#125;&lt;&#x2F;h1&gt;</span><br></pre></td></tr></table></figure>
+
+<p>指令、组件，作为 NgModule 元数据中的 declarations 导入。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">declarations: [</span><br><span class="line">  AppComponent,</span><br><span class="line">  HighlightDirective,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h2 id="第-5-部分-自定义组件"><a href="#第-5-部分-自定义组件" class="headerlink" title="第 5 部分 自定义组件"></a>第 5 部分 自定义组件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Component, Input &#125; from &#39;@angular&#x2F;core&#39;;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  selector: &#39;app-title&#39;,</span><br><span class="line">  templateUrl: &#39;&lt;h1 highlight&gt;&#123;&#123;title&#125;&#125; &#123;&#123;subtitle&#125;&#125;&lt;&#x2F;h1&gt;&#39;,</span><br><span class="line">&#125;)</span><br><span class="line">export class TitleComponent &#123;</span><br><span class="line">  @Input() subtitle &#x3D; &#39;&#39;;</span><br><span class="line">  title &#x3D; &#39;Angular Modules&#39;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>引入自定义组件，作为 NgModule 元数据中的 declarations 导入。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> @NgModule(&#123;</span><br><span class="line">  imports:      [ BrowserModule ],</span><br><span class="line">  declarations: [ AppComponent, HighlightDirective,TitleComponent, ],</span><br><span class="line">  bootstrap:    [ AppComponent ]</span><br><span class="line">&#125;)</span><br><span class="line">export class AppModule &#123; &#125;</span><br></pre></td></tr></table></figure>
+
+<p>服务提供商</p>
+<p>模块可以往应用的“根依赖注入器”中添加提供商，让那些服务在应用中到处可用。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Injectable &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Injectable</span>()</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> UserService &#123;</span><br><span class="line">  userName = <span class="string">'Sherlock Holmes'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">highlight</span>&gt;</span>&#123;&#123;title&#125;&#125; &#123;&#123;subtitle&#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> *<span class="attr">ngIf</span>=<span class="string">"user"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">i</span>&gt;</span>Welcome, &#123;&#123;user&#125;&#125;<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component, Input &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; UserService &#125; <span class="keyword">from</span> <span class="string">'./user.service'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'app-title'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./title.component.html'</span>,</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> TitleComponent &#123;</span><br><span class="line">  <span class="meta">@Input</span>() subtitle = <span class="string">''</span>;</span><br><span class="line">  title = <span class="string">'Angular Modules'</span>;</span><br><span class="line">  user = <span class="string">''</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params">userService: UserService</span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>.user = userService.userName;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> <span class="meta">@NgModule</span>(&#123;</span><br><span class="line">  imports:      [ BrowserModule ],</span><br><span class="line">  declarations: [ AppComponent, HighlightDirective,TitleComponent, ],</span><br><span class="line">  bootstrap:    [ AppComponent ],</span><br><span class="line">  providers: 	[ UserService ]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> AppModule &#123; &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="导入模块"><a href="#导入模块" class="headerlink" title="导入模块"></a>导入模块</h4><p>导入<code>BrowserModule</code>会让该模块公开的所有组件、指令和管道在<code>AppModule</code>下的任何组件模板中可用。</p>
+<p>更准确的说，<code>NgIf</code>是在来自<code>@angular/common</code>的<code>CommonModule</code>中声明的。</p>
+<p><code>CommonModule</code>提供了很多应用程序中常用的指令，包括<code>NgIf</code>和<code>NgFor</code>等。<code>BrowserModule</code>导入了<code>CommonModule</code>并且<a href="https://v2.angular.cn/docs/ts/latest/cookbook/ngmodule-faq.html#q-re-export" target="_blank" rel="noopener"><em>重新导出</em></a>了它。</p>
+<p> 最终的效果是：只要导入<code>BrowserModule</code>就自动获得了<code>CommonModule</code>中的指令。</p>
+<p>很多熟悉的 Angular 指令并不属于<code>CommonModule</code>。 例如，<code>NgModel</code>和<code>RouterLink</code>分别属于 Angular 的<code>FormsModule</code>模块和<code>RouterModule</code>模块。</p>
+<p>模版驱动的表单</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>Contact of &#123;&#123;userName&#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> *<span class="attr">ngIf</span>=<span class="string">"msg"</span> <span class="attr">class</span>=<span class="string">"msg"</span>&gt;</span>&#123;&#123;msg&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> *<span class="attr">ngIf</span>=<span class="string">"contacts"</span> (<span class="attr">ngSubmit</span>)=<span class="string">"onSubmit()"</span> #<span class="attr">contactForm</span>=<span class="string">"ngForm"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h3</span> <span class="attr">highlight</span>&gt;</span>&#123;&#123; contact.name | awesome &#125;&#125;<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"name"</span>&gt;</span>Name<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">required</span></span></span><br><span class="line"><span class="tag">      [(<span class="attr">ngModel</span>)]=<span class="string">"contact.name"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">name</span>=<span class="string">"name"</span>  #<span class="attr">name</span>=<span class="string">"ngModel"</span> &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> [<span class="attr">hidden</span>]=<span class="string">"name.valid"</span> <span class="attr">class</span>=<span class="string">"alert alert-danger"</span>&gt;</span></span><br><span class="line">      Name is required</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">class</span>=<span class="string">"btn btn-default"</span> [<span class="attr">disabled</span>]=<span class="string">"!contactForm.form.valid"</span>&gt;</span>Save<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">class</span>=<span class="string">"btn"</span> (<span class="attr">click</span>)=<span class="string">"next()"</span> [<span class="attr">disabled</span>]=<span class="string">"!contactForm.form.valid"</span>&gt;</span>Next Contact<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">class</span>=<span class="string">"btn"</span> (<span class="attr">click</span>)=<span class="string">"newContact()"</span>&gt;</span>New Contact<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="第-6-部分-angular"><a href="#第-6-部分-angular" class="headerlink" title="第 6 部分 angular"></a>第 6 部分 angular</h2><p>是将 <code>&lt;base&gt;</code> 标签添加到我们的 <code>index.html</code> 文件中，在 html 的 head 中，添加一段 <code>&lt;base href=&quot;/&quot;&gt;</code></p>
+<h3 id="定义带参数的路由"><a href="#定义带参数的路由" class="headerlink" title="定义带参数的路由"></a>定义带参数的路由</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import &#123; HomeComponent &#125; from &#39;.&#x2F;home&#x2F;home.component&#39;;</span><br><span class="line">import &#123; ProfileComponent &#125; from &#39;.&#x2F;profile&#x2F;profile.component&#39;;</span><br><span class="line"></span><br><span class="line">export const ROUTES: Routes &#x3D; [</span><br><span class="line">  &#123; path: &#39;&#39;, component: HomeComponent &#125;,</span><br><span class="line">  &#123; path: &#39;&#x2F;profile&#x2F;:username&#39;, component: ProfileComponent &#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取路由的参数"><a href="#获取路由的参数" class="headerlink" title="获取路由的参数"></a>获取路由的参数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Component, OnInit &#125; from &#39;@angular&#x2F;core&#39;;</span><br><span class="line">import &#123; ActivatedRoute &#125; from &#39;@angular&#x2F;router&#39;;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  selector: &#39;profile-page&#39;,</span><br><span class="line">  template: &#96;</span><br><span class="line">    &lt;div class&#x3D;&quot;profile&quot;&gt;</span><br><span class="line">      &lt;h3&gt;&#123;&#123; username &#125;&#125;&lt;&#x2F;h3&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">  &#96;</span><br><span class="line">&#125;)</span><br><span class="line">export class SettingsComponent implements OnInit &#123;</span><br><span class="line">  username: string;</span><br><span class="line">  constructor(private route: ActivatedRoute) &#123;&#125;</span><br><span class="line">  ngOnInit() &#123;</span><br><span class="line">    this.route.params.subscribe((params) &#x3D;&gt; this.username &#x3D; params.username);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="子路由的例子"><a href="#子路由的例子" class="headerlink" title="子路由的例子"></a>子路由的例子</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">import &#123; SettingsComponent &#125; from &#39;.&#x2F;settings&#x2F;settings.component&#39;;</span><br><span class="line">import &#123; ProfileSettingsComponent &#125; from &#39;.&#x2F;settings&#x2F;profile&#x2F;profile.component&#39;;</span><br><span class="line">import &#123; PasswordSettingsComponent &#125; from &#39;.&#x2F;settings&#x2F;password&#x2F;password.component&#39;;</span><br><span class="line"></span><br><span class="line">export const ROUTES: Routes &#x3D; [</span><br><span class="line">  &#123; </span><br><span class="line">    path: &#39;settings&#39;, </span><br><span class="line">    component: SettingsComponent,</span><br><span class="line">    children: [</span><br><span class="line">      &#123; path: &#39;profile&#39;, component: ProfileSettingsComponent &#125;,</span><br><span class="line">      &#123; path: &#39;password&#39;, component: PasswordSettingsComponent &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">  imports: [</span><br><span class="line">    BrowserModule,</span><br><span class="line">    RouterModule.forRoot(ROUTES)</span><br><span class="line">  ],</span><br><span class="line">&#125;)</span><br><span class="line">export class AppModule &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 daughlas@gmail.com </span>
+    </div>
+</article>
+
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>学习 angular</p>
+    
+    <p><span class="copy-title">本文作者:</span><a  title="吕嘉文">吕嘉文</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-06-01, 17:38:22</p>
+    <p><span class="copy-title">最后更新:</span>2020-06-01, 17:43:02</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/06/01/temp/%E5%AD%A6%E4%B9%A0%20angular/" title="学习 angular">http://yoursite.com/2020/06/01/temp/%E5%AD%A6%E4%B9%A0%20angular/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2016-2020 daughlas</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#javascript','#临时','#vue','#vue-router','#vue-cli','#angular','#Node.js',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>吕嘉文的小栈</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="吕嘉文的小栈">
+  <title>学习 HTTP 协议 | 吕嘉文的小栈</title>
+  <meta name="keywords" content=" 临时 ">
+  <meta name="description" content="学习 HTTP 协议 | 吕嘉文的小栈">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
 <meta property="og:type" content="article">
@@ -53,7 +53,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -420,12 +420,55 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-temp/学习 HTTP 协议" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于叶落阁"><span class="toc-text">关于叶落阁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">学习 HTTP 协议</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="临时">临时</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color3">临时</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-06-01 17:44:08'>2020-06-01 17:33</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一部分-概述"><span class="toc-text">第一部分 概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二部分-发展历史"><span class="toc-text">第二部分 发展历史</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP-0-9："><span class="toc-text">HTTP&#x2F;0.9：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP-1-0-1996年5月"><span class="toc-text">HTTP&#x2F;1.0(1996年5月)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP-1-1-1997年1月"><span class="toc-text">HTTP&#x2F;1.1(1997年1月)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP-2-2015年"><span class="toc-text">HTTP&#x2F;2(2015年)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第三部分-HTTP-请求"><span class="toc-text">第三部分 HTTP 请求</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP-请求信息"><span class="toc-text">HTTP 请求信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP-请求方法"><span class="toc-text">HTTP 请求方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#状态码"><span class="toc-text">状态码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#域名解析和三次握手"><span class="toc-text">域名解析和三次握手</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#域名解析"><span class="toc-text">域名解析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三次握手"><span class="toc-text">三次握手</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -438,32 +481,169 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
-<blockquote>
-<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
-</blockquote>
-<blockquote>
-<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
-</blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
-<h2 id="关于叶落阁"><a href="#关于叶落阁" class="headerlink" title="关于叶落阁"></a>关于叶落阁</h2><p><strong>叶落阁</strong> 是阿杰（杨玉杰）的个人站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)、作者(@作者)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
-</ul>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="第一部分-概述"><a href="#第一部分-概述" class="headerlink" title="第一部分 概述"></a>第一部分 概述</h2><ol>
+<li>HTTP 是 HyperText Transfer Protocol 的缩写，意思是超文本传输协议，只有计算机之间都遵守这个协议才能相互通讯。它设计HTTP最初的目的是为了提供一种发布和接收HTML页面的方法。通过HTTP或者HTTPS协议请求的资源由统一资源标识符（Uniform Resource Identifiers，URI）来标识。</li>
+<li>URI，统一资源标识符，字符串定义，我们常用的 URL，是统一资源定位符的意思，是 URI 的一个子集，</li>
+</ol>
+<ol start="4">
+<li>TCP，传输控制协议，英文是 Transmission Control Protocol，应用层向TCP层发送用于网间传输的、用8位字节表示的数据流，然后TCP把数据流分割成适当长度的报文段（通常受该计算机连接的网络的数据链路层的最大传输单元（MTU）的限制）。之后TCP把结果包传给IP层，由它来通过网络将包传送给接收端实体的TCP层。TCP为了保证不发生丢包，就给每个包一个序号，同时序号也保证了传送到接收端实体的包的按序接收。然后接收端实体对已成功收到的包发回一个相应的确认（ACK）；如果发送端实体在合理的往返时延（RTT）内未收到确认，那么对应的数据包就被假设为已丢失将会被进行重传。TCP用一个校验和函数来检验数据是否有错误；在发送和接收时都要计算校验和。</li>
+<li>TCP 传输协议的特点<ol>
+<li>有序数据传输</li>
+<li>重发丢失的封包</li>
+<li>舍弃重复的封包</li>
+<li>无错误数据传输</li>
+<li>阻塞/流量控制</li>
+<li>连接导向（确认有建立三方交握，连线已建立才做传输。）</li>
+</ol>
+</li>
+<li>HTTP 流程：由HTTP客户端发起一个请求，建立一个到服务器指定端口（默认是80端口）的TCP连接。HTTP服务器则在那个端口监听客户端的请求。一旦收到请求，服务器会向客户端返回一个状态，比如”HTTP/1.1 200 OK”，以及返回的内容，如请求的文件、错误消息、或者其它信息。</li>
+<li>下面的一节来具体论述 5 和 6<br>的过程。</li>
+</ol>
+<h2 id="第二部分-发展历史"><a href="#第二部分-发展历史" class="headerlink" title="第二部分 发展历史"></a>第二部分 发展历史</h2><h3 id="HTTP-0-9："><a href="#HTTP-0-9：" class="headerlink" title="HTTP/0.9："></a>HTTP/0.9：</h3><ol>
+<li>只有一个 GET 方法</li>
+<li>服务器只能回应 HTML 格式的字符串</li>
+</ol>
+<h3 id="HTTP-1-0-1996年5月"><a href="#HTTP-1-0-1996年5月" class="headerlink" title="HTTP/1.0(1996年5月)"></a>HTTP/1.0(1996年5月)</h3><ol>
+<li>引入了 POST 和 HEAD 方法</li>
+<li>任何格式的内容都可以发送，包括文字、图像、视频、二进制文件等。</li>
+<li>HTTP 的请求和回应格式改变，在数据部分之外，每次请求必须包含头信息</li>
+<li>还增加了：状态吗、多字符集支持、多部分发送、权限、缓存、内容编码等</li>
+<li>HTTP/1.0 版的主要缺点是，每个TCP连接只能发送一个请求。发送数据完毕，连接就关闭，如果还要请求其他资源，就必须再新建一个连接。TCP连接的新建成本很高，因为需要客户端和服务器三次握手，并且开始时发送速率较慢（slow start）。所以，HTTP 1.0版本的性能比较差。随着网页加载的外部资源越来越多，这个问题就愈发突出了。</li>
+</ol>
+<h3 id="HTTP-1-1-1997年1月"><a href="#HTTP-1-1-1997年1月" class="headerlink" title="HTTP/1.1(1997年1月)"></a>HTTP/1.1(1997年1月)</h3><ol>
+<li>是引入了持久连接（persistent connection），即TCP连接默认不关闭，可以被多个请求复用，客户端和服务器发现对方一段时间没有活动，就可以主动关闭连接。</li>
+<li>还引入了管道机制（pipelining），即在同一个TCP连接里面，客户端可以同时发送多个请求。这样就进一步改进了HTTP协议的效率。</li>
+<li>Content-Length 字段，声明多个响应之中每一个响应的数据长度</li>
+<li>分块传输编码，产生一块数据，就发送一块，采用”流模式”（stream）取代”缓存模式”（buffer）。1.1版规定可以不使用Content-Length字段，而使用”分块传输编码”（chunked transfer encoding）。只要请求或回应的头信息有Transfer-Encoding字段，就表明回应将由数量未定的数据块组成。</li>
+<li>新增了许多动词方法：PUT、PATCH、HEAD、 OPTIONS、DELETE。</li>
+<li>客户端请求的头信息新增了Host字段，用来指定服务器的域名。</li>
+<li>缺点：1.1版允许复用TCP连接，但是同一个TCP连接里面，所有的数据通信是按次序进行的。服务器只有处理完一个回应，才会进行下一个回应。要是前面的回应特别慢，后面就会有许多请求排队等着。这称为”队头堵塞”（Head-of-line blocking）。为了避免这个问题，只有两种方法：一是减少请求数，二是同时多开持久连接。这导致了很多的网页优化技巧，比如合并脚本和样式表、将图片嵌入CSS代码、域名分片（domain sharding）等等。如果HTTP协议设计得更好一些，这些额外的工作是可以避免的。</li>
+</ol>
+<h3 id="HTTP-2-2015年"><a href="#HTTP-2-2015年" class="headerlink" title="HTTP/2(2015年)"></a>HTTP/2(2015年)</h3><ol>
+<li>二进制协议</li>
+<li>多工，在一个TCP连接里面，服务器同时收到了A请求和B请求，于是先回应A请求，结果发现处理过程非常耗时，于是就发送A请求已经处理好的部分， 接着回应B请求，完成后，再发送A请求剩下的部分。</li>
+<li>数据流，HTTP/2 将每个请求或回应的所有数据包，称为一个数据流（stream）。每个数据流都有一个独一无二的编号。数据包发送的时候，都必须标记数据流ID，用来区分它属于哪个数据流。另外还规定，客户端发出的数据流，ID一律为奇数，服务器发出的，ID为偶数。</li>
+<li>头信息压缩，客户端和服务器同时维护一张头信息表，所有字段都会存入这个表，生成一个索引号，以后就不发送同样字段了（比如Cookie和User Agent），只发送索引号，这样就提高速度了。</li>
+<li>服务器推送，允许服务器未经请求，主动向客户端发送资源，这叫做服务器推送（server push）。常见场景是客户端请求一个网页，这个网页里面包含很多静态资源。正常情况下，客户端必须收到网页后，解析HTML源码，发现有静态资源，再发出静态资源请求。其实，服务器可以预期到客户端请求网页后，很可能会再请求静态资源，所以就主动把这些静态资源随着网页一起发给客户端了。</li>
+</ol>
+<h2 id="第三部分-HTTP-请求"><a href="#第三部分-HTTP-请求" class="headerlink" title="第三部分 HTTP 请求"></a>第三部分 HTTP 请求</h2><h3 id="HTTP-请求信息"><a href="#HTTP-请求信息" class="headerlink" title="HTTP 请求信息"></a>HTTP 请求信息</h3><ol>
+<li>组成：<ol>
+<li>请求行，例如GET /images/logo.gif HTTP/1.1，表示从/images目录下请求logo.gif这个文件。</li>
+<li>请求头，例如Accept-Language: en</li>
+<li>空行</li>
+<li>其他消息体</li>
+</ol>
+</li>
+<li>请求行和标题必须以<CR><LF>作为结尾。空行内必须只有<CR><LF>而无其他空格。在HTTP/1.1协议中，所有的请求头，除Host外，都是可选的。</li>
+</ol>
+<h3 id="HTTP-请求方法"><a href="#HTTP-请求方法" class="headerlink" title="HTTP 请求方法"></a>HTTP 请求方法</h3><p>HTTP/1.1协议中共定义了八种方法（也叫“动作”）来以不同方式操作指定的资源，下面一一介绍：</p>
+<ol>
+<li>GET：向指定的资源发出「显示」请求。使用GET方法应该只用在读取资料，而不应当被用于产生「副作用」的操作中，因为GET可能会被网络蜘蛛等随意访问。</li>
+<li>POST：向指定资源提交数据，请求服务器进行处理（例如提交表单或者上传文件）。数据被包含在请求本文中。这个请求可能会建立新的资源或修改現有资源，或二者皆有。</li>
+<li>PUT：向指定资源位置上传其最新内容。</li>
+<li>DELETE：请求服务器删除Request-URI所标识的资源。</li>
+<li>HEAD：与GET方法一样，都是向服务器发出指定资源的请求。只不过服务器將不传回资源的本文部份。它的好处在于，使用这個方法可以在不必传输全部内容的情况下，就可以获取其中关于该资源的信息。</li>
+<li>OPTIONS：這个方法可使服务器传回该资源所支持的所有HTTP请求方法。用’*’来代替资源名称，向Web服务器发送OPTIONS请求，可以测试服务器功能是否正常运作。</li>
+<li>TRACE：回显服务器收到的请求，主要用于测试或诊断。</li>
+<li>CONNECT：HTTP/1.1协议中预留给能够将连接改为管道方式的代理服务器。通常用于 SSL 加密伺服器的连结（经由由非加密的HTTP代理伺服器）。</li>
+<li>HTTP服务器至少应该实现GET和HEAD方法，其他方法都是可选的。</li>
+<li>于GET和HEAD方法而言，除了进行获取资源信息外，这些请求不应当再有其他意义。也就是说，这些方法应当被认为是“安全的”。 客户端可能会使用其他“非安全”方法，例如POST，PUT及DELETE，应该以特殊的方式（通常是按钮而不是超链接）告知客户可能的后果（例如一个按钮控制的资金交易），或请求的操作可能是不安全的（例如某个文件将被上传或删除）。</li>
+</ol>
+<h3 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h3><p>所有HTTP响应的第一行都是状态行，依次是当前HTTP版本号，3位数字组成的状态代码，以及描述状态的短语，彼此由空格分隔。</p>
+<ol>
+<li>1xx 消息 —— 请求已被服务器接收，继续处理</li>
+<li>2xx 成功 —— 请求已成功被服务器接收、理解、并接受</li>
+<li>3xx 重定向 —— 重定向需要后续操作才能完成这一请求</li>
+<li>4xx 请求错误 —— 求含有词法错误或者无法被执行<ol>
+<li>错误一般是<ol>
+<li>请求的时候有语法错误</li>
+<li>请求无法实现</li>
+</ol>
+</li>
+<li>400 客户端请求有语法错误，服务器端不能理解</li>
+<li>401 请求没有经过授权</li>
+<li>403 服务器端接到请求，但是还是不能实现，没太懂</li>
+<li>404 资源未找到</li>
+<li>405 某个请求所针对的资源不支持对应的请求方法的时候</li>
+</ol>
+</li>
+<li>5xx 服务器错误 —— 服务器在处理某个正确请求时发生错误<ol>
+<li>500 服务器端发生了一个未知的错误</li>
+<li>501 服务器不认识或者不支持对应的请求方法的时候</li>
+<li>503 服务器端当前还不能处理客户端的这个请求，过一段时间可能会恢复正常</li>
+</ol>
+</li>
+</ol>
+<h2 id="域名解析和三次握手"><a href="#域名解析和三次握手" class="headerlink" title="域名解析和三次握手"></a>域名解析和三次握手</h2><h3 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h3><ol>
+<li>搜索浏览器自身的 DNS 缓存，看其中有没有域名缓存和ip地址</li>
+<li>搜索操作系统自身的 DNS 缓存</li>
+<li>读取本地的 HOST 文件</li>
+<li>浏览器发起一个 DNS 的一个系统调用，运营商的 DNS 解析<ol>
+<li>宽带运营商服务器服务器查看本身缓存，如果没有，有则返回信息，没有则执行下一步</li>
+<li>运营商服务器发起一个迭代 DNS 解析请求<ol>
+<li>问其根域，xxx.com 的域名地址是多少</li>
+<li>根域回复：我只知道com域的顶级域的ip地址</li>
+<li>运营商服务器拿到 .com 域这个顶级域的ip地址</li>
+<li>运营商服务器向 .com 域的 DNS 服务器询问：xxx.com的域名地址是多少</li>
+<li>.com域 DNS 服务器回复 xxx.com 域的ip地址</li>
+<li>运营商的服务器询问 xxx.com 这个域的 DNS 服务器询问 xxx.com 这个域名的ip地址，并得到回复</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>运营商服务器把结果返回操作系统内核同时缓存起来</li>
+<li>操作系统内核把结果返回浏览器</li>
+</ol>
+<h3 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h3><ol>
+<li>接上文DNS解析之后，浏览器拿到了 <a href="http://www.xxx.com" target="_blank" rel="noopener">www.xxx.com</a> 对应的 ip 地址，发起 http 的“三次握手” ,TCP连接请求，通过层层路由，到达服务器端，进入到网卡，进入到内核的 TCP/IP协议栈，经过防火墙，建立了 TCP 和 IP 的连接<ol>
+<li>哥们，能听到我说话吗？唠唠呗</li>
+<li>嗨，兄弟，我能听到你说话，咱俩可以唠唠。</li>
+<li>好的哥们，咱俩开始唠吧</li>
+</ol>
+</li>
+<li>TCP/IP 链接建立起来后，浏览器就可以向服务器发送HTTP请求了，例如用 HTTP 的 GET 方法请求根域里的一个域名，协议可以采用 HTTP 1.0 的一个协议。</li>
+<li>服务器接收请求，根据路径，后端处理，返回结果，把完整的HTML页面代码返回给浏览器</li>
+<li>浏览器渲染拿到的 HTML 页面代码，这个过程中，里面的js、css、图片静态资源也是一个个 HTTP 请求，都需要经过上面的的过程。</li>
+<li>浏览器根据拿到的资源渲染页面，完整呈现页面</li>
+</ol>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
+<li>慕课网 Scott <a href="http://www.imooc.com/learn/348" target="_blank" rel="noopener">老师的进击的《Node.js基础（一）》</a></li>
+<li>维基百科词条：<a href="https://www.wikiwand.com/zh/超文本传输协议" target="_blank" rel="noopener">超文本传输协议</a></li>
+<li>维基百科词条<a href="https://www.wikiwand.com/传输控制协议" target="_blank" rel="noopener">传输控制协议</a></li>
+<li>阮一峰的博客文章 <a href="http://www.ruanyifeng.com/blog/2016/08/http.html" target="_blank" rel="noopener">HTTP 协议入门</a></li>
+</ol>
 
-        </article>
-        
-        
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 daughlas@gmail.com </span>
+    </div>
+</article>
+
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>学习 HTTP 协议</p>
+    
+    <p><span class="copy-title">本文作者:</span><a  title="吕嘉文">吕嘉文</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-06-01, 17:33:15</p>
+    <p><span class="copy-title">最后更新:</span>2020-06-01, 17:44:08</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/06/01/temp/%E5%AD%A6%E4%B9%A0%20HTTP%20%E5%8D%8F%E8%AE%AE/" title="学习 HTTP 协议">http://yoursite.com/2020/06/01/temp/%E5%AD%A6%E4%B9%A0%20HTTP%20%E5%8D%8F%E8%AE%AE/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">©2016-2020 daughlas</p>

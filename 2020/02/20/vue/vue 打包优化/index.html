@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>吕嘉文的小栈</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="吕嘉文的小栈">
+  <title>vue-cli3 打包优化 | 吕嘉文的小栈</title>
+  <meta name="keywords" content=" vue , vue-cli ">
+  <meta name="description" content="vue-cli3 打包优化 | 吕嘉文的小栈">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
 <meta property="og:type" content="article">
@@ -53,7 +53,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -420,12 +420,57 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-vue/vue 打包优化" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于叶落阁"><span class="toc-text">关于叶落阁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">vue-cli3 打包优化</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="纯前端">纯前端</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color4">vue</a>
+            
+            <a class="color3">vue-cli</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-02-20 14:36:39'>2020-02-20 14:15</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#vue-cli3-打包优化"><span class="toc-text">vue-cli3 打包优化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#代码压缩"><span class="toc-text">代码压缩</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#防止-cli3-进入页面的时候加载太多请求"><span class="toc-text">防止 cli3 进入页面的时候加载太多请求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CDN-引入"><span class="toc-text">CDN 引入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关闭生产环境-sourceMap"><span class="toc-text">关闭生产环境 sourceMap</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置别名"><span class="toc-text">配置别名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#压缩代码"><span class="toc-text">压缩代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关闭生产环境-sourceMap-1"><span class="toc-text">关闭生产环境 sourceMap</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关闭生产环境-sourceMap-2"><span class="toc-text">关闭生产环境 sourceMap</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -438,32 +483,59 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
-<blockquote>
-<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
-</blockquote>
-<blockquote>
-<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
-</blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
-<h2 id="关于叶落阁"><a href="#关于叶落阁" class="headerlink" title="关于叶落阁"></a>关于叶落阁</h2><p><strong>叶落阁</strong> 是阿杰（杨玉杰）的个人站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)、作者(@作者)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
-</ul>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="vue-cli3-打包优化"><a href="#vue-cli3-打包优化" class="headerlink" title="vue-cli3 打包优化"></a>vue-cli3 打包优化</h1><h2 id="代码压缩"><a href="#代码压缩" class="headerlink" title="代码压缩"></a>代码压缩</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">configureWebpack: config &#x3D;&gt; &#123;</span><br><span class="line">  if (process.env.NODE_ENV &#x3D;&#x3D;&#x3D; &#39;production&#39;) &#123;</span><br><span class="line">    &#x2F;&#x2F; 为生产环境修改配置...</span><br><span class="line">    config.plugins.push(</span><br><span class="line">      &#x2F;&#x2F;生产环境自动删除console</span><br><span class="line">      new UglifyJsPlugin(&#123;</span><br><span class="line">        uglifyOptions: &#123;</span><br><span class="line">          compress: &#123;</span><br><span class="line">            warnings: false,</span><br><span class="line">            drop_debugger: true,</span><br><span class="line">            drop_console: true,</span><br><span class="line">          &#125;,</span><br><span class="line">        &#125;,</span><br><span class="line">        sourceMap: false,</span><br><span class="line">        parallel: true,</span><br><span class="line">      &#125;)</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        </article>
-        
-        
+<h2 id="防止-cli3-进入页面的时候加载太多请求"><a href="#防止-cli3-进入页面的时候加载太多请求" class="headerlink" title="防止 cli3 进入页面的时候加载太多请求"></a>防止 cli3 进入页面的时候加载太多请求</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">chainWebpack: config &#x3D;&gt; &#123;</span><br><span class="line">  &#x2F;&#x2F; 移除 prefetch 插件</span><br><span class="line">  config.plugins.delete(&#39;prefetch&#39;)</span><br><span class="line">  &#x2F;&#x2F; 移除 preload 插件</span><br><span class="line">  config.plugins.delete(&#39;preload&#39;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="CDN-引入"><a href="#CDN-引入" class="headerlink" title="CDN 引入"></a>CDN 引入</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; vue.config.js</span><br><span class="line">const isProduction &#x3D; process.env.NODE_ENV &#x3D;&#x3D;&#x3D; &#39;production&#39;;</span><br><span class="line">const cdn &#x3D; &#123;</span><br><span class="line">  css: [],</span><br><span class="line">  js: [</span><br><span class="line">    &#39;https:&#x2F;&#x2F;cdn.bootcss.com&#x2F;vue&#x2F;2.6.10&#x2F;vue.runtime.min.js&#39;,</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br><span class="line">module.exports &#x3D; &#123;</span><br><span class="line">  chainWebpack: config &#x3D;&gt; &#123;</span><br><span class="line">    &#x2F;&#x2F; 生产环境配置</span><br><span class="line">    if (isProduction) &#123;</span><br><span class="line">      &#x2F;&#x2F; 生产环境注入cdn</span><br><span class="line">      config.plugin(&#39;html&#39;)</span><br><span class="line">        .tap(args &#x3D;&gt; &#123;</span><br><span class="line">          args[0].cdn &#x3D; cdn;</span><br><span class="line">          return args;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  configureWebpack: config &#x3D;&gt; &#123;</span><br><span class="line">    if (isProduction) &#123;</span><br><span class="line">      &#x2F;&#x2F; 用cdn方式引入</span><br><span class="line">      config.externals &#x3D; &#123;</span><br><span class="line">          &#39;vue&#39;: &#39;Vue&#39;,</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>html 文件也要修改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> &lt;!-- 使用CDN的JS文件 --&gt;</span><br><span class="line">&lt;% for (var i in htmlWebpackPlugin.options.cdn &amp;&amp; htmlWebpackPlugin.options.cdn.js) &#123; %&gt;</span><br><span class="line">  &lt;link href&#x3D;&quot;&lt;%&#x3D; htmlWebpackPlugin.options.cdn.js[i] %&gt;&quot; rel&#x3D;&quot;preload&quot; as&#x3D;&quot;script&quot;&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="关闭生产环境-sourceMap"><a href="#关闭生产环境-sourceMap" class="headerlink" title="关闭生产环境 sourceMap"></a>关闭生产环境 sourceMap</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">module.exports &#x3D; &#123;</span><br><span class="line">  configureWebpack: config &#x3D;&gt; &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="配置别名"><a href="#配置别名" class="headerlink" title="配置别名"></a>配置别名</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">module.exports &#x3D; &#123;</span><br><span class="line">  configureWebpack: config &#x3D;&gt; &#123;</span><br><span class="line">    if (isProduction) &#123;</span><br><span class="line">      config.resolve.alias</span><br><span class="line">        .set(&quot;@&quot;, resolve(&quot;src&quot;))</span><br><span class="line">        .set(&quot;@img&quot;, resolve(&quot;src&#x2F;assets&#x2F;images&quot;))</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="压缩代码"><a href="#压缩代码" class="headerlink" title="压缩代码"></a>压缩代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">module.exports &#x3D; &#123;</span><br><span class="line">  chainWebpack: config &#x3D;&gt; &#123;</span><br><span class="line">    if (isProduction) &#123;</span><br><span class="line">      &#x2F;&#x2F; 压缩代码</span><br><span class="line">      config.optimization.minimize(true);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="关闭生产环境-sourceMap-1"><a href="#关闭生产环境-sourceMap-1" class="headerlink" title="关闭生产环境 sourceMap"></a>关闭生产环境 sourceMap</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">module.exports &#x3D; &#123;</span><br><span class="line">  configureWebpack: config &#x3D;&gt; &#123;</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="关闭生产环境-sourceMap-2"><a href="#关闭生产环境-sourceMap-2" class="headerlink" title="关闭生产环境 sourceMap"></a>关闭生产环境 sourceMap</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">module.exports &#x3D; &#123;</span><br><span class="line">  configureWebpack: config &#x3D;&gt; &#123;</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 daughlas@gmail.com </span>
+    </div>
+</article>
+
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>vue-cli3 打包优化</p>
+    
+    <p><span class="copy-title">本文作者:</span><a  title="吕嘉文">吕嘉文</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-02-20, 14:15:50</p>
+    <p><span class="copy-title">最后更新:</span>2020-02-20, 14:36:39</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/02/20/vue/vue%20%E6%89%93%E5%8C%85%E4%BC%98%E5%8C%96/" title="vue-cli3 打包优化">http://yoursite.com/2020/02/20/vue/vue%20%E6%89%93%E5%8C%85%E4%BC%98%E5%8C%96/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">©2016-2020 daughlas</p>

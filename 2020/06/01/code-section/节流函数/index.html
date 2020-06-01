@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>吕嘉文的小栈</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="吕嘉文的小栈">
+  <title>throttle 节流函数 | 吕嘉文的小栈</title>
+  <meta name="keywords" content=" javascript ">
+  <meta name="description" content="throttle 节流函数 | 吕嘉文的小栈">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
 <meta property="og:type" content="article">
@@ -53,7 +53,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -420,12 +420,55 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-code-section/节流函数" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于叶落阁"><span class="toc-text">关于叶落阁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">throttle 节流函数</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="一段代码">一段代码</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color1">javascript</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-06-01 18:06:59'>2020-06-01 17:48</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        
     
 <style>
     .left-col .switch-btn,
@@ -438,32 +481,40 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
-<blockquote>
-<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
-</blockquote>
-<blockquote>
-<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
-</blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
-<h2 id="关于叶落阁"><a href="#关于叶落阁" class="headerlink" title="关于叶落阁"></a>关于叶落阁</h2><p><strong>叶落阁</strong> 是阿杰（杨玉杰）的个人站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)、作者(@作者)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
-</ul>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">  &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1.0&quot;&gt;</span><br><span class="line">  &lt;title&gt;节流函数&lt;&#x2F;title&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">    #container &#123;</span><br><span class="line">      width: 100%;</span><br><span class="line">      height: 200px;</span><br><span class="line">      line-height: 200px;</span><br><span class="line">      text-align: center;</span><br><span class="line">      color: #fff;</span><br><span class="line">      background-color: #444444;</span><br><span class="line">      font-size: 30px;</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;&#x2F;style&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;h2&gt;使用场景：&lt;&#x2F;h2&gt;</span><br><span class="line">  &lt;div&gt;监听 window 的 resize、scroll&lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div&gt;监听鼠标的 mousedown、mouseover&lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div&gt;监听键盘的 keyup、keydown&lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div&gt;...&lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div id&#x3D;&quot;container&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">  &lt;button id&#x3D;&quot;btn&quot;&gt;取消debounce&lt;&#x2F;button&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  var count &#x3D; 1;</span><br><span class="line">  var container &#x3D; document.getElementById(&#39;container&#39;);</span><br><span class="line">  </span><br><span class="line">  function getUserAction(ev) &#123;</span><br><span class="line">    console.log(ev)</span><br><span class="line">    console.log(this);</span><br><span class="line">    container.innerHTML &#x3D; count++;</span><br><span class="line">    return count;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  &#x2F;&#x2F; function throttle(func, wait) &#123;</span><br><span class="line">  &#x2F;&#x2F;   var previous &#x3D; 0;</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F;   return function() &#123;</span><br><span class="line">  &#x2F;&#x2F;     var context &#x3D; this;</span><br><span class="line">  &#x2F;&#x2F;     var args &#x3D; arguments;</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F;     var now &#x3D; +new Date()</span><br><span class="line">      </span><br><span class="line">  &#x2F;&#x2F;     if (now - previous &gt; wait) &#123;</span><br><span class="line">  &#x2F;&#x2F;       func.apply(context, args);</span><br><span class="line">  &#x2F;&#x2F;       previous &#x3D; now;</span><br><span class="line">  &#x2F;&#x2F;     &#125;</span><br><span class="line">  &#x2F;&#x2F;   &#125;</span><br><span class="line">  &#x2F;&#x2F; &#125;</span><br><span class="line"></span><br><span class="line">  function throttle(func, wait) &#123;</span><br><span class="line">    var timeout, context, args, result;</span><br><span class="line">    var previous &#x3D; 0;</span><br><span class="line"></span><br><span class="line">    var later &#x3D; function() &#123;</span><br><span class="line">      previous &#x3D; +new Date();</span><br><span class="line">      timeout &#x3D; null;</span><br><span class="line">      func.apply(context, args)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    var throttled &#x3D; function() &#123;</span><br><span class="line">      context &#x3D; this;</span><br><span class="line">      args &#x3D; arguments;</span><br><span class="line">      var now &#x3D; +new Date();</span><br><span class="line">      var remaining &#x3D; wait - (now - previous);</span><br><span class="line">      if (remaining &lt;&#x3D;0 || remaining &gt; wait) &#123;</span><br><span class="line">        if (timeout) &#123;</span><br><span class="line">          clearTimeout(timeout);</span><br><span class="line">          timeout &#x3D; null;</span><br><span class="line">        &#125;</span><br><span class="line">        previous &#x3D; now;</span><br><span class="line">        func.apply(context, args);</span><br><span class="line">      &#125; else if (!timeout) &#123;</span><br><span class="line">        timeout &#x3D; setTimeout(later, remaining);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return throttled;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  container.onmousemove &#x3D; throttle(getUserAction, 1000);</span><br><span class="line">  &lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
 
-        </article>
-        
-        
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 daughlas@gmail.com </span>
+    </div>
+</article>
+
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>throttle 节流函数</p>
+    
+    <p><span class="copy-title">本文作者:</span><a  title="吕嘉文">吕嘉文</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-06-01, 17:48:06</p>
+    <p><span class="copy-title">最后更新:</span>2020-06-01, 18:06:59</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/06/01/code-section/%E8%8A%82%E6%B5%81%E5%87%BD%E6%95%B0/" title="throttle 节流函数">http://yoursite.com/2020/06/01/code-section/%E8%8A%82%E6%B5%81%E5%87%BD%E6%95%B0/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">©2016-2020 daughlas</p>

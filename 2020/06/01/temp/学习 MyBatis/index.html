@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>吕嘉文的小栈</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="吕嘉文的小栈">
+  <title>学习 MyBatis | 吕嘉文的小栈</title>
+  <meta name="keywords" content=" 临时 ">
+  <meta name="description" content="学习 MyBatis | 吕嘉文的小栈">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
 <meta property="og:type" content="article">
@@ -53,7 +53,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -420,12 +420,55 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-temp/学习 MyBatis" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于叶落阁"><span class="toc-text">关于叶落阁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">学习 MyBatis</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="临时">临时</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color3">临时</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-06-01 18:05:54'>2020-06-01 18:05</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#传统-JDBC-程序的设计缺陷"><span class="toc-text">传统 JDBC 程序的设计缺陷</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MyBatis-概述"><span class="toc-text">MyBatis 概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MyBatis-的使用优势"><span class="toc-text">MyBatis 的使用优势</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MyBatis-的使用场景"><span class="toc-text">MyBatis 的使用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MyBatis-核心-API-操作过程分解"><span class="toc-text">MyBatis 核心 API 操作过程分解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MyBatis-架构分解"><span class="toc-text">MyBatis 架构分解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用"><span class="toc-text">使用</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -438,32 +481,127 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
-<blockquote>
-<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
-</blockquote>
-<blockquote>
-<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
-</blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
-<h2 id="关于叶落阁"><a href="#关于叶落阁" class="headerlink" title="关于叶落阁"></a>关于叶落阁</h2><p><strong>叶落阁</strong> 是阿杰（杨玉杰）的个人站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)、作者(@作者)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="传统-JDBC-程序的设计缺陷"><a href="#传统-JDBC-程序的设计缺陷" class="headerlink" title="传统 JDBC 程序的设计缺陷"></a>传统 JDBC 程序的设计缺陷</h3><ul>
+<li>大量配置信息硬编码，数据库密码、用户等</li>
+<li>大量的无关业务处理的编码</li>
+<li>扩展优化极为不便</li>
 </ul>
+<h3 id="MyBatis-概述"><a href="#MyBatis-概述" class="headerlink" title="MyBatis 概述"></a>MyBatis 概述</h3><p>MyBatis 是支持定制化 SQL、存储过程以及高级映射的优秀的持久层框架。</p>
+<ul>
+<li>避免传统 JDBC 硬编码</li>
+<li>XML 配置或者注解</li>
+<li>POJO对象和数据库记录直接映射</li>
+<li>完善的文档支持</li>
+</ul>
+<h3 id="MyBatis-的使用优势"><a href="#MyBatis-的使用优势" class="headerlink" title="MyBatis 的使用优势"></a>MyBatis 的使用优势</h3><ul>
+<li><p>数据库交互信息配置化</p>
+</li>
+<li><p>动态 SQL 处理（一级缓存、二级缓存）</p>
+</li>
+</ul>
+<h3 id="MyBatis-的使用场景"><a href="#MyBatis-的使用场景" class="headerlink" title="MyBatis 的使用场景"></a>MyBatis 的使用场景</h3><ul>
+<li>更加关注 SQL 优化的项目</li>
+<li>需求频繁更新改动的项目</li>
+</ul>
+<h3 id="MyBatis-核心-API-操作过程分解"><a href="#MyBatis-核心-API-操作过程分解" class="headerlink" title="MyBatis 核心 API 操作过程分解"></a>MyBatis 核心 API 操作过程分解</h3><ul>
+<li>SQL输入参数  +  去数据库中操作</li>
+<li>数据库操作<ul>
+<li>mybatis 配置<ul>
+<li>mybatis.xml 主配置文件</li>
+<li>XXXMapper.xml 映射配置文件</li>
+</ul>
+</li>
+<li>构建和数据库之间的对话<ul>
+<li>SqlSessionFactoryBuilder =&gt; SqlSessionFactory =&gt; SqlSession =&gt;Executor =&gt; Mapped Statement</li>
+</ul>
+</li>
+<li>操作数据库</li>
+</ul>
+</li>
+<li>SQL 输出结果集</li>
+</ul>
+<h3 id="MyBatis-架构分解"><a href="#MyBatis-架构分解" class="headerlink" title="MyBatis 架构分解"></a>MyBatis 架构分解</h3><ul>
+<li>接口层<ul>
+<li>数据查询接口</li>
+<li>数据新增接口</li>
+<li>数据更新接口</li>
+<li>数据删除接口</li>
+<li>获取配置接口</li>
+</ul>
+</li>
+<li>数据处理层<ul>
+<li>参数映射<ul>
+<li>参数映射配置</li>
+<li>参数映射解析</li>
+<li>参数类型解析</li>
+</ul>
+</li>
+<li>SQL 解析<ul>
+<li>SQL 获取</li>
+<li>SQL 解析</li>
+<li>动态 SQL</li>
+</ul>
+</li>
+<li>SQL 执行<ul>
+<li>SimpleExecutor</li>
+<li>BatchExecutor</li>
+<li>ReuseExecutor</li>
+</ul>
+</li>
+<li>结果映射<ul>
+<li>结果映射配置</li>
+<li>结果类型转换</li>
+<li>结果数据拷贝</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>基础支撑层<ul>
+<li>配置框架<ul>
+<li>连接管理</li>
+<li>事务管理</li>
+<li>配置加载</li>
+<li>缓存处理</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>动态 sql</p>
+<p>数据库和实体类不一致，resultMap 而不用 resultType</p>
+<p>log4j 日志管理 debug 级别 info 级别</p>
 
-        </article>
-        
-        
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 daughlas@gmail.com </span>
+    </div>
+</article>
+
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>学习 MyBatis</p>
+    
+    <p><span class="copy-title">本文作者:</span><a  title="吕嘉文">吕嘉文</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-06-01, 18:05:08</p>
+    <p><span class="copy-title">最后更新:</span>2020-06-01, 18:05:54</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/06/01/temp/%E5%AD%A6%E4%B9%A0%20MyBatis/" title="学习 MyBatis">http://yoursite.com/2020/06/01/temp/%E5%AD%A6%E4%B9%A0%20MyBatis/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">©2016-2020 daughlas</p>

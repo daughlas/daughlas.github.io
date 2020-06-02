@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>策略模式 | 吕嘉文的小栈</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="策略模式 | 吕嘉文的小栈">
+  <title>javascript 作用域 | 吕嘉文的小栈</title>
+  <meta name="keywords" content=" 编程语言 , java ">
+  <meta name="description" content="javascript 作用域 | 吕嘉文的小栈">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="javascript 函数的执行闭包相关知识图谱  闭包 表达式部分：lamada 表达式 环境部分 环境 变量环境 词法环境 this值   标识符列表：函数中用到的未声明的变量      javascript 函数相关知识图谱：  javascript 函数 表达式部分：函数 环境部分：函数的词法环境部分组成 函数里面不带 var 、let、const 的变量 词法作用域（执行上下文的一部分）">
 <meta property="og:type" content="article">
@@ -1023,9 +1023,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-design-pattern/策略模式" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-languages/javascript作用域" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">策略模式</h1>
+        <h1 class="article-title">javascript 作用域</h1>
     
     <div class="article-meta">
         
@@ -1033,15 +1033,23 @@
         
         <span class="book">
             
-                <a  data-rel="设计模式">设计模式</a>
+                <a  data-rel="编程语言">编程语言</a>
             
         </span>
         
         
+        <span class="tag">
+            
+            <a class="color5">编程语言</a>
+            
+            <a class="color5">java</a>
+            
+        </span>
+        
     </div>
     <div class="article-meta">
         
-        <!-- 创建时间:<time class="date" title='更新时间: 2020-06-02 16:01:41'>2020-06-02 16:01</time> -->
+        <!-- 创建时间:<time class="date" title='更新时间: 2020-06-02 17:45:22'>2020-06-02 17:44</time> -->
         
     </div>
     <div class="article-meta">
@@ -1063,7 +1071,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#8-行为型：策略模式"><span class="toc-text">8 行为型：策略模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#策略模式之掘金小册"><span class="toc-text">策略模式之掘金小册</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#业务场景"><span class="toc-text">业务场景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#if-else-大侠"><span class="toc-text">if-else 大侠</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#if-else-侠，人人喊打"><span class="toc-text">if-else 侠，人人喊打</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#重构询价逻辑"><span class="toc-text">重构询价逻辑</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#单一功能改造"><span class="toc-text">单一功能改造</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#开放封闭改造"><span class="toc-text">开放封闭改造</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#最终版本"><span class="toc-text">最终版本</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#策略模式之慕课网"><span class="toc-text">策略模式之慕课网</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#概念"><span class="toc-text">概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#示例"><span class="toc-text">示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#设计原则验证"><span class="toc-text">设计原则验证</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#javascript-函数的执行"><span class="toc-text">javascript 函数的执行</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#闭包"><span class="toc-text">闭包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#执行上下文：执行的基础设施"><span class="toc-text">执行上下文：执行的基础设施</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#执行上下文的演变"><span class="toc-text">执行上下文的演变</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ES3中的执行上下文"><span class="toc-text">ES3中的执行上下文</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ES5-中的执行上下文"><span class="toc-text">ES5 中的执行上下文</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ES-2018中的执行上下文"><span class="toc-text">ES 2018中的执行上下文</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#var-声明和赋值"><span class="toc-text">var 声明和赋值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#let"><span class="toc-text">let</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Realm"><span class="toc-text">Realm</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#函数的种类"><span class="toc-text">函数的种类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#函数的分类"><span class="toc-text">函数的分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#普通函数"><span class="toc-text">普通函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#箭头函数"><span class="toc-text">箭头函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法"><span class="toc-text">方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#生成器函数"><span class="toc-text">生成器函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类"><span class="toc-text">类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#异步函数"><span class="toc-text">异步函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#this-关键字的行为"><span class="toc-text">this 关键字的行为</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#普通函数的-this"><span class="toc-text">普通函数的 this</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#箭头函数的-this"><span class="toc-text">箭头函数的 this</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方法的-this"><span class="toc-text">方法的 this</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他函数"><span class="toc-text">其他函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#this-关键字的机制"><span class="toc-text">this 关键字的机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作-this-的内置函数"><span class="toc-text">操作 this 的内置函数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#javascript-作用域"><span class="toc-text">javascript 作用域</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#javascript-闭包"><span class="toc-text">javascript 闭包</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1079,232 +1087,198 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="8-行为型：策略模式"><a href="#8-行为型：策略模式" class="headerlink" title="8 行为型：策略模式"></a>8 行为型：策略模式</h2><h3 id="策略模式之掘金小册"><a href="#策略模式之掘金小册" class="headerlink" title="策略模式之掘金小册"></a>策略模式之掘金小册</h3><p>策略模式和状态模式属于本书”彩蛋“性质的附加小节。这两种模式理解难度都不大，在面试中也几乎没有什么权重，但是却对大家培养良好的编码习惯和重构意识却大有裨益。</p>
-<p>定义一系列的算法,把它们一个个封装起来, 并且使它们可相互替换。</p>
-<p>手实现了算法提取、算法封装、分发优化的整个一条龙的操作流。</p>
-<h4 id="业务场景"><a href="#业务场景" class="headerlink" title="业务场景"></a>业务场景</h4><p>有一天，产品经理韩梅梅找到李雷，给李雷提了这么个需求：<br>马上大促要来了，我们本次大促要做差异化询价。啥是差异化询价？就是说同一个商品，我通过在后台给它设置不同的价格类型，可以让它展示不同的价格。具体的逻辑如下：</p>
+        <h1 id="javascript-函数的执行"><a href="#javascript-函数的执行" class="headerlink" title="javascript 函数的执行"></a>javascript 函数的执行</h1><p>闭包相关知识图谱</p>
 <ul>
-<li>当价格类型为“预售价”时，满 100 - 20，不满 100 打 9 折</li>
-<li>当价格类型为“大促价”时，满 100 - 30，不满 100 打 8 折</li>
-<li>当价格类型为“返场价”时，满 200 - 50，不叠加</li>
-<li>当价格类型为“尝鲜价”时，直接打 5 折</li>
-</ul>
-<h4 id="if-else-大侠"><a href="#if-else-大侠" class="headerlink" title="if-else 大侠"></a>if-else 大侠</h4><p>李雷扫了一眼 prd，立刻来了主意。他首先将四种价格做了标签化：</p>
-<pre><code>预售价 - pre
-大促价 - onSale
-返场价 - back
-尝鲜价 - fresh</code></pre><pre><code class="javascript">// 询价方法，接受价格标签和原价为入参
-function askPrice(tag, originPrice) {
-
-  // 处理预热价
-  if(tag === &#39;pre&#39;) {
-    if(originPrice &gt;= 100) {
-      return originPrice - 20
-    } 
-    return originPrice * 0.9
-  }
-
-  // 处理大促价
-  if(tag === &#39;onSale&#39;) {
-    if(originPrice &gt;= 100) {
-      return originPrice - 30
-    } 
-    return originPrice * 0.8
-  }
-
-  // 处理返场价
-  if(tag === &#39;back&#39;) {
-    if(originPrice &gt;= 200) {
-      return originPrice - 50
-    }
-    return originPrice
-  }
-
-  // 处理尝鲜价
-  if(tag === &#39;fresh&#39;) {
-     return originPrice * 0.5
-  }
-}</code></pre>
-<h4 id="if-else-侠，人人喊打"><a href="#if-else-侠，人人喊打" class="headerlink" title="if-else 侠，人人喊打"></a>if-else 侠，人人喊打</h4><p>问题：</p>
-<ul>
-<li>首先，它违背了“单一功能”原则。一个 function 里面，它竟然处理了四坨逻辑<ul>
-<li>万一其中一行代码出了 Bug，那么整个询价逻辑都会崩坏</li>
-<li>与此同时出了 Bug 你很难定位到底是哪个代码块坏了事</li>
-<li>单个能力很难被抽离复用</li>
-<li>见到胖逻辑，我们的第一反应，就是一个字——拆！</li>
+<li>闭包<ul>
+<li>表达式部分：lamada 表达式</li>
+<li>环境部分<ul>
+<li>环境<ul>
+<li>变量环境</li>
+<li>词法环境</li>
+<li>this值</li>
 </ul>
 </li>
-<li>不仅如此，它还违背了“开放封闭”原则。假如有一天韩梅梅再次找到李雷，要他加一个满 100 - 50 的“新人价”怎么办？他只能继续 if-else：</li>
+<li>标识符列表：函数中用到的未声明的变量</li>
 </ul>
-<pre><code class="javascript"> // 处理新人价
-  if(tag === &#39;newUser&#39;) {
-    if(originPrice &gt;= 100) {
-      return originPrice - 50
-    }
-    return originPrice
-  }</code></pre>
-<h4 id="重构询价逻辑"><a href="#重构询价逻辑" class="headerlink" title="重构询价逻辑"></a>重构询价逻辑</h4><h5 id="单一功能改造"><a href="#单一功能改造" class="headerlink" title="单一功能改造"></a>单一功能改造</h5><pre><code class="javascript">// 处理预热价
-function prePrice(originPrice) {
-  if(originPrice &gt;= 100) {
-    return originPrice - 20
-  } 
-  return originPrice * 0.9
-}
-
-// 处理大促价
-function onSalePrice(originPrice) {
-  if(originPrice &gt;= 100) {
-    return originPrice - 30
-  } 
-  return originPrice * 0.8
-}
-
-// 处理返场价
-function backPrice(originPrice) {
-  if(originPrice &gt;= 200) {
-    return originPrice - 50
-  }
-  return originPrice
-}
-
-// 处理尝鲜价
-function freshPrice(originPrice) {
-  return originPrice * 0.5
-}
-
-function askPrice(tag, originPrice) {
-  // 处理预热价
-  if(tag === &#39;pre&#39;) {
-    return prePrice(originPrice)
-  }
-  // 处理大促价
-  if(tag === &#39;onSale&#39;) {
-    return onSalePrice(originPrice)
-  }
-
-  // 处理返场价
-  if(tag === &#39;back&#39;) {
-    return backPrice(originPrice)
-  }
-
-  // 处理尝鲜价
-  if(tag === &#39;fresh&#39;) {
-     return freshPrice(originPrice)
-  }
-}</code></pre>
-<p>OK，我们现在至少做到了一个函数只做一件事。现在每个函数都有了自己明确的、单一的分工。如此一来，我们在遇到 Bug 时，就可以做到“头痛医头，脚痛医脚”，而不必在庞大的逻辑海洋里费力去定位到底是哪块不对。</p>
-<p>同时，如果我在另一个函数里也想使用某个询价能力，比如说我想询预热价，那我直接把 prePrice 这个函数拿去调用就是了，而不必在 askPrice 肥胖的身躯里苦苦寻觅、然后掏出这块逻辑、最后再复制粘贴到另一个函数去——更何况万一哪天 askPrice 里的预热价逻辑改了，你还得再复制粘贴一次，扎心啊老铁！</p>
-<h5 id="开放封闭改造"><a href="#开放封闭改造" class="headerlink" title="开放封闭改造"></a>开放封闭改造</h5><p>那个新人价的问题——这会儿我要想给 askPrice 增加新人询价逻辑，我该咋整？我只能这么来：</p>
-<pre><code class="javascript">// 添加一个函数
-// 处理新人价
-function newUserPrice(originPrice) {
-  if(originPrice &gt;= 100) {
-    return originPrice - 50
-  }
-  return originPrice
-}
-
-// 在 askPrice 之中，添加一段代码
-// 处理新人价
-if(tag === &#39;newUser&#39;) {
-    return newUserPrice(originPrice)
-}</code></pre>
-<p>在外层，我们编写一个 newUser 函数用于处理新人价逻辑；在 askPrice 里面，我们新增了一个 if-else 判断。可以看出，这样其实还是在修改 askPrice 的函数体，没有实现“对扩展开放，对修改封闭”的效果。</p>
-<h5 id="最终版本"><a href="#最终版本" class="headerlink" title="最终版本"></a>最终版本</h5><pre><code class="javascript">// 处理预热价
-function prePrice(originPrice) {
-  if(originPrice &gt;= 100) {
-    return originPrice - 20
-  } 
-  return originPrice * 0.9
-}
-
-// 处理大促价
-function onSalePrice(originPrice) {
-  if(originPrice &gt;= 100) {
-    return originPrice - 30
-  } 
-  return originPrice * 0.8
-}
-
-// 处理返场价
-function backPrice(originPrice) {
-  if(originPrice &gt;= 200) {
-    return originPrice - 50
-  }
-  return originPrice
-}
-
-// 处理尝鲜价
-function freshPrice(originPrice) {
-  return originPrice * 0.5
-}
-
-const priceProcessor = {
-    pre: prePrice,
-    onSale: onSalePrice,
-    back: backPrice,
-    fresh: freshPrice
-}
-
-function askPrice(tag, originPrice) {
-  return priceProcessor[tag](originPrice)
-}</code></pre>
-<h3 id="策略模式之慕课网"><a href="#策略模式之慕课网" class="headerlink" title="策略模式之慕课网"></a>策略模式之慕课网</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><ul>
-<li>不同策略分开处理</li>
-<li>避免出现大量 if else 或者 switch case</li>
-<li>JS 未找到经典应用场景，因为主要跟业务有关</li>
+</li>
 </ul>
-<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><pre><code class="javascript">class User {
-    constructor(type) {
-        this.type = type
-    }
-
-    buy() {
-        if (this.type === &#39;ordinary&#39;) {
-            console.log(&#39;普通用户购买&#39;)
-        } else if (this.type === &#39;memeber&#39;) {
-            console.log(&#39;会员用户购买&#39;)
-        } else if (this.type === &#39;vip&#39;) {
-            console.log(&#39;VIP 用户购买&#39;)
-        }
-    }
-}
-
-var u1 = new User(&#39;ordinary&#39;)
-u1.buy()
-var u2 = new User(&#39;member&#39;)
-u1.buy()
-var u3 = new User(&#39;vip&#39;)
-u1.buy()</code></pre>
-<pre><code class="javascript">class OrdinaryUser {
-    buy() {
-        console.log(&#39;普通用户购买&#39;)
-    }
-}
-
-class MemberUser {
-    buy() {
-        console.log(&#39;会员用户购买&#39;)
-    }
-}
-
-class VipUser {
-    buy() {
-      console.log(&#39;VIP 用户购买&#39;)
-    }
-}
-
-var u1 = new OrdinaryUser()
-u1.buy()
-var u2 = new MemberUser()
-u1.buy()
-var u3 = new VipUser()
-u1.buy()</code></pre>
-<h4 id="设计原则验证"><a href="#设计原则验证" class="headerlink" title="设计原则验证"></a>设计原则验证</h4><ul>
-<li>不同策略，分开处理，而不是混合在一起</li>
-<li>符合开放封闭原则</li>
+</li>
 </ul>
+<p>javascript 函数相关知识图谱：</p>
+<ul>
+<li>javascript 函数<ul>
+<li>表达式部分：函数</li>
+<li>环境部分：函数的词法环境部分组成<ul>
+<li>函数里面不带 var 、let、const 的变量</li>
+<li>词法作用域（执行上下文的一部分）<ul>
+<li>scope</li>
+<li>this值</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>从图上可以看出，二者是可以对应起来的。</p>
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p>在上世纪60年代，主流编程语言是基于 lamada 演算的函数式编程语言。</p>
+<p>对闭包，一个不太精确的描述是，<strong>带有一系列信息的 lamada 表达式</strong>（在函数式语言中，lamada表达式就是函数）。</p>
+<p>进一步理解，<strong>闭包是一个绑定了执行环境的函数</strong></p>
+<p>闭包不同于普通函数之处在于，他<strong>携带了执行的环境</strong>。</p>
+<blockquote>
+<p>误区：执行上下文或者作用域（scope，ES3中规定的执行上下文的一部分）就是闭包（这是错的）</p>
+</blockquote>
+<p><strong>javascript 中闭包对应的概念就是函数。</strong></p>
+<h2 id="执行上下文：执行的基础设施"><a href="#执行上下文：执行的基础设施" class="headerlink" title="执行上下文：执行的基础设施"></a>执行上下文：执行的基础设施</h2><p>JavaScript 标准把一段代码（包括函数），执行所需的所有信息定义为：“<strong>执行上下文</strong>”。</p>
+<h3 id="执行上下文的演变"><a href="#执行上下文的演变" class="headerlink" title="执行上下文的演变"></a>执行上下文的演变</h3><h4 id="ES3中的执行上下文"><a href="#ES3中的执行上下文" class="headerlink" title="ES3中的执行上下文"></a>ES3中的执行上下文</h4><ul>
+<li>scope：作用域，也叫作用域链</li>
+<li>variable object： 变量对象，用于存储变量的对象</li>
+<li>this value： this 值</li>
+</ul>
+<h4 id="ES5-中的执行上下文"><a href="#ES5-中的执行上下文" class="headerlink" title="ES5 中的执行上下文"></a>ES5 中的执行上下文</h4><ul>
+<li>lexical enrironment：词法环境，当获取变量时使用。</li>
+<li>variable environment：变量环境，当声明变量时使用。</li>
+<li>this value：this 值</li>
+</ul>
+<h4 id="ES-2018中的执行上下文"><a href="#ES-2018中的执行上下文" class="headerlink" title="ES 2018中的执行上下文"></a>ES 2018中的执行上下文</h4><ul>
+<li>lexical enrironment：词法环境，当获取变量时使用或者 this 值时使用。</li>
+<li>variable environment：变量环境，当声明变量时使用。</li>
+<li>code evaluation state：用于恢复代码执行位置。</li>
+<li>Function：执行的任务是函数时使用，表示正在执行的函数</li>
+<li>ScriptOrModule：执行的任务是脚本或模块时使用，表示正在执行的代码</li>
+<li>Realm：使用的基础库和内置对象实例。</li>
+<li>Generator：仅生成器上下文有这个属性，表示当前生成器</li>
+</ul>
+<p>this 被归入了 lexical environment</p>
+<h3 id="var-声明和赋值"><a href="#var-声明和赋值" class="headerlink" title="var 声明和赋值"></a>var 声明和赋值</h3><p>var 会穿透 for、if 等语句。</p>
+<p>因此也就有了立即执行函数IIFE，创建一个立即执行的函数来构造一个新的作用域，控制 var 的范围。</p>
+<h3 id="let"><a href="#let" class="headerlink" title="let"></a>let</h3><p>以下语句会产生 let 使用的作用域</p>
+<ul>
+<li>for</li>
+<li>if</li>
+<li>switch</li>
+<li>try / catch / finally</li>
+</ul>
+<h3 id="Realm"><a href="#Realm" class="headerlink" title="Realm"></a>Realm</h3><p>领域、范围</p>
+<h1 id="函数的种类"><a href="#函数的种类" class="headerlink" title="函数的种类"></a>函数的种类</h1><p>一旦上下文被切换，整个语句的效果可能都会发生改变。那么，切换上下文的时机就显得非常重要了。</p>
+<p>在 JavaScript，切换上下文最主要的场景是函数调用。在这一课，我们就来讲讲函数调用切换上下文的事情。我们在讲函数调用之前，首先来认识一下函数家族。</p>
+<h2 id="函数的分类"><a href="#函数的分类" class="headerlink" title="函数的分类"></a>函数的分类</h2><h3 id="普通函数"><a href="#普通函数" class="headerlink" title="普通函数"></a>普通函数</h3><p>用 function 关键字定义的函数</p>
+<pre><code class="js">function foo() {
+    // code
+}</code></pre>
+<h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><p>用 =&gt; 运算符定义的函数</p>
+<pre><code class="js">const foo = () =&gt; {
+    // code
+}</code></pre>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>在 class 中定义的函数</p>
+<pre><code class="js">class C {
+    foo() {
+        // code
+    }
+}</code></pre>
+<h3 id="生成器函数"><a href="#生成器函数" class="headerlink" title="生成器函数"></a>生成器函数</h3><p>用 function* 定义的函数</p>
+<pre><code class="js">function* foo() {
+    // code
+}</code></pre>
+<h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><p>用 class 定义的类，实际上也是函数</p>
+<pre><code class="js">class Foo {
+    constructor() {
+        // code
+    }
+}</code></pre>
+<h3 id="异步函数"><a href="#异步函数" class="headerlink" title="异步函数"></a>异步函数</h3><p>普通函数、箭头函数、和生成器函数加上 async 关键字</p>
+<pre><code>async function foo() {
+    // code
+}
 
+const foo = async () =&gt; {
+    // code
+}
+async function foo*() {
+    // code
+}</code></pre><h2 id="this-关键字的行为"><a href="#this-关键字的行为" class="headerlink" title="this 关键字的行为"></a>this 关键字的行为</h2><p>对普通变量而言，这些函数并没有本质区别，都是遵循了“继承定义时环境”的规则，它们的一个行为差异在于 this 关键字。</p>
+<p>this 是执行上下文中很重要的一个组成部分。同一个函数调用方式不同，得到的 this 值也不同。</p>
+<h4 id="普通函数的-this"><a href="#普通函数的-this" class="headerlink" title="普通函数的 this"></a>普通函数的 this</h4><pre><code class="js">function showThis() {
+    console.log(this)
+}
+
+var o = {
+    showThis: showThis
+}
+
+showThis()    // global
+o.showThis()    // o</code></pre>
+<p>普通函数的 this 值由“调用它所使用的引用”决定，其中奥秘就在于：我们获取函数的表达式，它实际上返回的并非函数本身，而是一个 Reference 类型（记得我们在类型一章讲过七种标准类型吗，正是其中之一）。</p>
+<p>Reference 类型由两部分组成：一个对象和一个属性值。不难理解 o.showThis 产生的 Reference 类型，即由对象 o 和属性“showThis”构成。</p>
+<p>当做一些算术运算（或者其他运算时），Reference 类型会被解引用，即获取真正的值（被引用的内容）来参与运算，而类似函数调用、delete 等操作，都需要用到 Reference 类型中的对象。</p>
+<p>在这个例子中，Reference 类型中的对象被当作 this 值，传入了执行函数时的上下文当中。</p>
+<p>至此，我们对 this 的解释已经非常清晰了：调用函数时使用的引用，决定了函数执行时刻的 this 值</p>
+<h4 id="箭头函数的-this"><a href="#箭头函数的-this" class="headerlink" title="箭头函数的 this"></a>箭头函数的 this</h4><pre><code>const showThis = () =&gt; {
+    console.log(this)
+}
+
+var o = {
+    showThis: showThis
+}
+
+showThis()    // global
+o.showThis()    // global</code></pre><p>我们看到，改为箭头函数后，不论用什么引用来调用它，都不影响它的 this 值。</p>
+<h4 id="方法的-this"><a href="#方法的-this" class="headerlink" title="方法的 this"></a>方法的 this</h4><pre><code>class C {
+    showThis() {
+        console.log(this)
+    }
+}
+
+var o = new C()
+var showThis = o.showThis()
+
+showThis() // undefined
+o.showThis() // o</code></pre><h3 id="其他函数"><a href="#其他函数" class="headerlink" title="其他函数"></a>其他函数</h3><ul>
+<li>生成器函数、异步生成器函数和异步普通函数跟普通函数行为是一致的</li>
+<li>异步箭头函数与箭头函数行为是一致的</li>
+</ul>
+<h3 id="this-关键字的机制"><a href="#this-关键字的机制" class="headerlink" title="this 关键字的机制"></a>this 关键字的机制</h3><p>在 JavaScript 标准中，为函数规定了用来保存定义时上下文的私有属性[[Environment]]。</p>
+<p>当一个函数执行时，会创建一条新的执行环境记录，记录的外层词法环境（outer lexical environment）会被设置成函数的[[Environment]]。</p>
+<p>这个动作就是切换上下文了。</p>
+<p>JavaScript 用一个栈来管理执行上下文，这个栈中的每一项又包含一个链表。</p>
+<p>当函数调用时，会入栈一个新的执行上下文，函数调用结束时，执行上下文被出栈。</p>
+<p>而 this 则是一个更为复杂的机制，JavaScript 标准定义了 [[thisMode]] 私有属性。</p>
+<p>[[thisMode]] 私有属性有三个取值：</p>
+<ul>
+<li>lexical：表示从上下文中找 this，这对应了箭头函数。</li>
+<li>global：表示当 this 为 undefined 时，取全局对象，对应了普通函数。</li>
+<li>strict：当严格模式时使用，this 严格按照调用时传入的值，可能为 null 或者 undefined。</li>
+</ul>
+<p>非常有意思的是，方法的行为跟普通函数有差异，恰恰是因为 class 设计成了默认按 strict 模式执行。</p>
+<p>我们可以用 strict 达成与上一节中方法的例子一样的效果:</p>
+<pre><code class="js">&quot;use strict&quot;
+function showThis(){ 
+    console.log(this);
+}
+var o = {
+    showThis: showThis
+}
+
+showThis(); // undefined
+o.showThis(); // o</code></pre>
+<p>函数创建新的执行上下文中的词法环境记录时，会根据[[thisMode]]来标记新纪录的[[ThisBindingStatus]]私有属性。</p>
+<p>代码执行遇到 this 时，会逐层检查当前词法环境记录中的[[ThisBindingStatus]]，当找到有 this 的环境记录时获取 this 的值。</p>
+<p>这样的规则的实际效果是，嵌套的箭头函数中的代码都指向外层 this，例如：</p>
+<pre><code>var o = {a: 1, b: 2, c: 3}
+o.foo = function() {
+    console.log(this)
+    return () =&gt; {
+        console.log(this)
+        return () =&gt; console.log(this)
+    }
+}
+o.foo()()();//o, o, o</code></pre><h3 id="操作-this-的内置函数"><a href="#操作-this-的内置函数" class="headerlink" title="操作 this 的内置函数"></a>操作 this 的内置函数</h3><pre><code>function foo(a, b, c) {
+    console.log(this)
+    console.log(a, b, c)
+}
+
+foo.call({d:4}, 1, 2, 3)
+foo.apply({e: 5}, [1, 2, 3])</code></pre><h1 id="javascript-作用域"><a href="#javascript-作用域" class="headerlink" title="javascript 作用域"></a>javascript 作用域</h1><h1 id="javascript-闭包"><a href="#javascript-闭包" class="headerlink" title="javascript 闭包"></a>javascript 闭包</h1>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 daughlas@gmail.com </span>
     </div>
@@ -1313,12 +1287,12 @@ u1.buy()</code></pre>
 
 <!-- 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>策略模式</p>
+    <p><span class="copy-title">文章标题:</span>javascript 作用域</p>
     
     <p><span class="copy-title">本文作者:</span><a  title="吕嘉文">吕嘉文</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-06-02, 16:01:11</p>
-    <p><span class="copy-title">最后更新:</span>2020-06-02, 16:01:41</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/06/02/design-pattern/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" title="策略模式">http://yoursite.com/2020/06/02/design-pattern/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/</a>
+    <p><span class="copy-title">发布时间:</span>2020-06-02, 17:44:53</p>
+    <p><span class="copy-title">最后更新:</span>2020-06-02, 17:45:22</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/06/02/languages/javascript%E4%BD%9C%E7%94%A8%E5%9F%9F/" title="javascript 作用域">http://yoursite.com/2020/06/02/languages/javascript%E4%BD%9C%E7%94%A8%E5%9F%9F/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

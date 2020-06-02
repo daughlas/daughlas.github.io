@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>imooc 前端入门人工智能 | 吕嘉文的小栈</title>
+  <meta name="keywords" content=" 待续 , imooc 实战 ">
+  <meta name="description" content="imooc 前端入门人工智能 | 吕嘉文的小栈">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="输入git 或者 git help 会显示出常用的命令和解释 git help -a 显示所有命令 git help -g 显示手册，继续输入标题，进入详细说明，例如git help add，F 键乡下翻页，B 键向上翻页，q 推出介绍 配置 git system设置：所有使用这台电脑的人 global设置： 全局，用户设置 git config --global user.name &amp;quot">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git 学习">
+<meta property="og:url" content="http://yoursite.com/2020/06/02/tools/Learn_git/index.html">
+<meta property="og:site_name" content="吕嘉文的小栈">
+<meta property="og:description" content="输入git 或者 git help 会显示出常用的命令和解释 git help -a 显示所有命令 git help -g 显示手册，继续输入标题，进入详细说明，例如git help add，F 键乡下翻页，B 键向上翻页，q 推出介绍 配置 git system设置：所有使用这台电脑的人 global设置： 全局，用户设置 git config --global user.name &amp;quot">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-06-02T10:57:35.653Z">
+<meta property="article:modified_time" content="2020-06-02T10:57:49.647Z">
+<meta property="article:author" content="吕嘉文">
+<meta property="article:tag" content="工具">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/darcula.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>吕嘉文</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="github" href="https://github.com/daughlas" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="weibo" href="http://weibo.com/u/2307534817" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="jianshu" href="https://www.jianshu.com/u/ff56736de7cf" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-jianshu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:daughlas@gmail.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=806004005&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(88)</small></div></li>
+    
+        
+            
+            <li><div data-rel="运维">运维<small>(7)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="人工智能">人工智能<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="算法">算法<small>(9)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="一段代码">一段代码<small>(8)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="数据库">数据库<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="数据结构">数据结构<small>(7)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="前端框架">前端框架<small>(9)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="设计模式">设计模式<small>(13)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="编程语言">编程语言<small>(7)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Node">Node<small>(8)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="临时">临时<small>(10)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="工具">工具<small>(4)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="计算机网络">计算机网络<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="88">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color3">运维</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">nginx</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">linux</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">CentOS</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">域名</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">Node.js</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">待续</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">imooc 实战</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">算法</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">数据结构</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">javascript</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">Python</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">排序</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">MongoDB</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">ORM</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">react</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">react-native</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">vue</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">vue-cli</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">编程语言</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">java</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">ES</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">TypeScript</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">临时</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">工具</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">MySQL</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">redux</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">angular</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">http</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="运维 "
+           href="/2020/06/02/OPS/PM2/"
+           data-tag="运维"
+           data-author="" >
+            <span class="post-title" title="PM2">PM2</span>
+            <!-- <span class="post-date" title="2020-06-02 10:45:08">2020/06/02</span> -->
+        </a>
+        
+        <a  class="运维 "
+           href="/2020/06/02/OPS/NGINX%20%E7%9B%B8%E5%85%B3/"
+           data-tag="nginx"
+           data-author="" >
+            <span class="post-title" title="NGINX 相关">NGINX 相关</span>
+            <!-- <span class="post-date" title="2020-06-02 10:25:16">2020/06/02</span> -->
+        </a>
+        
+        <a  class="运维 "
+           href="/2020/06/02/OPS/%E5%AE%89%E5%85%A8%E8%AE%BE%E7%BD%AE/"
+           data-tag="linux,CentOS"
+           data-author="" >
+            <span class="post-title" title="LINUX 增加安全性">LINUX 增加安全性</span>
+            <!-- <span class="post-date" title="2020-06-02 09:46:47">2020/06/02</span> -->
+        </a>
+        
+        <a  class="运维 "
+           href="/2020/06/02/OPS/%E5%9F%9F%E5%90%8D%E7%9B%B8%E5%85%B3/"
+           data-tag="域名"
+           data-author="" >
+            <span class="post-title" title="域名相关">域名相关</span>
+            <!-- <span class="post-date" title="2020-06-02 09:48:04">2020/06/02</span> -->
+        </a>
+        
+        <a  class="运维 "
+           href="/2020/06/02/OPS/%E9%85%8D%E7%BD%AE%20Node.js%20%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83/"
+           data-tag="linux,CentOS,Node.js"
+           data-author="" >
+            <span class="post-title" title="LINUX 配置 Node 生产环境">LINUX 配置 Node 生产环境</span>
+            <!-- <span class="post-date" title="2020-06-02 09:49:07">2020/06/02</span> -->
+        </a>
+        
+        <a  class="运维 "
+           href="/2020/06/02/OS/CENTOS%20%E5%AD%A6%E4%B9%A0/"
+           data-tag="linux,CentOS,待续"
+           data-author="" >
+            <span class="post-title" title="CENTOS 7 学习">CENTOS 7 学习</span>
+            <!-- <span class="post-date" title="2020-06-02 09:51:42">2020/06/02</span> -->
+        </a>
+        
+        <a  class="人工智能 "
+           href="/2020/06/02/ai/imooc%20%E5%89%8D%E7%AB%AF%E5%85%A5%E9%97%A8%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"
+           data-tag="待续,imooc 实战"
+           data-author="" >
+            <span class="post-title" title="imooc 前端入门人工智能">imooc 前端入门人工智能</span>
+            <!-- <span class="post-date" title="2020-06-02 18:44:46">2020/06/02</span> -->
+        </a>
+        
+        <a  class="运维 "
+           href="/2020/06/02/OS/LINUX%20%E5%AD%A6%E4%B9%A0/"
+           data-tag="linux,CentOS,待续"
+           data-author="" >
+            <span class="post-title" title="LINUX 学习">LINUX 学习</span>
+            <!-- <span class="post-date" title="2020-06-02 09:50:40">2020/06/02</span> -->
+        </a>
+        
+        <a  class="算法 "
+           href="/2020/06/02/algorithms/imooc-JavaScript%E7%89%88%20%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/"
+           data-tag="算法,数据结构,javascript"
+           data-author="" >
+            <span class="post-title" title="imooc-JavaScript版 数据结构与算法笔记">imooc-JavaScript版 数据结构与算法笔记</span>
+            <!-- <span class="post-date" title="2020-06-02 18:53:00">2020/06/02</span> -->
+        </a>
+        
+        <a  class="算法 "
+           href="/2020/06/02/algorithms/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"
+           data-tag="算法,Python"
+           data-author="" >
+            <span class="post-title" title="二分查找">二分查找</span>
+            <!-- <span class="post-date" title="2020-06-02 13:57:08">2020/06/02</span> -->
+        </a>
+        
+        <a  class="算法 "
+           href="/2020/06/02/algorithms/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/"
+           data-tag="算法,Python,排序"
+           data-author="" >
+            <span class="post-title" title="冒泡排序">冒泡排序</span>
+            <!-- <span class="post-date" title="2020-06-02 14:01:57">2020/06/02</span> -->
+        </a>
+        
+        <a  class="算法 "
+           href="/2020/06/02/algorithms/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/"
+           data-tag="算法,Python,排序"
+           data-author="" >
+            <span class="post-title" title="归并排序">归并排序</span>
+            <!-- <span class="post-date" title="2020-06-02 14:09:46">2020/06/02</span> -->
+        </a>
+        
+        <a  class="算法 "
+           href="/2020/06/02/algorithms/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/"
+           data-tag="算法,Python,排序"
+           data-author="" >
+            <span class="post-title" title="归并排序">归并排序</span>
+            <!-- <span class="post-date" title="2020-06-02 14:07:53">2020/06/02</span> -->
+        </a>
+        
+        <a  class="算法 "
+           href="/2020/06/02/algorithms/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/"
+           data-tag="算法,Python,排序"
+           data-author="" >
+            <span class="post-title" title="归并排序">归并排序</span>
+            <!-- <span class="post-date" title="2020-06-02 14:08:38">2020/06/02</span> -->
+        </a>
+        
+        <a  class="算法 "
+           href="/2020/06/02/algorithms/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/"
+           data-tag="算法"
+           data-author="" >
+            <span class="post-title" title="数组去重">数组去重</span>
+            <!-- <span class="post-date" title="2020-06-02 13:59:04">2020/06/02</span> -->
+        </a>
+        
+        <a  class="算法 "
+           href="/2020/06/02/algorithms/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/"
+           data-tag="算法,Python,排序"
+           data-author="" >
+            <span class="post-title" title="归并排序">归并排序</span>
+            <!-- <span class="post-date" title="2020-06-02 14:09:14">2020/06/02</span> -->
+        </a>
+        
+        <a  class="算法 "
+           href="/2020/06/02/algorithms/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/"
+           data-tag="算法,Python,排序"
+           data-author="" >
+            <span class="post-title" title="插入排序">插入排序</span>
+            <!-- <span class="post-date" title="2020-06-02 14:05:51">2020/06/02</span> -->
+        </a>
+        
+        <a  class="一段代码 "
+           href="/2020/02/19/code-section/JS%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="JS 数据类型">JS 数据类型</span>
+            <!-- <span class="post-date" title="2020-02-19 11:15:20">2020/02/19</span> -->
+        </a>
+        
+        <a  class="一段代码 "
+           href="/2020/06/01/code-section/debounce/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="debounce 防抖">debounce 防抖</span>
+            <!-- <span class="post-date" title="2020-06-01 18:07:26">2020/06/01</span> -->
+        </a>
+        
+        <a  class="一段代码 "
+           href="/2020/02/19/code-section/%E6%B7%B1%E6%8B%B7%E8%B4%9D/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="JS 深拷贝">JS 深拷贝</span>
+            <!-- <span class="post-date" title="2020-02-19 09:39:56">2020/02/19</span> -->
+        </a>
+        
+        <a  class="一段代码 "
+           href="/2020/02/20/code-section/js-new/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="JS - new">JS - new</span>
+            <!-- <span class="post-date" title="2020-02-20 15:40:32">2020/02/20</span> -->
+        </a>
+        
+        <a  class="一段代码 "
+           href="/2020/02/19/code-section/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E7%89%88/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="JS 深拷贝性能优化版">JS 深拷贝性能优化版</span>
+            <!-- <span class="post-date" title="2020-02-19 11:07:44">2020/02/19</span> -->
+        </a>
+        
+        <a  class="一段代码 "
+           href="/2020/06/01/code-section/%E7%AE%80%E6%98%93%E6%A8%A1%E5%9D%97%E7%AE%A1%E7%90%86/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="简易模块管理">简易模块管理</span>
+            <!-- <span class="post-date" title="2020-06-01 17:56:46">2020/06/01</span> -->
+        </a>
+        
+        <a  class="一段代码 "
+           href="/2020/06/01/code-section/%E8%8A%82%E6%B5%81%E5%87%BD%E6%95%B0/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="throttle 节流函数">throttle 节流函数</span>
+            <!-- <span class="post-date" title="2020-06-01 17:48:06">2020/06/01</span> -->
+        </a>
+        
+        <a  class="一段代码 "
+           href="/2020/06/01/code-section/%E8%8E%B7%E5%8F%96%E5%9C%B0%E5%9D%80%E6%A0%8F/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="获取地址栏参数">获取地址栏参数</span>
+            <!-- <span class="post-date" title="2020-06-01 17:30:03">2020/06/01</span> -->
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/06/01/database/%E5%AD%A6%E4%B9%A0%20MongoDB/"
+           data-tag="MongoDB"
+           data-author="" >
+            <span class="post-title" title="学习 MongoDB">学习 MongoDB</span>
+            <!-- <span class="post-date" title="2020-06-01 18:04:32">2020/06/01</span> -->
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/06/01/database/%E5%AD%A6%E4%B9%A0%20MyBatis/"
+           data-tag="ORM"
+           data-author="" >
+            <span class="post-title" title="学习 MyBatis">学习 MyBatis</span>
+            <!-- <span class="post-date" title="2020-06-01 18:05:08">2020/06/01</span> -->
+        </a>
+        
+        <a  class="数据结构 "
+           href="/2020/06/02/data-structure/%E4%BA%8C%E5%8F%89%E6%A0%91/"
+           data-tag="数据结构,Python"
+           data-author="" >
+            <span class="post-title" title="二叉树">二叉树</span>
+            <!-- <span class="post-date" title="2020-06-02 14:16:01">2020/06/02</span> -->
+        </a>
+        
+        <a  class="数据结构 "
+           href="/2020/06/02/data-structure/%E5%8D%95%E5%90%91%E5%BE%AA%E7%8E%AF%E9%93%BE%E8%A1%A8%20copy/"
+           data-tag="数据结构,Python"
+           data-author="" >
+            <span class="post-title" title="单向循环链表">单向循环链表</span>
+            <!-- <span class="post-date" title="2020-06-02 14:19:38">2020/06/02</span> -->
+        </a>
+        
+        <a  class="数据结构 "
+           href="/2020/06/02/data-structure/%E5%8D%95%E9%93%BE%E8%A1%A8/"
+           data-tag="数据结构,Python"
+           data-author="" >
+            <span class="post-title" title="单链表">单链表</span>
+            <!-- <span class="post-date" title="2020-06-02 14:17:31">2020/06/02</span> -->
+        </a>
+        
+        <a  class="数据结构 "
+           href="/2020/06/02/data-structure/%E6%A0%88/"
+           data-tag="数据结构,Python"
+           data-author="" >
+            <span class="post-title" title="栈">栈</span>
+            <!-- <span class="post-date" title="2020-06-02 14:22:22">2020/06/02</span> -->
+        </a>
+        
+        <a  class="数据结构 "
+           href="/2020/06/02/data-structure/%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97/"
+           data-tag="数据结构,Python"
+           data-author="" >
+            <span class="post-title" title="双端队列">双端队列</span>
+            <!-- <span class="post-date" title="2020-06-02 14:21:50">2020/06/02</span> -->
+        </a>
+        
+        <a  class="前端框架 "
+           href="/2020/06/02/fe-frameworkds/imooc%20react-native%20%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/"
+           data-tag="待续,imooc 实战,react,react-native"
+           data-author="" >
+            <span class="post-title" title="imooc react-native 项目笔记">imooc react-native 项目笔记</span>
+            <!-- <span class="post-date" title="2020-06-02 10:53:17">2020/06/02</span> -->
+        </a>
+        
+        <a  class="数据结构 "
+           href="/2020/06/02/data-structure/%E9%98%9F%E5%88%97/"
+           data-tag="数据结构,Python"
+           data-author="" >
+            <span class="post-title" title="队列">队列</span>
+            <!-- <span class="post-date" title="2020-06-02 14:21:24">2020/06/02</span> -->
+        </a>
+        
+        <a  class="数据结构 "
+           href="/2020/06/02/data-structure/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/"
+           data-tag="数据结构,Python"
+           data-author="" >
+            <span class="post-title" title="双向链表">双向链表</span>
+            <!-- <span class="post-date" title="2020-06-02 14:19:02">2020/06/02</span> -->
+        </a>
+        
+        <a  class="前端框架 "
+           href="/2020/02/20/fe-frameworkds/vue%20%E6%89%93%E5%8C%85%E4%BC%98%E5%8C%96/"
+           data-tag="vue,vue-cli"
+           data-author="" >
+            <span class="post-title" title="vue-cli3 打包优化">vue-cli3 打包优化</span>
+            <!-- <span class="post-date" title="2020-02-20 14:15:50">2020/02/20</span> -->
+        </a>
+        
+        <a  class="前端框架 "
+           href="/2020/06/02/fe-frameworkds/vue%20%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"
+           data-tag="vue"
+           data-author="" >
+            <span class="post-title" title="vue 性能优化">vue 性能优化</span>
+            <!-- <span class="post-date" title="2020-06-02 16:51:53">2020/06/02</span> -->
+        </a>
+        
+        <a  class="前端框架 "
+           href="/2020/06/02/fe-frameworkds/vue%20%E7%BB%84%E4%BB%B6%E5%8C%96%E8%BF%87%E7%A8%8B/"
+           data-tag="vue"
+           data-author="" >
+            <span class="post-title" title="Vue.js 渲染初始化渲染过程">Vue.js 渲染初始化渲染过程</span>
+            <!-- <span class="post-date" title="2020-06-02 16:57:04">2020/06/02</span> -->
+        </a>
+        
+        <a  class="前端框架 "
+           href="/2020/06/02/fe-frameworkds/vuex/"
+           data-tag="vue"
+           data-author="" >
+            <span class="post-title" title="vuex">vuex</span>
+            <!-- <span class="post-date" title="2020-06-02 16:58:47">2020/06/02</span> -->
+        </a>
+        
+        <a  class="设计模式 "
+           href="/2020/06/02/design-pattern/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="代理模式">代理模式</span>
+            <!-- <span class="post-date" title="2020-06-02 16:00:21">2020/06/02</span> -->
+        </a>
+        
+        <a  class="设计模式 "
+           href="/2020/06/02/design-pattern/%E6%9E%84%E9%80%A0%E5%99%A8%E6%A8%A1%E5%BC%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="构造器模式">构造器模式</span>
+            <!-- <span class="post-date" title="2020-06-02 15:39:02">2020/06/02</span> -->
+        </a>
+        
+        <a  class="设计模式 "
+           href="/2020/06/02/design-pattern/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="工厂模式">工厂模式</span>
+            <!-- <span class="post-date" title="2020-06-02 15:40:49">2020/06/02</span> -->
+        </a>
+        
+        <a  class="设计模式 "
+           href="/2020/06/02/design-pattern/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="单例模式">单例模式</span>
+            <!-- <span class="post-date" title="2020-06-02 15:42:02">2020/06/02</span> -->
+        </a>
+        
+        <a  class="设计模式 "
+           href="/2020/06/02/design-pattern/%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="原型模式">原型模式</span>
+            <!-- <span class="post-date" title="2020-06-02 15:43:36">2020/06/02</span> -->
+        </a>
+        
+        <a  class="设计模式 "
+           href="/2020/06/02/design-pattern/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="策略模式">策略模式</span>
+            <!-- <span class="post-date" title="2020-06-02 16:01:11">2020/06/02</span> -->
+        </a>
+        
+        <a  class="设计模式 "
+           href="/2020/06/02/design-pattern/%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="装饰器模式">装饰器模式</span>
+            <!-- <span class="post-date" title="2020-06-02 15:44:52">2020/06/02</span> -->
+        </a>
+        
+        <a  class="设计模式 "
+           href="/2020/06/02/design-pattern/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="观察者模式">观察者模式</span>
+            <!-- <span class="post-date" title="2020-06-02 16:11:38">2020/06/02</span> -->
+        </a>
+        
+        <a  class="设计模式 "
+           href="/2020/06/02/design-pattern/%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="迭代器模式">迭代器模式</span>
+            <!-- <span class="post-date" title="2020-06-02 16:12:19">2020/06/02</span> -->
+        </a>
+        
+        <a  class="设计模式 "
+           href="/2020/06/02/design-pattern/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="设计模式学习">设计模式学习</span>
+            <!-- <span class="post-date" title="2020-06-02 15:39:35">2020/06/02</span> -->
+        </a>
+        
+        <a  class="设计模式 "
+           href="/2020/06/02/design-pattern/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="适配器模式">适配器模式</span>
+            <!-- <span class="post-date" title="2020-06-02 15:58:50">2020/06/02</span> -->
+        </a>
+        
+        <a  class="编程语言 "
+           href="/2020/06/02/languages/ES5%20%E6%97%B6%E4%BB%A3%E6%A8%A1%E5%9D%97%E5%8C%96%E5%8F%91%E5%B1%95/"
+           data-tag="javascript,编程语言"
+           data-author="" >
+            <span class="post-title" title="ES5 模块化发展历程">ES5 模块化发展历程</span>
+            <!-- <span class="post-date" title="2020-06-02 18:13:26">2020/06/02</span> -->
+        </a>
+        
+        <a  class="编程语言 "
+           href="/2020/06/02/languages/JAVA%20%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%20%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"
+           data-tag="编程语言,java"
+           data-author="" >
+            <span class="post-title" title="《JAVA 核心技术》读书笔记">《JAVA 核心技术》读书笔记</span>
+            <!-- <span class="post-date" title="2020-06-02 17:43:43">2020/06/02</span> -->
+        </a>
+        
+        <a  class="编程语言 "
+           href="/2020/06/02/languages/es/"
+           data-tag="编程语言,ES"
+           data-author="" >
+            <span class="post-title" title="ES 5 / 6 / 7 / 8 新特性">ES 5 / 6 / 7 / 8 新特性</span>
+            <!-- <span class="post-date" title="2020-06-02 10:55:56">2020/06/02</span> -->
+        </a>
+        
+        <a  class="编程语言 "
+           href="/2020/06/02/languages/javascript%E4%BD%9C%E7%94%A8%E5%9F%9F/"
+           data-tag="编程语言,java"
+           data-author="" >
+            <span class="post-title" title="javascript 作用域">javascript 作用域</span>
+            <!-- <span class="post-date" title="2020-06-02 17:44:53">2020/06/02</span> -->
+        </a>
+        
+        <a  class="编程语言 "
+           href="/2020/06/02/languages/javascript%20%E5%A5%87%E6%B7%AB%E5%B7%A7%E6%8A%80/"
+           data-tag="javascript,编程语言"
+           data-author="" >
+            <span class="post-title" title="javascript 奇淫巧技">javascript 奇淫巧技</span>
+            <!-- <span class="post-date" title="2020-06-02 17:57:46">2020/06/02</span> -->
+        </a>
+        
+        <a  class="编程语言 "
+           href="/2020/06/01/languages/%E5%AD%A6%E4%B9%A0%20typescript/"
+           data-tag="编程语言,TypeScript"
+           data-author="" >
+            <span class="post-title" title="学习 TypeScript">学习 TypeScript</span>
+            <!-- <span class="post-date" title="2020-06-01 17:48:56">2020/06/01</span> -->
+        </a>
+        
+        <a  class="Node "
+           href="/2020/06/02/node/Node.js%20CommonJS%20%E6%A8%A1%E5%9D%97/"
+           data-tag="Node.js"
+           data-author="" >
+            <span class="post-title" title="Node.js CommonJS 模块">Node.js CommonJS 模块</span>
+            <!-- <span class="post-date" title="2020-06-02 10:22:14">2020/06/02</span> -->
+        </a>
+        
+        <a  class="Node "
+           href="/2020/06/02/node/Node.js%20Http%20%E6%A8%A1%E5%9D%97/"
+           data-tag="Node.js"
+           data-author="" >
+            <span class="post-title" title="Node.js Http 模块">Node.js Http 模块</span>
+            <!-- <span class="post-date" title="2020-06-02 10:28:40">2020/06/02</span> -->
+        </a>
+        
+        <a  class="Node "
+           href="/2020/06/02/node/Node.js%20fs%20%E6%A8%A1%E5%9D%97/"
+           data-tag="Node.js"
+           data-author="" >
+            <span class="post-title" title="Node.js fs 模块">Node.js fs 模块</span>
+            <!-- <span class="post-date" title="2020-06-02 10:30:09">2020/06/02</span> -->
+        </a>
+        
+        <a  class="Node "
+           href="/2020/06/02/node/websocket/"
+           data-tag="Node.js"
+           data-author="" >
+            <span class="post-title" title="socket">socket</span>
+            <!-- <span class="post-date" title="2020-06-02 10:31:32">2020/06/02</span> -->
+        </a>
+        
+        <a  class="Node "
+           href="/2020/06/02/node/%E5%BC%82%E6%AD%A5%E6%93%8D%E4%BD%9C/"
+           data-tag="Node.js"
+           data-author="" >
+            <span class="post-title" title="异步操作">异步操作</span>
+            <!-- <span class="post-date" title="2020-06-02 10:16:01">2020/06/02</span> -->
+        </a>
+        
+        <a  class="Node "
+           href="/2020/06/02/node/%E5%AD%A6%E4%B9%A0%20express%20%E6%A1%86%E6%9E%B6/"
+           data-tag="Node.js"
+           data-author="" >
+            <span class="post-title" title="学习 Express 框架">学习 Express 框架</span>
+            <!-- <span class="post-date" title="2020-06-02 10:26:50">2020/06/02</span> -->
+        </a>
+        
+        <a  class="临时 "
+           href="/2020/06/02/temp/Node.js%20%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E5%8C%BA%E5%9D%97%E9%93%BE/"
+           data-tag="临时"
+           data-author="" >
+            <span class="post-title" title="Node.js 实现一个简单的区块链">Node.js 实现一个简单的区块链</span>
+            <!-- <span class="post-date" title="2020-06-02 13:50:49">2020/06/02</span> -->
+        </a>
+        
+        <a  class="临时 "
+           href="/2020/06/02/temp/css/"
+           data-tag="临时"
+           data-author="" >
+            <span class="post-title" title="学习 CSS">学习 CSS</span>
+            <!-- <span class="post-date" title="2020-06-02 14:56:20">2020/06/02</span> -->
+        </a>
+        
+        <a  class="临时 "
+           href="/2020/06/02/temp/rem%20%E9%80%82%E9%85%8D%E7%AE%80%E5%8D%95%E5%8E%9F%E7%90%86/"
+           data-tag="临时"
+           data-author="" >
+            <span class="post-title" title="rem 适配简单原理">rem 适配简单原理</span>
+            <!-- <span class="post-date" title="2020-06-02 16:55:44">2020/06/02</span> -->
+        </a>
+        
+        <a  class="临时 "
+           href="/2020/06/02/temp/Rxjs%20%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C%E7%AC%A6/"
+           data-tag="临时"
+           data-author="" >
+            <span class="post-title" title="Rxjs 常见操作符">Rxjs 常见操作符</span>
+            <!-- <span class="post-date" title="2020-06-02 18:37:45">2020/06/02</span> -->
+        </a>
+        
+        <a  class="临时 "
+           href="/2020/06/02/temp/%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83%E7%AD%89/"
+           data-tag="待续,临时"
+           data-author="" >
+            <span class="post-title" title="命名规范等">命名规范等</span>
+            <!-- <span class="post-date" title="2020-06-02 16:38:53">2020/06/02</span> -->
+        </a>
+        
+        <a  class=""
+           href="/2020/06/02/temp/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="temp/基础数据类型与引用数据类型">temp/基础数据类型与引用数据类型</span>
+            <!-- <span class="post-date" title="2020-06-02 17:14:39">2020/06/02</span> -->
+        </a>
+        
+        <a  class="临时 "
+           href="/2020/06/02/temp/%E5%AD%A6%E4%B9%A0%20stylus/"
+           data-tag="临时"
+           data-author="" >
+            <span class="post-title" title="学习 stylus">学习 stylus</span>
+            <!-- <span class="post-date" title="2020-06-02 17:47:05">2020/06/02</span> -->
+        </a>
+        
+        <a  class="临时 "
+           href="/2020/06/02/temp/%E6%9E%84%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E7%BD%91%E7%AB%99/"
+           data-tag="临时"
+           data-author="" >
+            <span class="post-title" title="构建自己的网站">构建自己的网站</span>
+            <!-- <span class="post-date" title="2020-06-02 17:12:08">2020/06/02</span> -->
+        </a>
+        
+        <a  class="工具 "
+           href="/2020/06/02/tools/Learn_git/"
+           data-tag="工具"
+           data-author="" >
+            <span class="post-title" title="git 学习">git 学习</span>
+            <!-- <span class="post-date" title="2020-06-02 18:57:35">2020/06/02</span> -->
+        </a>
+        
+        <a  class="工具 "
+           href="/2020/06/02/tools/sublime%E4%BD%BF%E7%94%A8/"
+           data-tag="工具"
+           data-author="" >
+            <span class="post-title" title="sublime 使用">sublime 使用</span>
+            <!-- <span class="post-date" title="2020-06-02 17:48:30">2020/06/02</span> -->
+        </a>
+        
+        <a  class="工具 "
+           href="/2020/06/01/tools/vs%20code%20%E4%BD%BF%E7%94%A8/"
+           data-tag="工具"
+           data-author="" >
+            <span class="post-title" title="VS code 使用">VS code 使用</span>
+            <!-- <span class="post-date" title="2020-06-01 17:51:56">2020/06/01</span> -->
+        </a>
+        
+        <a  class="工具 "
+           href="/2020/06/02/tools/%E5%A5%BD%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7%E9%9B%86%E5%90%88/"
+           data-tag="工具"
+           data-author="" >
+            <span class="post-title" title="好用的工具集合">好用的工具集合</span>
+            <!-- <span class="post-date" title="2020-06-02 11:33:05">2020/06/02</span> -->
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/06/01/database/%E5%AD%A6%E4%B9%A0%20MySQL/"
+           data-tag="MySQL"
+           data-author="" >
+            <span class="post-title" title="学习 MySQL 基础">学习 MySQL 基础</span>
+            <!-- <span class="post-date" title="2020-06-01 18:03:06">2020/06/01</span> -->
+        </a>
+        
+        <a  class="前端框架 "
+           href="/2020/06/02/fe-frameworkds/react%20%E5%9F%BA%E7%A1%80/"
+           data-tag="react"
+           data-author="" >
+            <span class="post-title" title="React 学习笔记">React 学习笔记</span>
+            <!-- <span class="post-date" title="2020-06-02 10:43:24">2020/06/02</span> -->
+        </a>
+        
+        <a  class="前端框架 "
+           href="/2020/06/02/fe-frameworkds/redux%20%E5%9F%BA%E7%A1%80/"
+           data-tag="react,redux"
+           data-author="" >
+            <span class="post-title" title="Redux 基础">Redux 基础</span>
+            <!-- <span class="post-date" title="2020-06-02 10:44:08">2020/06/02</span> -->
+        </a>
+        
+        <a  class="前端框架 "
+           href="/2020/06/01/fe-frameworkds/%E5%AD%A6%E4%B9%A0%20angular/"
+           data-tag="angular"
+           data-author="" >
+            <span class="post-title" title="学习 angular">学习 angular</span>
+            <!-- <span class="post-date" title="2020-06-01 17:38:22">2020/06/01</span> -->
+        </a>
+        
+        <a  class="前端框架 "
+           href="/2020/06/02/fe-frameworkds/%E6%8E%98%E9%87%91%20vue%20%E7%BB%84%E4%BB%B6%E7%B2%BE%E8%AE%B2%E7%AC%94%E8%AE%B0/"
+           data-tag="vue"
+           data-author="" >
+            <span class="post-title" title="掘金 vue 组件精讲笔记">掘金 vue 组件精讲笔记</span>
+            <!-- <span class="post-date" title="2020-06-02 16:46:56">2020/06/02</span> -->
+        </a>
+        
+        <a  class="设计模式 "
+           href="/2020/06/01/design-pattern/%E5%85%B6%E4%BB%96%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="其他设计模式">其他设计模式</span>
+            <!-- <span class="post-date" title="2020-06-01 17:57:57">2020/06/01</span> -->
+        </a>
+        
+        <a  class="设计模式 "
+           href="/2020/06/02/design-pattern/%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="状态模式">状态模式</span>
+            <!-- <span class="post-date" title="2020-06-02 16:03:07">2020/06/02</span> -->
+        </a>
+        
+        <a  class="计算机网络 "
+           href="/2020/06/01/net/%E5%AD%A6%E4%B9%A0%20HTTP%20%E5%8D%8F%E8%AE%AE/"
+           data-tag="http"
+           data-author="" >
+            <span class="post-title" title="学习 HTTP 协议">学习 HTTP 协议</span>
+            <!-- <span class="post-date" title="2020-06-01 17:33:15">2020/06/01</span> -->
+        </a>
+        
+        <a  class="编程语言 "
+           href="/2020/06/02/languages/ES5%20%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/"
+           data-tag="javascript,编程语言"
+           data-author="" >
+            <span class="post-title" title="ES5 的面向对象编程">ES5 的面向对象编程</span>
+            <!-- <span class="post-date" title="2020-06-02 18:07:02">2020/06/02</span> -->
+        </a>
+        
+        <a  class="Node "
+           href="/2020/06/02/node/imooc-Node.js+KOA2%20%E4%BB%8E0%E5%88%B01%E6%89%93%E9%80%A0%E8%B6%85%E5%A5%BD%E7%94%A8Web%E6%A1%86%E6%9E%B6%E7%AC%94%E8%AE%B0/"
+           data-tag="Node.js,待续,imooc 实战"
+           data-author="" >
+            <span class="post-title" title="imooc-Node.js+KOA2 从0到1打造超好用Web框架笔记">imooc-Node.js+KOA2 从0到1打造超好用Web框架笔记</span>
+            <!-- <span class="post-date" title="2020-06-02 18:46:51">2020/06/02</span> -->
+        </a>
+        
+        <a  class="临时 "
+           href="/2020/06/02/temp/ionic%20%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/"
+           data-tag="临时"
+           data-author="" >
+            <span class="post-title" title="ionic 开发总结">ionic 开发总结</span>
+            <!-- <span class="post-date" title="2020-06-02 15:57:41">2020/06/02</span> -->
+        </a>
+        
+        <a  class="临时 "
+           href="/2020/06/01/temp/%E5%88%AB%E4%BA%BA%E6%80%BB%E7%BB%93%E7%9A%84%E5%BE%88%E5%A4%9A%E6%AD%A3%E5%88%99/"
+           data-tag="临时"
+           data-author="" >
+            <span class="post-title" title="别人总结的各种各样的正则表达式">别人总结的各种各样的正则表达式</span>
+            <!-- <span class="post-date" title="2020-06-01 17:54:05">2020/06/01</span> -->
+        </a>
+        
+        <a  class="临时 "
+           href="/2020/06/01/temp/%E5%AD%A6%E4%B9%A0%20Rxjs/"
+           data-tag="临时"
+           data-author="" >
+            <span class="post-title" title="学习 Rxjs">学习 Rxjs</span>
+            <!-- <span class="post-date" title="2020-06-01 17:43:52">2020/06/01</span> -->
+        </a>
+        
+        <a  class="Node "
+           href="/2020/06/01/node/%E6%85%95%E8%AF%BE%E7%BD%91%20Node.js%20%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%8F%91%20web%20server%E5%8D%9A%E5%AE%A2%E9%A1%B9%E7%AC%94%E8%AE%B0/"
+           data-tag="Node.js,imooc 实战"
+           data-author="" >
+            <span class="post-title" title="慕课网 Node.js 从零开发 web server博客项笔记">慕课网 Node.js 从零开发 web server博客项笔记</span>
+            <!-- <span class="post-date" title="2020-06-01 17:55:35">2020/06/01</span> -->
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-ai/imooc 前端入门人工智能" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">imooc 前端入门人工智能</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="人工智能">人工智能</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color3">待续</a>
+            
+            <a class="color4">imooc 实战</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        <!-- 创建时间:<time class="date" title='更新时间: 2020-06-02 18:46:03'>2020-06-02 18:44</time> -->
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第2章-机器学习与神经网络简介"><span class="toc-text">第2章 机器学习与神经网络简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-机器学习简介"><span class="toc-text">2-1 机器学习简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1-机器学习是什么？"><span class="toc-text">2-1-1 机器学习是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2-机器学习例子（以往的经验-数据）"><span class="toc-text">2-1-2 机器学习例子（以往的经验 &#x2F; 数据）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-3-为何要用机器学习？"><span class="toc-text">2-1-3 为何要用机器学习？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-3-机器学习如何运作？"><span class="toc-text">2-1-3 机器学习如何运作？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-神经网络简介"><span class="toc-text">2-2 神经网络简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-神经网络的训练"><span class="toc-text">2-3 神经网络的训练</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是神经网络的训练？"><span class="toc-text">什么是神经网络的训练？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何训练神经网络？"><span class="toc-text">如何训练神经网络？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#前向传播与反向传播"><span class="toc-text">前向传播与反向传播</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何计算损失？"><span class="toc-text">如何计算损失？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何优化？"><span class="toc-text">如何优化？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第3章-Tensorflow-js-简介"><span class="toc-text">第3章 Tensorflow.js 简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-Tensorflow-js-是什么"><span class="toc-text">3-1 Tensorflow.js 是什么</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Tensorflow-js-是什么"><span class="toc-text">Tensorflow.js 是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tensorflow-js-具体功能"><span class="toc-text">Tensorflow.js 具体功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-安装-Tensorflow-js"><span class="toc-text">3-2 安装 Tensorflow.js</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#在浏览器中安装"><span class="toc-text">在浏览器中安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在-Node-js-中安装"><span class="toc-text">在 Node.js 中安装</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-为何要用-Tensor？"><span class="toc-text">3-3 为何要用 Tensor？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是-Tensor？"><span class="toc-text">什么是 Tensor？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tensor-和机器学习有什么关系？"><span class="toc-text">Tensor 和机器学习有什么关系？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#神经网络数据结构设计"><span class="toc-text">神经网络数据结构设计</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第4章-线性回归"><span class="toc-text">第4章 线性回归</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-线性回归任务简介"><span class="toc-text">4-1 线性回归任务简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是线性回归？"><span class="toc-text">什么是线性回归？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作步骤"><span class="toc-text">操作步骤</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-准备、可视化训练数据"><span class="toc-text">4-2 准备、可视化训练数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#操作步骤-1"><span class="toc-text">操作步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-定义模型结构：单层单个神经元组成的神经网络"><span class="toc-text">4-3 定义模型结构：单层单个神经元组成的神经网络</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作步骤-2"><span class="toc-text">操作步骤</span></a></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="第2章-机器学习与神经网络简介"><a href="#第2章-机器学习与神经网络简介" class="headerlink" title="第2章 机器学习与神经网络简介"></a>第2章 机器学习与神经网络简介</h1><h2 id="2-1-机器学习简介"><a href="#2-1-机器学习简介" class="headerlink" title="2-1 机器学习简介"></a>2-1 机器学习简介</h2><h3 id="2-1-1-机器学习是什么？"><a href="#2-1-1-机器学习是什么？" class="headerlink" title="2-1-1 机器学习是什么？"></a>2-1-1 机器学习是什么？</h3><ul>
+<li>机器学习是指对能通过 <strong><em>经验</em></strong> 自动改进的计算机算法的研究。</li>
+<li>机器学习使用 <strong><em>数据</em></strong> 或以往的 <strong><em>经验</em></strong> ，以此优化计算机程序的性能标准。</li>
+</ul>
+<h3 id="2-1-2-机器学习例子（以往的经验-数据）"><a href="#2-1-2-机器学习例子（以往的经验-数据）" class="headerlink" title="2-1-2 机器学习例子（以往的经验 / 数据）"></a>2-1-2 机器学习例子（以往的经验 / 数据）</h3><ul>
+<li>用很多男子的脚长的平均值，估计男子脚长</li>
+<li>线性回归<ul>
+<li>身高体重预测</li>
+<li>房价预测（面积、价格）</li>
+</ul>
+</li>
+<li>逻辑回归</li>
+<li>语音助手</li>
+</ul>
+<h3 id="2-1-3-为何要用机器学习？"><a href="#2-1-3-为何要用机器学习？" class="headerlink" title="2-1-3 为何要用机器学习？"></a>2-1-3 为何要用机器学习？</h3><ul>
+<li>有些棘手问题只能用机器学习来解决（程序员写代码来解决，可能吗？）</li>
+<li>获取数据比编写规则更加容易</li>
+<li>GPU 等计算能力显著提升（使用机器学习成本将下来了）</li>
+</ul>
+<h3 id="2-1-3-机器学习如何运作？"><a href="#2-1-3-机器学习如何运作？" class="headerlink" title="2-1-3 机器学习如何运作？"></a>2-1-3 机器学习如何运作？</h3><ul>
+<li>神经网络（重点）</li>
+<li>决策树、支持向量机、贝叶斯分类器、强化学习….</li>
+</ul>
+<h2 id="2-2-神经网络简介"><a href="#2-2-神经网络简介" class="headerlink" title="2-2 神经网络简介"></a>2-2 神经网络简介</h2><ul>
+<li><p>运算模型（输入到输出的映射）</p>
+</li>
+<li><p>人工神经网络是一种运算模型（就是输入输出的映射），由大量的节点（或称神经元）之间相互连接构成</p>
+</li>
+<li><p>下图，用输入相亲对象的信息，得出是否满意。</p>
+</li>
+</ul>
+<p>![image-20200208093440239](/Users/lvjiawen/Library/Application Support/typora-user-images/image-20200208093440239.png)</p>
+<ul>
+<li>其他复杂因素：<ul>
+<li>偏置</li>
+<li>激活函数，到一定程度就可以了，不要再线性增长了</li>
+<li>权重</li>
+</ul>
+</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li>每个神经元里存储着若干权重（weight）、偏置（bias）、和一个激活函数（activation）</li>
+<li>输入乘上权重加上偏置，经过激活函数得到输出</li>
+<li>激活函数用于添加一些非线性的变化</li>
+<li>神经网络通常包含一个输入层、若干隐藏层，一个输出层，输入层通常不用于计算神经网络的层数</li>
+</ul>
+<h3 id="2-3-神经网络的训练"><a href="#2-3-神经网络的训练" class="headerlink" title="2-3 神经网络的训练"></a>2-3 神经网络的训练</h3><h3 id="什么是神经网络的训练？"><a href="#什么是神经网络的训练？" class="headerlink" title="什么是神经网络的训练？"></a>什么是神经网络的训练？</h3><ul>
+<li><p>给大量输入和输出，算出神经网络里所有神经元的权重、偏置，然后给定新的输入，可以算出新的输出</p>
+</li>
+<li><p>在机器学习力，输入输出被称为 <strong><em>特征</em></strong> 和 <strong><em>标签</em></strong> ，大连输入输出被称为 <strong><em>训练集</em></strong></p>
+</li>
+<li><p>给1000 个相亲对象的数据（特征），和对应的满意程度（标签），训练完后，给一份新的相亲对象的数据，就可以判断满意程度了。</p>
+</li>
+</ul>
+<h3 id="如何训练神经网络？"><a href="#如何训练神经网络？" class="headerlink" title="如何训练神经网络？"></a>如何训练神经网络？</h3><ul>
+<li>初始化：随机生成一些权重和偏置</li>
+<li>计算损失：给定特征，计算出标签，得到它与真实标签差的多远</li>
+<li>优化：微调权重和偏置，使损失变小</li>
+</ul>
+<h3 id="前向传播与反向传播"><a href="#前向传播与反向传播" class="headerlink" title="前向传播与反向传播"></a>前向传播与反向传播</h3><ul>
+<li>前向传播：将训练的数据的特征送入网络，得到标签（第一 =》 第二层 =》。。。 =》 最后一层）</li>
+<li>反向传播：计算损失并优化（先调整最后一层，再调整倒数第二层）<ul>
+<li>注：原理见微积分的链式法则</li>
+</ul>
+</li>
+</ul>
+<h3 id="如何计算损失？"><a href="#如何计算损失？" class="headerlink" title="如何计算损失？"></a>如何计算损失？</h3><ul>
+<li>使用 <strong><em>损失函数</em></strong>（科学家研究出来的）</li>
+<li>例如：均方误差、对数损失、交叉熵</li>
+<li>了解原理即可，工作中可以直接从第三方库中调用</li>
+</ul>
+<h3 id="如何优化？"><a href="#如何优化？" class="headerlink" title="如何优化？"></a>如何优化？</h3><ul>
+<li>使用 <strong><em>优化器</em></strong> （科学家研究出来的）</li>
+<li>例如：随机梯度下降（SGD）、Adam</li>
+<li>了解原理即可，工作中可以直接从第三方库中调用</li>
+</ul>
+<h1 id="第3章-Tensorflow-js-简介"><a href="#第3章-Tensorflow-js-简介" class="headerlink" title="第3章 Tensorflow.js 简介"></a>第3章 Tensorflow.js 简介</h1><h2 id="3-1-Tensorflow-js-是什么"><a href="#3-1-Tensorflow-js-是什么" class="headerlink" title="3-1 Tensorflow.js 是什么"></a>3-1 Tensorflow.js 是什么</h2><h3 id="Tensorflow-js-是什么"><a href="#Tensorflow-js-是什么" class="headerlink" title="Tensorflow.js 是什么"></a>Tensorflow.js 是什么</h3><ul>
+<li>一个用 javascript 实现的机器学习库</li>
+<li>可以直接在浏览器和 Node.js 中使用机器学习技术了</li>
+</ul>
+<h3 id="Tensorflow-js-具体功能"><a href="#Tensorflow-js-具体功能" class="headerlink" title="Tensorflow.js 具体功能"></a>Tensorflow.js 具体功能</h3><ul>
+<li>运行现有模型</li>
+<li>重新训练现有模型</li>
+<li>使用 javascript 开发机器学习模型</li>
+</ul>
+<h2 id="3-2-安装-Tensorflow-js"><a href="#3-2-安装-Tensorflow-js" class="headerlink" title="3-2 安装 Tensorflow.js"></a>3-2 安装 Tensorflow.js</h2><h3 id="在浏览器中安装"><a href="#在浏览器中安装" class="headerlink" title="在浏览器中安装"></a>在浏览器中安装</h3><ul>
+<li>使用 script 标签<ul>
+<li>使用 <code>npm i nrm -g</code>，然后 <code>nrm ls</code>，然后 <code>nrm use taobao</code>，安装 http-server <code>npm i http-server -g</code>，使用http-server 命令行输入 <code>hs</code> 即可</li>
+</ul>
+</li>
+<li>使用 npm 包安装，并使用 parcel 或者 webpack 构建<ul>
+<li><code>npm install @tensorflow/tfjs</code></li>
+<li><code>npm install -g parcel-bundler</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="在-Node-js-中安装"><a href="#在-Node-js-中安装" class="headerlink" title="在 Node.js 中安装"></a>在 Node.js 中安装</h3><ul>
+<li>安装带有原生 C++ 绑定的 TensorFlow.js（推荐，但是麻烦）<ul>
+<li>安装 node-gyp，专门用来构建底层库<ul>
+<li>windows：<code>npm i node-gyp windows-build-tools@4.0.0 -g</code></li>
+</ul>
+</li>
+<li></li>
+</ul>
+</li>
+<li>在 GPU 上安装 TensorFlow.js</li>
+<li>安装纯 Javascript 版本，这是性能方面最慢的选项</li>
+</ul>
+<h2 id="3-3-为何要用-Tensor？"><a href="#3-3-为何要用-Tensor？" class="headerlink" title="3-3 为何要用 Tensor？"></a>3-3 为何要用 Tensor？</h2><h3 id="什么是-Tensor？"><a href="#什么是-Tensor？" class="headerlink" title="什么是 Tensor？"></a>什么是 Tensor？</h3><ul>
+<li>中文名字是 <strong><em>张量</em></strong></li>
+<li>张量是向量和矩阵向更高维度的推广</li>
+<li>相当于多维数组，但是有别的属性，例如形状、大小，关注rank，size，shape</li>
+</ul>
+<h3 id="Tensor-和机器学习有什么关系？"><a href="#Tensor-和机器学习有什么关系？" class="headerlink" title="Tensor 和机器学习有什么关系？"></a>Tensor 和机器学习有什么关系？</h3><ul>
+<li><p>神经网络是什么样子</p>
+</li>
+<li><p>如果放你设计神经网络的数据结构，你会怎么设计？</p>
+<ul>
+<li>上面例子中</li>
+<li>五官、身材、学历、家境，作为输入的数值</li>
+<li>那形象这个神经元举例，他要存储五官、身材、学历、家境这四个输入的权重。财富、品质、有趣是一样的</li>
+<li>形象、财富、品质、有趣乘以各自的权重得到满意程度，满意程度之中包含了形象、财富、品质、有趣的权重</li>
+<li>按照这个例子，每一个神经元是一个四个元素的数组，每一层的神经元可以设计成一个二维数组</li>
+<li>这个例子中一层要进行两次循环</li>
+</ul>
+<h3 id="神经网络数据结构设计"><a href="#神经网络数据结构设计" class="headerlink" title="神经网络数据结构设计"></a>神经网络数据结构设计</h3><ul>
+<li>神经网络每一层要存储 N 堆数据</li>
+<li>N 层的 For 循环运算</li>
+<li>Tensor 作为高位数据结构完美解决以上问题</li>
+</ul>
+</li>
+</ul>
+<pre><code class="javascript">import * as tf from &#39;@tensorflow/tfjs&#39;;
+// 传统 for 循环
+const input = [1, 2, 3, 4];
+const w = [[1, 2, 3, 4], [2, 3, 4, 5], [3, 4, 5, 6], [4, 5, 6,7]];
+const output = [0, 0, 0, 0];
+
+for (let i = 0; i &lt; w.length; i++) {
+  for (let j = 0; j &lt; input.length; j++) {
+    output[i] += input[j] * w[i][j]
+  }
+}
+console.log(output)
+
+// 使用 tensor
+tf.tensor(w).dot(tf.tensor(input)).print();</code></pre>
+<blockquote>
+<p>数学原理，点乘，旋转</p>
+</blockquote>
+<h1 id="第4章-线性回归"><a href="#第4章-线性回归" class="headerlink" title="第4章 线性回归"></a>第4章 线性回归</h1><h2 id="4-1-线性回归任务简介"><a href="#4-1-线性回归任务简介" class="headerlink" title="4-1 线性回归任务简介"></a>4-1 线性回归任务简介</h2><h3 id="什么是线性回归？"><a href="#什么是线性回归？" class="headerlink" title="什么是线性回归？"></a>什么是线性回归？</h3><ul>
+<li>利用数理统计中回归分析，来确定两种或两种以上变量间相互依赖的定量关系的一种统计分析方法</li>
+<li>例子：身高体重数据，预测身高体重</li>
+</ul>
+<h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3><ul>
+<li>准备、可视化训练数据</li>
+<li>使用 Tensorflow.js 的 API 构建神经网络</li>
+<li>训练模型并预测</li>
+</ul>
+<h2 id="4-2-准备、可视化训练数据"><a href="#4-2-准备、可视化训练数据" class="headerlink" title="4-2 准备、可视化训练数据"></a>4-2 准备、可视化训练数据</h2><h3 id="操作步骤-1"><a href="#操作步骤-1" class="headerlink" title="操作步骤"></a>操作步骤</h3><ul>
+<li>准备线性回归训练数据</li>
+<li>使用 tfvis 可视化训练数据</li>
+</ul>
+<pre><code class="js">import * as tfvis from &#39;@tensorflow/tfjs-vis&#39;
+
+window.onload = () =&gt; {
+  const xs = [1, 2, 3, 4];
+  const ys = [1, 3, 5, 7];
+
+  // 散点图
+  tfvis.render.scatterplot(
+    { name: &#39;线性回归训练集&#39; },
+    { values: xs
+      .map((x, i) =&gt; {
+        return {
+          x,
+          y: ys[i]
+        }
+      })
+    },
+    { xAxisDomain: [0, 5], yAxisDomain: [0, 8] }
+  )
+};</code></pre>
+<h3 id="4-3-定义模型结构：单层单个神经元组成的神经网络"><a href="#4-3-定义模型结构：单层单个神经元组成的神经网络" class="headerlink" title="4-3 定义模型结构：单层单个神经元组成的神经网络"></a>4-3 定义模型结构：单层单个神经元组成的神经网络</h3><h3 id="操作步骤-2"><a href="#操作步骤-2" class="headerlink" title="操作步骤"></a>操作步骤</h3><ul>
+<li>初始化一个神经网络模型</li>
+<li>为神经网络添加层</li>
+<li>设计层的神经元个数 和 输入形状（inputShape）</li>
+</ul>
+<pre><code class="js">// 连续的模型，这一层的输入是下一层的输出
+  const model = tf.sequential();
+
+  // 给模型添加层
+  // dense 全链接层
+  model.add(tf.layers.dense({
+    units: 1, // 神经元个数
+    inputShape: [1], // 输入形状
+  }))</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 daughlas@gmail.com </span>
+    </div>
+</article>
+
+
+<!-- 
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>imooc 前端入门人工智能</p>
+    
+    <p><span class="copy-title">本文作者:</span><a  title="吕嘉文">吕嘉文</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-06-02, 18:44:46</p>
+    <p><span class="copy-title">最后更新:</span>2020-06-02, 18:46:03</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/06/02/ai/imooc%20%E5%89%8D%E7%AB%AF%E5%85%A5%E9%97%A8%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" title="imooc 前端入门人工智能">http://yoursite.com/2020/06/02/ai/imooc%20%E5%89%8D%E7%AB%AF%E5%85%A5%E9%97%A8%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+ -->
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2016-2020 daughlas</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#运维','#nginx','#linux','#CentOS','#域名','#Node.js','#待续','#imooc 实战','#算法','#数据结构','#javascript','#Python','#排序','#MongoDB','#ORM','#react','#react-native','#vue','#vue-cli','#编程语言','#java','#ES','#TypeScript','#临时','#工具','#MySQL','#redux','#angular','#http',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

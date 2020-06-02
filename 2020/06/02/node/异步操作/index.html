@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>异步操作 | 吕嘉文的小栈</title>
+  <meta name="keywords" content=" Node.js ">
+  <meta name="description" content="异步操作 | 吕嘉文的小栈">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="纪律生活、工作、学习的点点滴滴">
+<meta property="og:type" content="article">
+<meta property="og:title" content="好用的工具集合">
+<meta property="og:url" content="http://yoursite.com/2020/06/02/tools/%E5%A5%BD%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7%E9%9B%86%E5%90%88/index.html">
+<meta property="og:site_name" content="吕嘉文的小栈">
+<meta property="og:description" content="纪律生活、工作、学习的点点滴滴">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-06-02T03:33:05.389Z">
+<meta property="article:modified_time" content="2020-06-02T03:33:16.868Z">
+<meta property="article:author" content="吕嘉文">
+<meta property="article:tag" content="工具">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>吕嘉文</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="github" href="https://github.com/daughlas" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="weibo" href="http://weibo.com/u/2307534817" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="jianshu" href="https://www.jianshu.com/u/ff56736de7cf" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-jianshu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:daughlas@gmail.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=806004005&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(41)</small></div></li>
+    
+        
+            
+            <li><div data-rel="运维">运维<small>(7)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="一段代码">一段代码<small>(8)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="数据库">数据库<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="前端框架">前端框架<small>(8)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Node">Node<small>(7)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="编程语言">编程语言<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="临时">临时<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="工具">工具<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="设计模式">设计模式<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="41">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color1">nginx</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">linux</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">CentOS</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">运维</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">域名</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">javascript</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">Node.js</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">MongoDB</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">待续</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">react</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">react-native</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">imooc 实战</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">vue</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">vue-cli</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">vue-router</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">编程语言</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">TypeScript</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">ES</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">临时</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">工具</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">MySQL</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">redux</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">angular</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="运维 "
+           href="/2020/06/02/OPS/NGINX%20%E7%9B%B8%E5%85%B3/"
+           data-tag="nginx"
+           data-author="" >
+            <span class="post-title" title="NGINX 相关">NGINX 相关</span>
+            <span class="post-date" title="2020-06-02 10:25:16">2020/06/02</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2020/06/02/OPS/%E5%AE%89%E5%85%A8%E8%AE%BE%E7%BD%AE/"
+           data-tag="linux,CentOS"
+           data-author="" >
+            <span class="post-title" title="LINUX 增加安全性">LINUX 增加安全性</span>
+            <span class="post-date" title="2020-06-02 09:46:47">2020/06/02</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2020/06/02/OPS/PM2/"
+           data-tag="运维"
+           data-author="" >
+            <span class="post-title" title="PM2">PM2</span>
+            <span class="post-date" title="2020-06-02 10:45:08">2020/06/02</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2020/06/02/OPS/%E5%9F%9F%E5%90%8D%E7%9B%B8%E5%85%B3/"
+           data-tag="域名"
+           data-author="" >
+            <span class="post-title" title="域名相关">域名相关</span>
+            <span class="post-date" title="2020-06-02 09:48:04">2020/06/02</span>
+        </a>
+        
+        <a  class="一段代码 "
+           href="/2020/02/19/code-section/JS%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="JS 数据类型">JS 数据类型</span>
+            <span class="post-date" title="2020-02-19 11:15:20">2020/02/19</span>
+        </a>
+        
+        <a  class="一段代码 "
+           href="/2020/06/01/code-section/debounce/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="debounce 防抖">debounce 防抖</span>
+            <span class="post-date" title="2020-06-01 18:07:26">2020/06/01</span>
+        </a>
+        
+        <a  class="一段代码 "
+           href="/2020/02/20/code-section/js-new/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="JS - new">JS - new</span>
+            <span class="post-date" title="2020-02-20 15:40:32">2020/02/20</span>
+        </a>
+        
+        <a  class="一段代码 "
+           href="/2020/02/19/code-section/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E7%89%88/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="JS 深拷贝性能优化版">JS 深拷贝性能优化版</span>
+            <span class="post-date" title="2020-02-19 11:07:44">2020/02/19</span>
+        </a>
+        
+        <a  class="一段代码 "
+           href="/2020/02/19/code-section/%E6%B7%B1%E6%8B%B7%E8%B4%9D/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="JS 深拷贝">JS 深拷贝</span>
+            <span class="post-date" title="2020-02-19 09:39:56">2020/02/19</span>
+        </a>
+        
+        <a  class="一段代码 "
+           href="/2020/06/01/code-section/%E7%AE%80%E6%98%93%E6%A8%A1%E5%9D%97%E7%AE%A1%E7%90%86/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="简易模块管理">简易模块管理</span>
+            <span class="post-date" title="2020-06-01 17:56:46">2020/06/01</span>
+        </a>
+        
+        <a  class="一段代码 "
+           href="/2020/06/01/code-section/%E8%8A%82%E6%B5%81%E5%87%BD%E6%95%B0/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="throttle 节流函数">throttle 节流函数</span>
+            <span class="post-date" title="2020-06-01 17:48:06">2020/06/01</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2020/06/02/OPS/%E9%85%8D%E7%BD%AE%20Node.js%20%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83/"
+           data-tag="linux,CentOS,Node.js"
+           data-author="" >
+            <span class="post-title" title="LINUX 配置 Node 生产环境">LINUX 配置 Node 生产环境</span>
+            <span class="post-date" title="2020-06-02 09:49:07">2020/06/02</span>
+        </a>
+        
+        <a  class="一段代码 "
+           href="/2020/06/01/code-section/%E8%8E%B7%E5%8F%96%E5%9C%B0%E5%9D%80%E6%A0%8F/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="获取地址栏参数">获取地址栏参数</span>
+            <span class="post-date" title="2020-06-01 17:30:03">2020/06/01</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/06/01/database/%E5%AD%A6%E4%B9%A0%20MongoDB/"
+           data-tag="MongoDB"
+           data-author="" >
+            <span class="post-title" title="学习 MongoDB">学习 MongoDB</span>
+            <span class="post-date" title="2020-06-01 18:04:32">2020/06/01</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2020/06/02/OS/CENTOS%20%E5%AD%A6%E4%B9%A0/"
+           data-tag="linux,CentOS,待续"
+           data-author="" >
+            <span class="post-title" title="CENTOS 7 学习">CENTOS 7 学习</span>
+            <span class="post-date" title="2020-06-02 09:51:42">2020/06/02</span>
+        </a>
+        
+        <a  class="前端框架 "
+           href="/2020/06/02/fe-frameworkds/imooc%20react-native%20%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/"
+           data-tag="react,react-native,imooc 实战"
+           data-author="" >
+            <span class="post-title" title="imooc react-native 项目笔记">imooc react-native 项目笔记</span>
+            <span class="post-date" title="2020-06-02 10:53:17">2020/06/02</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2020/06/02/OS/LINUX%20%E5%AD%A6%E4%B9%A0/"
+           data-tag="linux,CentOS,待续"
+           data-author="" >
+            <span class="post-title" title="LINUX 学习">LINUX 学习</span>
+            <span class="post-date" title="2020-06-02 09:50:40">2020/06/02</span>
+        </a>
+        
+        <a  class="前端框架 "
+           href="/2020/02/20/fe-frameworkds/vue%20%E6%89%93%E5%8C%85%E4%BC%98%E5%8C%96/"
+           data-tag="vue,vue-cli"
+           data-author="" >
+            <span class="post-title" title="vue-cli3 打包优化">vue-cli3 打包优化</span>
+            <span class="post-date" title="2020-02-20 14:15:50">2020/02/20</span>
+        </a>
+        
+        <a  class="前端框架 "
+           href="/2020/02/20/fe-frameworkds/vue%20%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/"
+           data-tag="vue,vue-router"
+           data-author="" >
+            <span class="post-title" title="vue 最佳实践">vue 最佳实践</span>
+            <span class="post-date" title="2020-02-20 14:15:21">2020/02/20</span>
+        </a>
+        
+        <a  class="前端框架 "
+           href="/2020/02/18/fe-frameworkds/vue-router%20%E4%BD%BF%E7%94%A8/"
+           data-tag="vue,vue-router"
+           data-author="" >
+            <span class="post-title" title="vue-router 使用">vue-router 使用</span>
+            <span class="post-date" title="2020-02-18 11:23:11">2020/02/18</span>
+        </a>
+        
+        <a  class="前端框架 "
+           href="/2020/02/18/fe-frameworkds/vue-router%20%E5%8E%9F%E7%90%86%EF%BC%88%E4%B8%80%EF%BC%89/"
+           data-tag="vue,vue-router"
+           data-author="" >
+            <span class="post-title" title="vue-router 原理（一）">vue-router 原理（一）</span>
+            <span class="post-date" title="2020-02-18 11:23:45">2020/02/18</span>
+        </a>
+        
+        <a  class="Node "
+           href="/2020/06/02/node/Node.js%20CommonJS%20%E6%A8%A1%E5%9D%97/"
+           data-tag="Node.js"
+           data-author="" >
+            <span class="post-title" title="Node.js CommonJS 模块">Node.js CommonJS 模块</span>
+            <span class="post-date" title="2020-06-02 10:22:14">2020/06/02</span>
+        </a>
+        
+        <a  class="Node "
+           href="/2020/06/02/node/Node.js%20Http%20%E6%A8%A1%E5%9D%97/"
+           data-tag="Node.js"
+           data-author="" >
+            <span class="post-title" title="Node.js Http 模块">Node.js Http 模块</span>
+            <span class="post-date" title="2020-06-02 10:28:40">2020/06/02</span>
+        </a>
+        
+        <a  class="编程语言 "
+           href="/2020/06/01/languages/%E5%AD%A6%E4%B9%A0%20typescript/"
+           data-tag="编程语言,TypeScript"
+           data-author="" >
+            <span class="post-title" title="学习 TypeScript">学习 TypeScript</span>
+            <span class="post-date" title="2020-06-01 17:48:56">2020/06/01</span>
+        </a>
+        
+        <a  class="Node "
+           href="/2020/06/02/node/%E5%AD%A6%E4%B9%A0%20express%20%E6%A1%86%E6%9E%B6/"
+           data-tag="Node.js"
+           data-author="" >
+            <span class="post-title" title="学习 Express 框架">学习 Express 框架</span>
+            <span class="post-date" title="2020-06-02 10:26:50">2020/06/02</span>
+        </a>
+        
+        <a  class="编程语言 "
+           href="/2020/06/02/languages/es/"
+           data-tag="编程语言,ES"
+           data-author="" >
+            <span class="post-title" title="ES 5 / 6 / 7 / 8 新特性">ES 5 / 6 / 7 / 8 新特性</span>
+            <span class="post-date" title="2020-06-02 10:55:56">2020/06/02</span>
+        </a>
+        
+        <a  class="Node "
+           href="/2020/06/02/node/%E5%BC%82%E6%AD%A5%E6%93%8D%E4%BD%9C/"
+           data-tag="Node.js"
+           data-author="" >
+            <span class="post-title" title="异步操作">异步操作</span>
+            <span class="post-date" title="2020-06-02 10:16:01">2020/06/02</span>
+        </a>
+        
+        <a  class="临时 "
+           href="/2020/06/01/temp/%E5%AD%A6%E4%B9%A0%20MyBatis/"
+           data-tag="临时"
+           data-author="" >
+            <span class="post-title" title="学习 MyBatis">学习 MyBatis</span>
+            <span class="post-date" title="2020-06-01 18:05:08">2020/06/01</span>
+        </a>
+        
+        <a  class="Node "
+           href="/2020/06/02/node/websocket/"
+           data-tag="Node.js"
+           data-author="" >
+            <span class="post-title" title="socket">socket</span>
+            <span class="post-date" title="2020-06-02 10:31:32">2020/06/02</span>
+        </a>
+        
+        <a  class="工具 "
+           href="/2020/06/01/tools/vs%20code%20%E4%BD%BF%E7%94%A8/"
+           data-tag="工具"
+           data-author="" >
+            <span class="post-title" title="VS code 使用">VS code 使用</span>
+            <span class="post-date" title="2020-06-01 17:51:56">2020/06/01</span>
+        </a>
+        
+        <a  class="工具 "
+           href="/2020/06/02/tools/%E5%A5%BD%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7%E9%9B%86%E5%90%88/"
+           data-tag="工具"
+           data-author="" >
+            <span class="post-title" title="好用的工具集合">好用的工具集合</span>
+            <span class="post-date" title="2020-06-02 11:33:05">2020/06/02</span>
+        </a>
+        
+        <a  class="Node "
+           href="/2020/06/02/node/Node.js%20fs%20%E6%A8%A1%E5%9D%97/"
+           data-tag="Node.js"
+           data-author="" >
+            <span class="post-title" title="Node.js fs 模块">Node.js fs 模块</span>
+            <span class="post-date" title="2020-06-02 10:30:09">2020/06/02</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/06/01/database/%E5%AD%A6%E4%B9%A0%20MySQL/"
+           data-tag="MySQL"
+           data-author="" >
+            <span class="post-title" title="学习 MySQL 基础">学习 MySQL 基础</span>
+            <span class="post-date" title="2020-06-01 18:03:06">2020/06/01</span>
+        </a>
+        
+        <a  class="前端框架 "
+           href="/2020/06/02/fe-frameworkds/react%20%E5%9F%BA%E7%A1%80/"
+           data-tag="react"
+           data-author="" >
+            <span class="post-title" title="React 学习笔记">React 学习笔记</span>
+            <span class="post-date" title="2020-06-02 10:43:24">2020/06/02</span>
+        </a>
+        
+        <a  class="前端框架 "
+           href="/2020/06/02/fe-frameworkds/redux%20%E5%9F%BA%E7%A1%80/"
+           data-tag="react,redux"
+           data-author="" >
+            <span class="post-title" title="Redux 基础">Redux 基础</span>
+            <span class="post-date" title="2020-06-02 10:44:08">2020/06/02</span>
+        </a>
+        
+        <a  class="前端框架 "
+           href="/2020/06/01/fe-frameworkds/%E5%AD%A6%E4%B9%A0%20angular/"
+           data-tag="angular"
+           data-author="" >
+            <span class="post-title" title="学习 angular">学习 angular</span>
+            <span class="post-date" title="2020-06-01 17:38:22">2020/06/01</span>
+        </a>
+        
+        <a  class="临时 "
+           href="/2020/06/01/temp/%E5%AD%A6%E4%B9%A0%20HTTP%20%E5%8D%8F%E8%AE%AE/"
+           data-tag="临时"
+           data-author="" >
+            <span class="post-title" title="学习 HTTP 协议">学习 HTTP 协议</span>
+            <span class="post-date" title="2020-06-01 17:33:15">2020/06/01</span>
+        </a>
+        
+        <a  class="临时 "
+           href="/2020/06/01/temp/%E5%88%AB%E4%BA%BA%E6%80%BB%E7%BB%93%E7%9A%84%E5%BE%88%E5%A4%9A%E6%AD%A3%E5%88%99/"
+           data-tag="临时"
+           data-author="" >
+            <span class="post-title" title="别人总结的各种各样的正则表达式">别人总结的各种各样的正则表达式</span>
+            <span class="post-date" title="2020-06-01 17:54:05">2020/06/01</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/06/01/temp/%E5%AD%A6%E4%B9%A0%20Rxjs/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="temp/学习 Rxjs">temp/学习 Rxjs</span>
+            <span class="post-date" title="2020-06-01 17:43:52">2020/06/01</span>
+        </a>
+        
+        <a  class="Node "
+           href="/2020/06/01/node/%E6%85%95%E8%AF%BE%E7%BD%91%20Node.js%20%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%8F%91%20web%20server%E5%8D%9A%E5%AE%A2%E9%A1%B9%E7%AC%94%E8%AE%B0/"
+           data-tag="Node.js,imooc 实战"
+           data-author="" >
+            <span class="post-title" title="慕课网 Node.js 从零开发 web server博客项笔记">慕课网 Node.js 从零开发 web server博客项笔记</span>
+            <span class="post-date" title="2020-06-01 17:55:35">2020/06/01</span>
+        </a>
+        
+        <a  class="设计模式 "
+           href="/2020/06/01/design-pattern/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AD%A6%E4%B9%A0/"
+           data-tag="imooc 实战"
+           data-author="" >
+            <span class="post-title" title="设计模式学习">设计模式学习</span>
+            <span class="post-date" title="2020-06-01 17:57:57">2020/06/01</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-node/异步操作" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">异步操作</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="Node">Node</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color3">Node.js</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-06-02 10:27:29'>2020-06-02 10:16</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#异步操作"><span class="toc-text">异步操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#非阻塞的优势"><span class="toc-text">非阻塞的优势</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#单线程"><span class="toc-text">单线程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事件驱动和非阻塞，Node-js-如何利用单线程"><span class="toc-text">事件驱动和非阻塞，Node.js 如何利用单线程</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="异步操作"><a href="#异步操作" class="headerlink" title="异步操作"></a>异步操作</h2><ol>
+<li>当代码需要等待一个无状态的东西的时候，比如说不知道用户什么时候输入</li>
+<li>异步的就是执行要好长时间的代码，我们直接绕过它</li>
+<li>JS 代码计时器</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.time(<span class="string">"main"</span>);</span><br><span class="line"><span class="comment">// 执行一段代码</span></span><br><span class="line"><span class="built_in">console</span>.timeEnd(<span class="string">"main"</span>);</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>手动写异步的操作用 <code>setTimeout([function],0)</code> 实现</li>
+<li>callback 一般都是错误优先的回调函数，异步操作发生异常的话，外界是捕获不到的。错误优先的回调函数，如下</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function doSomethingAsync (path, callback) &#123;</span><br><span class="line">  if (错误) &#123;</span><br><span class="line">    callback(new Error(&#39;xxx 错误&#39;))    </span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    callback(null, data);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>典型的异步操作<ol>
+<li>打电话是同步操作，发短信是异步操作</li>
+<li>程序世界中：定时器、Ajax、文件操作 是典型的异步的。</li>
+<li>Node.js 所有的会发生阻塞的操作都是异步的，主要是文件操作和网络操作</li>
+</ol>
+</li>
+<li>I/O：可以理解为从输入到输出之间的转化过程</li>
+<li>对于耗费时间的任务 Node.js 把这个任务和任务执行完的回调函数，下达给了操作系统（这么理解），放在任务队列（Event Loop）的最后一个，让它去执行</li>
+<li>效率最高：专注于做一件事，这件事做完之后马上再去做另外一件事情。</li>
+<li>由于 Windows 和 *nix 平台的差异，Node 提供了libuv 作为抽象封装层，保证上层的 Node 与下层的自定义线程池及 IOCP 之间各自独立</li>
+</ol>
+<h2 id="非阻塞的优势"><a href="#非阻塞的优势" class="headerlink" title="非阻塞的优势"></a>非阻塞的优势</h2><ol>
+<li>提高代码的响应效率</li>
+<li>充分利用单核CPU</li>
+<li>改善I/O的不可预测带来的问题</li>
+<li>但是目前市面上大多数都是多核 CPU，不能很好利用多核，一般运用虚拟化技术把多核 CPU 虚拟城单核机</li>
+</ol>
+<h2 id="单线程"><a href="#单线程" class="headerlink" title="单线程"></a>单线程</h2><ol start="12">
+<li>进程和线程 <ol>
+<li>进程是一个更大的单位，线程更小</li>
+<li>进程：每一个<strong>正在运行</strong>的应用程序都至少有一个进程，它给应用程序提供运行环境，是操作系统为应用程序分配资源的一个单位。</li>
+<li>线程：用来执行代码，一个进程内部可以有很多线程，一个线程同时只能干一件事情</li>
+<li>传统的开发方式大部分的I/O都是阻塞的，小更多的线程来更好的利用硬件资源</li>
+<li>多线程的缺点<ol>
+<li>线程之间共享某些数据，同步起来很麻烦</li>
+<li>更致命的是：（主要单核CPU的问题，伪多线程）<ol>
+<li>创建线程耗费</li>
+<li>线程数量有限，线程初始化空间 2M 已经很大了，这个占得是内存</li>
+<li>虽然多线程，但是还是只有一个CPU</li>
+<li>CPU 在不同线程之间转换，有个上下文转换，非常耗费时间。（Node最大的性能优势）</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>例如： node 进程启动之后，会默认创建一个线程，用于执行我们的代码，一般是叫main thread。</li>
+</ol>
+</li>
+<li>在chrome 的控制台中，按shift + return 可以换行写代码。</li>
+<li>异步回调的问题：嵌套过深；回调黑洞（里层调用外层内容，形成死循环）。——Promise解决回调嵌套的问题。<ol>
+<li>不容易阅读</li>
+<li>不容易调试：断点不容易打</li>
+<li>不容易维护：加一个功能难</li>
+</ol>
+</li>
+<li>V8 引擎的一个最主要特点就是单线程</li>
+</ol>
+<hr>
+<h2 id="事件驱动和非阻塞，Node-js-如何利用单线程"><a href="#事件驱动和非阻塞，Node-js-如何利用单线程" class="headerlink" title="事件驱动和非阻塞，Node.js 如何利用单线程"></a>事件驱动和非阻塞，Node.js 如何利用单线程</h2><ol>
+<li>Node.js 主线程之外，内部有一个事件队列</li>
+<li>Node 的执行过程有一个事件循环，事件循环回去判断是不是有阻塞操作，阻塞的就安排到 Node 底层的 Thread Pool 线程池中</li>
+<li>所以对于编程Node是单线程的，实际底层运行的时候它还是多线程的，用多线程来执行那些阻塞的操作。</li>
+<li>为了避免线程创建耗费资源 Node 的多线程是实现创建好，放在 THread Pool 中的。</li>
+<li>专业一点的表述<ol>
+<li>Node平台将一个任务联通该任务的回调函数放到一个事件循环系统中；</li>
+<li>事件循环高效的管理系统线程池同时高效执行每一个任务</li>
+<li>当任务完成过后自动执行回调函数</li>
+<li>Node 将所有的阻塞操作交给了内部实现的线程池</li>
+<li>Node.js 本身主线程主要就是不断地往返调度</li>
+</ol>
+</li>
+</ol>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 daughlas@gmail.com </span>
+    </div>
+</article>
+
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>异步操作</p>
+    
+    <p><span class="copy-title">本文作者:</span><a  title="吕嘉文">吕嘉文</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-06-02, 10:16:01</p>
+    <p><span class="copy-title">最后更新:</span>2020-06-02, 10:27:29</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/06/02/node/%E5%BC%82%E6%AD%A5%E6%93%8D%E4%BD%9C/" title="异步操作">http://yoursite.com/2020/06/02/node/%E5%BC%82%E6%AD%A5%E6%93%8D%E4%BD%9C/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2016-2020 daughlas</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#nginx','#linux','#CentOS','#运维','#域名','#javascript','#Node.js','#MongoDB','#待续','#react','#react-native','#imooc 实战','#vue','#vue-cli','#vue-router','#编程语言','#TypeScript','#ES','#临时','#工具','#MySQL','#redux','#angular',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

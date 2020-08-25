@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <meta name="msapplication-config" content="/images/browserconfig.xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="一些命令示例ip addr 改 service network restart yum update grep 过滤，-v 不包含，反转一下 cat anaconda-ks.cfg | grep &quot;net&quot; | grep -v &quot;off&quot; 帐号管理添加新的用户账号user add   -c 注释性描述 -d 指定主目录，一般不指定 -g 用户组 -G 用户组的附属组 -s 用户登录的shell 文">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LINUX 学习">
+<meta property="og:url" content="http://yoursite.com/2020/06/02/OS/LINUX%20%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="嘉文小栈">
+<meta property="og:description" content="一些命令示例ip addr 改 service network restart yum update grep 过滤，-v 不包含，反转一下 cat anaconda-ks.cfg | grep &quot;net&quot; | grep -v &quot;off&quot; 帐号管理添加新的用户账号user add   -c 注释性描述 -d 指定主目录，一般不指定 -g 用户组 -G 用户组的附属组 -s 用户登录的shell 文">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-02T01:50:40.883Z">
+<meta property="article:modified_time" content="2020-06-02T06:49:48.092Z">
+<meta property="article:author" content="吕嘉文">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="CentOS">
+<meta property="article:tag" content="待续">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/06/02/OS/LINUX%20%E5%AD%A6%E4%B9%A0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>LINUX 学习 | 嘉文小栈</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">嘉文小栈</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">每天进步一点点</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/02/OS/LINUX%20%E5%AD%A6%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="name" content="吕嘉文">
+      <meta itemprop="description" content="记录生活、工作、学习的点点滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉文小栈">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          LINUX 学习
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 09:50:40 / 修改时间：14:49:48" itemprop="dateCreated datePublished" datetime="2020-06-02T09:50:40+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%BF%90%E7%BB%B4/" itemprop="url" rel="index"><span itemprop="name">运维</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="一些命令示例"><a href="#一些命令示例" class="headerlink" title="一些命令示例"></a>一些命令示例</h3><p><code>ip addr</code> 改</p>
+<p><code>service network restart</code></p>
+<p><code>yum update</code></p>
+<p>grep 过滤，-v 不包含，反转一下</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">cat</span> anaconda-ks.cfg <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"net"</span> <span class="token operator">|</span> <span class="token function">grep</span> -v <span class="token string">"off"</span></code></pre>
+<h2 id="帐号管理"><a href="#帐号管理" class="headerlink" title="帐号管理"></a>帐号管理</h2><h3 id="添加新的用户账号"><a href="#添加新的用户账号" class="headerlink" title="添加新的用户账号"></a>添加新的用户账号</h3><p>user add </p>
+<ul>
+<li>-c 注释性描述</li>
+<li>-d 指定主目录，一般不指定</li>
+<li>-g 用户组</li>
+<li>-G 用户组的附属组</li>
+<li>-s 用户登录的shell 文件</li>
+<li>-u 用户号</li>
+</ul>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">groupadd</span> ljs
+<span class="token function">useradd</span> -s /bin/sh -g ljw -G adm,root ljw</code></pre>
+<h3 id="删除账户"><a href="#删除账户" class="headerlink" title="删除账户"></a>删除账户</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">userdel</span> -r ljw
+
+<span class="token function">userdel</span> ljw
+<span class="token function">rm</span> -rf /home/ljw</code></pre>
+<h3 id="修改账户"><a href="#修改账户" class="headerlink" title="修改账户"></a>修改账户</h3><p>usermod，加上-c, -d, -m, -g, -G, -s, -u, -o</p>
+<h3 id="用户密码管理"><a href="#用户密码管理" class="headerlink" title="用户密码管理"></a>用户密码管理</h3><p>passwd</p>
+<ul>
+<li>-l 锁定口令，禁用账号</li>
+<li>-u 口令解锁</li>
+<li>-d 使账号无口令</li>
+<li>-f 强迫用户下次登录时修改口令</li>
+</ul>
+<h2 id="用户组管理"><a href="#用户组管理" class="headerlink" title="用户组管理"></a>用户组管理</h2><h3 id="添加用户组"><a href="#添加用户组" class="headerlink" title="添加用户组"></a>添加用户组</h3><p>groupadd</p>
+<ul>
+<li>-g GID 指定新用户组的 GID（一定是数字）</li>
+<li>-o</li>
+</ul>
+<h3 id="删除用户组"><a href="#删除用户组" class="headerlink" title="删除用户组"></a>删除用户组</h3><p>groupdel</p>
+<h3 id="修改用户组"><a href="#修改用户组" class="headerlink" title="修改用户组"></a>修改用户组</h3><p>groupmod</p>
+<ul>
+<li>-n 新组名 + 旧组名</li>
+<li>-g</li>
+<li>-o</li>
+</ul>
+<p>newgrp</p>
+<p>su user1 切换用户</p>
+<p>exit 退出当前所有用户</p>
+<h3 id="linux-用户权限相关"><a href="#linux-用户权限相关" class="headerlink" title="linux 用户权限相关"></a>linux 用户权限相关</h3><p>/etc/passwd</p>
+<p>/etc/shadow</p>
+<p>/etc/group</p>
+<p>修改 /etc/sudoers</p>
+<pre class=" language-bash"><code class="language-bash">user1     ALL<span class="token operator">=</span><span class="token punctuation">(</span>ALL<span class="token punctuation">)</span>        NOPASSWD: /bin/mkdir,/bin/rm</code></pre>
+<h2 id="linux-文件常用命令"><a href="#linux-文件常用命令" class="headerlink" title="linux 文件常用命令"></a>linux 文件常用命令</h2><h4 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h4><ul>
+<li>touch，<code>touch file_test</code></li>
+<li>cat，<code>cat file_test &gt; file_test_copy</code> 或者 <code>cat file_test &gt;&gt; file_test_copy</code></li>
+<li>echo，<code>echo &quot;I love you&quot; &gt; file_test2</code></li>
+<li>vi，<code>vi new_file</code></li>
+</ul>
+<h4 id="复制文件"><a href="#复制文件" class="headerlink" title="复制文件"></a>复制文件</h4><ul>
+<li>cat，<code>cat file_test &gt; file-test_copy</code></li>
+<li>cp，<code>cp file_test file_test_test2</code></li>
+</ul>
+<h4 id="链接文件"><a href="#链接文件" class="headerlink" title="链接文件"></a>链接文件</h4><ul>
+<li>ln -s 源文件 目标文件 （软链接，类似windows 的快捷方式）</li>
+<li>ln 源文件 目标文件（同样的文件，两个出口）</li>
+</ul>
+<h4 id="重命名（移动）文件"><a href="#重命名（移动）文件" class="headerlink" title="重命名（移动）文件"></a>重命名（移动）文件</h4><p>mv 源文件 目标文件</p>
+<h4 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h4><p>rm</p>
+<ul>
+<li>-r recursive 递归删除，牵扯目录</li>
+<li>-f </li>
+</ul>
+<h2 id="linux-目录常用命令"><a href="#linux-目录常用命令" class="headerlink" title="linux 目录常用命令"></a>linux 目录常用命令</h2><h3 id="创建目录"><a href="#创建目录" class="headerlink" title="创建目录"></a>创建目录</h3><p>mkdir</p>
+<p>-p 创建多级目录</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">mkdir</span> test_dir/child_1/child_2/child_3</code></pre>
+<h3 id="复制目录"><a href="#复制目录" class="headerlink" title="复制目录"></a>复制目录</h3><p>cp -r 源目录 目标目录</p>
+<p>-r 是递归的意思，必须要传</p>
+<h3 id="链接目录"><a href="#链接目录" class="headerlink" title="链接目录"></a>链接目录</h3><h4 id="软链接"><a href="#软链接" class="headerlink" title="软链接"></a>软链接</h4><p>ln -s 源目录 目标目录（软连接）</p>
+<h4 id="目录不可硬链接"><a href="#目录不可硬链接" class="headerlink" title="目录不可硬链接"></a>目录不可硬链接</h4><h3 id="重命名（移动）目录"><a href="#重命名（移动）目录" class="headerlink" title="重命名（移动）目录"></a>重命名（移动）目录</h3><p>mv 源目录 目标目录</p>
+<h3 id="删除目录"><a href="#删除目录" class="headerlink" title="删除目录"></a>删除目录</h3><p>rm -r[f] 源目录 </p>
+<p>-r 递归</p>
+<p>-f 强制删除</p>
+<p>rm -rf / 删除全部文件</p>
+<h2 id="查看文件信息"><a href="#查看文件信息" class="headerlink" title="查看文件信息"></a>查看文件信息</h2><p>ls -l[hdi]</p>
+<p>-l 以列表的形式展示</p>
+<p>-h 优化文件大小的可读性</p>
+<p>-i 展示文件的信息</p>
+<p>-c 排序 按最后修改时间</p>
+<p>文件信息 = 节点号 + 文件类型及权限 + 硬链接数 + 属主 + 所归属的组 + 文件或目录的大小 + 最近修改时间 + 文件或目录名</p>
+<p>ls -ld */ 指数出目录，而不输出文件</p>
+<p>文件类型及权限，第一个字符为d代表文件夹，为-表示是文件</p>
+<h2 id="linux-统计技巧"><a href="#linux-统计技巧" class="headerlink" title="linux 统计技巧"></a>linux 统计技巧</h2><p>grep </p>
+<p>“^d” 表示目录</p>
+<p>“^-“ 表示文件</p>
+<p>wc （word count） -l（line）-c(character)</p>
+<p>查看当前目录下的文件数量（不包含子目录中的文件）</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">ls</span> -l <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"^-"</span> <span class="token operator">|</span> <span class="token function">wc</span></code></pre>
+<p>查看当前目录下的文件数量（包含子目录的文件），注意，R，代表递归子目录</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">ls</span> -lR <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"^-"</span> <span class="token operator">|</span> <span class="token function">wc</span></code></pre>
+<p>使用通配符查询目录下的所有文件数量</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">ls</span> -lR 20161124*/ <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"^-"</span> <span class="token operator">|</span> <span class="token function">wc</span> -l</code></pre>
+<h2 id="Linux-文件属性"><a href="#Linux-文件属性" class="headerlink" title="Linux 文件属性"></a>Linux 文件属性</h2><p>stat 命令（display file or file system status）</p>
+<p>stat -f, —file-system</p>
+<p>atime(Access time) 最后一次访问文件或目录的时间</p>
+<p>mtime(modify time) 最后一次修改文件或目录的时间</p>
+<p>ctime(change time) 最后一次改变文件或目录的时间</p>
+<h2 id="Linux-文件类型"><a href="#Linux-文件类型" class="headerlink" title="Linux 文件类型"></a>Linux 文件类型</h2><h3 id="普通文件类型"><a href="#普通文件类型" class="headerlink" title="普通文件类型"></a>普通文件类型</h3><ul>
+<li>纯文本文件</li>
+<li>二进制文件</li>
+<li>数据格式的文件</li>
+<li>各种压缩文件</li>
+<li>第一个属性为 [-]</li>
+</ul>
+<h3 id="目录文件"><a href="#目录文件" class="headerlink" title="目录文件"></a>目录文件</h3><ul>
+<li>能用 # cd 命令进入的</li>
+<li>第一个属性为 [d]，例如 [drwxrwxrwx]</li>
+</ul>
+<h3 id="块设备文件"><a href="#块设备文件" class="headerlink" title="块设备文件"></a>块设备文件</h3><ul>
+<li>就是存储数据以供系统存取的接口设备，简单而言就是硬盘。例如一号硬盘的代码时 /dev/hda1 等文件</li>
+<li>第一个属性为 [b]</li>
+</ul>
+<h3 id="字符设备文件"><a href="#字符设备文件" class="headerlink" title="字符设备文件"></a>字符设备文件</h3><ul>
+<li>串行端口的接口设备，例如键盘、鼠标等等。</li>
+<li>第一个属性名为 [c]</li>
+</ul>
+<h3 id="套接字文件"><a href="#套接字文件" class="headerlink" title="套接字文件"></a>套接字文件</h3><ul>
+<li>这类文件通常用在网络数据链接。</li>
+<li>可以启动一个程序来监听客户端的要求，客户端就可以通过套接字来进行数据通信。</li>
+<li>第一个属性为 [s]</li>
+<li>最常在 /var/run 目录中看到这种类型</li>
+</ul>
+<h3 id="管道文件"><a href="#管道文件" class="headerlink" title="管道文件"></a>管道文件</h3><ul>
+<li>FIFO 也是一种特殊的文件类型</li>
+<li>它主要的目的是，解决多个程序同时存取一个文件所造成的错误</li>
+<li>第一个属性为 [p]</li>
+</ul>
+<h3 id="链接文件-1"><a href="#链接文件-1" class="headerlink" title="链接文件"></a>链接文件</h3><ul>
+<li>蕾丝windows 的快捷方式。</li>
+<li>软链接，第一个属性为 [l]</li>
+</ul>
+<h2 id="Linux-文件与目录查找技巧"><a href="#Linux-文件与目录查找技巧" class="headerlink" title="Linux 文件与目录查找技巧"></a>Linux 文件与目录查找技巧</h2><p>find path [-option] [-print] [exec -ok command] {} \</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># ls -l a*</span>
+<span class="token comment" spellcheck="true"># find -name a</span>
+<span class="token comment" spellcheck="true"># find -name "a*"</span>
+<span class="token comment" spellcheck="true"># find -name "*copy"</span>
+<span class="token comment" spellcheck="true"># find -name "a*" -type f</span>
+<span class="token comment" spellcheck="true"># find -name "a*" -type d</span>
+<span class="token comment" spellcheck="true"># find -name "a*" -type d -maxdepth 1</span>
+<span class="token comment" spellcheck="true"># find -maxdepth 3 -type f -exec rm -rf {} +</span>
+<span class="token comment" spellcheck="true"># find -maxdepth 1 -type f -exec cat {} +</span></code></pre>
+<ul>
+<li>-name</li>
+<li>-perm 执行权限来查找</li>
+<li>-user 按文件属主来查找</li>
+<li>-group 按组来查找</li>
+<li>-ctime -1 一天之内创建的文件</li>
+<li>-mtime +1 一天之前修改的文件</li>
+<li>-atime 按文件的访问时间来查</li>
+<li>-nogroup 查找无有效属组的文件</li>
+<li>-nouser 查找无有效属主的文件</li>
+<li>-newer f1 !f2  查找更改时间比 f1 新 但比 f2 旧的文件</li>
+<li>-type b/d/c/p/l/f 块设备，目录，字符设备，管道，链接，文件</li>
+<li>-size n[c] 查找长度为 n 块或 n 字节的文件</li>
+<li>-depth 使查找在进入子目录之前先行查找完本目录</li>
+<li>-fstype 查找位于某一类型文件系统中的文件，这些文件系统类型通常可在 /etc/fstab中找到</li>
+<li>-mount 查找文件时，不跨越文件系统 mount 点</li>
+<li>-follow 如果遇到符号链接文件，就跟踪链接所指的文件</li>
+<li>-cpio 对匹配文件使用cpio 命令，将他们备份到磁带设备中</li>
+<li>-prune 忽略某个目录</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/linux/" rel="tag"># linux</a>
+              <a href="/tags/CentOS/" rel="tag"># CentOS</a>
+              <a href="/tags/%E5%BE%85%E7%BB%AD/" rel="tag"># 待续</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/06/02/OPS/%E9%85%8D%E7%BD%AE%20Node.js%20%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83/" rel="prev" title="LINUX 配置 Node 生产环境">
+      <i class="fa fa-chevron-left"></i> LINUX 配置 Node 生产环境
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/06/02/OS/CENTOS%20%E5%AD%A6%E4%B9%A0/" rel="next" title="CENTOS 7 学习">
+      CENTOS 7 学习 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一些命令示例"><span class="nav-number">1.</span> <span class="nav-text">一些命令示例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#帐号管理"><span class="nav-number"></span> <span class="nav-text">帐号管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加新的用户账号"><span class="nav-number">1.</span> <span class="nav-text">添加新的用户账号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除账户"><span class="nav-number">2.</span> <span class="nav-text">删除账户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改账户"><span class="nav-number">3.</span> <span class="nav-text">修改账户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户密码管理"><span class="nav-number">4.</span> <span class="nav-text">用户密码管理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户组管理"><span class="nav-number"></span> <span class="nav-text">用户组管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加用户组"><span class="nav-number">1.</span> <span class="nav-text">添加用户组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除用户组"><span class="nav-number">2.</span> <span class="nav-text">删除用户组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改用户组"><span class="nav-number">3.</span> <span class="nav-text">修改用户组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linux-用户权限相关"><span class="nav-number">4.</span> <span class="nav-text">linux 用户权限相关</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux-文件常用命令"><span class="nav-number"></span> <span class="nav-text">linux 文件常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建文件"><span class="nav-number">0.1.</span> <span class="nav-text">创建文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#复制文件"><span class="nav-number">0.2.</span> <span class="nav-text">复制文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#链接文件"><span class="nav-number">0.3.</span> <span class="nav-text">链接文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重命名（移动）文件"><span class="nav-number">0.4.</span> <span class="nav-text">重命名（移动）文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除文件"><span class="nav-number">0.5.</span> <span class="nav-text">删除文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux-目录常用命令"><span class="nav-number"></span> <span class="nav-text">linux 目录常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建目录"><span class="nav-number">1.</span> <span class="nav-text">创建目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复制目录"><span class="nav-number">2.</span> <span class="nav-text">复制目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链接目录"><span class="nav-number">3.</span> <span class="nav-text">链接目录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#软链接"><span class="nav-number">3.1.</span> <span class="nav-text">软链接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#目录不可硬链接"><span class="nav-number">3.2.</span> <span class="nav-text">目录不可硬链接</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重命名（移动）目录"><span class="nav-number">4.</span> <span class="nav-text">重命名（移动）目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除目录"><span class="nav-number">5.</span> <span class="nav-text">删除目录</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看文件信息"><span class="nav-number"></span> <span class="nav-text">查看文件信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux-统计技巧"><span class="nav-number"></span> <span class="nav-text">linux 统计技巧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-文件属性"><span class="nav-number"></span> <span class="nav-text">Linux 文件属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-文件类型"><span class="nav-number"></span> <span class="nav-text">Linux 文件类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#普通文件类型"><span class="nav-number">1.</span> <span class="nav-text">普通文件类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目录文件"><span class="nav-number">2.</span> <span class="nav-text">目录文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#块设备文件"><span class="nav-number">3.</span> <span class="nav-text">块设备文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符设备文件"><span class="nav-number">4.</span> <span class="nav-text">字符设备文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#套接字文件"><span class="nav-number">5.</span> <span class="nav-text">套接字文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#管道文件"><span class="nav-number">6.</span> <span class="nav-text">管道文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链接文件-1"><span class="nav-number">7.</span> <span class="nav-text">链接文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-文件与目录查找技巧"><span class="nav-number"></span> <span class="nav-text">Linux 文件与目录查找技巧</span></a></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="吕嘉文"
+      src="/images/icon.jpg">
+  <p class="site-author-name" itemprop="name">吕嘉文</p>
+  <div class="site-description" itemprop="description">记录生活、工作、学习的点点滴滴</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">106</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-at"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">吕嘉文</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

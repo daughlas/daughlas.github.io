@@ -1,0 +1,1729 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <meta name="msapplication-config" content="/images/browserconfig.xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="记录生活、工作、学习的点点滴滴">
+<meta property="og:type" content="website">
+<meta property="og:title" content="嘉文小栈">
+<meta property="og:url" content="http://yoursite.com/page/6/index.html">
+<meta property="og:site_name" content="嘉文小栈">
+<meta property="og:description" content="记录生活、工作、学习的点点滴滴">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="吕嘉文">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/page/6/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>嘉文小栈</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">嘉文小栈</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">每天进步一点点</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/02/algorithms/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="name" content="吕嘉文">
+      <meta itemprop="description" content="记录生活、工作、学习的点点滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉文小栈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/02/algorithms/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" class="post-title-link" itemprop="url">归并排序</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 14:08:38 / 修改时间：14:15:10" itemprop="dateCreated datePublished" datetime="2020-06-02T14:08:38+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># coding:utf-8</span>
+<span class="token keyword">def</span> <span class="token function">quick_sort</span><span class="token punctuation">(</span>alist<span class="token punctuation">,</span> first<span class="token punctuation">,</span> last<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> first <span class="token operator">>=</span> last<span class="token punctuation">:</span>
+        <span class="token keyword">return</span>
+    mid_value <span class="token operator">=</span> alist<span class="token punctuation">[</span>first<span class="token punctuation">]</span>
+    low <span class="token operator">=</span> first
+    high <span class="token operator">=</span> last
+    <span class="token keyword">while</span> low <span class="token operator">&lt;</span> high<span class="token punctuation">:</span>
+        <span class="token keyword">while</span> alist<span class="token punctuation">[</span>high<span class="token punctuation">]</span> <span class="token operator">>=</span> mid_value<span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># high 左移</span>
+            high <span class="token operator">-=</span> <span class="token number">1</span>
+        alist<span class="token punctuation">[</span>low<span class="token punctuation">]</span> <span class="token operator">=</span> alist<span class="token punctuation">[</span>high<span class="token punctuation">]</span>
+        <span class="token keyword">while</span> low <span class="token operator">&lt;</span> high <span class="token operator">and</span> alist<span class="token punctuation">[</span>low<span class="token punctuation">]</span> <span class="token operator">&lt;</span> mid_value<span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># low 右移</span>
+            low <span class="token operator">+=</span> <span class="token number">1</span>
+        alist<span class="token punctuation">[</span>high<span class="token punctuation">]</span> <span class="token operator">=</span> alist<span class="token punctuation">[</span>low<span class="token punctuation">]</span>
+    <span class="token comment" spellcheck="true"># 从整个循环退出来的时候 ，low == high</span>
+    alist<span class="token punctuation">[</span>low<span class="token punctuation">]</span> <span class="token operator">=</span> mid_value
+    <span class="token comment" spellcheck="true"># 对 low 左边的列表执行快排</span>
+    quick_sort<span class="token punctuation">(</span>alist<span class="token punctuation">,</span> first<span class="token punctuation">,</span> low <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># 对 low 右边的列表执行快排</span>
+    quick_sort<span class="token punctuation">(</span>alist<span class="token punctuation">,</span> low <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> last<span class="token punctuation">)</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    li <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">54</span><span class="token punctuation">,</span> <span class="token number">26</span><span class="token punctuation">,</span> <span class="token number">93</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">77</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">44</span><span class="token punctuation">,</span> <span class="token number">55</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">]</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span>
+    quick_sort<span class="token punctuation">(</span>li<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>len<span class="token punctuation">(</span>li<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span>
+</code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/02/algorithms/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="name" content="吕嘉文">
+      <meta itemprop="description" content="记录生活、工作、学习的点点滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉文小栈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/02/algorithms/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" class="post-title-link" itemprop="url">归并排序</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 14:07:53 / 修改时间：14:15:08" itemprop="dateCreated datePublished" datetime="2020-06-02T14:07:53+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># coding:utf-8</span>
+<span class="token keyword">def</span> <span class="token function">merge_sort</span><span class="token punctuation">(</span>alist<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    n <span class="token operator">=</span> len<span class="token punctuation">(</span>alist<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> n <span class="token operator">&lt;=</span> <span class="token number">1</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> alist
+    mid <span class="token operator">=</span> n <span class="token operator">//</span> <span class="token number">2</span>
+
+    <span class="token comment" spellcheck="true"># 采用归并排序后形成的有序的，新的列表</span>
+    left_li <span class="token operator">=</span> merge_sort<span class="token punctuation">(</span>alist<span class="token punctuation">[</span><span class="token punctuation">:</span>mid<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    right_li <span class="token operator">=</span> merge_sort<span class="token punctuation">(</span>alist<span class="token punctuation">[</span>mid<span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># 将两个有序的子序列合并为一个新的整体</span>
+    left_pointer<span class="token punctuation">,</span> right_pointer <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span>
+    result <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">while</span> left_pointer <span class="token operator">&lt;</span> len<span class="token punctuation">(</span>left_li<span class="token punctuation">)</span> <span class="token operator">and</span> right_pointer <span class="token operator">&lt;</span> len<span class="token punctuation">(</span>right_li<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> left_li<span class="token punctuation">[</span>left_pointer<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> right_li<span class="token punctuation">[</span>right_pointer<span class="token punctuation">]</span><span class="token punctuation">:</span>
+            result<span class="token punctuation">.</span>append<span class="token punctuation">(</span>left_li<span class="token punctuation">[</span>left_pointer<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            left_pointer <span class="token operator">+=</span> <span class="token number">1</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            result<span class="token punctuation">.</span>append<span class="token punctuation">(</span>right_li<span class="token punctuation">[</span>right_pointer<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            right_pointer <span class="token operator">+=</span> <span class="token number">1</span>
+    <span class="token comment" spellcheck="true"># 越界的切片返回空数组</span>
+    result <span class="token operator">+=</span> left_li<span class="token punctuation">[</span>left_pointer<span class="token punctuation">:</span><span class="token punctuation">]</span>
+    result <span class="token operator">+=</span> right_li<span class="token punctuation">[</span>right_pointer<span class="token punctuation">:</span><span class="token punctuation">]</span>
+    <span class="token keyword">return</span> result
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    li <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">54</span><span class="token punctuation">,</span> <span class="token number">26</span><span class="token punctuation">,</span> <span class="token number">93</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">77</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">44</span><span class="token punctuation">,</span> <span class="token number">55</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">]</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>merge_sort<span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/02/algorithms/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="name" content="吕嘉文">
+      <meta itemprop="description" content="记录生活、工作、学习的点点滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉文小栈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/02/algorithms/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/" class="post-title-link" itemprop="url">插入排序</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-02 14:05:51" itemprop="dateCreated datePublished" datetime="2020-06-02T14:05:51+08:00">2020-06-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-06 23:15:56" itemprop="dateModified" datetime="2020-08-06T23:15:56+08:00">2020-08-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># coding:utf-8</span>
+
+<span class="token keyword">def</span> <span class="token function">insert_sort</span><span class="token punctuation">(</span>alist<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    n <span class="token operator">=</span> len<span class="token punctuation">(</span>alist<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># for i in range(j + 1, 0, -1):</span>
+        <span class="token comment" spellcheck="true">#     if (alist[i] &lt; alist[i - 1]):</span>
+        <span class="token comment" spellcheck="true">#         alist[i - 1], alist[i] = alist[i], alist[i - 1]</span>
+        <span class="token comment" spellcheck="true">#     else:</span>
+        <span class="token comment" spellcheck="true">#         break</span>
+
+        i <span class="token operator">=</span> j <span class="token operator">+</span> <span class="token number">1</span>
+        <span class="token keyword">while</span> i <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>alist<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;</span> alist<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                alist<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> alist<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> alist<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> alist<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span>
+                i <span class="token operator">-=</span><span class="token number">1</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                <span class="token keyword">break</span>
+    <span class="token keyword">return</span> alist
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    li <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">54</span><span class="token punctuation">,</span> <span class="token number">26</span><span class="token punctuation">,</span> <span class="token number">93</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">77</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">44</span><span class="token punctuation">,</span> <span class="token number">55</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">]</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>insert_sort<span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span>
+    li2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>insert_sort<span class="token punctuation">(</span>li2<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    li3 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>insert_sort<span class="token punctuation">(</span>li3<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    li4 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>insert_sort<span class="token punctuation">(</span>li4<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    li5 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>insert_sort<span class="token punctuation">(</span>li5<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    li6 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>insert_sort<span class="token punctuation">(</span>li6<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/02/algorithms/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="name" content="吕嘉文">
+      <meta itemprop="description" content="记录生活、工作、学习的点点滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉文小栈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/02/algorithms/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" class="post-title-link" itemprop="url">冒泡排序</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 14:01:57 / 修改时间：14:15:13" itemprop="dateCreated datePublished" datetime="2020-06-02T14:01:57+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># coding:utf-8</span>
+<span class="token keyword">def</span> <span class="token function">bubble_sort</span><span class="token punctuation">(</span>alist<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token string">"冒泡排序"</span>
+    n <span class="token operator">=</span> len<span class="token punctuation">(</span>alist<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 产生了 n - 1 次</span>
+        count <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">-</span> i<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>alist<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">></span> alist<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                alist<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> alist<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> alist<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> alist<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
+                count <span class="token operator">+=</span> <span class="token number">1</span>
+        <span class="token keyword">if</span> count <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">break</span>
+    <span class="token keyword">return</span> alist
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    li <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>bubble_sort<span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/02/algorithms/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="name" content="吕嘉文">
+      <meta itemprop="description" content="记录生活、工作、学习的点点滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉文小栈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/02/algorithms/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/" class="post-title-link" itemprop="url">数组去重</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 13:59:04 / 修改时间：14:15:19" itemprop="dateCreated datePublished" datetime="2020-06-02T13:59:04+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 数组去重</span>
+<span class="token keyword">let</span> ary <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/* 方案1 SET */</span> 
+<span class="token comment" spellcheck="true">// let arr = [...new Set(ary)]</span>
+<span class="token comment" spellcheck="true">// let arr = Array.from(new Set(ary))</span>
+
+
+<span class="token comment" spellcheck="true">/* 方案2 拿出当前项和后面的内容进行比较 */</span>
+<span class="token comment" spellcheck="true">// 用当前项和后面的项去比较</span>
+<span class="token comment" spellcheck="true">// 双重 for 循环</span>
+<span class="token comment" spellcheck="true">/* 方案2.1 */</span> 
+<span class="token comment" spellcheck="true">// for (let i = 0; i&lt; ary.length - 1; i++) {</span>
+<span class="token comment" spellcheck="true">//   let item = ary[i]</span>
+<span class="token comment" spellcheck="true">//   let left  = ary.slice(i+1)</span>
+<span class="token comment" spellcheck="true">//   if (left.indexOf(item) >= 0) {</span>
+<span class="token comment" spellcheck="true">//     // splice 删除的问题：</span>
+<span class="token comment" spellcheck="true">//     // 1. 数组塌陷</span>
+<span class="token comment" spellcheck="true">//     // 2. 性能不好</span>
+<span class="token comment" spellcheck="true">//     ary.splice(i, 1)</span>
+<span class="token comment" spellcheck="true">//     i--</span>
+<span class="token comment" spellcheck="true">//   }</span>
+<span class="token comment" spellcheck="true">// }</span>
+
+<span class="token comment" spellcheck="true">/* 方案2.2 */</span>
+<span class="token comment" spellcheck="true">// 每一个新数组都是一个堆</span>
+<span class="token comment" spellcheck="true">// let arr = []</span>
+<span class="token comment" spellcheck="true">// for (let i = 0; i&lt;= ary.length - 1; i++) {</span>
+<span class="token comment" spellcheck="true">//   let item = ary[i]</span>
+<span class="token comment" spellcheck="true">//   let left  = ary.slice(i+1)</span>
+<span class="token comment" spellcheck="true">//   if (left.indexOf(item) === -1) {</span>
+<span class="token comment" spellcheck="true">//     arr.push(item)</span>
+<span class="token comment" spellcheck="true">//   }</span>
+<span class="token comment" spellcheck="true">// }</span>
+
+<span class="token comment" spellcheck="true">/* 方案2.3 */</span>
+<span class="token comment" spellcheck="true">// 赋值为 null 再 filter 一下</span>
+<span class="token comment" spellcheck="true">// for (let i = 0; i&lt; ary.length - 1; i++) {</span>
+<span class="token comment" spellcheck="true">//   let item = ary[i]</span>
+<span class="token comment" spellcheck="true">//   let left  = ary.slice(i+1)</span>
+<span class="token comment" spellcheck="true">//   if (left.indexOf(item) >= 0) {</span>
+<span class="token comment" spellcheck="true">//     ary[i] = null</span>
+<span class="token comment" spellcheck="true">//   }</span>
+<span class="token comment" spellcheck="true">// }</span>
+<span class="token comment" spellcheck="true">// let arr = ary</span>
+<span class="token comment" spellcheck="true">// arr = ary.filter(item => item !== null)</span>
+
+<span class="token comment" spellcheck="true">/* 方案2.4 */</span>
+<span class="token comment" spellcheck="true">// 用最后一项替换</span>
+<span class="token comment" spellcheck="true">// for (let i = 0; i&lt; ary.length - 1; i++) {</span>
+<span class="token comment" spellcheck="true">//   let item = ary[i]</span>
+<span class="token comment" spellcheck="true">//   let left  = ary.slice(i+1)</span>
+<span class="token comment" spellcheck="true">//   if (left.indexOf(item) >= 0) {</span>
+<span class="token comment" spellcheck="true">//     ary[i] = ary[ary.length - 1]</span>
+<span class="token comment" spellcheck="true">//     ary.length</span>
+<span class="token comment" spellcheck="true">//     i--</span>
+<span class="token comment" spellcheck="true">//   }</span>
+<span class="token comment" spellcheck="true">// }</span>
+<span class="token comment" spellcheck="true">// let arr = ary</span>
+
+<span class="token comment" spellcheck="true">/* 方案3 */</span>
+<span class="token comment" spellcheck="true">// 创建空容器，拿出一项，放到空容器中，之前看看还有没有</span>
+<span class="token comment" spellcheck="true">/* 方案3.1 对象键值对 */</span>
+<span class="token comment" spellcheck="true">// let obj = {}</span>
+<span class="token comment" spellcheck="true">// for (let i = 0; i &lt; ary.length; i++) {</span>
+<span class="token comment" spellcheck="true">//   let item = ary[i]</span>
+<span class="token comment" spellcheck="true">//   if(typeof obj[item] !== 'undefined') {</span>
+<span class="token comment" spellcheck="true">//     ary[i] = ary[ary.length - 1]</span>
+<span class="token comment" spellcheck="true">//     ary.length--</span>
+<span class="token comment" spellcheck="true">//     i--</span>
+<span class="token comment" spellcheck="true">//     continue</span>
+<span class="token comment" spellcheck="true">//   }</span>
+<span class="token comment" spellcheck="true">//   obj[ary[i]] = ary[i]</span>
+<span class="token comment" spellcheck="true">// }</span>
+<span class="token comment" spellcheck="true">// obj = null</span>
+<span class="token comment" spellcheck="true">// let arr = ary</span>
+
+<span class="token comment" spellcheck="true">/* 方案3.2 数组 */</span>
+<span class="token comment" spellcheck="true">// let arr = []</span>
+<span class="token comment" spellcheck="true">// for (let i = 0; i &lt; ary.length; i++) {</span>
+<span class="token comment" spellcheck="true">//   let item = ary[i]</span>
+<span class="token comment" spellcheck="true">//   if (arr.indexOf(item) === -1) {</span>
+<span class="token comment" spellcheck="true">//     arr.push(item)</span>
+<span class="token comment" spellcheck="true">//   }</span>
+<span class="token comment" spellcheck="true">// }</span>
+
+<span class="token comment" spellcheck="true">/* 方案4 先排序，相邻项比较，给予正则 */</span> 
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span></code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/02/algorithms/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="name" content="吕嘉文">
+      <meta itemprop="description" content="记录生活、工作、学习的点点滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉文小栈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/02/algorithms/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" class="post-title-link" itemprop="url">二分查找</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 13:57:08 / 修改时间：14:10:52" itemprop="dateCreated datePublished" datetime="2020-06-02T13:57:08+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>1</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">binary_search</span><span class="token punctuation">(</span>alist<span class="token punctuation">,</span> item<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token string">"二分查找，递归版本"</span>
+    n <span class="token operator">=</span> len<span class="token punctuation">(</span>alist<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> n <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span>
+        mid <span class="token operator">=</span> n <span class="token operator">//</span> <span class="token number">2</span>
+        <span class="token keyword">if</span> alist<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">==</span> item<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token boolean">True</span>
+        <span class="token keyword">elif</span> alist<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">&lt;</span> item<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> binary_search<span class="token punctuation">(</span>alist<span class="token punctuation">[</span>mid<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">,</span> item<span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> binary_search<span class="token punctuation">(</span>alist<span class="token punctuation">[</span><span class="token punctuation">:</span>mid<span class="token punctuation">]</span><span class="token punctuation">,</span> item<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token boolean">False</span></code></pre>
+<p>2</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">binary_search_2</span><span class="token punctuation">(</span>alist<span class="token punctuation">,</span> item<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token string">"二分查找，非递归版本"</span>
+    n <span class="token operator">=</span> len<span class="token punctuation">(</span>alist<span class="token punctuation">)</span>
+    first <span class="token operator">=</span> <span class="token number">0</span>
+    end <span class="token operator">=</span> n <span class="token operator">-</span> <span class="token number">1</span>
+    <span class="token keyword">while</span> end <span class="token operator">>=</span> first<span class="token punctuation">:</span>
+        mid <span class="token operator">=</span> <span class="token punctuation">(</span>first <span class="token operator">+</span> end<span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">2</span>
+        <span class="token keyword">if</span> alist<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">==</span> item<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token boolean">True</span>
+        <span class="token keyword">elif</span> alist<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">&lt;</span> item<span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># 右边查找</span>
+            first <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># 左边查找</span>
+            end <span class="token operator">=</span> mid <span class="token operator">-</span> <span class="token number">1</span>
+    <span class="token keyword">return</span> <span class="token boolean">False</span></code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/02/temp/Node.js%20%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E5%8C%BA%E5%9D%97%E9%93%BE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="name" content="吕嘉文">
+      <meta itemprop="description" content="记录生活、工作、学习的点点滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉文小栈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/02/temp/Node.js%20%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E5%8C%BA%E5%9D%97%E9%93%BE/" class="post-title-link" itemprop="url">Node.js 实现一个简单的区块链</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 13:50:49 / 修改时间：14:44:49" itemprop="dateCreated datePublished" datetime="2020-06-02T13:50:49+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%B4%E6%97%B6/" itemprop="url" rel="index"><span itemprop="name">临时</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Node-js-实现一个简单的区块链"><a href="#Node-js-实现一个简单的区块链" class="headerlink" title="Node.js 实现一个简单的区块链"></a>Node.js 实现一个简单的区块链</h1><h3 id="blockchain-js"><a href="#blockchain-js" class="headerlink" title="blockchain.js"></a>blockchain.js</h3><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">const</span> crypto <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'crypto'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> initBlock <span class="token operator">=</span> <span class="token punctuation">{</span> 
+  index<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  data<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  prevHash<span class="token punctuation">:</span> <span class="token string">'0'</span><span class="token punctuation">,</span>
+  hash<span class="token punctuation">:</span> <span class="token string">'000076b0b009d79eea894aedcaa2325c2984fef49f3c53a3b5fcbc48a581cc52'</span><span class="token punctuation">,</span>
+  timestamp<span class="token punctuation">:</span> <span class="token number">1550374969656</span><span class="token punctuation">,</span>
+  nonce<span class="token punctuation">:</span> <span class="token number">5492</span> 
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Blockchain</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>blockchain <span class="token operator">=</span> <span class="token punctuation">[</span>initBlock<span class="token punctuation">]</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>data <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>difficulty <span class="token operator">=</span> <span class="token number">6</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment" spellcheck="true">// 获取最新区块</span>
+  <span class="token function">getLastBlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>blockchain<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>blockchain<span class="token punctuation">.</span>length <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">balance</span><span class="token punctuation">(</span>address<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> balance <span class="token operator">=</span>  <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>blockchain<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>block <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>block<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> 
+      <span class="token punctuation">}</span>
+      block<span class="token punctuation">.</span>data<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>trans <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>address <span class="token operator">===</span> trans<span class="token punctuation">.</span><span class="token keyword">from</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          balance <span class="token operator">-</span><span class="token operator">=</span> trans<span class="token punctuation">.</span>amount
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>address <span class="token operator">===</span> trans<span class="token punctuation">.</span>to<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          balance <span class="token operator">+</span><span class="token operator">=</span> trans<span class="token punctuation">.</span>amount
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> balance
+  <span class="token punctuation">}</span>
+
+  <span class="token comment" spellcheck="true">// 挖矿 打包交易</span>
+  <span class="token function">mine</span><span class="token punctuation">(</span>address<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 挖矿结束 矿工奖励 每次挖矿成功给 100</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">transfer</span><span class="token punctuation">(</span><span class="token string">'0'</span><span class="token punctuation">,</span> address<span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> newBlock <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">generateNewBlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 区块合法，并且区块链合法，就新增一下</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">isValidBlock</span><span class="token punctuation">(</span>newBlock<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">isValidChain</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>blockchain<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>newBlock<span class="token punctuation">)</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>data <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+      <span class="token keyword">return</span> newBlock
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Error, Invalid Block'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">generateNewBlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 1. 生成新区块</span>
+    <span class="token comment" spellcheck="true">// 2. 不停的计算 hash 直到符合条件的哈希值，获得记账权</span>
+    <span class="token keyword">let</span> nonce <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">const</span> index <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>blockchain<span class="token punctuation">.</span>length <span class="token comment" spellcheck="true">// 区块索引值</span>
+    <span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data
+    <span class="token keyword">const</span> prevHash <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getLastBlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>hash
+    <span class="token keyword">let</span> timestamp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">let</span> hash  <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">computeHash</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> prevHash<span class="token punctuation">,</span> timestamp<span class="token punctuation">,</span>data<span class="token punctuation">,</span> nonce<span class="token punctuation">)</span>
+
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>hash<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>difficulty<span class="token punctuation">)</span> <span class="token operator">!==</span> <span class="token string">'0'</span><span class="token punctuation">.</span><span class="token function">repeat</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>difficulty<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      nonce <span class="token operator">+</span><span class="token operator">=</span><span class="token number">1</span>
+      hash  <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">computeHash</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> prevHash<span class="token punctuation">,</span> timestamp<span class="token punctuation">,</span>data<span class="token punctuation">,</span> nonce<span class="token punctuation">)</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'mine'</span><span class="token punctuation">,</span> nonce<span class="token punctuation">,</span> hash<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      index<span class="token punctuation">,</span>
+      data<span class="token punctuation">,</span>
+      prevHash<span class="token punctuation">,</span>
+      hash<span class="token punctuation">,</span>
+      timestamp<span class="token punctuation">,</span>
+      nonce
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">computeHashForBlock</span><span class="token punctuation">(</span>block<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">computeHash</span><span class="token punctuation">(</span>block<span class="token punctuation">.</span>index<span class="token punctuation">,</span> block<span class="token punctuation">.</span>prevHash<span class="token punctuation">,</span> block<span class="token punctuation">.</span>timestamp<span class="token punctuation">,</span> block<span class="token punctuation">.</span>data<span class="token punctuation">,</span> block<span class="token punctuation">.</span>nonce<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">computeHash</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> prevHash<span class="token punctuation">,</span> timestamp<span class="token punctuation">,</span> data<span class="token punctuation">,</span> nonce<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> crypto
+      <span class="token punctuation">.</span><span class="token function">createHash</span><span class="token punctuation">(</span><span class="token string">'sha256'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span>index <span class="token operator">+</span> prevHash <span class="token operator">+</span> timestamp <span class="token operator">+</span> data <span class="token operator">+</span> nonce<span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">digest</span><span class="token punctuation">(</span><span class="token string">'hex'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">isValidBlock</span><span class="token punctuation">(</span>newBlock<span class="token punctuation">,</span> lastBlock<span class="token operator">=</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getLastBlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 区块的 index = 最新区块的index + 1</span>
+    <span class="token comment" spellcheck="true">// 新区块的timestamp 大于最后一个区块</span>
+    <span class="token comment" spellcheck="true">// 最新区块的 prevHash = 最后一个区块的 hash</span>
+    <span class="token comment" spellcheck="true">// 区块的 hash 值 符合难度要求</span>
+    <span class="token comment" spellcheck="true">// 新区快 hash 计算正确</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span> newBlock<span class="token punctuation">.</span>index <span class="token operator">!==</span> lastBlock<span class="token punctuation">.</span>index <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>newBlock<span class="token punctuation">.</span>timestamp <span class="token operator">&lt;=</span> lastBlock<span class="token punctuation">.</span>timestamp<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>newBlock<span class="token punctuation">.</span>prevHash <span class="token operator">!==</span> lastBlock<span class="token punctuation">.</span>hash<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>newBlock<span class="token punctuation">.</span>hash<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>difficulty<span class="token punctuation">)</span> <span class="token operator">!==</span> <span class="token string">'0'</span><span class="token punctuation">.</span><span class="token function">repeat</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>difficulty<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>newBlock<span class="token punctuation">.</span>hash <span class="token operator">!==</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">computeHashForBlock</span><span class="token punctuation">(</span>newBlock<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">isValidChain</span><span class="token punctuation">(</span>chain<span class="token operator">=</span><span class="token keyword">this</span><span class="token punctuation">.</span>blockchain<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 校验除了创世区块之外的区块</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span>chain<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">>=</span><span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">=</span>i<span class="token number">-1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">isValidBlock</span><span class="token punctuation">(</span>chain<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> chain<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Error, Invalid Chain'</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">// 校验创世区块</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>chain<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">!==</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>initBlock<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Error, Invalid Genesis Block'</span><span class="token punctuation">)</span>
+      <span class="token keyword">return</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">transfer</span><span class="token punctuation">(</span><span class="token keyword">from</span><span class="token punctuation">,</span> to<span class="token punctuation">,</span> amount<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">from</span> <span class="token operator">!==</span> <span class="token string">'0'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// 交易非挖矿</span>
+      <span class="token keyword">const</span> balance <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">balance</span><span class="token punctuation">(</span><span class="token keyword">from</span><span class="token punctuation">)</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>balance <span class="token operator">&lt;</span> amount<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'not enough balance'</span><span class="token punctuation">,</span> <span class="token keyword">from</span><span class="token punctuation">,</span> balance<span class="token punctuation">,</span> amount<span class="token punctuation">)</span>
+        <span class="token keyword">return</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">// 签名校验（后面完成）</span>
+    <span class="token keyword">const</span> transObj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token keyword">from</span><span class="token punctuation">,</span> to<span class="token punctuation">,</span> amount<span class="token punctuation">}</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>transObj<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> transObj
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// let bc = new Blockchain()</span>
+<span class="token comment" spellcheck="true">// bc.mine()</span>
+<span class="token comment" spellcheck="true">// bc.blockchain[1].nonce = '3123123'</span>
+<span class="token comment" spellcheck="true">// bc.mine()</span>
+<span class="token comment" spellcheck="true">// bc.mine()</span>
+<span class="token comment" spellcheck="true">// bc.mine()</span>
+<span class="token comment" spellcheck="true">// bc.mine()</span>
+<span class="token comment" spellcheck="true">// console.log(bc.blockchain)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> Blockchain</code></pre>
+<h3 id="index-js"><a href="#index-js" class="headerlink" title="index.js"></a>index.js</h3><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">const</span> vorpal <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'vorpal'</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> Blockchain <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./blockchain'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> blockchain <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Blockchain</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> Table <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'cli-table'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> table <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Table</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  head<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'TH 1 label'</span><span class="token punctuation">,</span> <span class="token string">'TH 2 label'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  colWidths<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">// 原始值: [{name: 'woniu', age: 18}, {name: 'imooc', age: 22}]</span>
+<span class="token keyword">function</span> <span class="token function">formatLog</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    data <span class="token operator">=</span> <span class="token punctuation">[</span>data<span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">const</span> first <span class="token operator">=</span> data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+  <span class="token keyword">const</span> head <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>first<span class="token punctuation">)</span>
+  <span class="token keyword">const</span> table <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Table</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    head<span class="token punctuation">:</span> head<span class="token punctuation">,</span>
+    colWidths<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span>head<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> res <span class="token operator">=</span> data<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>v <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> head<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>h <span class="token operator">=</span><span class="token operator">></span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>v<span class="token punctuation">[</span>h<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  table<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">...</span>res<span class="token punctuation">)</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>table<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+vorpal
+  <span class="token punctuation">.</span><span class="token function">command</span><span class="token punctuation">(</span><span class="token string">'balance &lt;address>'</span><span class="token punctuation">,</span> <span class="token string">'查询余额'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">action</span><span class="token punctuation">(</span><span class="token punctuation">(</span>args<span class="token punctuation">,</span> callback<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> balance <span class="token operator">=</span> blockchain<span class="token punctuation">.</span><span class="token function">balance</span><span class="token punctuation">(</span>args<span class="token punctuation">.</span>address<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>balance<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">formatLog</span><span class="token punctuation">(</span><span class="token punctuation">{</span>address<span class="token punctuation">:</span> args<span class="token punctuation">.</span>address<span class="token punctuation">,</span> balance<span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">callback</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+vorpal
+  <span class="token punctuation">.</span><span class="token function">command</span><span class="token punctuation">(</span><span class="token string">'detail &lt;index>'</span><span class="token punctuation">,</span> <span class="token string">'查看区块详情'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">action</span><span class="token punctuation">(</span><span class="token punctuation">(</span>args<span class="token punctuation">,</span> callback<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> block <span class="token operator">=</span> blockchain<span class="token punctuation">.</span>blockchain<span class="token punctuation">[</span>args<span class="token punctuation">.</span>index<span class="token punctuation">]</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>block<span class="token punctuation">,</span> <span class="token keyword">null</span> <span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token function">callback</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+vorpal
+  <span class="token punctuation">.</span><span class="token function">command</span><span class="token punctuation">(</span><span class="token string">'trans &lt;from> &lt;to> &lt;amount>'</span><span class="token punctuation">,</span> <span class="token string">'挖矿'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">action</span><span class="token punctuation">(</span><span class="token punctuation">(</span>args<span class="token punctuation">,</span> callback<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> trans <span class="token operator">=</span> blockchain<span class="token punctuation">.</span><span class="token function">transfer</span><span class="token punctuation">(</span>args<span class="token punctuation">.</span><span class="token keyword">from</span><span class="token punctuation">,</span> args<span class="token punctuation">.</span>to<span class="token punctuation">,</span> args<span class="token punctuation">.</span>amount<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>trans<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">formatLog</span><span class="token punctuation">(</span>trans<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">callback</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+vorpal
+  <span class="token punctuation">.</span><span class="token function">command</span><span class="token punctuation">(</span><span class="token string">'mine &lt;address>'</span><span class="token punctuation">,</span> <span class="token string">'挖矿'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">action</span><span class="token punctuation">(</span><span class="token punctuation">(</span>args<span class="token punctuation">,</span> callback<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> newBlock <span class="token operator">=</span> blockchain<span class="token punctuation">.</span><span class="token function">mine</span><span class="token punctuation">(</span>args<span class="token punctuation">.</span>address<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>newBlock<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">formatLog</span><span class="token punctuation">(</span>newBlock<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">callback</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+vorpal
+  <span class="token punctuation">.</span><span class="token function">command</span><span class="token punctuation">(</span><span class="token string">'chain'</span><span class="token punctuation">,</span> <span class="token string">'查看区块链'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">action</span><span class="token punctuation">(</span><span class="token punctuation">(</span>args<span class="token punctuation">,</span> callback<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token function">formatLog</span><span class="token punctuation">(</span>blockchain<span class="token punctuation">.</span>blockchain<span class="token punctuation">)</span>
+    <span class="token function">callback</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Welcome to ljw-block-chain'</span><span class="token punctuation">)</span>
+
+vorpal<span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span><span class="token string">'help'</span><span class="token punctuation">)</span>
+
+vorpal
+  <span class="token punctuation">.</span><span class="token function">delimiter</span><span class="token punctuation">(</span><span class="token string">'ljw-block-chain => '</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/02/tools/%E5%A5%BD%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7%E9%9B%86%E5%90%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="name" content="吕嘉文">
+      <meta itemprop="description" content="记录生活、工作、学习的点点滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉文小栈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/02/tools/%E5%A5%BD%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7%E9%9B%86%E5%90%88/" class="post-title-link" itemprop="url">好用的工具集合</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 11:33:05 / 修改时间：11:33:16" itemprop="dateCreated datePublished" datetime="2020-06-02T11:33:05+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">工具</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/02/fe-frameworkds/imooc%20react-native%20%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="name" content="吕嘉文">
+      <meta itemprop="description" content="记录生活、工作、学习的点点滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉文小栈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/02/fe-frameworkds/imooc%20react-native%20%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">imooc react-native 项目笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 10:53:17 / 修改时间：18:45:58" itemprop="dateCreated datePublished" datetime="2020-06-02T10:53:17+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index"><span itemprop="name">前端框架</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="imooc-react-native-项目笔记"><a href="#imooc-react-native-项目笔记" class="headerlink" title="imooc react-native 项目笔记"></a>imooc react-native 项目笔记</h1><h2 id="React-基础知识"><a href="#React-基础知识" class="headerlink" title="React 基础知识"></a>React 基础知识</h2><blockquote>
+<p>声明式与命令式</p>
+</blockquote>
+<blockquote>
+<p>命令式编程：命令“机器”如何去做事情（how），这样不管你想要的是什么（what），他都会按照你的命令实现<br>声明式编程：高速“机器“你想要的是什么（what），让机器想出如何去做(how)</p>
+</blockquote>
+<h3 id="如何返回多个顶级标签"><a href="#如何返回多个顶级标签" class="headerlink" title="如何返回多个顶级标签"></a>如何返回多个顶级标签</h3><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">HelloMessage</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+    <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> views <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        views<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>h1<span class="token operator">></span>Hello world<span class="token operator">!</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span><span class="token punctuation">)</span>
+        views<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>h1<span class="token operator">></span>I am Lv Jiawen<span class="token punctuation">.</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>HelloMessage <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">,</span>
+    document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'root'</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span></code></pre>
+<h3 id="渲染子节点"><a href="#渲染子节点" class="headerlink" title="渲染子节点"></a>渲染子节点</h3><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">Comp</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+    <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>
+            <span class="token operator">&lt;</span>ul<span class="token operator">></span>
+                <span class="token punctuation">{</span>
+                    React<span class="token punctuation">.</span>children<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>children<span class="token punctuation">,</span> <span class="token punctuation">(</span>child<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+                        <span class="token keyword">return</span> <span class="token operator">&lt;</span>h1<span class="token operator">></span><span class="token punctuation">{</span>child<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span>
+                    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">></span>
+        <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>Comp<span class="token operator">></span>
+        <span class="token operator">&lt;</span>span<span class="token operator">></span>hello<span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span>
+        <span class="token operator">&lt;</span>span<span class="token operator">></span>world<span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span>
+        <span class="token operator">&lt;</span>span<span class="token operator">></span>lvjiawen<span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>Comp<span class="token operator">></span><span class="token punctuation">,</span>
+    document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'root'</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span></code></pre>
+<h3 id="PropTypes"><a href="#PropTypes" class="headerlink" title="PropTypes"></a>PropTypes</h3><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">import</span> PropTypes <span class="token keyword">from</span> <span class="token string">'prop-types'</span>
+<span class="token keyword">class</span> <span class="token class-name">Comp</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> propTypes <span class="token operator">=</span> <span class="token punctuation">{</span>
+        title<span class="token punctuation">:</span> PropTypes<span class="token punctuation">.</span>string<span class="token punctuation">.</span>isRequired
+    <span class="token punctuation">}</span>
+    <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// ....</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="默认属性"><a href="#默认属性" class="headerlink" title="默认属性"></a>默认属性</h3><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">Comp</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> defaultProps <span class="token operator">=</span> <span class="token punctuation">{</span>
+        shortName<span class="token punctuation">:</span> <span class="token string">'MyTitle'</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// ....</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="ref属性（获取真实-DOM）"><a href="#ref属性（获取真实-DOM）" class="headerlink" title="ref属性（获取真实 DOM）"></a>ref属性（获取真实 DOM）</h3><p>mount 之后才能拿到 $refs</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">Alert</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
+    <span class="token function">showAlert</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">alert</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`Debug:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>message<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">null</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">MyTitle</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+    onClick <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>alert<span class="token punctuation">.</span><span class="token function">showAlert</span><span class="token punctuation">(</span><span class="token string">'MyTitle'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>
+            <span class="token operator">&lt;</span>div<span class="token operator">></span>
+                <span class="token operator">&lt;</span>h1 onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>onClick<span class="token punctuation">}</span><span class="token operator">></span>Click me<span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span>
+                <span class="token operator">&lt;</span>Alert ref<span class="token operator">=</span><span class="token string">'alert'</span><span class="token operator">/</span><span class="token operator">></span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+        <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="state"><a href="#state" class="headerlink" title="state"></a>state</h3><p>用户交互之后，组件自身会改变的一些属性</p>
+<p>props 是组件自身无法改变的属性</p>
+<h3 id="组件生命周期"><a href="#组件生命周期" class="headerlink" title="组件生命周期"></a>组件生命周期</h3><ul>
+<li><p>IOS</p>
+<ul>
+<li>(void) viewWillAppear: (BOOL)animated</li>
+<li>(void) viewDidLoad</li>
+<li>(void) viewWillDisappear: (BOOL)animated</li>
+</ul>
+</li>
+<li><p>Android  Activity 提供了</p>
+<ul>
+<li>onCreate()</li>
+<li>onStart()</li>
+<li>onResume()</li>
+<li>onPause()</li>
+<li>onStop()</li>
+<li>onDestroy()</li>
+</ul>
+</li>
+<li><p>react</p>
+<ul>
+<li>初始化阶段<ol>
+<li><strong>constructor</strong></li>
+<li>static getDerivedStateFromProps()</li>
+<li><strong>componentWillMount()</strong> / UNSAFE_componentWillMount()</li>
+<li><strong>render()</strong></li>
+<li><strong>componentDidMount()</strong></li>
+</ol>
+</li>
+<li>更新阶段（props 或者 state 的改变可能会引起组件的更新，组件重新渲染的过程中会调用）<ol>
+<li>componentWillReceiveProps()</li>
+<li>UNSAFE_componentWillReceiveProps()</li>
+<li>static getDerivedStateFromProps()</li>
+<li>shouldComponentUpdate()</li>
+<li><strong>componentWillUpdate()</strong> / UNSAFE_componentWillUpdate()：内存里边，数据已经是最新的了，界面还没有更新</li>
+<li><strong>render()</strong></li>
+<li>getSnapshotBeforeUpdate()</li>
+<li><strong>componentDidUpdate()</strong></li>
+</ol>
+</li>
+<li>卸载阶段<ol>
+<li>componentWillUnmount()</li>
+</ol>
+</li>
+<li>错误处理<ol>
+<li>componentDidCatch()</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="render"><a href="#render" class="headerlink" title="render"></a>render</h3><ul>
+<li>返回<ul>
+<li>react 元素</li>
+<li>字符串、数字</li>
+<li>null</li>
+<li>布尔值</li>
+</ul>
+</li>
+</ul>
+<h3 id="componentDidMount"><a href="#componentDidMount" class="headerlink" title="componentDidMount"></a>componentDidMount</h3><p>  组件被装配之后立即调用</p>
+<p>  componentDidMount 在 render 方法之后执行的，componentDidMount 可以获取到真是的 DOM 节点</p>
+<h3 id="shouldComponentUpdate"><a href="#shouldComponentUpdate" class="headerlink" title="shouldComponentUpdate"></a>shouldComponentUpdate</h3><p>  初始化渲染不会调用该方法</p>
+<pre class=" language-javascript"><code class="language-javascript">  <span class="token function">shouldComponentUpdate</span><span class="token punctuation">(</span>nextProps<span class="token punctuation">,</span> nextState<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token boolean">true</span> <span class="token operator">/</span> <span class="token boolean">false</span>
+  <span class="token punctuation">}</span></code></pre>
+<h3 id="componentDidUpdate"><a href="#componentDidUpdate" class="headerlink" title="componentDidUpdate"></a>componentDidUpdate</h3><h3 id="componentWillUnmount"><a href="#componentWillUnmount" class="headerlink" title="componentWillUnmount"></a>componentWillUnmount</h3><p>  组件从DOM 中一处的时候立即被调用。清除定时器，在 componentDidMount 创建的一些东西。</p>
+<h2 id="React-native-布局知识"><a href="#React-native-布局知识" class="headerlink" title="React-native 布局知识"></a>React-native 布局知识</h2><p>react-native 中，宽高没有单位，代表设备的独立像素</p>
+<h3 id="react-native-flex-box-与-web-css-flex-box-的不同"><a href="#react-native-flex-box-与-web-css-flex-box-的不同" class="headerlink" title="react-native flex box 与 web css flex box 的不同"></a>react-native flex box 与 web css flex box 的不同</h3><ul>
+<li>在 react-native 中 flexDirection 默认为 ’column’，在css 中 flex-direction 默认为 row</li>
+<li>在 react-native 中 alignItems 默认为 ’stretch’，在css 中 align-items 默认为 ‘flex-start’</li>
+<li>在 react-native 中 flex 只接受一个参数，在css 中 flex 默认为 ‘2 2 10%’</li>
+<li>react-native 不支持 align-content, flex-basis, order, flex-flow, flex-grow, flex-shrink</li>
+</ul>
+<h3 id="父亲视图属性"><a href="#父亲视图属性" class="headerlink" title="父亲视图属性"></a>父亲视图属性</h3><ul>
+<li>flexDirection：row, column, row-reverse, column-reverse</li>
+<li>flexWrap：wrap, nowrap</li>
+<li>justifyContent: flex-start, flex-end, center, space-between, space-around</li>
+<li>alignItems: flex-start, flex-end, center, stretch</li>
+</ul>
+<h3 id="子视图属性"><a href="#子视图属性" class="headerlink" title="子视图属性"></a>子视图属性</h3><ul>
+<li>alignSelf：重写父视图中alignItems</li>
+<li>flex：定义一个元素可伸缩的能力，默认为0</li>
+</ul>
+<h2 id="React-navigation"><a href="#React-navigation" class="headerlink" title="React-navigation"></a>React-navigation</h2><h3 id="什么是导航器？"><a href="#什么是导航器？" class="headerlink" title="什么是导航器？"></a>什么是导航器？</h3><p>导航器也可以堪称是一个普通的 react 组件</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/02/OPS/PM2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="name" content="吕嘉文">
+      <meta itemprop="description" content="记录生活、工作、学习的点点滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉文小栈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/02/OPS/PM2/" class="post-title-link" itemprop="url">PM2</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 10:45:08 / 修改时间：16:26:14" itemprop="dateCreated datePublished" datetime="2020-06-02T10:45:08+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%BF%90%E7%BB%B4/" itemprop="url" rel="index"><span itemprop="name">运维</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="PM2"><a href="#PM2" class="headerlink" title="PM2"></a>PM2</h2><p>pm2（process manager）是一个进程管理工具，维护一个进程列表，可以用它来管理你的node进程，负责所有正在运行的进程，并查看node进程的状态，也支持性能监控，负载均衡等功能。</p>
+<ul>
+<li>进程守护，系统崩溃自动重启</li>
+<li>启动多进程，充分利用 CPU 和内存</li>
+<li>自带日志记录功能</li>
+</ul>
+<h3 id="PM2-介绍"><a href="#PM2-介绍" class="headerlink" title="PM2 介绍"></a>PM2 介绍</h3><h4 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h4><p><code>npm install pm2 -g</code></p>
+<p><code>pm2 --version</code></p>
+<h4 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h4><p>启动 <code>cross-env NODE_ENV=production pm2 start app.js</code></p>
+<p>查看 <code>pm2 list</code></p>
+<h4 id="核心价值"><a href="#核心价值" class="headerlink" title="核心价值"></a>核心价值</h4><ul>
+<li>进程守护</li>
+<li>多进程启动</li>
+<li>线上日志记录</li>
+</ul>
+<h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><p><code>pm2 start …</code> 可以跟配置文件作为参数</p>
+<p><code>pm2 list</code> 程序列表</p>
+<p><code>pm2 restart ${appName|/${id}</code>  重启进程</p>
+<p><code>pm2 stop ${appName|/${id}</code>停止</p>
+<p><code>pm2 delete ${appName|/${id}</code> 删除</p>
+<p><code>pm2 info ${appName|/${id}</code> 信息</p>
+<p><code>pm2 log ${appName|/${id}</code> 日志</p>
+<p><code>pm2 monit ${appName|/${id}</code> 监控</p>
+<h3 id="PM2-进程守护"><a href="#PM2-进程守护" class="headerlink" title="PM2 进程守护"></a>PM2 进程守护</h3><p>pm2 遇到进程崩溃，会自动重启</p>
+<h3 id="PM2-配置和日志记录"><a href="#PM2-配置和日志记录" class="headerlink" title="PM2 配置和日志记录"></a>PM2 配置和日志记录</h3><h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><ul>
+<li>新建 PM2 配置文件（包括进程数量，日志文件目录等）</li>
+</ul>
+<p>pm2.config.json</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token punctuation">{</span>
+  <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"pm2-test-server"</span><span class="token punctuation">,</span>
+  <span class="token string">"script"</span><span class="token punctuation">:</span> <span class="token string">"app.js"</span><span class="token punctuation">,</span>
+  <span class="token string">"watch"</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 是否监听文件变化</span>
+  <span class="token string">"ignore_watch"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"node_modules"</span><span class="token punctuation">,</span>
+    <span class="token string">"logs"</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token string">"error_file"</span><span class="token punctuation">:</span> <span class="token string">"logs/err.log"</span><span class="token punctuation">,</span>
+  <span class="token string">"out_file"</span><span class="token punctuation">:</span> <span class="token string">"logs/out.log"</span><span class="token punctuation">,</span>
+  <span class="token string">"log_date_format"</span><span class="token punctuation">:</span> <span class="token string">"YYYY-MM-DD HH:mm:ss"</span>
+<span class="token punctuation">}</span></code></pre>
+<ul>
+<li>修改 PM2 启动命令，重启</li>
+<li>访问 server，检查日志文件的内容（日志记录是否生效）</li>
+</ul>
+<h3 id="PM2-多进程"><a href="#PM2-多进程" class="headerlink" title="PM2 多进程"></a>PM2 多进程</h3><h4 id="为何使用多进程"><a href="#为何使用多进程" class="headerlink" title="为何使用多进程"></a>为何使用多进程</h4><p><img src="/images/image-20190628101837144.png" alt="image-20190628101837144"></p>
+<ul>
+<li>单个进程的内存是受到限制的</li>
+<li>一个进程无法利用机器的全部内存</li>
+<li>多进程能够充分利用 CPU 多核的优势</li>
+</ul>
+<h4 id="多进程和-redis"><a href="#多进程和-redis" class="headerlink" title="多进程和 redis"></a>多进程和 redis</h4><p>多个进程的 session 无法共享</p>
+<p><img src="/images/image-20190628102048890.png" alt="image-20190628102048890"></p>
+<p>使用redis 解决</p>
+<p><img src="/images/image-20190628102123289.png" alt="image-20190628102123289"></p>
+<p>pm2 会自动在寻找空闲进程进行负载均衡</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="吕嘉文"
+      src="/images/icon.jpg">
+  <p class="site-author-name" itemprop="name">吕嘉文</p>
+  <div class="site-description" itemprop="description">记录生活、工作、学习的点点滴滴</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">106</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-at"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">吕嘉文</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

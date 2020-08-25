@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <meta name="msapplication-config" content="/images/browserconfig.xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="express 整体感知 出色的路由能力，正则，“：”方法等 静态文件处理，用 app.use(express.static(&#39;.&#x2F;public&#39;)&#39;就行了 与模板引擎配合  static express.static 实现静态页面服务 express.static 和路由冲突的时候，看谁在上面，就会把路由拦截下来  路由 app.get(网址, 回调)，当用get 方法访">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习 Express 框架">
+<meta property="og:url" content="http://yoursite.com/2020/06/02/node/%E5%AD%A6%E4%B9%A0%20express%20%E6%A1%86%E6%9E%B6/index.html">
+<meta property="og:site_name" content="嘉文小栈">
+<meta property="og:description" content="express 整体感知 出色的路由能力，正则，“：”方法等 静态文件处理，用 app.use(express.static(&#39;.&#x2F;public&#39;)&#39;就行了 与模板引擎配合  static express.static 实现静态页面服务 express.static 和路由冲突的时候，看谁在上面，就会把路由拦截下来  路由 app.get(网址, 回调)，当用get 方法访">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-02T02:26:50.337Z">
+<meta property="article:modified_time" content="2020-06-02T06:44:49.098Z">
+<meta property="article:author" content="吕嘉文">
+<meta property="article:tag" content="Node.js">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/06/02/node/%E5%AD%A6%E4%B9%A0%20express%20%E6%A1%86%E6%9E%B6/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>学习 Express 框架 | 嘉文小栈</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">嘉文小栈</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">每天进步一点点</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/02/node/%E5%AD%A6%E4%B9%A0%20express%20%E6%A1%86%E6%9E%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="name" content="吕嘉文">
+      <meta itemprop="description" content="记录生活、工作、学习的点点滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉文小栈">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          学习 Express 框架
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 10:26:50 / 修改时间：14:44:49" itemprop="dateCreated datePublished" datetime="2020-06-02T10:26:50+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Node/" itemprop="url" rel="index"><span itemprop="name">Node</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="express-整体感知"><a href="#express-整体感知" class="headerlink" title="express 整体感知"></a>express 整体感知</h2><ol>
+<li>出色的路由能力，正则，“：”方法等</li>
+<li>静态文件处理，用 <code>app.use(express.static(&#39;./public&#39;)&#39;</code>就行了</li>
+<li>与模板引擎配合</li>
+</ol>
+<h2 id="static"><a href="#static" class="headerlink" title="static"></a>static</h2><ol>
+<li>express.static 实现静态页面服务</li>
+<li>express.static 和路由冲突的时候，看谁在上面，就会把路由拦截下来</li>
+</ol>
+<h2 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h2><ol>
+<li>app.get(网址, 回调)，当用get 方法访问网址的时候进行什么样的处理</li>
+<li>app.post(网址, 回调)，当用post 方法访问网址的时候，进行什么样的处理</li>
+<li>app.all(网址, 回调)，当用任何方法访问这个网址，都用同样的处理</li>
+<li>互联网的网址是不区分大小写的，这个是 http 协议规定的</li>
+<li>路由到 /a ，实际 /a?id=2&amp;se=man#hello，也是被这个网址的回调函数处理的</li>
+<li>app.get(//commits/(/w+)(?:..(\w+)?$/, function)，可以在地址中使用正则表达式，通过req.params[0] 得到圆括号分组的结果，实际上express上用：的方式更好</li>
+<li>推荐冒号的写法 <code>app.get(&#39;/user/:id&#39;,function(req, res) {})</code> ，可以通过req.params[“id”] 得到</li>
+<li>表单可以自己提交到自己上，一个 get 请求，一个 post 方法，可以节约路由器</li>
+<li>RESTful 路由设计<ol>
+<li>/student/:id<ol>
+<li>get 获取学生信息</li>
+<li>add 添加学生</li>
+<li>delete 删除学生信息</li>
+</ol>
+</li>
+<li>一个路径，根据 http 的方法不同，对这个页面的使用不同</li>
+<li>express 特别适合进行这样的路由设计</li>
+</ol>
+</li>
+<li>网页基本上只能处理 get 和 post 请求，软件和 app 可以发起各种不同种类的请求</li>
+</ol>
+<h2 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h2><ol>
+<li>中间件的<strong>顺序</strong>很重要，越详细的越往前写，越抽象的越往后写</li>
+<li>express 寻找路由的顺序，是按照程序书写时从上到下，上面找到了就执行，下面符合的地址就执行不了了，匹配第一个路由之后不会继续匹配了。</li>
+<li>想要继续寻找路由，需要在回调中添加一个 next 参数<code>(req, res, next)</code>，并执行它 <code>next()</code>，这样可以用两段小程序处理一个事，可以把业务分开。</li>
+<li>解决路由冲突的第一种方法合理设置顺序，匹配了第一个，就不会往下匹配了。路由表，具体的往上写，抽象的往下写。</li>
+<li>第二种解决方法是加入判断和 next()，还有两项业务挂载到一个路由上，注意第一个send之后，不能进行第二次send，next 的时候最后要一个中间件接受不满足所有匹配，最后会进行怎样的操作。</li>
+<li>express 中有个很抽象的 app.use([path,]function[,function]) 函数，可以填写多个地址，用了 use 之后，设定了 path 之后，客户端访问path/任意东西，都会执行这个回调函数，可以把第一个参数的层级无限扩充下去，提供了req.originUrl 填写的全部网址，baseUrl app.use 中写的网址，req.path 第一个减去第二个</li>
+<li>app.use(‘/‘,function) ，任何网址都会经过这个路由，但是会截断路由，这个必须得写next，不写网址的时候，也相当于写了一个 ‘/‘，也就是所有网址</li>
+<li>app.use 的主要作用就是后面传入其他的参数和函数，这个回调会默认被传入 req 和 res 两个参数</li>
+<li><code>app.use(&#39;/static&#39;, app.static(&#39;./public&#39;))</code> 可以把静态文件挂载到 static 这个路由下面，这样路由和文件夹的名字就不怕冲突了</li>
+<li>用 express 写 404，最后放一个，<code>app.use(function(req, res) {res.send(&quot;没有这个页面&quot;)}</code>，所有路由都找不到的时候，就走这个路由，直接就是 404 了</li>
+<li>post 必须用 body-parser 这个中间件</li>
+<li><code>app.get(&quot;/&quot;, showIndex)</code> 这个 showIndex 的函数不用穿 req 和 res，因为它是个中间件，相当于回调的时候自动送进去了两个参数</li>
+</ol>
+<h2 id="内容渲染"><a href="#内容渲染" class="headerlink" title="内容渲染"></a>内容渲染</h2><ol>
+<li>大多数情况下，内容渲染用 res.render()，将会根据views 中的模板文件进行渲染，自己写文件夹 <code>app.set(&quot;views&quot;,文件夹名)</code></li>
+<li>这个函数根据内容，自动帮我们设置了 Content-type 头部和 200 状态码。</li>
+<li>想写不同的状态码，可以用 <code>res.status(404).send(&quot;sorry, we can&#39;t find that!&quot;)</code></li>
+<li>设置不同的 Content-Type，用 <code>res.set(&quot;Content-Type&quot;,&quot;text/html&quot;)</code></li>
+<li>res.send 和 res.end 一样，只能设一次，但是 send 有个好处，自动帮我们设置状态吗和 MIME 类型。</li>
+</ol>
+<h2 id="post-和-get-请求"><a href="#post-和-get-请求" class="headerlink" title="post 和 get 请求"></a>post 和 get 请求</h2><ol>
+<li><code>app.use(express.static(&quot;./public&quot;)</code> 就解决了所有静态文件的问题</li>
+<li>get 请求的参数在 url 中，原生 node 中需要 URL 模块来识别参数字符串。在 express 中，可以直接使用 req.query 对象</li>
+<li>POST 在 express 中不能直接获得，body-parser 模块，使用之后可以用 req.body 得到参数。但是表单中含有文件的上传，那么需要使用 formidable 这样的工具</li>
+<li>body-parser 的使用<ol>
+<li><code>const bodyParser = require(&quot;body-parser&quot;)</code></li>
+<li><code>app.use(bodyParser, urlencoded({extended: false}))</code></li>
+<li>或者 <code>app.use(bodyParser, json())</code></li>
+</ol>
+</li>
+</ol>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ol>
+<li><p>AJAX 请求的都是 JSON</p>
+</li>
+<li><p>node.js 所有的js文件可以从自己出发，用相对目录引用</p>
+</li>
+<li><p>Node.js 的编程思维：因为所有的东西都是异步的，所以，内层函数，不是return 回来东西，而是调用高层函数提供的回调函数。先干具体的事情，用回调代替返回值</p>
+<p>不是这样</p>
+<pre class=" language-javascript"><code class="language-javascript">res<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token string">'index'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token string">"name"</span><span class="token punctuation">:</span> student<span class="token punctuation">.</span><span class="token function">getDetailById</span><span class="token punctuation">(</span><span class="token number">234234</span><span class="token punctuation">)</span><span class="token punctuation">.</span>name
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<p>而是这样</p>
+<pre class=" language-javascript"><code class="language-javascript">student<span class="token punctuation">.</span><span class="token function">getDetailById</span><span class="token punctuation">(</span><span class="token number">234234</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>detail<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    res<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token string">'index'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        <span class="token string">"name"</span><span class="token punctuation">:</span> detail<span class="token punctuation">.</span>name
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+</li>
+<li><p>Node 全是回调函数，如果我们自己的方法中包含IO或者数据库，也要用回调函数的方法封装。callback(err, null) 和 callback(null, err)</p>
+</li>
+<li><p>可以将最后的app.use 写404</p>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Node-js/" rel="tag"># Node.js</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/06/02/OPS/NGINX%20%E7%9B%B8%E5%85%B3/" rel="prev" title="NGINX 相关">
+      <i class="fa fa-chevron-left"></i> NGINX 相关
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/06/02/node/Node.js%20Http%20%E6%A8%A1%E5%9D%97/" rel="next" title="Node.js Http 模块">
+      Node.js Http 模块 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#express-整体感知"><span class="nav-number">1.</span> <span class="nav-text">express 整体感知</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#static"><span class="nav-number">2.</span> <span class="nav-text">static</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#路由"><span class="nav-number">3.</span> <span class="nav-text">路由</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中间件"><span class="nav-number">4.</span> <span class="nav-text">中间件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内容渲染"><span class="nav-number">5.</span> <span class="nav-text">内容渲染</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#post-和-get-请求"><span class="nav-number">6.</span> <span class="nav-text">post 和 get 请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">7.</span> <span class="nav-text">其他</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="吕嘉文"
+      src="/images/icon.jpg">
+  <p class="site-author-name" itemprop="name">吕嘉文</p>
+  <div class="site-description" itemprop="description">记录生活、工作、学习的点点滴滴</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">106</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-at"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">吕嘉文</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

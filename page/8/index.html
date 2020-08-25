@@ -1,0 +1,2495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <meta name="msapplication-config" content="/images/browserconfig.xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="记录生活、工作、学习的点点滴滴">
+<meta property="og:type" content="website">
+<meta property="og:title" content="嘉文小栈">
+<meta property="og:url" content="http://yoursite.com/page/8/index.html">
+<meta property="og:site_name" content="嘉文小栈">
+<meta property="og:description" content="记录生活、工作、学习的点点滴滴">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="吕嘉文">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/page/8/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>嘉文小栈</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">嘉文小栈</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">每天进步一点点</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/02/OS/LINUX%20%E5%AD%A6%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="name" content="吕嘉文">
+      <meta itemprop="description" content="记录生活、工作、学习的点点滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉文小栈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/02/OS/LINUX%20%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">LINUX 学习</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 09:50:40 / 修改时间：14:49:48" itemprop="dateCreated datePublished" datetime="2020-06-02T09:50:40+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%BF%90%E7%BB%B4/" itemprop="url" rel="index"><span itemprop="name">运维</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="一些命令示例"><a href="#一些命令示例" class="headerlink" title="一些命令示例"></a>一些命令示例</h3><p><code>ip addr</code> 改</p>
+<p><code>service network restart</code></p>
+<p><code>yum update</code></p>
+<p>grep 过滤，-v 不包含，反转一下</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">cat</span> anaconda-ks.cfg <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"net"</span> <span class="token operator">|</span> <span class="token function">grep</span> -v <span class="token string">"off"</span></code></pre>
+<h2 id="帐号管理"><a href="#帐号管理" class="headerlink" title="帐号管理"></a>帐号管理</h2><h3 id="添加新的用户账号"><a href="#添加新的用户账号" class="headerlink" title="添加新的用户账号"></a>添加新的用户账号</h3><p>user add </p>
+<ul>
+<li>-c 注释性描述</li>
+<li>-d 指定主目录，一般不指定</li>
+<li>-g 用户组</li>
+<li>-G 用户组的附属组</li>
+<li>-s 用户登录的shell 文件</li>
+<li>-u 用户号</li>
+</ul>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">groupadd</span> ljs
+<span class="token function">useradd</span> -s /bin/sh -g ljw -G adm,root ljw</code></pre>
+<h3 id="删除账户"><a href="#删除账户" class="headerlink" title="删除账户"></a>删除账户</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">userdel</span> -r ljw
+
+<span class="token function">userdel</span> ljw
+<span class="token function">rm</span> -rf /home/ljw</code></pre>
+<h3 id="修改账户"><a href="#修改账户" class="headerlink" title="修改账户"></a>修改账户</h3><p>usermod，加上-c, -d, -m, -g, -G, -s, -u, -o</p>
+<h3 id="用户密码管理"><a href="#用户密码管理" class="headerlink" title="用户密码管理"></a>用户密码管理</h3><p>passwd</p>
+<ul>
+<li>-l 锁定口令，禁用账号</li>
+<li>-u 口令解锁</li>
+<li>-d 使账号无口令</li>
+<li>-f 强迫用户下次登录时修改口令</li>
+</ul>
+<h2 id="用户组管理"><a href="#用户组管理" class="headerlink" title="用户组管理"></a>用户组管理</h2><h3 id="添加用户组"><a href="#添加用户组" class="headerlink" title="添加用户组"></a>添加用户组</h3><p>groupadd</p>
+<ul>
+<li>-g GID 指定新用户组的 GID（一定是数字）</li>
+<li>-o</li>
+</ul>
+<h3 id="删除用户组"><a href="#删除用户组" class="headerlink" title="删除用户组"></a>删除用户组</h3><p>groupdel</p>
+<h3 id="修改用户组"><a href="#修改用户组" class="headerlink" title="修改用户组"></a>修改用户组</h3><p>groupmod</p>
+<ul>
+<li>-n 新组名 + 旧组名</li>
+<li>-g</li>
+<li>-o</li>
+</ul>
+<p>newgrp</p>
+<p>su user1 切换用户</p>
+<p>exit 退出当前所有用户</p>
+<h3 id="linux-用户权限相关"><a href="#linux-用户权限相关" class="headerlink" title="linux 用户权限相关"></a>linux 用户权限相关</h3><p>/etc/passwd</p>
+<p>/etc/shadow</p>
+<p>/etc/group</p>
+<p>修改 /etc/sudoers</p>
+<pre class=" language-bash"><code class="language-bash">user1     ALL<span class="token operator">=</span><span class="token punctuation">(</span>ALL<span class="token punctuation">)</span>        NOPASSWD: /bin/mkdir,/bin/rm</code></pre>
+<h2 id="linux-文件常用命令"><a href="#linux-文件常用命令" class="headerlink" title="linux 文件常用命令"></a>linux 文件常用命令</h2><h4 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h4><ul>
+<li>touch，<code>touch file_test</code></li>
+<li>cat，<code>cat file_test &gt; file_test_copy</code> 或者 <code>cat file_test &gt;&gt; file_test_copy</code></li>
+<li>echo，<code>echo &quot;I love you&quot; &gt; file_test2</code></li>
+<li>vi，<code>vi new_file</code></li>
+</ul>
+<h4 id="复制文件"><a href="#复制文件" class="headerlink" title="复制文件"></a>复制文件</h4><ul>
+<li>cat，<code>cat file_test &gt; file-test_copy</code></li>
+<li>cp，<code>cp file_test file_test_test2</code></li>
+</ul>
+<h4 id="链接文件"><a href="#链接文件" class="headerlink" title="链接文件"></a>链接文件</h4><ul>
+<li>ln -s 源文件 目标文件 （软链接，类似windows 的快捷方式）</li>
+<li>ln 源文件 目标文件（同样的文件，两个出口）</li>
+</ul>
+<h4 id="重命名（移动）文件"><a href="#重命名（移动）文件" class="headerlink" title="重命名（移动）文件"></a>重命名（移动）文件</h4><p>mv 源文件 目标文件</p>
+<h4 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h4><p>rm</p>
+<ul>
+<li>-r recursive 递归删除，牵扯目录</li>
+<li>-f </li>
+</ul>
+<h2 id="linux-目录常用命令"><a href="#linux-目录常用命令" class="headerlink" title="linux 目录常用命令"></a>linux 目录常用命令</h2><h3 id="创建目录"><a href="#创建目录" class="headerlink" title="创建目录"></a>创建目录</h3><p>mkdir</p>
+<p>-p 创建多级目录</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">mkdir</span> test_dir/child_1/child_2/child_3</code></pre>
+<h3 id="复制目录"><a href="#复制目录" class="headerlink" title="复制目录"></a>复制目录</h3><p>cp -r 源目录 目标目录</p>
+<p>-r 是递归的意思，必须要传</p>
+<h3 id="链接目录"><a href="#链接目录" class="headerlink" title="链接目录"></a>链接目录</h3><h4 id="软链接"><a href="#软链接" class="headerlink" title="软链接"></a>软链接</h4><p>ln -s 源目录 目标目录（软连接）</p>
+<h4 id="目录不可硬链接"><a href="#目录不可硬链接" class="headerlink" title="目录不可硬链接"></a>目录不可硬链接</h4><h3 id="重命名（移动）目录"><a href="#重命名（移动）目录" class="headerlink" title="重命名（移动）目录"></a>重命名（移动）目录</h3><p>mv 源目录 目标目录</p>
+<h3 id="删除目录"><a href="#删除目录" class="headerlink" title="删除目录"></a>删除目录</h3><p>rm -r[f] 源目录 </p>
+<p>-r 递归</p>
+<p>-f 强制删除</p>
+<p>rm -rf / 删除全部文件</p>
+<h2 id="查看文件信息"><a href="#查看文件信息" class="headerlink" title="查看文件信息"></a>查看文件信息</h2><p>ls -l[hdi]</p>
+<p>-l 以列表的形式展示</p>
+<p>-h 优化文件大小的可读性</p>
+<p>-i 展示文件的信息</p>
+<p>-c 排序 按最后修改时间</p>
+<p>文件信息 = 节点号 + 文件类型及权限 + 硬链接数 + 属主 + 所归属的组 + 文件或目录的大小 + 最近修改时间 + 文件或目录名</p>
+<p>ls -ld */ 指数出目录，而不输出文件</p>
+<p>文件类型及权限，第一个字符为d代表文件夹，为-表示是文件</p>
+<h2 id="linux-统计技巧"><a href="#linux-统计技巧" class="headerlink" title="linux 统计技巧"></a>linux 统计技巧</h2><p>grep </p>
+<p>“^d” 表示目录</p>
+<p>“^-“ 表示文件</p>
+<p>wc （word count） -l（line）-c(character)</p>
+<p>查看当前目录下的文件数量（不包含子目录中的文件）</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">ls</span> -l <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"^-"</span> <span class="token operator">|</span> <span class="token function">wc</span></code></pre>
+<p>查看当前目录下的文件数量（包含子目录的文件），注意，R，代表递归子目录</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">ls</span> -lR <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"^-"</span> <span class="token operator">|</span> <span class="token function">wc</span></code></pre>
+<p>使用通配符查询目录下的所有文件数量</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">ls</span> -lR 20161124*/ <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"^-"</span> <span class="token operator">|</span> <span class="token function">wc</span> -l</code></pre>
+<h2 id="Linux-文件属性"><a href="#Linux-文件属性" class="headerlink" title="Linux 文件属性"></a>Linux 文件属性</h2><p>stat 命令（display file or file system status）</p>
+<p>stat -f, —file-system</p>
+<p>atime(Access time) 最后一次访问文件或目录的时间</p>
+<p>mtime(modify time) 最后一次修改文件或目录的时间</p>
+<p>ctime(change time) 最后一次改变文件或目录的时间</p>
+<h2 id="Linux-文件类型"><a href="#Linux-文件类型" class="headerlink" title="Linux 文件类型"></a>Linux 文件类型</h2><h3 id="普通文件类型"><a href="#普通文件类型" class="headerlink" title="普通文件类型"></a>普通文件类型</h3><ul>
+<li>纯文本文件</li>
+<li>二进制文件</li>
+<li>数据格式的文件</li>
+<li>各种压缩文件</li>
+<li>第一个属性为 [-]</li>
+</ul>
+<h3 id="目录文件"><a href="#目录文件" class="headerlink" title="目录文件"></a>目录文件</h3><ul>
+<li>能用 # cd 命令进入的</li>
+<li>第一个属性为 [d]，例如 [drwxrwxrwx]</li>
+</ul>
+<h3 id="块设备文件"><a href="#块设备文件" class="headerlink" title="块设备文件"></a>块设备文件</h3><ul>
+<li>就是存储数据以供系统存取的接口设备，简单而言就是硬盘。例如一号硬盘的代码时 /dev/hda1 等文件</li>
+<li>第一个属性为 [b]</li>
+</ul>
+<h3 id="字符设备文件"><a href="#字符设备文件" class="headerlink" title="字符设备文件"></a>字符设备文件</h3><ul>
+<li>串行端口的接口设备，例如键盘、鼠标等等。</li>
+<li>第一个属性名为 [c]</li>
+</ul>
+<h3 id="套接字文件"><a href="#套接字文件" class="headerlink" title="套接字文件"></a>套接字文件</h3><ul>
+<li>这类文件通常用在网络数据链接。</li>
+<li>可以启动一个程序来监听客户端的要求，客户端就可以通过套接字来进行数据通信。</li>
+<li>第一个属性为 [s]</li>
+<li>最常在 /var/run 目录中看到这种类型</li>
+</ul>
+<h3 id="管道文件"><a href="#管道文件" class="headerlink" title="管道文件"></a>管道文件</h3><ul>
+<li>FIFO 也是一种特殊的文件类型</li>
+<li>它主要的目的是，解决多个程序同时存取一个文件所造成的错误</li>
+<li>第一个属性为 [p]</li>
+</ul>
+<h3 id="链接文件-1"><a href="#链接文件-1" class="headerlink" title="链接文件"></a>链接文件</h3><ul>
+<li>蕾丝windows 的快捷方式。</li>
+<li>软链接，第一个属性为 [l]</li>
+</ul>
+<h2 id="Linux-文件与目录查找技巧"><a href="#Linux-文件与目录查找技巧" class="headerlink" title="Linux 文件与目录查找技巧"></a>Linux 文件与目录查找技巧</h2><p>find path [-option] [-print] [exec -ok command] {} \</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># ls -l a*</span>
+<span class="token comment" spellcheck="true"># find -name a</span>
+<span class="token comment" spellcheck="true"># find -name "a*"</span>
+<span class="token comment" spellcheck="true"># find -name "*copy"</span>
+<span class="token comment" spellcheck="true"># find -name "a*" -type f</span>
+<span class="token comment" spellcheck="true"># find -name "a*" -type d</span>
+<span class="token comment" spellcheck="true"># find -name "a*" -type d -maxdepth 1</span>
+<span class="token comment" spellcheck="true"># find -maxdepth 3 -type f -exec rm -rf {} +</span>
+<span class="token comment" spellcheck="true"># find -maxdepth 1 -type f -exec cat {} +</span></code></pre>
+<ul>
+<li>-name</li>
+<li>-perm 执行权限来查找</li>
+<li>-user 按文件属主来查找</li>
+<li>-group 按组来查找</li>
+<li>-ctime -1 一天之内创建的文件</li>
+<li>-mtime +1 一天之前修改的文件</li>
+<li>-atime 按文件的访问时间来查</li>
+<li>-nogroup 查找无有效属组的文件</li>
+<li>-nouser 查找无有效属主的文件</li>
+<li>-newer f1 !f2  查找更改时间比 f1 新 但比 f2 旧的文件</li>
+<li>-type b/d/c/p/l/f 块设备，目录，字符设备，管道，链接，文件</li>
+<li>-size n[c] 查找长度为 n 块或 n 字节的文件</li>
+<li>-depth 使查找在进入子目录之前先行查找完本目录</li>
+<li>-fstype 查找位于某一类型文件系统中的文件，这些文件系统类型通常可在 /etc/fstab中找到</li>
+<li>-mount 查找文件时，不跨越文件系统 mount 点</li>
+<li>-follow 如果遇到符号链接文件，就跟踪链接所指的文件</li>
+<li>-cpio 对匹配文件使用cpio 命令，将他们备份到磁带设备中</li>
+<li>-prune 忽略某个目录</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/02/OPS/%E9%85%8D%E7%BD%AE%20Node.js%20%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="name" content="吕嘉文">
+      <meta itemprop="description" content="记录生活、工作、学习的点点滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉文小栈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/02/OPS/%E9%85%8D%E7%BD%AE%20Node.js%20%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83/" class="post-title-link" itemprop="url">LINUX 配置 Node 生产环境</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 09:49:07 / 修改时间：14:48:53" itemprop="dateCreated datePublished" datetime="2020-06-02T09:49:07+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%BF%90%E7%BB%B4/" itemprop="url" rel="index"><span itemprop="name">运维</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="LINUX-配置-Node-生产环境"><a href="#LINUX-配置-Node-生产环境" class="headerlink" title="LINUX 配置 Node 生产环境"></a>LINUX 配置 Node 生产环境</h1><h2 id="安装-Node-js-生产环境"><a href="#安装-Node-js-生产环境" class="headerlink" title="安装 Node.js 生产环境"></a>安装 Node.js 生产环境</h2><p>更新</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> yum update
+<span class="token function">sudo</span> yum <span class="token function">install</span> vim openssl build-essential libssl-dev <span class="token function">wget</span> curl <span class="token function">git</span>
+<span class="token function">sudo</span> yum groupinstall <span class="token string">"Development Tools"</span>
+<span class="token function">sudo</span> yum <span class="token function">install</span> openssl-devel</code></pre>
+<p>nvm</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">wget</span> -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh <span class="token operator">|</span> <span class="token function">bash</span>
+nvm <span class="token function">install</span> v6.9.5
+nvm use v6.9.5
+nvm <span class="token function">alias</span> default v6.9.5
+node -v
+<span class="token function">npm</span> --registry<span class="token operator">=</span>https://registry.npm.taobao.org <span class="token function">install</span> -g <span class="token function">npm</span>
+<span class="token keyword">echo</span> fs.inotify.max_user_watches<span class="token operator">=</span>524288 <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">tee</span> -a /etc/sysctl.conf <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> sysctl </code></pre>
+<p>npm 常用 工具包</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> i pm2 webpack gulp grunt-cli -g</code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">vi</span> /etc/iptables.up.rules</code></pre>
+<h2 id="pm2-使用"><a href="#pm2-使用" class="headerlink" title="pm2 使用"></a>pm2 使用</h2><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 开启服务</span>
+pm2 start app.js
+
+<span class="token comment" spellcheck="true"># 查看所有服务</span>
+pm2 list
+
+<span class="token comment" spellcheck="true"># 详情</span>
+pm2 show app<span class="token punctuation">(</span>name<span class="token punctuation">)</span> 
+
+<span class="token comment" spellcheck="true"># 当前的日志</span>
+pm2 logs</code></pre>
+<h2 id="配置-nginx"><a href="#配置-nginx" class="headerlink" title="配置 nginx"></a>配置 nginx</h2><p>停掉阿帕奇(ubuntu)</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">service</span> apache2 stop</code></pre>
+<p>卸载阿帕奇(ubuntu)</p>
+<pre class=" language-bash"><code class="language-bash">update-rc.d -f apache2 remove
+
+<span class="token function">sudo</span> <span class="token function">apt-get</span> remove apache2</code></pre>
+<p>安装 nginx </p>
+<p>配置 nginx</p>
+<pre class=" language-bash"><code class="language-bash">upstream blog <span class="token punctuation">{</span>
+    server 127.0.0.1:8080<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+server <span class="token punctuation">{</span>
+    listen 80<span class="token punctuation">;</span>
+    server_name 47.106.204.77<span class="token punctuation">;</span>
+
+    location / <span class="token punctuation">{</span>
+        proxy_set_header X-Real-IP <span class="token variable">$remote_addr</span><span class="token punctuation">;</span>
+        proxy_set_header X-Forward-For <span class="token variable">$proxy_add_x_forwarded_for</span><span class="token punctuation">;</span>
+        proxy_set_header Host <span class="token variable">$http_host</span><span class="token punctuation">;</span>
+        proxy_set_header X-Nginx-Proxy <span class="token boolean">true</span><span class="token punctuation">;</span>
+
+        proxy_pass http://blog<span class="token punctuation">;</span>
+        proxy_redirect off<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/02/OPS/%E5%9F%9F%E5%90%8D%E7%9B%B8%E5%85%B3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="name" content="吕嘉文">
+      <meta itemprop="description" content="记录生活、工作、学习的点点滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉文小栈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/02/OPS/%E5%9F%9F%E5%90%8D%E7%9B%B8%E5%85%B3/" class="post-title-link" itemprop="url">域名相关</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 09:48:04 / 修改时间：09:48:41" itemprop="dateCreated datePublished" datetime="2020-06-02T09:48:04+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%BF%90%E7%BB%B4/" itemprop="url" rel="index"><span itemprop="name">运维</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="配置解析项目的域名-A-记录和-CNAME"><a href="#配置解析项目的域名-A-记录和-CNAME" class="headerlink" title="配置解析项目的域名 A 记录和 CNAME"></a>配置解析项目的域名 A 记录和 CNAME</h3><h4 id="主机记录"><a href="#主机记录" class="headerlink" title="主机记录"></a>主机记录</h4><p>填个 @ 直接解析顶级域名，lvjiawen.tech</p>
+<p>填入 www 解析 <a href="http://www.lvjiawen.tech" target="_blank" rel="noopener">www.lvjiawen.tech</a></p>
+<p>填入 * ，泛解析，陪陪其他所有域名 *.lvjiawen.tech</p>
+<h4 id="记录类型"><a href="#记录类型" class="headerlink" title="记录类型"></a>记录类型</h4><p>A 记录，address，将域名指向一个 IPV4地址</p>
+<p>CNAME，将域名指向另外一个域名</p>
+<p>MX，将域名指向邮件服务器地址</p>
+<p>TXT，可以填任何东西，反垃圾邮件，搜索引擎。。。。。用途</p>
+<h4 id="权重-和-MX-优先级"><a href="#权重-和-MX-优先级" class="headerlink" title="权重 和 MX 优先级"></a>权重 和 MX 优先级</h4><p>规则冲突的时候决定解析哪个</p>
+<h4 id="TTL"><a href="#TTL" class="headerlink" title="TTL"></a>TTL</h4><p>一般600s，设置 DNS 域名解析的缓存时间，超过时间，再次去 DNS 服务器请求地址</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/02/OPS/%E5%AE%89%E5%85%A8%E8%AE%BE%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="name" content="吕嘉文">
+      <meta itemprop="description" content="记录生活、工作、学习的点点滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉文小栈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/02/OPS/%E5%AE%89%E5%85%A8%E8%AE%BE%E7%BD%AE/" class="post-title-link" itemprop="url">LINUX 增加安全性</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 09:46:47 / 修改时间：14:47:56" itemprop="dateCreated datePublished" datetime="2020-06-02T09:46:47+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%BF%90%E7%BB%B4/" itemprop="url" rel="index"><span itemprop="name">运维</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="LINUX-增加安全性"><a href="#LINUX-增加安全性" class="headerlink" title="LINUX 增加安全性"></a>LINUX 增加安全性</h1><h2 id="添加用户，提升用户的权限"><a href="#添加用户，提升用户的权限" class="headerlink" title="添加用户，提升用户的权限"></a>添加用户，提升用户的权限</h2><p>adduser lvjiawen</p>
+<p>gpasswd -a lvjiawen sudo 让 lvjiawen 可以以 sudo 角色调用系统命令</p>
+<p>sudo visudo 修改</p>
+<pre class=" language-shell"><code class="language-shell">root ALL=(ALL:ALL) ALL
+lvjiawen ALL=(ALL:ALL) ALL</code></pre>
+<p>第一个 ALL 对所有宿主生效，第二个lvjiawen 可以以任何用户来执行命令，第三个 all，lvjiawen 可以以任何的组来执行命令，第四个all，规则适用于所有命令</p>
+<p>按下 ctrl + X，选shift + Y，再按回车</p>
+<h2 id="ssh-登录服务器"><a href="#ssh-登录服务器" class="headerlink" title="ssh 登录服务器"></a>ssh 登录服务器</h2><p>看看本地有没有配置过</p>
+<pre class=" language-shell"><code class="language-shell">cd ~
+pwd
+cd ~/.ssh
+ls</code></pre>
+<p>重新添加</p>
+<pre class=" language-shell"><code class="language-shell">ssh-keygen -t rsa -b 4096 -C "daughlas@gmail.com"</code></pre>
+<p>开启 ssh 代理</p>
+<pre class=" language-shell"><code class="language-shell">eval "$(ssh-agent -s)"</code></pre>
+<pre class=" language-shell"><code class="language-shell">ssh-add ~/.ssh/id_rsa</code></pre>
+<p>在 .ssh 目录下 </p>
+<pre class=" language-shell"><code class="language-shell">vi /usr/lvjiawen/.ssh/authorized_keys</code></pre>
+<p>shift + :</p>
+<p>然后 wq</p>
+<p>复制本地 id_rsa.pub 到远程 /usr/lvjiawen/.ssh/authorized_keys</p>
+<pre class=" language-shell"><code class="language-shell">chmod 600 authorized_keys
+sudo systemctl restart sshd</code></pre>
+<h2 id="端口的安全性"><a href="#端口的安全性" class="headerlink" title="端口的安全性"></a>端口的安全性</h2><pre class=" language-shell"><code class="language-shell">sudo vi /etc/ssh/sshd_config</code></pre>
+<p>port 1025-65536</p>
+<p>设置 39876</p>
+<p>在最末增加一行</p>
+<pre class=" language-shell"><code class="language-shell">AllowUsers lvjiawen
+sudo systemctl restart sshd
+// 启动 firewall
+systemctl start firewalld
+// 修改端口
+firewall-cmd --zone=public --add-port=39876/tcp --permanent
+// reload 
+firewall-cmd --reload
+// 查看是否成功
+sudo firewall-cmd --zone=public --query-port=39876/tcp</code></pre>
+<h2 id="关闭服务器-root-登录"><a href="#关闭服务器-root-登录" class="headerlink" title="关闭服务器 root 登录"></a>关闭服务器 root 登录</h2><pre class=" language-shell"><code class="language-shell">sudo vi /etc/ssh/sshd_config</code></pre>
+<p>中间一段</p>
+<pre class=" language-shell"><code class="language-shell">PermitEmptyPassowrds no</code></pre>
+<p>修改最底下</p>
+<pre class=" language-shell"><code class="language-shell">PermitRootLogin no
+PasswordAuthentication no</code></pre>
+<h2 id="配置-iptables-增强安全防护"><a href="#配置-iptables-增强安全防护" class="headerlink" title="配置 iptables 增强安全防护"></a>配置 iptables 增强安全防护</h2><p>iptables 是一个防火墙</p>
+<pre class=" language-shell"><code class="language-shell">wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+yum makecache
+yum -y update
+
+iptables -F // 清空所有 iptables 现有规则
+sudo vi /etc/iptables.up.rules</code></pre>
+<p>编辑</p>
+<pre class=" language-shell"><code class="language-shell">*filter
+
+# allow all connections
+-A INPUT -m state --state ESTABLISHED,RELATED  -j ACCEPT 
+
+# allow out traffic
+-A OUTPUT -j ACCEPT
+
+# allow http & https
+-A INPUT -p tcp --dport 443 -j ACCEPT // 允许 http
+-A INPUT -p tcp --dport 80 -j ACCEPT // 允许 80
+
+# allow ssh port loogin
+-A INPUT -p tcp -m state --state NEW --dport 39876 -j ACCEPT
+
+# ping
+-A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT 
+
+# log denied calls
+-A INPUT -m limit --limit 5/min -j LOG --log-prefix "iptables denied:" --log-level 7
+
+# drop incoming sensitive connections
+-A INPUT -p tcp --dport 80 -i eth0 -m state --state NEW -m recent --set
+-A INPUT -p tcp --dport 80 -i eth0 -m state --state NEW -m recent --update --seconds 60 --hitcount 150 -j DROP
+
+# reject all other inbound
+-A INPUT -j REJECT
+-A FORWARD -j REJECT
+
+COMMIT</code></pre>
+<p>告诉 iptables 防火墙配置文件在哪里</p>
+<pre class=" language-shell"><code class="language-shell">sudo iptables-restore < /etc/iptables.up.rules</code></pre>
+<p>查看是否成功启动</p>
+<pre class=" language-shell"><code class="language-shell"># ubuntu
+sudo ufw status
+# active
+sudo ufw enable
+# 输入 y 确认</code></pre>
+<p>设置开机自动启动</p>
+<pre class=" language-shell"><code class="language-shell">sudo vi /etc/network/if-up.d/iptables</code></pre>
+<p>写入脚本</p>
+<pre class=" language-shell"><code class="language-shell">#!/bin/sh
+iptables-restore /etc/iptables.up.rules</code></pre>
+<p>给脚本执行的全新啊</p>
+<pre class=" language-shell"><code class="language-shell">sudo chmod +x /etc/network/if-up.d/iptables</code></pre>
+<h2 id="配置-Fail2ban-增强安全防护"><a href="#配置-Fail2ban-增强安全防护" class="headerlink" title="配置  Fail2ban 增强安全防护"></a>配置  Fail2ban 增强安全防护</h2><p>防御性的动作库，根据可疑行为执行防御动作</p>
+<pre class=" language-shell"><code class="language-shell"># ubuntu
+sudo apt-get install fail2ban</code></pre>
+<p>打开配置文件</p>
+<pre class=" language-shell"><code class="language-shell">sudo vi /etc/fail2ban/jail.conf</code></pre>
+<p>修改</p>
+<pre class=" language-shell"><code class="language-shell"># bantime
+bantime = 3600
+
+# Destination email
+destemail = daughlas@gmail.com
+
+# choose default action
+action = %(action_mw)s
+</code></pre>
+<p>查看状态</p>
+<pre class=" language-shell"><code class="language-shell"># ubuntu
+sudo service fail2ban status
+# 停用
+sudo service fail2ban stop
+# 开启
+sudo service fail2ban start</code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/01/code-section/debounce/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="name" content="吕嘉文">
+      <meta itemprop="description" content="记录生活、工作、学习的点点滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉文小栈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/01/code-section/debounce/" class="post-title-link" itemprop="url">debounce 防抖</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-01 18:07:26" itemprop="dateCreated datePublished" datetime="2020-06-01T18:07:26+08:00">2020-06-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-02 14:36:15" itemprop="dateModified" datetime="2020-06-02T14:36:15+08:00">2020-06-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%80%E6%AE%B5%E4%BB%A3%E7%A0%81/" itemprop="url" rel="index"><span itemprop="name">一段代码</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <pre class=" language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>width<span class="token punctuation">=</span>device-width, initial-scale<span class="token punctuation">=</span>1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>防抖函数<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style language-css">
+    <span class="token selector"><span class="token id">#container</span> </span><span class="token punctuation">{</span>
+      <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100%</span><span class="token punctuation">;</span>
+      <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span>
+      <span class="token property">line-height</span><span class="token punctuation">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span>
+      <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+      <span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#fff</span><span class="token punctuation">;</span>
+      <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token hexcode">#444444</span><span class="token punctuation">;</span>
+      <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">30</span>px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>使用场景：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>监听 window 的 resize、scroll<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>监听鼠标的 mousedown、mouseover<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>监听键盘的 keyup、keydown<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>btn<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>取消debounce<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+<span class="token keyword">var</span> count <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> container <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'container'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">getUserAction</span><span class="token punctuation">(</span>ev<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>ev<span class="token punctuation">)</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  container<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> count<span class="token operator">++</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> count<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// 第 0 版</span>
+<span class="token comment" spellcheck="true">// container.onmousemove = getUserAction;</span>
+
+<span class="token comment" spellcheck="true">// 第一版</span>
+<span class="token comment" spellcheck="true">// function debounce(func, wait) {</span>
+<span class="token comment" spellcheck="true">//   var timeout;</span>
+<span class="token comment" spellcheck="true">//   return function() {</span>
+<span class="token comment" spellcheck="true">//     clearInterval(timeout)</span>
+<span class="token comment" spellcheck="true">//     timeout = setTimeout(func, wait)</span>
+<span class="token comment" spellcheck="true">//   }</span>
+<span class="token comment" spellcheck="true">// }</span>
+
+<span class="token comment" spellcheck="true">// 第二版</span>
+<span class="token comment" spellcheck="true">// 修复 this</span>
+<span class="token comment" spellcheck="true">// function debounce(func, wait) {</span>
+<span class="token comment" spellcheck="true">//   var timeout;</span>
+<span class="token comment" spellcheck="true">//   return function() {</span>
+<span class="token comment" spellcheck="true">//     var context = this;</span>
+<span class="token comment" spellcheck="true">//     clearInterval(timeout)</span>
+<span class="token comment" spellcheck="true">//     timeout = setTimeout(function() {</span>
+<span class="token comment" spellcheck="true">//       func.apply(context)</span>
+<span class="token comment" spellcheck="true">//     }, wait)</span>
+<span class="token comment" spellcheck="true">//   }</span>
+<span class="token comment" spellcheck="true">// }</span>
+
+<span class="token comment" spellcheck="true">// 第三版</span>
+<span class="token comment" spellcheck="true">// 修复event</span>
+<span class="token comment" spellcheck="true">// function debounce(func, wait) {</span>
+<span class="token comment" spellcheck="true">//   var timeout;</span>
+<span class="token comment" spellcheck="true">//   return function() {</span>
+<span class="token comment" spellcheck="true">//     var context = this;</span>
+<span class="token comment" spellcheck="true">//     var args = arguments;</span>
+
+<span class="token comment" spellcheck="true">//     clearInterval(timeout);</span>
+<span class="token comment" spellcheck="true">//     timeout = setTimeout(function() {</span>
+<span class="token comment" spellcheck="true">//       func.apply(context, args)</span>
+<span class="token comment" spellcheck="true">//     }, wait);</span>
+<span class="token comment" spellcheck="true">//   }</span>
+<span class="token comment" spellcheck="true">// }</span>
+
+<span class="token comment" spellcheck="true">// 第四版</span>
+<span class="token comment" spellcheck="true">// 让他可以立即执行</span>
+<span class="token comment" spellcheck="true">// function debounce(func, wait, immediate) {</span>
+<span class="token comment" spellcheck="true">//   var timer;</span>
+
+<span class="token comment" spellcheck="true">//   return function() {</span>
+<span class="token comment" spellcheck="true">//     var context = this;</span>
+<span class="token comment" spellcheck="true">//     var args = arguments;</span>
+
+<span class="token comment" spellcheck="true">//       if (timeout) {</span>
+<span class="token comment" spellcheck="true">//         clearTimeout(timer);</span>
+<span class="token comment" spellcheck="true">//       }</span>
+
+<span class="token comment" spellcheck="true">//     if (immediate) {</span>
+<span class="token comment" spellcheck="true">//       var callNow = !timer;</span>
+<span class="token comment" spellcheck="true">//       timer = setTimeout(function() {</span>
+<span class="token comment" spellcheck="true">//         timer = null;</span>
+<span class="token comment" spellcheck="true">//       }, wait)</span>
+<span class="token comment" spellcheck="true">//       if (callNow) {</span>
+<span class="token comment" spellcheck="true">//         result = func.apply(context, args)</span>
+<span class="token comment" spellcheck="true">//       }</span>
+<span class="token comment" spellcheck="true">//     } else {</span>
+<span class="token comment" spellcheck="true">//       timer = setTimeout(function() {</span>
+<span class="token comment" spellcheck="true">//         func.apply(context, args);</span>
+<span class="token comment" spellcheck="true">//       }, wait)</span>
+<span class="token comment" spellcheck="true">//     }</span>
+<span class="token comment" spellcheck="true">//   }</span>
+<span class="token comment" spellcheck="true">// }</span>
+
+<span class="token comment" spellcheck="true">// 第五版</span>
+<span class="token comment" spellcheck="true">// 增加一个取消的功能</span>
+<span class="token keyword">function</span> <span class="token function">debounce</span><span class="token punctuation">(</span>func<span class="token punctuation">,</span> wait<span class="token punctuation">,</span> immediate<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> timer<span class="token punctuation">;</span>
+
+  <span class="token keyword">var</span> debounced <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> context <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> args <span class="token operator">=</span> arguments<span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>timer<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">clearTimeout</span><span class="token punctuation">(</span>timer<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>immediate<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">var</span> callNow <span class="token operator">=</span> <span class="token operator">!</span>timer<span class="token punctuation">;</span>
+      timer <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        timer <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> wait<span class="token punctuation">)</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>callNow<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        func<span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> args<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      timer <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        func<span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> args<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> wait<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  debounced<span class="token punctuation">.</span>cancel <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">clearTimeout</span><span class="token punctuation">(</span>timer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    timer <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> debounced<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> setUserAction <span class="token operator">=</span> <span class="token function">debounce</span><span class="token punctuation">(</span>getUserAction<span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+container<span class="token punctuation">.</span>onmousemove <span class="token operator">=</span> setUserAction<span class="token punctuation">;</span>
+<span class="token keyword">var</span> btn <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'btn'</span><span class="token punctuation">)</span>
+btn<span class="token punctuation">.</span>onclick <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  setUserAction<span class="token punctuation">.</span><span class="token function">cancel</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/01/database/%E5%AD%A6%E4%B9%A0%20MyBatis/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="name" content="吕嘉文">
+      <meta itemprop="description" content="记录生活、工作、学习的点点滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉文小栈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/01/database/%E5%AD%A6%E4%B9%A0%20MyBatis/" class="post-title-link" itemprop="url">学习 MyBatis</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-01 18:05:08" itemprop="dateCreated datePublished" datetime="2020-06-01T18:05:08+08:00">2020-06-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-02 14:18:20" itemprop="dateModified" datetime="2020-06-02T14:18:20+08:00">2020-06-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="传统-JDBC-程序的设计缺陷"><a href="#传统-JDBC-程序的设计缺陷" class="headerlink" title="传统 JDBC 程序的设计缺陷"></a>传统 JDBC 程序的设计缺陷</h3><ul>
+<li>大量配置信息硬编码，数据库密码、用户等</li>
+<li>大量的无关业务处理的编码</li>
+<li>扩展优化极为不便</li>
+</ul>
+<h3 id="MyBatis-概述"><a href="#MyBatis-概述" class="headerlink" title="MyBatis 概述"></a>MyBatis 概述</h3><p>MyBatis 是支持定制化 SQL、存储过程以及高级映射的优秀的持久层框架。</p>
+<ul>
+<li>避免传统 JDBC 硬编码</li>
+<li>XML 配置或者注解</li>
+<li>POJO对象和数据库记录直接映射</li>
+<li>完善的文档支持</li>
+</ul>
+<h3 id="MyBatis-的使用优势"><a href="#MyBatis-的使用优势" class="headerlink" title="MyBatis 的使用优势"></a>MyBatis 的使用优势</h3><ul>
+<li><p>数据库交互信息配置化</p>
+</li>
+<li><p>动态 SQL 处理（一级缓存、二级缓存）</p>
+</li>
+</ul>
+<h3 id="MyBatis-的使用场景"><a href="#MyBatis-的使用场景" class="headerlink" title="MyBatis 的使用场景"></a>MyBatis 的使用场景</h3><ul>
+<li>更加关注 SQL 优化的项目</li>
+<li>需求频繁更新改动的项目</li>
+</ul>
+<h3 id="MyBatis-核心-API-操作过程分解"><a href="#MyBatis-核心-API-操作过程分解" class="headerlink" title="MyBatis 核心 API 操作过程分解"></a>MyBatis 核心 API 操作过程分解</h3><ul>
+<li>SQL输入参数  +  去数据库中操作</li>
+<li>数据库操作<ul>
+<li>mybatis 配置<ul>
+<li>mybatis.xml 主配置文件</li>
+<li>XXXMapper.xml 映射配置文件</li>
+</ul>
+</li>
+<li>构建和数据库之间的对话<ul>
+<li>SqlSessionFactoryBuilder =&gt; SqlSessionFactory =&gt; SqlSession =&gt;Executor =&gt; Mapped Statement</li>
+</ul>
+</li>
+<li>操作数据库</li>
+</ul>
+</li>
+<li>SQL 输出结果集</li>
+</ul>
+<h3 id="MyBatis-架构分解"><a href="#MyBatis-架构分解" class="headerlink" title="MyBatis 架构分解"></a>MyBatis 架构分解</h3><ul>
+<li>接口层<ul>
+<li>数据查询接口</li>
+<li>数据新增接口</li>
+<li>数据更新接口</li>
+<li>数据删除接口</li>
+<li>获取配置接口</li>
+</ul>
+</li>
+<li>数据处理层<ul>
+<li>参数映射<ul>
+<li>参数映射配置</li>
+<li>参数映射解析</li>
+<li>参数类型解析</li>
+</ul>
+</li>
+<li>SQL 解析<ul>
+<li>SQL 获取</li>
+<li>SQL 解析</li>
+<li>动态 SQL</li>
+</ul>
+</li>
+<li>SQL 执行<ul>
+<li>SimpleExecutor</li>
+<li>BatchExecutor</li>
+<li>ReuseExecutor</li>
+</ul>
+</li>
+<li>结果映射<ul>
+<li>结果映射配置</li>
+<li>结果类型转换</li>
+<li>结果数据拷贝</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>基础支撑层<ul>
+<li>配置框架<ul>
+<li>连接管理</li>
+<li>事务管理</li>
+<li>配置加载</li>
+<li>缓存处理</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>动态 sql</p>
+<p>数据库和实体类不一致，resultMap 而不用 resultType</p>
+<p>log4j 日志管理 debug 级别 info 级别</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/01/database/%E5%AD%A6%E4%B9%A0%20MongoDB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="name" content="吕嘉文">
+      <meta itemprop="description" content="记录生活、工作、学习的点点滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉文小栈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/01/database/%E5%AD%A6%E4%B9%A0%20MongoDB/" class="post-title-link" itemprop="url">学习 MongoDB</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-01 18:04:32" itemprop="dateCreated datePublished" datetime="2020-06-01T18:04:32+08:00">2020-06-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-02 14:37:04" itemprop="dateModified" datetime="2020-06-02T14:37:04+08:00">2020-06-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="mongodb"><a href="#mongodb" class="headerlink" title="mongodb"></a>mongodb</h1><pre class=" language-javascript"><code class="language-javascript">db<span class="token punctuation">.</span>accounts<span class="token punctuation">.</span><span class="token function">insertOne</span><span class="token punctuation">(</span>
+<span class="token operator">...</span>     <span class="token punctuation">{</span>
+  <span class="token operator">...</span>     _id<span class="token punctuation">:</span> <span class="token string">"account1"</span><span class="token punctuation">,</span>
+  <span class="token operator">...</span>     name<span class="token punctuation">:</span> <span class="token string">"alice"</span><span class="token punctuation">,</span>
+  <span class="token operator">...</span>     balance<span class="token punctuation">:</span> <span class="token number">100</span>
+  <span class="token operator">...</span> <span class="token punctuation">}</span>
+<span class="token operator">...</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>查询集合</p>
+<pre class=" language-javascript"><code class="language-javascript">show collections</code></pre>
+<pre class=" language-javascript"><code class="language-javascript">db<span class="token punctuation">.</span><span class="token operator">&lt;</span>collection<span class="token operator">></span><span class="token punctuation">.</span><span class="token function">insertMany</span><span class="token punctuation">(</span>
+    <span class="token punctuation">[</span>
+        <span class="token operator">&lt;</span>document1<span class="token operator">></span><span class="token punctuation">,</span>
+        <span class="token operator">&lt;</span>document2<span class="token operator">></span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        writeConcern<span class="token punctuation">:</span> <span class="token operator">&lt;</span>写入安全级别<span class="token operator">></span><span class="token punctuation">,</span>
+        ordered<span class="token punctuation">:</span> <span class="token operator">&lt;</span>boolean<span class="token punctuation">,</span>不写 默认 <span class="token boolean">true</span><span class="token operator">></span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">)</span></code></pre>
+<pre class=" language-javascript"><code class="language-javascript">db<span class="token punctuation">.</span>accounts<span class="token punctuation">.</span><span class="token function">insertMany</span><span class="token punctuation">(</span>
+    <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">'charlie'</span><span class="token punctuation">,</span> balance<span class="token punctuation">:</span> <span class="token number">500</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">'david'</span><span class="token punctuation">,</span> balance<span class="token punctuation">:</span> <span class="token number">200</span><span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">)</span></code></pre>
+<pre class=" language-javascript"><code class="language-javascript">db<span class="token punctuation">.</span><span class="token operator">&lt;</span>collection<span class="token operator">></span><span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>
+    <span class="token punctuation">[</span>
+        document or array <span class="token keyword">of</span> documents
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        writeConcern<span class="token punctuation">:</span> <span class="token operator">&lt;</span>写入安全级别<span class="token operator">></span><span class="token punctuation">,</span>
+        ordered<span class="token punctuation">:</span> <span class="token operator">&lt;</span>boolean<span class="token punctuation">,</span>不写 默认 <span class="token boolean">true</span><span class="token operator">></span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">)</span></code></pre>
+<pre class=" language-javascript"><code class="language-javascript">db<span class="token punctuation">.</span><span class="token operator">&lt;</span>collection<span class="token operator">></span><span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>document<span class="token operator">></span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        writeConcern<span class="token punctuation">:</span> <span class="token operator">&lt;</span>写入安全级别<span class="token operator">></span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">)</span></code></pre>
+<h2 id="读取文档"><a href="#读取文档" class="headerlink" title="读取文档"></a>读取文档</h2><ul>
+<li>db.collection.find()</li>
+<li>匹配查询</li>
+<li>查询操作符</li>
+<li>返回的是游标</li>
+<li>投射<ul>
+<li>只返回部分字段</li>
+<li>内嵌文档的投射</li>
+<li>数组的投射</li>
+</ul>
+</li>
+</ul>
+<pre class=" language-javascript"><code class="language-javascript">db<span class="token punctuation">.</span>collection<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>query<span class="token operator">></span><span class="token punctuation">,</span> <span class="token operator">&lt;</span>projection<span class="token operator">></span><span class="token punctuation">)</span></code></pre>
+<pre class=" language-javascript"><code class="language-javascript">db<span class="token punctuation">.</span>accounts<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">pretty</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<pre class=" language-javascript"><code class="language-javascript">db<span class="token punctuation">.</span>accounts<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">'alice'</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<pre class=" language-javascript"><code class="language-javascript"> db<span class="token punctuation">.</span>accounts<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"_id.type"</span><span class="token punctuation">:</span> <span class="token string">"savings"</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<p>{<field>: {$<operator>: <value>}}</p>
+<ul>
+<li>$eq =</li>
+<li>$ne !=</li>
+<li>$gt &gt;</li>
+<li>$gte &gt;=</li>
+<li>$lt &lt; </li>
+<li>$lte &lt;=</li>
+<li>$in</li>
+<li>$nin</li>
+</ul>
+<pre class=" language-javascript"><code class="language-javascript">db<span class="token punctuation">.</span>accounts<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token punctuation">{</span>$eq<span class="token punctuation">:</span> <span class="token string">"alice"</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<pre class=" language-javascript"><code class="language-javascript">db<span class="token punctuation">.</span>accounts<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token punctuation">{</span>$<span class="token keyword">in</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'alice'</span><span class="token punctuation">,</span> <span class="token string">'charles'</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<h3 id="逻辑操作符"><a href="#逻辑操作符" class="headerlink" title="逻辑操作符"></a>逻辑操作符</h3><ul>
+<li>$not</li>
+<li>$and 权成立</li>
+<li>$or 至少一个</li>
+<li>$nor</li>
+</ul>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token punctuation">{</span>
+  <span class="token operator">&lt;</span>field<span class="token operator">></span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      $not<span class="token punctuation">:</span><span class="token punctuation">{</span>
+            <span class="token operator">&lt;</span>operrator<span class="token operator">-</span>expression<span class="token operator">></span>
+        <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token punctuation">{</span>
+  <span class="token operator">&lt;</span>field<span class="token operator">></span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      $and<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+        <span class="token operator">&lt;</span>operrator<span class="token operator">-</span>expression<span class="token operator">></span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        <span class="token operator">&lt;</span>operrator<span class="token operator">-</span>expression<span class="token operator">></span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        <span class="token operator">&lt;</span>operrator<span class="token operator">-</span>expression<span class="token operator">></span>
+      <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class=" language-javascript"><code class="language-javascript">db<span class="token punctuation">.</span>accounts<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    $and <span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            balance<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                $gt<span class="token punctuation">:</span> <span class="token number">100</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            name<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                $gt<span class="token punctuation">:</span> <span class="token string">'bob'</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<p>简写</p>
+<pre class=" language-javascript"><code class="language-javascript">db<span class="token punctuation">.</span>accounts<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    balance<span class="token punctuation">:</span> <span class="token punctuation">{</span> $gt<span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token punctuation">{</span>$gt<span class="token punctuation">:</span> <span class="token string">'bob'</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<pre class=" language-javascript"><code class="language-javascript">db<span class="token punctuation">.</span>accounts<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    balance<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        $gt<span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+        $lt<span class="token punctuation">:</span> <span class="token number">500</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/01/database/%E5%AD%A6%E4%B9%A0%20MySQL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="name" content="吕嘉文">
+      <meta itemprop="description" content="记录生活、工作、学习的点点滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉文小栈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/01/database/%E5%AD%A6%E4%B9%A0%20MySQL/" class="post-title-link" itemprop="url">学习 MySQL 基础</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-01 18:03:06" itemprop="dateCreated datePublished" datetime="2020-06-01T18:03:06+08:00">2020-06-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-02 11:33:37" itemprop="dateModified" datetime="2020-06-02T11:33:37+08:00">2020-06-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="05-检索数据：你还在使用-SELECT-么？（二刷）"><a href="#05-检索数据：你还在使用-SELECT-么？（二刷）" class="headerlink" title="05 | 检索数据：你还在使用 SELECT * 么？（二刷）"></a>05 | 检索数据：你还在使用 SELECT * 么？（二刷）</h1><h2 id="SELECT-的执行顺序"><a href="#SELECT-的执行顺序" class="headerlink" title="SELECT 的执行顺序"></a>SELECT 的执行顺序</h2><ol>
+<li>关键字的顺序是不能颠倒的：</li>
+</ol>
+<pre class=" language-SQL"><code class="language-SQL">SELECT ... FROM ... WHERE ... GROUP BY ... HAVING ... ORDER BY ...</code></pre>
+<ol start="2">
+<li>SELECT 语句的执行顺序（在 MySQL 和 Oracle 中，SELECT 执行顺序基本相同）：</li>
+</ol>
+<pre class=" language-SQL"><code class="language-SQL">FROM > WHERE > GROUP BY > HAVING > SELECT的字段 > DISTINCT > ORDER BY > LIMIT</code></pre>
+<p>关键字顺序和执行顺序是下面这样的</p>
+<pre class=" language-SQL"><code class="language-SQL">SELECT DISTINCT player_id, player_name, count(*) as num #顺序5
+FROM player JOIN team ON player.team_id = team.team_id #顺序1
+WHERE height > 1.80 #顺序2
+GROUP BY player.team_id #顺序3
+HAVING num > 2 #顺序4
+ORDER BY num DESC #顺序6
+LIMIT 2 #顺序7</code></pre>
+<p>如果加上这个计算过程，完整的顺序是：<br>1、FROM子句组装数据<br>2、WHERE子句进行条件筛选<br>3、GROUP BY分组<br>4、使用聚集函数进行计算；<br>5、HAVING筛选分组；<br>6、计算所有的表达式；<br>7、SELECT 的字段；<br>8、ORDER BY排序<br>9、LIMIT筛选<br>所以中间有两个过程是需要计算的：聚集函数 和 表达式。其余是关键字的执行顺序，如文章所示。</p>
+<p>在 SELECT 语句执行这些步骤的时候，每个步骤都会产生一个虚拟表，然后将这个虚拟表传入下一个步骤中作为输入。</p>
+<h2 id="SQL-的执行原理"><a href="#SQL-的执行原理" class="headerlink" title="SQL 的执行原理"></a>SQL 的执行原理</h2><p>首先，你可以注意到，SELECT 是先执行 FROM 这一步的。在这个阶段，如果是多张表联查，还会经历下面的几个步骤：  </p>
+<ol>
+<li>首先先通过 CROSS JOIN 求笛卡尔积，相当于得到虚拟表 vt（virtual table）1-1；</li>
+<li>通过 ON 进行筛选，在虚拟表 vt1-1 的基础上进行筛选，得到虚拟表 vt1-2；</li>
+<li>添加外部行。如果我们使用的是左连接、右链接或者全连接，就会涉及到外部行，也就是在虚拟表 vt1-2 的基础上增加外部行，得到虚拟表 vt1-3。</li>
+</ol>
+<p>当然如果我们操作的是两张以上的表，还会重复上面的步骤，直到所有表都被处理完为止。这个过程得到是我们的原始数据。</p>
+<p>当我们拿到了查询数据表的原始数据，也就是最终的虚拟表 vt1，就可以在此基础上再进行 WHERE 阶段。在这个阶段中，会根据 vt1 表的结果进行筛选过滤，得到虚拟表 vt2。</p>
+<p>然后进入第三步和第四步，也就是 GROUP 和 HAVING 阶段。在这个阶段中，实际上是在虚拟表 vt2 的基础上进行分组和分组过滤，得到中间的虚拟表 vt3 和 vt4。</p>
+<p>当我们完成了条件筛选部分之后，就可以筛选表中提取的字段，也就是进入到 SELECT 和 DISTINCT 阶段。</p>
+<p>首先在 SELECT 阶段会提取想要的字段，然后在 DISTINCT 阶段过滤掉重复的行，分别得到中间的虚拟表 vt5-1 和 vt5-2。</p>
+<p>当我们提取了想要的字段数据之后，就可以按照指定的字段进行排序，也就是 ORDER BY 阶段，得到虚拟表 vt6。</p>
+<p>最后在 vt6 的基础上，取出指定行的记录，也就是 LIMIT 阶段，得到最终的结果，对应的是虚拟表 vt7。</p>
+<h1 id="06-数据过滤：SQL-数据过滤有哪些方法？（二刷）"><a href="#06-数据过滤：SQL-数据过滤有哪些方法？（二刷）" class="headerlink" title="06 | 数据过滤：SQL 数据过滤有哪些方法？（二刷）"></a>06 | 数据过滤：SQL 数据过滤有哪些方法？（二刷）</h1><p>在 WHERE 子句中，你可以使用比较运算符、逻辑运算符和通配符这三种方式对检索条件进行过滤。</p>
+<ul>
+<li>提升查询效率的一个很重要的方式，就是约束返回结果的数量</li>
+<li>还有一个很有效的方式，就是指定筛选条件，进行过滤。</li>
+</ul>
+<p>当 WHERE 子句中同时出现 AND 和 OR 操作符的时候，你需要考虑到执行的先后顺序，也就是两个操作符执行的优先级。一般来说 () 优先级最高，其次优先级是 AND，然后是 OR。</p>
+<h2 id="通配符："><a href="#通配符：" class="headerlink" title="通配符："></a>通配符：</h2><p>（%）代表零个或多个字符，而（_）只代表一个字符。</p>
+<p>建议你尽量少用通配符，因为它需要消耗数据库更长的时间来进行匹配。即使你对 LIKE 检索的字段进行了索引，索引的价值也可能会失效。如果要让索引生效，那么 LIKE 后面就不能以（%）开头，比如使用LIKE ‘%太%’或LIKE ‘%太’的时候就会对全表进行扫描。如果使用LIKE ‘太%’，同时检索的字段进行了索引的时候，则不会进行全表扫描。</p>
+<p>保持高效率的一个很重要的原则，就是要避免全表扫描，所以我们会考虑在 WHERE 及 ORDER BY 涉及到的列上增加索引。</p>
+<h2 id="索引不生效"><a href="#索引不生效" class="headerlink" title="索引不生效"></a>索引不生效</h2><ol>
+<li>不要在WHERE子句后面对字段做函数处理，同时也避免对索引字段进行数据类型转换</li>
+<li>避免在索引字段上使用&lt;&gt;，!=，以及对字段进行NULL判断（包括 IS NULL, IS NOT NULL）</li>
+<li>在索引字段后，慎用IN和NOT IN，如果是连续的数值，可以考虑用BETWEEN进行替换</li>
+</ol>
+<p>因为在WHERE子句中，如果对索引字段进行了函数处理，或者使用了&lt;&gt;,!=或NULL判断等，都会造成索引失效。</p>
+<h1 id="07-为什么是-SQL-函数？为什么使用-SQL-函数可能会带来问题（二刷）"><a href="#07-为什么是-SQL-函数？为什么使用-SQL-函数可能会带来问题（二刷）" class="headerlink" title="07 | 为什么是 SQL 函数？为什么使用 SQL 函数可能会带来问题（二刷）"></a>07 | 为什么是 SQL 函数？为什么使用 SQL 函数可能会带来问题（二刷）</h1><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ol>
+<li>什么是 SQL 函数</li>
+<li>内置的 SQL 函数包括哪些？</li>
+<li>如何使用 SQL 函数对一个数据表进行操作，比如针对一个王者荣耀的英雄数据库，我们可以使用这些函数完成哪些操作？</li>
+<li>什么情况下使用 SQL 函数？为什么使用 SQL 函数有时候会带来问题？</li>
+</ol>
+<h2 id="什么是-SQL-函数"><a href="#什么是-SQL-函数" class="headerlink" title="什么是 SQL 函数"></a>什么是 SQL 函数</h2><p>函数把我们经常使用的代码封装起来，需要的时候直接调用即可。这样既提高了代码效率，又提高了可维护性。</p>
+<h2 id="常用的-SQL-函数"><a href="#常用的-SQL-函数" class="headerlink" title="常用的 SQL 函数"></a>常用的 SQL 函数</h2><ol>
+<li>算术函数</li>
+<li>字符串函数</li>
+<li>日期函数</li>
+<li>转换函数</li>
+</ol>
+<h3 id="算术函数"><a href="#算术函数" class="headerlink" title="算术函数"></a>算术函数</h3><table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>定义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ABS()</td>
+<td>取绝对值</td>
+</tr>
+<tr>
+<td>MOD()</td>
+<td>取余</td>
+</tr>
+<tr>
+<td>ROUND()</td>
+<td>四舍五入为指定小数位数，两个参数，字段名称，小数位数</td>
+</tr>
+</tbody></table>
+<p>SELECT ABS(-2)，运行结果为 2。</p>
+<p>SELECT MOD(101,3)，运行结果 2。</p>
+<p>SELECT ROUND(37.25,1)，运行结果 37.3。</p>
+<h3 id="字符串函数"><a href="#字符串函数" class="headerlink" title="字符串函数"></a>字符串函数</h3><table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>定义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CONCAT()</td>
+<td>将多个字符串拼接起来</td>
+</tr>
+<tr>
+<td>LENGTH()</td>
+<td>计算字段长度，一个汉字算三个字符</td>
+</tr>
+<tr>
+<td>CHAR_LENGTH()</td>
+<td>计算字符长度，汉字、数字、字母都算一个字符</td>
+</tr>
+<tr>
+<td>LOWER()</td>
+<td>英文转小写</td>
+</tr>
+<tr>
+<td>UPPER()</td>
+<td>英文转大写</td>
+</tr>
+<tr>
+<td>REPLACE()</td>
+<td>替换，参数：要替换的表达式或字段名，想要查找替换字符串、替换成哪个字符串</td>
+</tr>
+<tr>
+<td>SUBSTRING()</td>
+<td>截取字符串，参数：要替换的表达式或字段名，开始截取的位置、想要街区的字符串长度</td>
+</tr>
+</tbody></table>
+<p>SELECT CONCAT(‘abc’, 123)，运行结果为 abc123。</p>
+<p>SELECT LENGTH(‘你好’)，运行结果为 6。</p>
+<p>SELECT CHAR_LENGTH(‘你好’)，运行结果为 2。</p>
+<p>SELECT LOWER(‘ABC’)，运行结果为 abc。</p>
+<p>SELECT UPPER(‘abc’)，运行结果 ABC。</p>
+<p>SELECT REPLACE(‘fabcd’, ‘abc’, 123)，运行结果为 f123d。</p>
+<p>SELECT SUBSTRING(‘fabcd’, 1,3)，运行结果为 fab。</p>
+<h3 id="日期函数"><a href="#日期函数" class="headerlink" title="日期函数"></a>日期函数</h3><table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>定义</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CURRENT_DATE()</td>
+<td>系统当前时间</td>
+<td>2019-04-03</td>
+</tr>
+<tr>
+<td>CURRENT_TIME()</td>
+<td>系统当前时间，没有具体的日期</td>
+<td>09:48:52</td>
+</tr>
+<tr>
+<td>CURRENT_TIMESTAMP()</td>
+<td>系统当前时间，包括具体的日期 + 时间</td>
+<td>2019-04-03 21:26:34</td>
+</tr>
+<tr>
+<td>EXTRACT()</td>
+<td>抽取具体的年、月、日</td>
+<td></td>
+</tr>
+<tr>
+<td>DATE()</td>
+<td>返回时间的日期部分</td>
+<td>2019-04-01</td>
+</tr>
+<tr>
+<td>YEAR()</td>
+<td>返回时间的年份部分</td>
+<td>2019</td>
+</tr>
+<tr>
+<td>MONTH()</td>
+<td>返回时间的月份部分</td>
+<td>04</td>
+</tr>
+<tr>
+<td>DAY()</td>
+<td>返回时间的天数部分</td>
+<td>01</td>
+</tr>
+<tr>
+<td>HOUR()</td>
+<td>返回时间的小时部分</td>
+<td>09</td>
+</tr>
+<tr>
+<td>MINUTE()</td>
+<td>返回时间的分钟部分</td>
+<td>48</td>
+</tr>
+<tr>
+<td>SECOND()</td>
+<td>返回时间的秒部分</td>
+<td>52</td>
+</tr>
+</tbody></table>
+<p>这里需要注意的是，DATE 日期格式必须是 yyyy-mm-dd 的形式。如果要进行日期比较，就要使用 DATE 函数，不要直接使用日期与字符串进行比较，我会在后面的例子中讲具体的原因。</p>
+<h3 id="转换函数"><a href="#转换函数" class="headerlink" title="转换函数"></a>转换函数</h3><table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>定义</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CAST()</td>
+<td>数据类型转换</td>
+<td>CAST(123.123 AS INT)，SELECT CAST(123.123 AS DECIMAL(8,2))</td>
+</tr>
+<tr>
+<td>COALESCE()</td>
+<td>返回第一个非空数值</td>
+<td>SELECT COALESCE(null,1,2)，运行结果为 1</td>
+</tr>
+</tbody></table>
+<p>转换为小鼠的话，DECIMAL(a,b)来指定，其中 a 代表整数部分和小数部分加起来最大的位数，b 代表小数位数、</p>
+<p>因为很多时候你无法确认 birthdate 的数据类型是字符串，还是 datetime 类型，如果你想对日期部分进行比较，那么使用DATE(birthdate)来进行比较是更安全的。</p>
+<p>10：11</p>
+<h3 id="SQL-函数有问题"><a href="#SQL-函数有问题" class="headerlink" title="SQL 函数有问题"></a>SQL 函数有问题</h3><p>DBMS 不同，实现的函数不同，使用 MySQL 的可移植性很差</p>
+<p>????它会导致查询不走索引，直接全表遍历，导致慢查询-这才是最重要的问题。</p>
+<h2 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h2><ol>
+<li>关键字和函数名称全部大写</li>
+<li>数据库名、表名、字段名称全部小写</li>
+<li>SQL 语句必须以分号结尾</li>
+</ol>
+<h1 id="08-什么事-SQL-的聚集函数，如何利用它们汇总表的数据？（二刷）"><a href="#08-什么事-SQL-的聚集函数，如何利用它们汇总表的数据？（二刷）" class="headerlink" title="08 | 什么事 SQL 的聚集函数，如何利用它们汇总表的数据？（二刷）"></a>08 | 什么事 SQL 的聚集函数，如何利用它们汇总表的数据？（二刷）</h1><h2 id="掌握"><a href="#掌握" class="headerlink" title="掌握"></a>掌握</h2><ol>
+<li>聚集函数都有哪些，能否在一条 SELECT 语句中使用多个聚集函数；</li>
+<li>如何对数据进行分组，并进行聚类统计；</li>
+<li>如何使用 HAVING 过滤分组，HAVING 和 WHERE 的区别是什么。</li>
+</ol>
+<h2 id="SQL-聚集函数"><a href="#SQL-聚集函数" class="headerlink" title="SQL 聚集函数"></a>SQL 聚集函数</h2><h3 id="有哪些聚集函数"><a href="#有哪些聚集函数" class="headerlink" title="有哪些聚集函数"></a>有哪些聚集函数</h3><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>COUNT()</td>
+<td>总行数</td>
+</tr>
+<tr>
+<td>MAX()</td>
+<td>最大值</td>
+</tr>
+<tr>
+<td>MIN()</td>
+<td>最小值</td>
+</tr>
+<tr>
+<td>SUM()</td>
+<td>求和</td>
+</tr>
+<tr>
+<td>AVG()</td>
+<td>平均值</td>
+</tr>
+</tbody></table>
+<p>COUNT(role_assist)会忽略值为 NULL 的数据行，而 COUNT(*) 只是统计数据行数，不管某个字段是否为 NULL。</p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><pre class=" language-SQL"><code class="language-SQL">SELECT COUNT(*), AVG(hp_max), MAX(hp_max), MIN(hp_max)  FROM heros WHERE role_main = '射手' OR role_assist = '射手';</code></pre>
+<pre class=" language-SQL"><code class="language-SQL">SELECT COUNT(DISTINCT hp_max)  FROM heros WHERE role_main = '射手' OR role_assist = '射手';</code></pre>
+<p>需要说明的是 AVG、MAX、MIN 等聚集函数会自动忽略值为 NULL 的数据行，MAX 和 MIN 函数也可以用于字符串类型数据的统计，如果是英文字母，则按照 A—Z 的顺序排列，越往后，数值越大。如果是汉字则按照全拼拼音进行排列。</p>
+<h3 id="分组聚集统计"><a href="#分组聚集统计" class="headerlink" title="分组聚集统计"></a>分组聚集统计</h3><p>使用一个字段进行分组</p>
+<pre class=" language-SQL"><code class="language-SQL">SELECT COUNT(*), role_main FROM heros GROUP BY role_main;</code></pre>
+<p>使用多个字段进行分组</p>
+<pre class=" language-SQL"><code class="language-SQL">SELECT COUNT(*) AS num, role_main, role_assist FROM heros GROUP BY role_main, role_assist ORDER BY num DESC;</code></pre>
+<h3 id="过滤分组"><a href="#过滤分组" class="headerlink" title="过滤分组"></a>过滤分组</h3><p>过滤分组我们使用的是 HAVING。HAVING 的作用和 WHERE 一样，都是起到过滤的作用，只不过 WHERE 是用于数据行，而 HAVING 则作用于分组。</p>
+<pre class=" language-SQL"><code class="language-SQL">SELECT COUNT(*) AS num, role_main, role_assist FROM heros GROUP BY role_main, role_assist HAVING num > 5 ORDER BY num DESC;</code></pre>
+<p>where 和 having</p>
+<pre class=" language-SQL"><code class="language-SQL">SELECT COUNT(*) as num, role_main, role_assist
+FROM heros
+WHERE hp_max > 6000
+GROUP BY role_main, role_assist
+HAVING num > 5
+ORDER BY num DESC</code></pre>
+<p>先使用 where 子句进行筛选，再使用 GROUP BY 进行分组，然后使用 HAVING 进行分组条件判断，然后使用 ORDER BY</p>
+<p>记住顺序</p>
+<pre><code>SELECT ... FROM ... WHERE ... GROUP BY ... HAVING ... ORDER BY ...</code></pre><p>在执行顺序上，SELECT字段在GROUP BY和HAVING之后，不过在SELECT字段之前，已经计算了聚集函数，也就是COUNT(*) as num。</p>
+<p>聚集函数的计算在GROUP BY之后，HAVING之前</p>
+<h1 id="09-子查询：子查询的种类？如何提高子查询的性能（二刷ing）"><a href="#09-子查询：子查询的种类？如何提高子查询的性能（二刷ing）" class="headerlink" title="09 | 子查询：子查询的种类？如何提高子查询的性能（二刷ing）"></a>09 | 子查询：子查询的种类？如何提高子查询的性能（二刷ing）</h1><p>SQL 还允许我们进行子查询，也就是嵌套在查询中的查询。</p>
+<p>很多时候，我们无法直接从数据表中得到查询结果，需要从查询结果集中再次进行查询，才能得到想要的结果。这个“查询结果集”就是今天我们要讲的子查询。</p>
+<h2 id="问题-1"><a href="#问题-1" class="headerlink" title="问题"></a>问题</h2><ol>
+<li>子查询可以分为关联子查询和非关联子查询。我会举一个 NBA 数据库查询的例子，告诉你什么是关联子查询，什么是非关联子查询；</li>
+<li>子查询中有一些关键词，可以方便我们对子查询的结果进行比较。比如存在性检测子查询，也就是 EXISTS 子查询，以及集合比较子查询，其中集合比较子查询关键词有 IN、SOME、 ANY 和 ALL，这些关键词在子查询中的作用是什么；</li>
+<li>子查询也可以作为主查询的列，我们如何使用子查询作为计算字段出现在 SELECT 查询中呢？</li>
+</ol>
+<h2 id="什么是关联子查询，什么是非关联子查询"><a href="#什么是关联子查询，什么是非关联子查询" class="headerlink" title="什么是关联子查询，什么是非关联子查询"></a>什么是关联子查询，什么是非关联子查询</h2><p>子查询从数据表中查询了数据结果，如果这个数据结果只执行一次，然后这个数据结果作为主查询的条件进行执行，那么这样的子查询叫做非关联子查询。</p>
+<p>同样，如果子查询需要执行多次，即采用循环的方式，先从外部查询开始，每次都传入子查询进行查询，然后再将结果反馈给外部，这种嵌套的执行方式就称为关联子查询。</p>
+<p>如果子查询的执行依赖于外部查询，通常情况下都是因为子查询中的表用到了外部的表，并进行了条件关联，因此每执行一次外部查询，子查询都要重新计算一次，这样的子查询就称之为关联子查询。比如我们想要查找每个球队中大于平均身高的球员有哪些，并显示他们的球员姓名、身高以及所在球队 ID。</p>
+<p>在一个表里边进行的子查询</p>
+<pre class=" language-SQL"><code class="language-SQL">SELECT player_name, height, team_id
+FROM player AS a
+WHERE height > (
+    SELECT AVG(height)
+    FROM player AS b
+    WHERE a.team_id = b.team_id
+);</code></pre>
+<h2 id="EXISTS-子查询"><a href="#EXISTS-子查询" class="headerlink" title="EXISTS 子查询"></a>EXISTS 子查询</h2><p>关联子查询通常也会和 EXISTS 一起来使用，EXISTS 子查询用来判断条件是否满足，满足的话为 True，不满足为 False。</p>
+<h1 id="12-｜-视图在-SQL-中的作用是什么，它是怎样工作的？"><a href="#12-｜-视图在-SQL-中的作用是什么，它是怎样工作的？" class="headerlink" title="12 ｜ 视图在 SQL 中的作用是什么，它是怎样工作的？"></a>12 ｜ 视图在 SQL 中的作用是什么，它是怎样工作的？</h1><p>视图，也就是我们今天要讲的虚拟表，本身是不具有数据的，它是 SQL 中的一个重要概念</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/01/design-pattern/%E5%85%B6%E4%BB%96%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="name" content="吕嘉文">
+      <meta itemprop="description" content="记录生活、工作、学习的点点滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉文小栈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/01/design-pattern/%E5%85%B6%E4%BB%96%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">其他设计模式</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-01 17:57:57" itemprop="dateCreated datePublished" datetime="2020-06-01T17:57:57+08:00">2020-06-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-02 16:34:17" itemprop="dateModified" datetime="2020-06-02T16:34:17+08:00">2020-06-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="其他设计模式（用得少）"><a href="#其他设计模式（用得少）" class="headerlink" title="其他设计模式（用得少）"></a>其他设计模式（用得少）</h2><h3 id="原型模式"><a href="#原型模式" class="headerlink" title="原型模式"></a>原型模式</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><ul>
+<li>clone 自己，生成一个新对象</li>
+<li>java 默认有 clone 接口，不用自己实现</li>
+<li>Object.create 用到了原型模式的思想，基于一个原型，创建一个对象</li>
+</ul>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> prototype <span class="token operator">=</span> <span class="token punctuation">{</span>
+    first<span class="token punctuation">:</span> <span class="token string">'undefined'</span><span class="token punctuation">,</span>
+    last<span class="token punctuation">:</span> <span class="token string">'undefined'</span><span class="token punctuation">,</span>
+    getName<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>first <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>last
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    say<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'hello, I am '</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> x <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>prototype<span class="token punctuation">)</span>
+x<span class="token punctuation">.</span>first <span class="token operator">=</span> <span class="token string">'A'</span>
+x<span class="token punctuation">.</span>last <span class="token operator">=</span> <span class="token string">'B'</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+x<span class="token punctuation">.</span><span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> y <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>prototype<span class="token punctuation">)</span>
+y<span class="token punctuation">.</span>first <span class="token operator">=</span> <span class="token string">'C'</span>
+y<span class="token punctuation">.</span>last <span class="token operator">=</span> <span class="token string">'D'</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>y<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+y<span class="token punctuation">.</span><span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<h4 id="对比-JS-中的原型-prototype"><a href="#对比-JS-中的原型-prototype" class="headerlink" title="对比 JS 中的原型 prototype"></a>对比 JS 中的原型 prototype</h4><ul>
+<li><p>prototype 可以理解为 ES6 class 的一种底层原理</p>
+</li>
+<li><p>而 class 是实现面向对象的基础，并不是服务于某个模式 </p>
+</li>
+<li><p>若干年后 ES6 全面普及，大家可能会忽略掉 prototype</p>
+</li>
+<li><p>但是 Object.create 却会长久存在</p>
+</li>
+</ul>
+<h3 id="桥接模式"><a href="#桥接模式" class="headerlink" title="桥接模式"></a>桥接模式</h3><h4 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h4><ul>
+<li>用于把抽象化与实现化解耦</li>
+<li>使得二者可以独立变化</li>
+</ul>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p><img src="/images/image-20191110161648910.png" alt="image-20191110161648910"></p>
+<p>不好的代码</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">ColorShape</span> <span class="token punctuation">{</span>
+    <span class="token function">yellowCircle</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'yellow circle'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">redCircle</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'red circle'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">yellowTriangle</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'yellow triangle'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">redTriangle</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'red triangle'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> cs <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ColorShpae</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+cs<span class="token punctuation">.</span><span class="token function">yellowCircle</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+cs<span class="token punctuation">.</span><span class="token function">redCircle</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+cs<span class="token punctuation">.</span><span class="token function">yellowTriangle</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+cs<span class="token punctuation">.</span><span class="token function">redTriangle</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<p><img src="/images/image-20191110162042544.png" alt="image-20191110162042544"></p>
+<p>桥接模式</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">Color</span> <span class="token punctuation">{</span>
+    <span class="token function">constructor</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Shape</span> <span class="token punctuation">{</span>
+    <span class="token function">constructor</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> color<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        <span class="token keyword">this</span><span class="token punctuation">.</span>color <span class="token operator">=</span> color
+    <span class="token punctuation">}</span>
+    <span class="token function">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>color<span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> red <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Color</span><span class="token punctuation">(</span><span class="token string">'red'</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> yellow <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Color</span><span class="token punctuation">(</span><span class="token string">'yellow'</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> circle <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Shape</span><span class="token punctuation">(</span><span class="token string">'circle'</span><span class="token punctuation">,</span> red<span class="token punctuation">)</span>
+circle<span class="token punctuation">.</span><span class="token function">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> triangle <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Shape</span><span class="token punctuation">(</span><span class="token string">'triangle'</span><span class="token punctuation">,</span> yellow<span class="token punctuation">)</span>
+triangle<span class="token punctuation">.</span><span class="token function">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<h4 id="设计原则验证"><a href="#设计原则验证" class="headerlink" title="设计原则验证"></a>设计原则验证</h4><ul>
+<li>抽象和实现的分离，解耦</li>
+<li>开放封闭原则</li>
+</ul>
+<h3 id="组合模式"><a href="#组合模式" class="headerlink" title="组合模式"></a>组合模式</h3><h4 id="概念-2"><a href="#概念-2" class="headerlink" title="概念"></a>概念</h4><ul>
+<li>生成树形结构，表示“整体-部分”的关系</li>
+<li>让整体和部分都具有一致的操作方式</li>
+<li>例如文件系统树</li>
+<li>JS 经典应用中，未找到这么复杂的数据结构</li>
+<li>虚拟 DOM 中的 vnode 是这种形式，但是数据类型简单</li>
+<li>用 JS 实现一个菜单，不算经典应用，与业务相关</li>
+</ul>
+<h4 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h4><pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"div1"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"container"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>p<span class="token operator">></span><span class="token number">123</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>
+    <span class="token operator">&lt;</span>p<span class="token operator">></span><span class="token number">456</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span></code></pre>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token punctuation">{</span>
+    tag<span class="token punctuation">:</span> <span class="token string">'div'</span><span class="token punctuation">,</span>
+    attr<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        id<span class="token punctuation">:</span> <span class="token string">'div1'</span><span class="token punctuation">,</span>
+        className<span class="token punctuation">:</span> <span class="token string">'container'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    children<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            tag<span class="token punctuation">:</span> <span class="token string">'P'</span><span class="token punctuation">,</span>
+      attr<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+      children<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'123'</span><span class="token punctuation">]</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            tag<span class="token punctuation">:</span> <span class="token string">'P'</span><span class="token punctuation">,</span>
+      attr<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+      children<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'456'</span><span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span></code></pre>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ul>
+<li>整体和单个节点的操作是一致的</li>
+<li>整体和单个节点的数据结构也保持一致</li>
+</ul>
+<h4 id="设计原则验证-1"><a href="#设计原则验证-1" class="headerlink" title="设计原则验证"></a>设计原则验证</h4><ul>
+<li>将整体和单个节点的操作抽象出来</li>
+<li>符合开放封闭原则</li>
+</ul>
+<h3 id="享元模式"><a href="#享元模式" class="headerlink" title="享元模式"></a>享元模式</h3><ul>
+<li>共享、元素局</li>
+</ul>
+<h4 id="概念-3"><a href="#概念-3" class="headerlink" title="概念"></a>概念</h4><ul>
+<li>共享内存（主要考虑内存，而非效率）</li>
+<li>相同的数据，共享使用</li>
+<li>JS 中未找到经典应用场景</li>
+</ul>
+<h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h3><p>无限下拉别表，将时间代理到高层节点上</p>
+<p>如果绑定到 a 标签，对内存开销太大</p>
+<p>实际上是个代理模式的例子，但是它体现了享元模式的思想</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"div1"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"#"</span><span class="token operator">></span>a1<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span>
+    <span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"#"</span><span class="token operator">></span>a2<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span>
+    <span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"#"</span><span class="token operator">></span>a3<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span>
+    <span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"#"</span><span class="token operator">></span>a4<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+    <span class="token keyword">var</span> div1 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'div1'</span><span class="token punctuation">)</span>
+    div1<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> target <span class="token operator">=</span> e<span class="token punctuation">.</span>target
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>e<span class="token punctuation">.</span>nodeName <span class="token operator">===</span> <span class="token string">'A'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">alert</span><span class="token punctuation">(</span>target<span class="token punctuation">.</span>innerHTML<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
+<h4 id="设计原则验证-2"><a href="#设计原则验证-2" class="headerlink" title="设计原则验证"></a>设计原则验证</h4><ul>
+<li>将相同的部分抽象出来</li>
+<li>符合开放封闭原则</li>
+<li>共享的数据，不同的地方不一样的话，不用享元模式，需要使用装饰器模式，适配器模式，代理模式</li>
+</ul>
+<h3 id="模板方法模式"><a href="#模板方法模式" class="headerlink" title="模板方法模式"></a>模板方法模式</h3><p>对内部的特殊处理，可以把它封装成一个方法对外输出</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">Action</span> <span class="token punctuation">{</span>
+    <span class="token function">handle</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">handle1</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token function">hander2</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token function">handle3</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">handle1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'1'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">handle2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'2'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">handle3</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'3'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="职责链模式"><a href="#职责链模式" class="headerlink" title="职责链模式"></a>职责链模式</h3><h4 id="概念-4"><a href="#概念-4" class="headerlink" title="概念"></a>概念</h4><ul>
+<li>一步操作可能分配多个职责角色来完成 </li>
+<li>把这些角色都分开， 然后用一个链穿起来</li>
+<li>将发起者和各个处理者进行隔离</li>
+<li>发起者和处理者，各个处理者之间进行隔离</li>
+</ul>
+<h4 id="示例-2"><a href="#示例-2" class="headerlink" title="示例"></a>示例</h4><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">Action</span> <span class="token punctuation">{</span>
+    <span class="token function">constructor</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        <span class="token keyword">this</span><span class="token punctuation">.</span>nextAction <span class="token operator">=</span> <span class="token keyword">null</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">setNextAction</span><span class="token punctuation">(</span>action<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>nextAction <span class="token operator">=</span> action
+    <span class="token punctuation">}</span>
+    <span class="token function">handle</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">审批`</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>nextAction <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>nextAction<span class="token punctuation">.</span><span class="token function">handle</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> a1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Action</span><span class="token punctuation">(</span><span class="token string">'组长'</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> a1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Action</span><span class="token punctuation">(</span><span class="token string">'经理'</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> a1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Action</span><span class="token punctuation">(</span><span class="token string">'总监'</span><span class="token punctuation">)</span>
+
+a1<span class="token punctuation">.</span><span class="token function">setNextAction</span><span class="token punctuation">(</span>a2<span class="token punctuation">)</span>
+a2<span class="token punctuation">.</span><span class="token function">setNextAction</span><span class="token punctuation">(</span>a3<span class="token punctuation">)</span>
+
+a1<span class="token punctuation">.</span><span class="token function">handle</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<h4 id="JS-中的链式操作"><a href="#JS-中的链式操作" class="headerlink" title="JS  中的链式操作"></a>JS  中的链式操作</h4><ul>
+<li>职责链模式和业务结合较多，JS 中能联想到链式操作</li>
+<li>Node 中 stream 的 pipe，Promise.then</li>
+</ul>
+<h4 id="设计模式验证"><a href="#设计模式验证" class="headerlink" title="设计模式验证"></a>设计模式验证</h4><ul>
+<li>发起者与各个处理者进行隔离</li>
+<li>符合开放封闭原则</li>
+</ul>
+<h3 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h3><h4 id="概念-5"><a href="#概念-5" class="headerlink" title="概念"></a>概念</h4><ul>
+<li>执行命令时，发布者和执行者分开</li>
+<li>中间加入命令对象，作为中转站</li>
+<li>类似于打仗的时候，统帅下达命令给打鼓的，打鼓的一打鼓，全军收到命令了 </li>
+<li>发布者和接受者不能直接接触的时候可以用</li>
+</ul>
+<p><img src="/images/image-20191114125450072.png" alt="image-20191114125450072"></p>
+<h4 id="示例-3"><a href="#示例-3" class="headerlink" title="示例"></a>示例</h4><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">Receiver</span> <span class="token punctuation">{</span>
+    <span class="token function">exec</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'执行'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Command</span> <span class="token punctuation">{</span>
+    <span class="token function">constructor</span><span class="token punctuation">(</span>receiver<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>receiver <span class="token operator">=</span> receiver
+    <span class="token punctuation">}</span>
+    <span class="token function">cmd</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'触发命令'</span><span class="token punctuation">)</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>receiver<span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Invoker</span> <span class="token punctuation">{</span>
+    <span class="token function">constructor</span><span class="token punctuation">(</span>command<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>command <span class="token operator">=</span> command
+    <span class="token punctuation">}</span>
+    <span class="token function">invoke</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'开始'</span><span class="token punctuation">)</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>command<span class="token punctuation">.</span><span class="token function">cmd</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> soldier <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Receiver</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 士兵</span>
+<span class="token keyword">let</span> trumpeter <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Command</span><span class="token punctuation">(</span>solider<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 小号手</span>
+<span class="token keyword">let</span> general <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Invoker</span><span class="token punctuation">(</span>trumpeter<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 将军</span>
+general<span class="token punctuation">.</span><span class="token function">invoke</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<h4 id="JS-中的应用"><a href="#JS-中的应用" class="headerlink" title="JS 中的应用"></a>JS 中的应用</h4><ul>
+<li>网页富文本编辑器，浏览器封装了一个命令对象</li>
+<li>document.execCommand(‘bold’)</li>
+<li>document.execCommand(‘undo’)</li>
+</ul>
+<h4 id="设计模式验证-1"><a href="#设计模式验证-1" class="headerlink" title="设计模式验证"></a>设计模式验证</h4><ul>
+<li>命令对象与执行对象分开，解耦</li>
+<li>符合开放封闭原则</li>
+</ul>
+<h3 id="备忘录模式"><a href="#备忘录模式" class="headerlink" title="备忘录模式"></a>备忘录模式</h3><h4 id="概念-6"><a href="#概念-6" class="headerlink" title="概念"></a>概念</h4><ul>
+<li>随时记录一个对象的状态变化</li>
+<li>随时可以恢复之前的某个状态（如撤销功能）</li>
+<li>未找到 JS 中经典应用，除了一些工具（如编辑器）</li>
+</ul>
+<h4 id="演示-1"><a href="#演示-1" class="headerlink" title="演示"></a>演示</h4><pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 状态备忘</span>
+<span class="token keyword">class</span> <span class="token class-name">Memento</span> <span class="token punctuation">{</span>
+    <span class="token function">constructor</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>content <span class="token operator">=</span> content
+    <span class="token punctuation">}</span>
+
+    <span class="token function">getContent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>content
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// 备忘录列表</span>
+<span class="token keyword">class</span> <span class="token class-name">CareTaker</span> <span class="token punctuation">{</span>
+    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">add</span><span class="token punctuation">(</span>memento<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>list<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>memento<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">get</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>list<span class="token punctuation">[</span>index<span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Editor</span> <span class="token punctuation">{</span>
+    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>content <span class="token operator">=</span> <span class="token keyword">null</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">setContent</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>content <span class="token operator">=</span> content
+    <span class="token punctuation">}</span>
+    <span class="token function">getContent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>content
+    <span class="token punctuation">}</span>
+    <span class="token function">saveContentToMemento</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Memento</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>content<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">getContentFromMemento</span><span class="token punctuation">(</span>memento<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>content <span class="token operator">=</span> memento<span class="token punctuation">.</span><span class="token function">getContent</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> editor <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Editor</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> careTaker <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CareTaker</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+editor<span class="token punctuation">.</span><span class="token function">setContent</span><span class="token punctuation">(</span><span class="token string">'111'</span><span class="token punctuation">)</span>
+editor<span class="token punctuation">.</span><span class="token function">setContent</span><span class="token punctuation">(</span><span class="token string">'222'</span><span class="token punctuation">)</span>
+careTaker<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>editor<span class="token punctuation">.</span><span class="token function">saveContentToMemento</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+editor<span class="token punctuation">.</span><span class="token function">setContent</span><span class="token punctuation">(</span><span class="token string">'333'</span><span class="token punctuation">)</span>
+careTaker<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>editor<span class="token punctuation">.</span><span class="token function">saveContentToMemento</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+editor<span class="token punctuation">.</span><span class="token function">setContent</span><span class="token punctuation">(</span><span class="token string">'444'</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>editor<span class="token punctuation">.</span><span class="token function">getContent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+editor<span class="token punctuation">.</span><span class="token function">getContentFromMemento</span><span class="token punctuation">(</span>careTaker<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>editor<span class="token punctuation">.</span><span class="token function">getContent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+editor<span class="token punctuation">.</span><span class="token function">getContentFromMemento</span><span class="token punctuation">(</span>careTaker<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>editor<span class="token punctuation">.</span><span class="token function">getContent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+<h4 id="设计原则验证-3"><a href="#设计原则验证-3" class="headerlink" title="设计原则验证"></a>设计原则验证</h4><ul>
+<li>状态对象与使用者分开，解耦</li>
+<li>符合开放封闭原则</li>
+</ul>
+<h3 id="中介者模式"><a href="#中介者模式" class="headerlink" title="中介者模式"></a>中介者模式</h3><h4 id="概念-7"><a href="#概念-7" class="headerlink" title="概念"></a>概念</h4><p><img src="/images/image-20191119124354169.png" alt="image-20191119124354169"></p>
+<h4 id="演示-2"><a href="#演示-2" class="headerlink" title="演示"></a>演示</h4><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">Mediator</span> <span class="token punctuation">{</span>
+    <span class="token function">constructor</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>a <span class="token operator">=</span> a
+        <span class="token keyword">this</span><span class="token punctuation">.</span>b <span class="token operator">=</span> b
+    <span class="token punctuation">}</span>
+    <span class="token function">setA</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> number <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>b<span class="token punctuation">.</span>number
+        <span class="token keyword">this</span><span class="token punctuation">.</span>a<span class="token punctuation">.</span><span class="token function">setNumber</span><span class="token punctuation">(</span>number<span class="token operator">*</span><span class="token number">100</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">setB</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> number <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>a<span class="token punctuation">.</span>number
+        <span class="token keyword">this</span><span class="token punctuation">.</span>b<span class="token punctuation">.</span><span class="token function">setNumber</span><span class="token punctuation">(</span>number <span class="token operator">/</span> <span class="token number">100</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">// 买房者，A 和 B</span>
+<span class="token keyword">class</span> <span class="token class-name">A</span> <span class="token punctuation">{</span>
+    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>number <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">setNumber</span><span class="token punctuation">(</span>num<span class="token punctuation">,</span> m<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>number <span class="token operator">=</span> num
+        <span class="token comment" spellcheck="true">// 如果有中介者，通过中介者去修改 B</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>m<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            m<span class="token punctuation">.</span><span class="token function">setB</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">B</span> <span class="token punctuation">{</span>
+    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>number <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">setNumber</span><span class="token punctuation">(</span>num<span class="token punctuation">,</span> m<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>number <span class="token operator">=</span> num
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>m<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            m<span class="token punctuation">.</span><span class="token function">setA</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">B</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> m <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Mediator</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span>
+a<span class="token punctuation">.</span><span class="token function">setNumber</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> m<span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>number<span class="token punctuation">,</span> b<span class="token punctuation">.</span>number<span class="token punctuation">)</span>
+b<span class="token punctuation">.</span><span class="token function">setNumber</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> m<span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>number<span class="token punctuation">,</span> b<span class="token punctuation">.</span>number<span class="token punctuation">)</span></code></pre>
+<h4 id="设计原则验证-4"><a href="#设计原则验证-4" class="headerlink" title="设计原则验证"></a>设计原则验证</h4><ul>
+<li>将各个关联对象通过中介者隔离</li>
+<li>符合开放封闭原则</li>
+</ul>
+<h3 id="访问者模式"><a href="#访问者模式" class="headerlink" title="访问者模式"></a>访问者模式</h3><ul>
+<li>将数据操作和数据结构进行分离</li>
+<li>使用场景不多</li>
+</ul>
+<h3 id="解释器模式"><a href="#解释器模式" class="headerlink" title="解释器模式"></a>解释器模式</h3><ul>
+<li>描述语言语法如何定义，如何解释和编译</li>
+<li>用于专业场景</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/01/code-section/%E7%AE%80%E6%98%93%E6%A8%A1%E5%9D%97%E7%AE%A1%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="name" content="吕嘉文">
+      <meta itemprop="description" content="记录生活、工作、学习的点点滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉文小栈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/01/code-section/%E7%AE%80%E6%98%93%E6%A8%A1%E5%9D%97%E7%AE%A1%E7%90%86/" class="post-title-link" itemprop="url">简易模块管理</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-01 17:56:46" itemprop="dateCreated datePublished" datetime="2020-06-01T17:56:46+08:00">2020-06-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-02 14:36:02" itemprop="dateModified" datetime="2020-06-02T14:36:02+08:00">2020-06-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%80%E6%AE%B5%E4%BB%A3%E7%A0%81/" itemprop="url" rel="index"><span itemprop="name">一段代码</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="简易模块管理"><a href="#简易模块管理" class="headerlink" title="简易模块管理"></a>简易模块管理</h1><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> MyModules <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">Manager</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> modules <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">function</span> <span class="token function">define</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> deps<span class="token punctuation">,</span> impl<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>deps<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        deps<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> modules<span class="token punctuation">[</span>deps<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+        modules<span class="token punctuation">[</span>name<span class="token punctuation">]</span> <span class="token operator">=</span> impl<span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span> impl<span class="token punctuation">,</span> deps <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">function</span> <span class="token keyword">get</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> modules<span class="token punctuation">[</span>name<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        define<span class="token punctuation">:</span> define<span class="token punctuation">,</span>
+        <span class="token keyword">get</span><span class="token punctuation">:</span> <span class="token keyword">get</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+MyModules<span class="token punctuation">.</span><span class="token function">define</span><span class="token punctuation">(</span><span class="token string">"bar"</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">function</span> <span class="token function">hello</span><span class="token punctuation">(</span>who<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">"Let me introduce: "</span> <span class="token operator">+</span> who
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        hello<span class="token punctuation">:</span> hello
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+MyModules<span class="token punctuation">.</span><span class="token function">define</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'bar'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>bar<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> hungry <span class="token operator">=</span> <span class="token string">'hippo'</span>
+    <span class="token keyword">function</span> <span class="token function">awesome</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>bar<span class="token punctuation">.</span><span class="token function">hello</span><span class="token punctuation">(</span>hungry<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        awesI ome<span class="token punctuation">:</span> awesome
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">var</span> bar <span class="token operator">=</span> MyModules<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'bar'</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> foo <span class="token operator">=</span> MyModules<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">)</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>bar<span class="token punctuation">.</span><span class="token function">hello</span><span class="token punctuation">(</span><span class="token string">'hippo'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+foo<span class="token punctuation">.</span><span class="token function">awesome</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="吕嘉文"
+      src="/images/icon.jpg">
+  <p class="site-author-name" itemprop="name">吕嘉文</p>
+  <div class="site-description" itemprop="description">记录生活、工作、学习的点点滴滴</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">106</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-at"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">吕嘉文</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

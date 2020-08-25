@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <meta name="msapplication-config" content="/images/browserconfig.xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="imooc react-native 项目笔记React 基础知识 声明式与命令式   命令式编程：命令“机器”如何去做事情（how），这样不管你想要的是什么（what），他都会按照你的命令实现声明式编程：高速“机器“你想要的是什么（what），让机器想出如何去做(how)  如何返回多个顶级标签class HelloMessage extends Component {     render()">
+<meta property="og:type" content="article">
+<meta property="og:title" content="imooc react-native 项目笔记">
+<meta property="og:url" content="http://yoursite.com/2020/06/02/fe-frameworkds/imooc%20react-native%20%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="嘉文小栈">
+<meta property="og:description" content="imooc react-native 项目笔记React 基础知识 声明式与命令式   命令式编程：命令“机器”如何去做事情（how），这样不管你想要的是什么（what），他都会按照你的命令实现声明式编程：高速“机器“你想要的是什么（what），让机器想出如何去做(how)  如何返回多个顶级标签class HelloMessage extends Component {     render()">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-02T02:53:17.540Z">
+<meta property="article:modified_time" content="2020-06-02T10:45:58.264Z">
+<meta property="article:author" content="吕嘉文">
+<meta property="article:tag" content="待续">
+<meta property="article:tag" content="imooc 实战">
+<meta property="article:tag" content="react">
+<meta property="article:tag" content="react-native">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/06/02/fe-frameworkds/imooc%20react-native%20%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>imooc react-native 项目笔记 | 嘉文小栈</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">嘉文小栈</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">每天进步一点点</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/02/fe-frameworkds/imooc%20react-native%20%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="name" content="吕嘉文">
+      <meta itemprop="description" content="记录生活、工作、学习的点点滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉文小栈">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          imooc react-native 项目笔记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 10:53:17 / 修改时间：18:45:58" itemprop="dateCreated datePublished" datetime="2020-06-02T10:53:17+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index"><span itemprop="name">前端框架</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="imooc-react-native-项目笔记"><a href="#imooc-react-native-项目笔记" class="headerlink" title="imooc react-native 项目笔记"></a>imooc react-native 项目笔记</h1><h2 id="React-基础知识"><a href="#React-基础知识" class="headerlink" title="React 基础知识"></a>React 基础知识</h2><blockquote>
+<p>声明式与命令式</p>
+</blockquote>
+<blockquote>
+<p>命令式编程：命令“机器”如何去做事情（how），这样不管你想要的是什么（what），他都会按照你的命令实现<br>声明式编程：高速“机器“你想要的是什么（what），让机器想出如何去做(how)</p>
+</blockquote>
+<h3 id="如何返回多个顶级标签"><a href="#如何返回多个顶级标签" class="headerlink" title="如何返回多个顶级标签"></a>如何返回多个顶级标签</h3><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">HelloMessage</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+    <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> views <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        views<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>h1<span class="token operator">></span>Hello world<span class="token operator">!</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span><span class="token punctuation">)</span>
+        views<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>h1<span class="token operator">></span>I am Lv Jiawen<span class="token punctuation">.</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>HelloMessage <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">,</span>
+    document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'root'</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span></code></pre>
+<h3 id="渲染子节点"><a href="#渲染子节点" class="headerlink" title="渲染子节点"></a>渲染子节点</h3><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">Comp</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+    <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>
+            <span class="token operator">&lt;</span>ul<span class="token operator">></span>
+                <span class="token punctuation">{</span>
+                    React<span class="token punctuation">.</span>children<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>children<span class="token punctuation">,</span> <span class="token punctuation">(</span>child<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+                        <span class="token keyword">return</span> <span class="token operator">&lt;</span>h1<span class="token operator">></span><span class="token punctuation">{</span>child<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span>
+                    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">></span>
+        <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>Comp<span class="token operator">></span>
+        <span class="token operator">&lt;</span>span<span class="token operator">></span>hello<span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span>
+        <span class="token operator">&lt;</span>span<span class="token operator">></span>world<span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span>
+        <span class="token operator">&lt;</span>span<span class="token operator">></span>lvjiawen<span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>Comp<span class="token operator">></span><span class="token punctuation">,</span>
+    document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'root'</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span></code></pre>
+<h3 id="PropTypes"><a href="#PropTypes" class="headerlink" title="PropTypes"></a>PropTypes</h3><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">import</span> PropTypes <span class="token keyword">from</span> <span class="token string">'prop-types'</span>
+<span class="token keyword">class</span> <span class="token class-name">Comp</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> propTypes <span class="token operator">=</span> <span class="token punctuation">{</span>
+        title<span class="token punctuation">:</span> PropTypes<span class="token punctuation">.</span>string<span class="token punctuation">.</span>isRequired
+    <span class="token punctuation">}</span>
+    <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// ....</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="默认属性"><a href="#默认属性" class="headerlink" title="默认属性"></a>默认属性</h3><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">Comp</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> defaultProps <span class="token operator">=</span> <span class="token punctuation">{</span>
+        shortName<span class="token punctuation">:</span> <span class="token string">'MyTitle'</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// ....</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="ref属性（获取真实-DOM）"><a href="#ref属性（获取真实-DOM）" class="headerlink" title="ref属性（获取真实 DOM）"></a>ref属性（获取真实 DOM）</h3><p>mount 之后才能拿到 $refs</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">Alert</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
+    <span class="token function">showAlert</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">alert</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`Debug:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>message<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">null</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">MyTitle</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+    onClick <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>alert<span class="token punctuation">.</span><span class="token function">showAlert</span><span class="token punctuation">(</span><span class="token string">'MyTitle'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>
+            <span class="token operator">&lt;</span>div<span class="token operator">></span>
+                <span class="token operator">&lt;</span>h1 onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>onClick<span class="token punctuation">}</span><span class="token operator">></span>Click me<span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span>
+                <span class="token operator">&lt;</span>Alert ref<span class="token operator">=</span><span class="token string">'alert'</span><span class="token operator">/</span><span class="token operator">></span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+        <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="state"><a href="#state" class="headerlink" title="state"></a>state</h3><p>用户交互之后，组件自身会改变的一些属性</p>
+<p>props 是组件自身无法改变的属性</p>
+<h3 id="组件生命周期"><a href="#组件生命周期" class="headerlink" title="组件生命周期"></a>组件生命周期</h3><ul>
+<li><p>IOS</p>
+<ul>
+<li>(void) viewWillAppear: (BOOL)animated</li>
+<li>(void) viewDidLoad</li>
+<li>(void) viewWillDisappear: (BOOL)animated</li>
+</ul>
+</li>
+<li><p>Android  Activity 提供了</p>
+<ul>
+<li>onCreate()</li>
+<li>onStart()</li>
+<li>onResume()</li>
+<li>onPause()</li>
+<li>onStop()</li>
+<li>onDestroy()</li>
+</ul>
+</li>
+<li><p>react</p>
+<ul>
+<li>初始化阶段<ol>
+<li><strong>constructor</strong></li>
+<li>static getDerivedStateFromProps()</li>
+<li><strong>componentWillMount()</strong> / UNSAFE_componentWillMount()</li>
+<li><strong>render()</strong></li>
+<li><strong>componentDidMount()</strong></li>
+</ol>
+</li>
+<li>更新阶段（props 或者 state 的改变可能会引起组件的更新，组件重新渲染的过程中会调用）<ol>
+<li>componentWillReceiveProps()</li>
+<li>UNSAFE_componentWillReceiveProps()</li>
+<li>static getDerivedStateFromProps()</li>
+<li>shouldComponentUpdate()</li>
+<li><strong>componentWillUpdate()</strong> / UNSAFE_componentWillUpdate()：内存里边，数据已经是最新的了，界面还没有更新</li>
+<li><strong>render()</strong></li>
+<li>getSnapshotBeforeUpdate()</li>
+<li><strong>componentDidUpdate()</strong></li>
+</ol>
+</li>
+<li>卸载阶段<ol>
+<li>componentWillUnmount()</li>
+</ol>
+</li>
+<li>错误处理<ol>
+<li>componentDidCatch()</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="render"><a href="#render" class="headerlink" title="render"></a>render</h3><ul>
+<li>返回<ul>
+<li>react 元素</li>
+<li>字符串、数字</li>
+<li>null</li>
+<li>布尔值</li>
+</ul>
+</li>
+</ul>
+<h3 id="componentDidMount"><a href="#componentDidMount" class="headerlink" title="componentDidMount"></a>componentDidMount</h3><p>  组件被装配之后立即调用</p>
+<p>  componentDidMount 在 render 方法之后执行的，componentDidMount 可以获取到真是的 DOM 节点</p>
+<h3 id="shouldComponentUpdate"><a href="#shouldComponentUpdate" class="headerlink" title="shouldComponentUpdate"></a>shouldComponentUpdate</h3><p>  初始化渲染不会调用该方法</p>
+<pre class=" language-javascript"><code class="language-javascript">  <span class="token function">shouldComponentUpdate</span><span class="token punctuation">(</span>nextProps<span class="token punctuation">,</span> nextState<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token boolean">true</span> <span class="token operator">/</span> <span class="token boolean">false</span>
+  <span class="token punctuation">}</span></code></pre>
+<h3 id="componentDidUpdate"><a href="#componentDidUpdate" class="headerlink" title="componentDidUpdate"></a>componentDidUpdate</h3><h3 id="componentWillUnmount"><a href="#componentWillUnmount" class="headerlink" title="componentWillUnmount"></a>componentWillUnmount</h3><p>  组件从DOM 中一处的时候立即被调用。清除定时器，在 componentDidMount 创建的一些东西。</p>
+<h2 id="React-native-布局知识"><a href="#React-native-布局知识" class="headerlink" title="React-native 布局知识"></a>React-native 布局知识</h2><p>react-native 中，宽高没有单位，代表设备的独立像素</p>
+<h3 id="react-native-flex-box-与-web-css-flex-box-的不同"><a href="#react-native-flex-box-与-web-css-flex-box-的不同" class="headerlink" title="react-native flex box 与 web css flex box 的不同"></a>react-native flex box 与 web css flex box 的不同</h3><ul>
+<li>在 react-native 中 flexDirection 默认为 ’column’，在css 中 flex-direction 默认为 row</li>
+<li>在 react-native 中 alignItems 默认为 ’stretch’，在css 中 align-items 默认为 ‘flex-start’</li>
+<li>在 react-native 中 flex 只接受一个参数，在css 中 flex 默认为 ‘2 2 10%’</li>
+<li>react-native 不支持 align-content, flex-basis, order, flex-flow, flex-grow, flex-shrink</li>
+</ul>
+<h3 id="父亲视图属性"><a href="#父亲视图属性" class="headerlink" title="父亲视图属性"></a>父亲视图属性</h3><ul>
+<li>flexDirection：row, column, row-reverse, column-reverse</li>
+<li>flexWrap：wrap, nowrap</li>
+<li>justifyContent: flex-start, flex-end, center, space-between, space-around</li>
+<li>alignItems: flex-start, flex-end, center, stretch</li>
+</ul>
+<h3 id="子视图属性"><a href="#子视图属性" class="headerlink" title="子视图属性"></a>子视图属性</h3><ul>
+<li>alignSelf：重写父视图中alignItems</li>
+<li>flex：定义一个元素可伸缩的能力，默认为0</li>
+</ul>
+<h2 id="React-navigation"><a href="#React-navigation" class="headerlink" title="React-navigation"></a>React-navigation</h2><h3 id="什么是导航器？"><a href="#什么是导航器？" class="headerlink" title="什么是导航器？"></a>什么是导航器？</h3><p>导航器也可以堪称是一个普通的 react 组件</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%BE%85%E7%BB%AD/" rel="tag"># 待续</a>
+              <a href="/tags/imooc-%E5%AE%9E%E6%88%98/" rel="tag"># imooc 实战</a>
+              <a href="/tags/react/" rel="tag"># react</a>
+              <a href="/tags/react-native/" rel="tag"># react-native</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/06/02/OPS/PM2/" rel="prev" title="PM2">
+      <i class="fa fa-chevron-left"></i> PM2
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/06/02/tools/%E5%A5%BD%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7%E9%9B%86%E5%90%88/" rel="next" title="好用的工具集合">
+      好用的工具集合 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#imooc-react-native-项目笔记"><span class="nav-number">1.</span> <span class="nav-text">imooc react-native 项目笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#React-基础知识"><span class="nav-number">1.1.</span> <span class="nav-text">React 基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何返回多个顶级标签"><span class="nav-number">1.1.1.</span> <span class="nav-text">如何返回多个顶级标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#渲染子节点"><span class="nav-number">1.1.2.</span> <span class="nav-text">渲染子节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PropTypes"><span class="nav-number">1.1.3.</span> <span class="nav-text">PropTypes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#默认属性"><span class="nav-number">1.1.4.</span> <span class="nav-text">默认属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ref属性（获取真实-DOM）"><span class="nav-number">1.1.5.</span> <span class="nav-text">ref属性（获取真实 DOM）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#state"><span class="nav-number">1.1.6.</span> <span class="nav-text">state</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件生命周期"><span class="nav-number">1.1.7.</span> <span class="nav-text">组件生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#render"><span class="nav-number">1.1.8.</span> <span class="nav-text">render</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#componentDidMount"><span class="nav-number">1.1.9.</span> <span class="nav-text">componentDidMount</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shouldComponentUpdate"><span class="nav-number">1.1.10.</span> <span class="nav-text">shouldComponentUpdate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#componentDidUpdate"><span class="nav-number">1.1.11.</span> <span class="nav-text">componentDidUpdate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#componentWillUnmount"><span class="nav-number">1.1.12.</span> <span class="nav-text">componentWillUnmount</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#React-native-布局知识"><span class="nav-number">1.2.</span> <span class="nav-text">React-native 布局知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#react-native-flex-box-与-web-css-flex-box-的不同"><span class="nav-number">1.2.1.</span> <span class="nav-text">react-native flex box 与 web css flex box 的不同</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#父亲视图属性"><span class="nav-number">1.2.2.</span> <span class="nav-text">父亲视图属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子视图属性"><span class="nav-number">1.2.3.</span> <span class="nav-text">子视图属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#React-navigation"><span class="nav-number">1.3.</span> <span class="nav-text">React-navigation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是导航器？"><span class="nav-number">1.3.1.</span> <span class="nav-text">什么是导航器？</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="吕嘉文"
+      src="/images/icon.jpg">
+  <p class="site-author-name" itemprop="name">吕嘉文</p>
+  <div class="site-description" itemprop="description">记录生活、工作、学习的点点滴滴</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">106</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-at"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">吕嘉文</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <meta name="msapplication-config" content="/images/browserconfig.xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="相关模块 fs path readline fs-extra(第三方)  path 模块 文件操作过程中，都必须使用物理路径(绝对路径)  path 提供了一系列与路径相关的API  path.basename(p[, ext]) 获取文件名，第二个参数表示不带拓展名  path.delimiter 获取不同系统默认的分隔符，环境变量的分隔符，windows是’;’，linux 是 ‘:’，举个应">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Node.js fs 模块">
+<meta property="og:url" content="http://yoursite.com/2020/06/02/node/Node.js%20fs%20%E6%A8%A1%E5%9D%97/index.html">
+<meta property="og:site_name" content="嘉文小栈">
+<meta property="og:description" content="相关模块 fs path readline fs-extra(第三方)  path 模块 文件操作过程中，都必须使用物理路径(绝对路径)  path 提供了一系列与路径相关的API  path.basename(p[, ext]) 获取文件名，第二个参数表示不带拓展名  path.delimiter 获取不同系统默认的分隔符，环境变量的分隔符，windows是’;’，linux 是 ‘:’，举个应">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-02T02:30:09.831Z">
+<meta property="article:modified_time" content="2020-06-02T06:44:49.118Z">
+<meta property="article:author" content="吕嘉文">
+<meta property="article:tag" content="Node.js">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/06/02/node/Node.js%20fs%20%E6%A8%A1%E5%9D%97/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Node.js fs 模块 | 嘉文小栈</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">嘉文小栈</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">每天进步一点点</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/02/node/Node.js%20fs%20%E6%A8%A1%E5%9D%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="name" content="吕嘉文">
+      <meta itemprop="description" content="记录生活、工作、学习的点点滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉文小栈">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Node.js fs 模块
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 10:30:09 / 修改时间：14:44:49" itemprop="dateCreated datePublished" datetime="2020-06-02T10:30:09+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Node/" itemprop="url" rel="index"><span itemprop="name">Node</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="相关模块"><a href="#相关模块" class="headerlink" title="相关模块"></a>相关模块</h2><ol>
+<li>fs</li>
+<li>path</li>
+<li>readline</li>
+<li>fs-extra(第三方)</li>
+</ol>
+<h2 id="path-模块"><a href="#path-模块" class="headerlink" title="path 模块"></a>path 模块</h2><ol>
+<li><p><strong>文件操作过程中，都必须使用物理路径(绝对路径)</strong></p>
+</li>
+<li><p>path 提供了一系列与路径相关的API</p>
+</li>
+<li><p><code>path.basename(p[, ext])</code> 获取文件名，第二个参数表示不带拓展名</p>
+</li>
+<li><p><code>path.delimiter</code> 获取不同系统默认的分隔符，环境变量的分隔符，windows是’;’，linux 是 ‘:’，举个应用的例子<code>console.log(process.env.PATH.split(path.delimiter))</code></p>
+</li>
+<li><p><code>path.dirname(p)</code> 获取论经中的目录名称</p>
+</li>
+<li><p><code>path.extname(p)</code> 获取路径中的拓展名，包含’.’</p>
+</li>
+<li><p><code>path.parse(pathString)</code> 将一个路径字符串转换成一个对象，包含目录，文件名，拓展名， 它的逆过程是 <code>path.format(pathObj)</code></p>
+</li>
+<li><p><code>path.isAbosolute(path)</code> 判断路径是否为绝对路径，设计 api 的时候判断一下别人传的是不是绝对路径，是的话就直接用，不是的话自己转换一下。</p>
+</li>
+<li><p><code>path.join([path1][, path2][, path3])</code> 拼接路径，例如<code>path.join(__dirname, &#39;..&#39;, &#39;./temp&#39;, &#39;a&#39;, &#39;../../x.md</code> 相当于 ../x.md 所指向的绝对路径</p>
+</li>
+<li><p><code>path.normalize(p)</code> 常规化一个路径，纠正写的不太对的路径</p>
+</li>
+<li><p><code>path.relative(绝对路径a, 绝对路径b)</code> 获取b路径相对于a路径的相对路径。</p>
+</li>
+<li><p><code>path.resolve(一对路径)</code> 生成一个应该指向的绝对路径，跟join 差不多</p>
+</li>
+<li><p><code>path.sep</code> 当前操作系统中用的默认路径成员分隔符。windows是’&#39;，Linux 用的是 ‘/‘</p>
+</li>
+<li><p><code>path.win32</code> win32 指的是win32，在任何操作系统中使用windows 的方式操作路径，’path.posix’ 允许在任何操作系统上使用 linux 的方式操作路径，使用 path 自动判断系统</p>
+</li>
+<li><p><strong>注意：赋值语句先执行右边的部分，所以不能循环定义</strong></p>
+<pre class=" language-javascript"><code class="language-javascript">    <span class="token keyword">var</span> p <span class="token operator">=</span> <span class="token punctuation">{</span>
+        xp <span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    p<span class="token punctuation">.</span>xp <span class="token operator">=</span> p<span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p <span class="token operator">==</span> p<span class="token punctuation">.</span>xp<span class="token punctuation">)</span></code></pre>
+</li>
+</ol>
+<h2 id="同步调用和异步调用"><a href="#同步调用和异步调用" class="headerlink" title="同步调用和异步调用"></a>同步调用和异步调用</h2><ol>
+<li><p>node 中所有的阻塞操作都提供了两种类型的 api，一种同步调用，一种异步调用，例如readFile() 和 readFileSync()</p>
+</li>
+<li><p>默认的一般都是异步调用，加上 Sync 的是同步的阻塞的</p>
+</li>
+<li><p>读取文件快不快很受cpu现在忙不忙影响。</p>
+</li>
+<li><p>异步调用</p>
+<pre class=" language-javascript"><code class="language-javascript">console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'async'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'async start'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span><span class="token string">'./2012.txt'</span><span class="token punctuation">,</span> <span class="token string">'utf8'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span>result<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token keyword">throw</span> err<span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"async finish"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'async'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li><p>同步调用</p>
+<pre class=" language-javascript"><code class="language-javascript">console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'sync'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'sync start'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> data <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span><span class="token string">'./2012.txt'</span><span class="token punctuation">,</span> <span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'sync finish'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">err</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> err<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'sync'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+</ol>
+<h2 id="文件编码和缓冲区Buffer"><a href="#文件编码和缓冲区Buffer" class="headerlink" title="文件编码和缓冲区Buffer"></a>文件编码和缓冲区Buffer</h2><ol>
+<li>读文件的时候没有传编码，默认的返回Buffer(缓冲区)</li>
+<li>读文本文件一般用 “utf8” 格式</li>
+<li><strong>现在的开发叫做基于高度封装的开发</strong></li>
+<li>什么是缓冲区<ol>
+<li>缓冲区及时内存中操作数据的容器</li>
+<li>只是数据容器而已</li>
+<li>通过缓冲区可以很方便的操作二进制数据</li>
+<li>而且在大文件操作室必须有缓冲区</li>
+</ol>
+</li>
+<li>把文件看做一个大水桶，想移动文件的话相当于换了一个水桶，可以把水一次倒进另一个水桶中，但是文件太大内存受不了；文件流就相当于一瓢一瓢的去从第一个桶里舀水到第二桶里边去，缓冲区就相当于这个瓢，一次只能放20M，40M之类的这么多文件，多舀几次</li>
+<li>早期的 JS 只能操作字符串数据，最近才能读二进制文件，就要用到缓冲区的概念，文件取一部分，放到缓冲区，再取一部分直到结束</li>
+<li><code>buf.toString(编码格式)</code> buf 中的内容读成字符串</li>
+<li><code>var buffer = new Buffer(4)</code> 能装4个字节，<code>buffer.write(&#39;sssssssssss&#39;)</code> 只能存4个s，超过的就漏出去了。</li>
+<li><code>var buf2 = new Buffer(4)</code>，能装下int32,2字节只能装下int16，<code>buf2.writeInt32LE(2)</code> 无论写的数字是什么都会占4个字节的空间，int32 的限制是27亿</li>
+<li>一般我们用writeInt32Le就行了，网络传输用到32BE，int32是占四个内存空间，int8占一个，int16 占两个内存空间</li>
+<li>base64 编码一般都是两个==</li>
+</ol>
+<h2 id="正则"><a href="#正则" class="headerlink" title="正则"></a>正则</h2><ol>
+<li>写正则的时候先找一个将要进行操作的字符串模板，然后一点一点修改它</li>
+<li><code>[00:01.22] 大家好</code> 复制他，修改之 <code>/\[(d{2})\:(d{2})\.(d{2})\]\s(.+)/</code></li>
+<li>. 表示任意非换行字符</li>
+<li>要是匹配之后还需要进一步操作的话，直接用 exec 执行，不用 test 测试可以节约一点性能，匹配结果第一项是字符串本身，$1 之类的才是我们自己的分组</li>
+</ol>
+<h2 id="写入文件"><a href="#写入文件" class="headerlink" title="写入文件"></a>写入文件</h2><ol>
+<li><code>JSON.stringfy({id = 10})</code> 序列化 JSON 字符串</li>
+<li><code>JSON.parse()</code> 反序列化</li>
+<li>写文件常见失败<ol>
+<li>意外错误</li>
+<li>文件权限问题</li>
+<li>找不到文件夹（不会自动帮你创建文件夹）</li>
+</ol>
+</li>
+<li>写入文件的方式<ol>
+<li>异步文件写入 <code>fs.writeFile(file, data[, option],callback(err))</code></li>
+<li>同步文件写入 <code>fs.writeSync(file,data[,option])</code></li>
+<li>流式文件写入 <code>let streamWriter = fs.createWriteStream(path[,option])</code> 和 <code>streamWriter.write(data,callback)</code></li>
+</ol>
+</li>
+<li>同步的情况用try catch 捕获错误。</li>
+<li>默认写文件是覆盖过去，想要追加fs.appendFile</li>
+</ol>
+<h2 id="其他的文件操作"><a href="#其他的文件操作" class="headerlink" title="其他的文件操作"></a>其他的文件操作</h2><ol>
+<li>很多系统移动和重命名文件用的都是相同的api</li>
+</ol>
+<h2 id="目录操作"><a href="#目录操作" class="headerlink" title="目录操作"></a>目录操作</h2><ol>
+<li>创建一个目录<ol>
+<li>fs.mkdir(path[, model], callback)</li>
+<li>fs.mkdirSync(path[, model]);</li>
+</ol>
+</li>
+<li>删除一个空目录<ol>
+<li>fs.rmdir(path, callback)</li>
+<li>fs.rmdirSync(path)</li>
+</ol>
+</li>
+<li>读取一个目录<ol>
+<li>fs.readdir(path, callback(err, files))</li>
+<li>fs.readdirSync(path) // =&gt; 返回files</li>
+</ol>
+</li>
+</ol>
+<h2 id="如何写递归"><a href="#如何写递归" class="headerlink" title="如何写递归"></a>如何写递归</h2><ol>
+<li>先写一层的情况</li>
+<li>抽象递归参数</li>
+<li>找到突破点（避免死循环）</li>
+<li>递归就是自己调用自己，突破点就是找到那种不调用自己的情况</li>
+<li>数组的 sort() 就是根据 ASCII 码排序</li>
+<li><code>var a = new Array(2)</code> 声明一个长度为2的空数组</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Node-js/" rel="tag"># Node.js</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/06/02/node/Node.js%20Http%20%E6%A8%A1%E5%9D%97/" rel="prev" title="Node.js Http 模块">
+      <i class="fa fa-chevron-left"></i> Node.js Http 模块
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/06/02/node/websocket/" rel="next" title="socket">
+      socket <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#相关模块"><span class="nav-number">1.</span> <span class="nav-text">相关模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#path-模块"><span class="nav-number">2.</span> <span class="nav-text">path 模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同步调用和异步调用"><span class="nav-number">3.</span> <span class="nav-text">同步调用和异步调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件编码和缓冲区Buffer"><span class="nav-number">4.</span> <span class="nav-text">文件编码和缓冲区Buffer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则"><span class="nav-number">5.</span> <span class="nav-text">正则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写入文件"><span class="nav-number">6.</span> <span class="nav-text">写入文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他的文件操作"><span class="nav-number">7.</span> <span class="nav-text">其他的文件操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目录操作"><span class="nav-number">8.</span> <span class="nav-text">目录操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何写递归"><span class="nav-number">9.</span> <span class="nav-text">如何写递归</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="吕嘉文"
+      src="/images/icon.jpg">
+  <p class="site-author-name" itemprop="name">吕嘉文</p>
+  <div class="site-description" itemprop="description">记录生活、工作、学习的点点滴滴</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">106</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-at"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">吕嘉文</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

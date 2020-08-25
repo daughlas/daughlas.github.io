@@ -1,0 +1,1957 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <meta name="msapplication-config" content="/images/browserconfig.xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="记录生活、工作、学习的点点滴滴">
+<meta property="og:type" content="website">
+<meta property="og:title" content="嘉文小栈">
+<meta property="og:url" content="http://yoursite.com/page/5/index.html">
+<meta property="og:site_name" content="嘉文小栈">
+<meta property="og:description" content="记录生活、工作、学习的点点滴滴">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="吕嘉文">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/page/5/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>嘉文小栈</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">嘉文小栈</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">每天进步一点点</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/02/temp/css/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="name" content="吕嘉文">
+      <meta itemprop="description" content="记录生活、工作、学习的点点滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉文小栈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/02/temp/css/" class="post-title-link" itemprop="url">学习 CSS</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 14:56:20 / 修改时间：17:10:06" itemprop="dateCreated datePublished" datetime="2020-06-02T14:56:20+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%B4%E6%97%B6/" itemprop="url" rel="index"><span itemprop="name">临时</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="flex-容器属性"><a href="#flex-容器属性" class="headerlink" title="flex 容器属性"></a>flex 容器属性</h2><h3 id="开启"><a href="#开启" class="headerlink" title="开启"></a>开启</h3><ol>
+<li>注意 flex 容器不是块状元素</li>
+<li>属性值<ol>
+<li><code>display: flex;</code></li>
+<li><code>display: inline-flex;</code></li>
+</ol>
+</li>
+</ol>
+<h3 id="flex-direction"><a href="#flex-direction" class="headerlink" title="flex-direction"></a>flex-direction</h3><ol>
+<li>主轴方向</li>
+<li>属性值<ol>
+<li>row 横排从左到右</li>
+<li>row-reserve 横排从右到左</li>
+<li>column 纵排从上到下</li>
+<li>column-reverse 纵排从下到上</li>
+</ol>
+</li>
+</ol>
+<h3 id="flex-wrap"><a href="#flex-wrap" class="headerlink" title="flex-wrap"></a>flex-wrap</h3><ol>
+<li>换行</li>
+<li>属性值<ol>
+<li>nowrap （默认值）单行显示</li>
+<li>wrap 多行显示，换行</li>
+</ol>
+</li>
+</ol>
+<h3 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a>justify-content</h3><ol>
+<li>主轴方向排列方式，对齐方式</li>
+<li>用于在主轴上对齐伸缩项目。这一行为会在所有可伸缩长度及所有自动边距均被解释后进行。著作权归作者所有。商业转载请联系作者获得授权,非商业转载请注明出处。当一行上的所有伸缩项目都不能伸缩或可伸缩但是已经达到其最大长度时，这一属性才会对多余的空间进行分配。著作权归作者所有。商业转载请联系作者获得授权,非商业转载请注明出处。</li>
+<li>属性值<ol>
+<li>flex-start: 伸缩项目向一行的起始weizhi</li>
+<li>flex-end</li>
+<li>center: 主轴方向居中</li>
+<li>space-between：主轴方向内容分居两侧，其他内容的间距平均分配剩余的空间</li>
+<li>space-around：主轴方向内容的间距平均分配生育的空间</li>
+</ol>
+</li>
+</ol>
+<h3 id="align-items"><a href="#align-items" class="headerlink" title="align-items"></a>align-items</h3><ol>
+<li>侧轴对齐方式</li>
+<li>属性值： <ol>
+<li>flex-start</li>
+<li>flex-end</li>
+<li>center</li>
+<li>stretch</li>
+<li>baseline</li>
+</ol>
+</li>
+</ol>
+<h3 id="align-content"><a href="#align-content" class="headerlink" title="align-content"></a>align-content</h3><ol>
+<li>当伸缩容器的侧轴还有多余空间时，用来调整伸缩行在伸缩容器里的对其方式</li>
+<li>只有多行的伸缩容器才会在侧轴上有多余的空间以供对齐，因为仅包含一行的伸缩容器中，唯一的一行会自动伸展填充全部的空间。著作权归作者所有。商业转载请联系作者获得授权,非商业转载请注明出处。</li>
+<li>属性值： <ol>
+<li>flex-start</li>
+<li>flex-end</li>
+<li>center</li>
+<li>stretch</li>
+<li>baseline</li>
+</ol>
+</li>
+</ol>
+<h2 id="flex-项目属性"><a href="#flex-项目属性" class="headerlink" title="flex 项目属性"></a>flex 项目属性</h2><p>order 顺序</p>
+<p>flex-grow 扩张</p>
+<p>Flex-shrink 缩小</p>
+<p>flex-basis 基础值</p>
+<p>flex flex-grow 和 fl</p>
+<p>align-self 对齐方式</p>
+<h4 id="order"><a href="#order" class="headerlink" title="order"></a>order</h4><p>控制项目的摆放顺序，默认值为 0， 可以为负数，值越小项目越靠前拜访。</p>
+<h4 id="flex-grow"><a href="#flex-grow" class="headerlink" title="flex-grow"></a>flex-grow</h4><p>容器宽度（row）超过所有项目宽度之和的时候，项目是不是需要拉伸。</p>
+<p>控制项目的放大比例，默认为0，不放大。</p>
+<p>值得注意的是，放大的比例是相对于剩余空间而言，而不是项目自己的大小，分得剩余空间相应比例加到自身宽度或高度上。</p>
+<h4 id="flex-shrink"><a href="#flex-shrink" class="headerlink" title="flex-shrink"></a>flex-shrink</h4><p>容器宽度不能容纳所有项目的时候，每个项目是不是要缩小，</p>
+<p>控制项目缩小比例，默认值为1，同比缩小。</p>
+<p>缩小比例也是按照剩余空间。</p>
+<p>？搜死的骆驼比马大</p>
+<p>Flex-shrink ：0 表示不缩小</p>
+<h4 id="flex-basis"><a href="#flex-basis" class="headerlink" title="flex-basis"></a>flex-basis</h4><p>若横轴为主轴，flex-basis 可以当做width 来用；</p>
+<p>若纵轴是主轴，flex-basis 可以当做 height 来使用</p>
+<h4 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h4><p>Flex 是 flex-grow flex-shrink flex-basis 三个属性的缩写</p>
+<p>flex: 1 代表flex-grow: 1 加上 flex-shrink: 1 加上 flex-basis: 0%。子元素一个flex：1，父元素给个宽度，直接等宽布局。</p>
+<h4 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a>align-self</h4><p>控制自身在侧轴方向的对齐方式。</p>
+<h2 id="多行文本省略显示"><a href="#多行文本省略显示" class="headerlink" title="多行文本省略显示"></a>多行文本省略显示</h2><h4 id="所有浏览器兼容的方法"><a href="#所有浏览器兼容的方法" class="headerlink" title="所有浏览器兼容的方法"></a>所有浏览器兼容的方法</h4><pre><code>p {
+width: 300px;
+position: relative;
+line-height: 1.5em;
+height: 1.5em;
+overflow: hidden;
+}
+p:after {
+content: &#39;...&#39;;
+position: absolute;
+bottom: 0;
+right: 0;
+padding: 0 5px;
+background-color: #fff;
+}</code></pre><h2 id="CSS-瀑布流"><a href="#CSS-瀑布流" class="headerlink" title="CSS 瀑布流"></a>CSS 瀑布流</h2><pre class=" language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>width<span class="token punctuation">=</span>device-width, initial-scale<span class="token punctuation">=</span>1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Document<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style language-css">
+    <span class="token selector"><span class="token class">.grid</span> </span><span class="token punctuation">{</span>
+      <span class="token property">-webkit-column-count</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">;</span>
+      <span class="token property">-webkit-column-gap</span><span class="token punctuation">:</span> <span class="token number">10</span>px<span class="token punctuation">;</span>
+      <span class="token property">-webkit-column-fill</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+      <span class="token property">-moz-column-count</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">;</span>
+      <span class="token property">-moz-column-gap</span><span class="token punctuation">:</span> <span class="token number">10</span>px<span class="token punctuation">;</span>
+      <span class="token property">-moz-column-fill</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+      <span class="token property">column-count</span><span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">;</span>
+      <span class="token property">column-gap</span><span class="token punctuation">:</span> <span class="token number">15</span>px<span class="token punctuation">;</span>
+      <span class="token property">column-fill</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector"><span class="token class">.block</span> </span><span class="token punctuation">{</span>
+      <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token hexcode">#ee01ca</span><span class="token punctuation">;</span>
+      <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+      <span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">20</span>px<span class="token punctuation">;</span>
+      <span class="token property">word-wrap</span><span class="token punctuation">:</span> break-word<span class="token punctuation">;</span>
+      <span class="token property">margin-bottom</span><span class="token punctuation">:</span> <span class="token number">20</span>px<span class="token punctuation">;</span>
+      <span class="token property">-webkit-column-break-inside</span><span class="token punctuation">:</span> avoid<span class="token punctuation">;</span>
+      <span class="token property">-moz-column-break-inside</span><span class="token punctuation">:</span> avoid<span class="token punctuation">;</span>
+      <span class="token property">column-break-inside</span><span class="token punctuation">:</span> avoid<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token selector"><span class="token class">.one</span> </span><span class="token punctuation">{</span>
+      <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">100</span>px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token selector"><span class="token class">.two</span> </span><span class="token punctuation">{</span>
+      <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token selector"><span class="token class">.three</span> </span><span class="token punctuation">{</span>
+      <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">300</span>px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>grid<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block one<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>ervewrv<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block two<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>afrvewrwerb<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block three<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>dfvdsf<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block one<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>vdfvdf<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block two<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>dfw45g4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block one<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>ervewrv<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block two<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>afrvewrwerb<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block three<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>dfvdsf<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block one<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>vdfvdf<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block two<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>dfw45g4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block three<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>4rv4r<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block one<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>4rv454<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block three<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>4rv4r<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block one<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>4rv454<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block one<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>ervewrv<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block one<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>ervewrv<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block two<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>afrvewrwerb<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block three<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>dfvdsf<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block one<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>vdfvdf<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block two<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>dfw45g4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block three<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>4rv4r<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block one<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>4rv454<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block one<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>ervewrv<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block two<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>afrvewrwerb<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block three<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>dfvdsf<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block one<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>vdfvdf<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block two<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>dfw45g4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block three<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>4rv4r<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block one<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>4rv454<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block two<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>afrvewrwerb<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block three<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>dfvdsf<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block one<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>vdfvdf<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block two<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>dfw45g4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block one<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>ervewrv<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block two<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>afrvewrwerb<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block three<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>dfvdsf<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block one<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>vdfvdf<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block two<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>dfw45g4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block three<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>4rv4r<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block one<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>4rv454<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block three<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>4rv4r<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block one<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>4rv454<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="label-的使用"><a href="#label-的使用" class="headerlink" title="label 的使用"></a>label 的使用</h2><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ui_button ui_button_primary<span class="token punctuation">"</span></span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>xFile<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>上传文件<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>file<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>xFile<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">position</span><span class="token punctuation">:</span>absolute<span class="token punctuation">;</span><span class="token property">clip</span><span class="token punctuation">:</span><span class="token function">rect</span><span class="token punctuation">(</span><span class="token number">0</span> <span class="token number">0</span> <span class="token number">0</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="a-标签各种状态"><a href="#a-标签各种状态" class="headerlink" title="a 标签各种状态"></a>a 标签各种状态</h2><ul>
+<li>a:link    {color:blue;}</li>
+<li>a:visited {color:blue;}</li>
+<li>a:hover   {color:red;}</li>
+<li>a:active  {color:yellow;}</li>
+</ul>
+<h2 id="CSS动画"><a href="#CSS动画" class="headerlink" title="CSS动画"></a>CSS动画</h2><h3 id="动画的使用"><a href="#动画的使用" class="headerlink" title="动画的使用"></a>动画的使用</h3><h4 id="定义关键帧"><a href="#定义关键帧" class="headerlink" title="定义关键帧"></a>定义关键帧</h4><pre><code>-webkit- @keyframes 必须有的动画名称{
+    from{background:red;}
+    to{background:yellow;}
+}</code></pre><p>####使用动画</p>
+<pre><code>div{
+    -webkit-animation: 动画名称 2s;
+}</code></pre><ol>
+<li>animation-name: 动画名称，必填</li>
+<li>animation-duration: 动画时间，必填</li>
+<li>animation-timing-function:  缓动函数<ol>
+<li>linear 匀速</li>
+<li>ease 缓冲</li>
+<li>ease-in 由慢到快</li>
+<li>后面还有很多；</li>
+</ol>
+</li>
+<li>animation-delay: 动画延迟</li>
+<li>animation-itereation-count: 动画重复进行的次数</li>
+<li>animation-play-state:;</li>
+</ol>
+<h3 id="关键帧的两种写法"><a href="#关键帧的两种写法" class="headerlink" title="关键帧的两种写法"></a>关键帧的两种写法</h3><h4 id="第一种-from-和-to"><a href="#第一种-from-和-to" class="headerlink" title="第一种 from 和 to"></a>第一种 from 和 to</h4><pre><code>-webkit- @keyframes 必须有的动画名称{
+    from{background:red;}
+    to{background:yellow;}
+}</code></pre><h4 id="第二种-百分数"><a href="#第二种-百分数" class="headerlink" title="第二种 百分数"></a>第二种 百分数</h4><pre><code>-webkit- @keyframes 必须有的动画名称{
+    0%{background:red;}
+    20%{background:orange;}
+    50%{background:yellow;}
+    70%{background:green;}
+    100%{background:blue;}    
+}
+div{
+    -webkit- animation: 动画名称 持续时间 linear;
+}</code></pre><h3 id="js-控制-css-动画"><a href="#js-控制-css-动画" class="headerlink" title="js 控制 css 动画"></a>js 控制 css 动画</h3><h4 id="添加"><a href="#添加" class="headerlink" title="添加"></a>添加</h4><pre><code>ocss +=&quot;keyframes change{
+    from{background:black}
+    to{background:yellow}
+}&quot;
+var span =  document.getElementsByTagName(&quot;span&quot;);
+span[1].style.webkitanimation = &quot;change 3s&quot;</code></pre><h4 id="监听"><a href="#监听" class="headerlink" title="监听"></a>监听</h4><pre><code>obj.addEventListener(&quot;webkitAnimationEnd&quot;,function(){
+
+});</code></pre>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/02/data-structure/%E6%A0%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="name" content="吕嘉文">
+      <meta itemprop="description" content="记录生活、工作、学习的点点滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉文小栈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/02/data-structure/%E6%A0%88/" class="post-title-link" itemprop="url">栈</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 14:22:22 / 修改时间：14:22:44" itemprop="dateCreated datePublished" datetime="2020-06-02T14:22:22+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Stack</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token string">"栈"</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>__list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">def</span> <span class="token function">push</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> item<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token string">"压栈，添加 item 到栈顶"</span>
+        self<span class="token punctuation">.</span>__list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">pop</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token string">"出栈，从栈顶弹出一个元素"</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>is_empty<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> None
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>__list<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">peek</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token string">"返回栈顶元素"</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>__list<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> self<span class="token punctuation">.</span>__list<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> None
+
+    <span class="token keyword">def</span> <span class="token function">is_empty</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token string">"判断栈是否为空"</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>__list <span class="token operator">==</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">def</span> <span class="token function">size</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token string">"返回栈中元素的个数"</span>
+        <span class="token keyword">return</span> len<span class="token punctuation">(</span>self<span class="token punctuation">.</span>__list<span class="token punctuation">)</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
+    s <span class="token operator">=</span> Stack<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    s<span class="token punctuation">.</span>push<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    s<span class="token punctuation">.</span>push<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+    s<span class="token punctuation">.</span>push<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+    s<span class="token punctuation">.</span>push<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>peek<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/02/data-structure/%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="name" content="吕嘉文">
+      <meta itemprop="description" content="记录生活、工作、学习的点点滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉文小栈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/02/data-structure/%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97/" class="post-title-link" itemprop="url">双端队列</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 14:21:50 / 修改时间：14:22:12" itemprop="dateCreated datePublished" datetime="2020-06-02T14:21:50+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">BiQueue</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token string">"双端队列"</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>__list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">def</span> <span class="token function">add_front</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> item<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>__list<span class="token punctuation">.</span> insert<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> item<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">add_rear</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> item<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token string">"入队，从队尾插入 item"</span>
+        self<span class="token punctuation">.</span>__list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">pop_front</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token string">"出队，从队头弹出一个元素"</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>is_empty<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> None
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>__list<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">pop_rear</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token string">"出队，从队头弹出一个元素"</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>is_empty<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> None
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>__list<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">is_empty</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token string">"判断栈是否为空"</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>__list <span class="token operator">==</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">def</span> <span class="token function">size</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token string">"返回栈中元素的个数"</span>
+        <span class="token keyword">return</span> len<span class="token punctuation">(</span>self<span class="token punctuation">.</span>__list<span class="token punctuation">)</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
+    bq <span class="token operator">=</span> BiQueue<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    bq<span class="token punctuation">.</span>add_front<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    bq<span class="token punctuation">.</span>add_front<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+    bq<span class="token punctuation">.</span>add_front<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+    bq<span class="token punctuation">.</span>add_front<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>
+    bq<span class="token punctuation">.</span>add_rear<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+    bq<span class="token punctuation">.</span>add_rear<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span>
+    bq<span class="token punctuation">.</span>add_rear<span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span>
+    bq<span class="token punctuation">.</span>add_rear<span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>bq<span class="token punctuation">.</span>pop_front<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>bq<span class="token punctuation">.</span>pop_front<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>bq<span class="token punctuation">.</span>pop_front<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>bq<span class="token punctuation">.</span>pop_front<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>bq<span class="token punctuation">.</span>pop_rear<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>bq<span class="token punctuation">.</span>pop_rear<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>bq<span class="token punctuation">.</span>pop_rear<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>bq<span class="token punctuation">.</span>pop_rear<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>bq<span class="token punctuation">.</span>pop_rear<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/02/data-structure/%E9%98%9F%E5%88%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="name" content="吕嘉文">
+      <meta itemprop="description" content="记录生活、工作、学习的点点滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉文小栈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/02/data-structure/%E9%98%9F%E5%88%97/" class="post-title-link" itemprop="url">队列</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 14:21:24 / 修改时间：14:21:46" itemprop="dateCreated datePublished" datetime="2020-06-02T14:21:24+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Queue</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token string">"队列"</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>__list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">def</span> <span class="token function">enqueue</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> item<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token string">"入队，从队尾插入 item"</span>
+        self<span class="token punctuation">.</span>__list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">dequeue</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token string">"出队，从队头弹出一个元素"</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>is_empty<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> None
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>__list<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">is_empty</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token string">"判断栈是否为空"</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>__list <span class="token operator">==</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">def</span> <span class="token function">size</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token string">"返回栈中元素的个数"</span>
+        <span class="token keyword">return</span> len<span class="token punctuation">(</span>self<span class="token punctuation">.</span>__list<span class="token punctuation">)</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
+    q <span class="token operator">=</span> Queue<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    q<span class="token punctuation">.</span>enqueue<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    q<span class="token punctuation">.</span>enqueue<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+    q<span class="token punctuation">.</span>enqueue<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+    q<span class="token punctuation">.</span>enqueue<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>q<span class="token punctuation">.</span>dequeue<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>q<span class="token punctuation">.</span>dequeue<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>q<span class="token punctuation">.</span>dequeue<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>q<span class="token punctuation">.</span>dequeue<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>q<span class="token punctuation">.</span>dequeue<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/02/data-structure/%E5%8D%95%E5%90%91%E5%BE%AA%E7%8E%AF%E9%93%BE%E8%A1%A8%20copy/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="name" content="吕嘉文">
+      <meta itemprop="description" content="记录生活、工作、学习的点点滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉文小栈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/02/data-structure/%E5%8D%95%E5%90%91%E5%BE%AA%E7%8E%AF%E9%93%BE%E8%A1%A8%20copy/" class="post-title-link" itemprop="url">单向循环链表</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-02 14:19:38" itemprop="dateCreated datePublished" datetime="2020-06-02T14:19:38+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Node</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""节点"""</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> ele<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>ele <span class="token operator">=</span> ele
+        self<span class="token punctuation">.</span>next <span class="token operator">=</span> None
+
+
+<span class="token keyword">class</span> <span class="token class-name">SingleCycleLinkList</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""单向循环链表"""</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> node<span class="token operator">=</span>None<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>__head <span class="token operator">=</span> None
+        <span class="token keyword">if</span> node<span class="token punctuation">:</span>
+            node<span class="token punctuation">.</span>next <span class="token operator">=</span> node
+
+    <span class="token keyword">def</span> <span class="token function">is_empty</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""链表是否为空"""</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>__head <span class="token operator">==</span> None
+
+    <span class="token keyword">def</span> <span class="token function">length</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""链表的长度"""</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>is_empty<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token number">0</span>
+        cur <span class="token operator">=</span> self<span class="token punctuation">.</span>__head
+        count <span class="token operator">=</span> <span class="token number">1</span>
+        <span class="token keyword">while</span> cur<span class="token punctuation">.</span>next <span class="token operator">!=</span> self<span class="token punctuation">.</span>__head<span class="token punctuation">:</span>
+            count <span class="token operator">+=</span> <span class="token number">1</span>
+            cur <span class="token operator">=</span> cur<span class="token punctuation">.</span>next
+        <span class="token keyword">return</span> count
+
+    <span class="token keyword">def</span> <span class="token function">travel</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""遍历"""</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>is_empty<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token boolean">False</span>
+        cur <span class="token operator">=</span> self<span class="token punctuation">.</span>__head
+        <span class="token keyword">while</span> cur<span class="token punctuation">.</span>next <span class="token operator">!=</span> self<span class="token punctuation">.</span>__head<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>cur<span class="token punctuation">.</span>ele<span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">" "</span><span class="token punctuation">)</span>
+            cur <span class="token operator">=</span> cur<span class="token punctuation">.</span>next
+        <span class="token comment" spellcheck="true"># 退出循环，cur 指向尾节点，但是尾结点的元素未打印</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>cur<span class="token punctuation">.</span>ele<span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">" "</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">add</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> item<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""头部添加"""</span>
+        node <span class="token operator">=</span> Node<span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>is_empty<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>__head <span class="token operator">=</span> node
+            node<span class="token punctuation">.</span>next <span class="token operator">=</span> node
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            cur <span class="token operator">=</span> self<span class="token punctuation">.</span>__head
+            <span class="token keyword">while</span> cur<span class="token punctuation">.</span>next <span class="token operator">!=</span> self<span class="token punctuation">.</span>__head<span class="token punctuation">:</span>
+                cur <span class="token operator">=</span> cur<span class="token punctuation">.</span>next
+            cur<span class="token punctuation">.</span>next <span class="token operator">=</span> node
+            node<span class="token punctuation">.</span>next <span class="token operator">=</span> self<span class="token punctuation">.</span>__head
+            self<span class="token punctuation">.</span>__head <span class="token operator">=</span> node
+
+    <span class="token keyword">def</span> <span class="token function">append</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> item<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""尾部添加"""</span>
+        node <span class="token operator">=</span> Node<span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>is_empty<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>__head <span class="token operator">=</span> node
+            node<span class="token punctuation">.</span>next <span class="token operator">=</span> node
+            <span class="token keyword">return</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            cur <span class="token operator">=</span> self<span class="token punctuation">.</span>__head
+            <span class="token keyword">while</span> cur<span class="token punctuation">.</span>next <span class="token operator">!=</span> self<span class="token punctuation">.</span>__head<span class="token punctuation">:</span>
+                cur <span class="token operator">=</span> cur<span class="token punctuation">.</span>next
+            <span class="token comment" spellcheck="true"># 先不动原有的列表</span>
+            node<span class="token punctuation">.</span>next <span class="token operator">=</span> self<span class="token punctuation">.</span>__head
+            cur<span class="token punctuation">.</span>next <span class="token operator">=</span> node    
+
+    <span class="token keyword">def</span> <span class="token function">insert</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> pos<span class="token punctuation">,</span> item<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""插入"""</span>
+        <span class="token keyword">if</span> pos <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>add<span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+        <span class="token keyword">elif</span> pos <span class="token operator">></span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>length<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>append<span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            index <span class="token operator">=</span> <span class="token number">0</span>
+            pre <span class="token operator">=</span> self<span class="token punctuation">.</span>__head
+            node <span class="token operator">=</span> Node<span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+            <span class="token keyword">while</span> index <span class="token operator">&lt;</span> <span class="token punctuation">(</span>pos <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                pre <span class="token operator">=</span> pre<span class="token punctuation">.</span>next
+                index <span class="token operator">+=</span> <span class="token number">1</span>
+            node<span class="token punctuation">.</span>next <span class="token operator">=</span> pre<span class="token punctuation">.</span>next
+            pre<span class="token punctuation">.</span>next <span class="token operator">=</span> node
+
+    <span class="token keyword">def</span> <span class="token function">remove</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> item<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""删除元素"""</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>is_empty<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token boolean">False</span>
+        cur <span class="token operator">=</span> self<span class="token punctuation">.</span>__head
+        pre <span class="token operator">=</span> None
+        <span class="token keyword">while</span> cur<span class="token punctuation">.</span>next <span class="token operator">!=</span> self<span class="token punctuation">.</span>__head<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> cur<span class="token punctuation">.</span>ele <span class="token operator">==</span> item<span class="token punctuation">:</span>
+                <span class="token comment" spellcheck="true"># 头结点就是要删除的元素</span>
+                <span class="token keyword">if</span> self<span class="token punctuation">.</span>__head <span class="token operator">==</span> cur<span class="token punctuation">:</span>
+                    <span class="token comment" spellcheck="true"># 头结点就是要找的</span>
+                    rear <span class="token operator">=</span> self<span class="token punctuation">.</span>__head
+                    <span class="token keyword">while</span> rear<span class="token punctuation">.</span>next <span class="token operator">!=</span> self<span class="token punctuation">.</span>__head<span class="token punctuation">:</span>
+                        rear <span class="token operator">=</span> rear<span class="token punctuation">.</span>next
+                    self<span class="token punctuation">.</span>__head <span class="token operator">=</span> cur<span class="token punctuation">.</span>next
+                    rear<span class="token punctuation">.</span>next <span class="token operator">=</span> self<span class="token punctuation">.</span>__head
+                <span class="token keyword">elif</span> cur<span class="token punctuation">.</span>next <span class="token operator">==</span> self<span class="token punctuation">.</span>__head<span class="token punctuation">:</span>
+                    pre<span class="token punctuation">.</span>next <span class="token operator">=</span> self<span class="token punctuation">.</span>__head
+                <span class="token keyword">else</span><span class="token punctuation">:</span>
+                    pre<span class="token punctuation">.</span>next <span class="token operator">=</span> cur<span class="token punctuation">.</span>next
+                <span class="token keyword">return</span> <span class="token boolean">True</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                pre <span class="token operator">=</span> cur
+                cur <span class="token operator">=</span> cur<span class="token punctuation">.</span>next
+        <span class="token comment" spellcheck="true"># 退出循环， cur 指向尾结点</span>
+        <span class="token keyword">if</span> cur<span class="token punctuation">.</span>ele <span class="token operator">==</span> item<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> cur <span class="token operator">==</span> self<span class="token punctuation">.</span>__head<span class="token punctuation">:</span>
+                <span class="token comment" spellcheck="true"># 链表只有一个节点</span>
+                self<span class="token punctuation">.</span>__head <span class="token operator">=</span> None
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                pre<span class="token punctuation">.</span>next <span class="token operator">=</span> self<span class="token punctuation">.</span>__head
+            <span class="token keyword">return</span> <span class="token boolean">True</span>
+        <span class="token comment" spellcheck="true"># 缺少最后一项</span>
+        <span class="token keyword">return</span> <span class="token boolean">False</span>
+
+    <span class="token keyword">def</span> <span class="token function">search</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> item<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""查看元素是否存在"""</span>
+        cur <span class="token operator">=</span> self<span class="token punctuation">.</span>__head
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>is_empty<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token boolean">False</span>
+        <span class="token keyword">while</span> cur<span class="token punctuation">.</span>next <span class="token operator">!=</span> self<span class="token punctuation">.</span>__head<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> cur<span class="token punctuation">.</span>ele <span class="token operator">==</span> item<span class="token punctuation">:</span>
+                <span class="token keyword">return</span> <span class="token boolean">True</span>
+                <span class="token keyword">break</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                cur <span class="token operator">=</span> cur<span class="token punctuation">.</span>next
+        <span class="token keyword">if</span> cur<span class="token punctuation">.</span>ele <span class="token operator">==</span> item<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token boolean">True</span>
+        <span class="token keyword">return</span> <span class="token boolean">False</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
+    ll <span class="token operator">=</span> SingleCycleLinkList<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    ll<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+    ll<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    ll<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+    ll<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+    ll<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>
+    ll<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+    ll<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span>
+    ll<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"11111"</span><span class="token punctuation">)</span>
+    ll<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"------"</span><span class="token punctuation">)</span>
+    ll<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">13</span><span class="token punctuation">,</span> <span class="token string">"00000"</span><span class="token punctuation">)</span>
+    ll<span class="token punctuation">.</span>travel<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>ll<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    ll<span class="token punctuation">.</span>remove<span class="token punctuation">(</span><span class="token string">"11111"</span><span class="token punctuation">)</span>
+    ll<span class="token punctuation">.</span>travel<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    ll<span class="token punctuation">.</span>remove<span class="token punctuation">(</span><span class="token string">"------"</span><span class="token punctuation">)</span>
+    ll<span class="token punctuation">.</span>travel<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    ll<span class="token punctuation">.</span>remove<span class="token punctuation">(</span><span class="token string">"00000"</span><span class="token punctuation">)</span>
+    ll<span class="token punctuation">.</span>travel<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/02/data-structure/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="name" content="吕嘉文">
+      <meta itemprop="description" content="记录生活、工作、学习的点点滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉文小栈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/02/data-structure/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/" class="post-title-link" itemprop="url">双向链表</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 14:19:02 / 修改时间：14:20:06" itemprop="dateCreated datePublished" datetime="2020-06-02T14:19:02+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Node</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""节点"""</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> ele<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>ele <span class="token operator">=</span> ele
+        self<span class="token punctuation">.</span>next <span class="token operator">=</span> None
+        self<span class="token punctuation">.</span>prev <span class="token operator">=</span> None
+
+
+<span class="token keyword">class</span> <span class="token class-name">DoubleLinkList</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""双链表"""</span>
+    <span class="token triple-quoted-string string">"""中间继承了 SingleLinkList 中的 is_empty, length,"""</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> node<span class="token operator">=</span>None<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>__head <span class="token operator">=</span> None
+
+    <span class="token keyword">def</span> <span class="token function">is_empty</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""链表是否为空"""</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>__head <span class="token keyword">is</span> None
+
+    <span class="token keyword">def</span> <span class="token function">length</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""链表的长度"""</span>
+        cur <span class="token operator">=</span> self<span class="token punctuation">.</span>__head
+        count <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">while</span> cur <span class="token keyword">is</span> <span class="token operator">not</span> None<span class="token punctuation">:</span>
+            count <span class="token operator">+=</span> <span class="token number">1</span>
+            cur <span class="token operator">=</span> cur<span class="token punctuation">.</span>next
+        <span class="token keyword">return</span> count
+
+    <span class="token keyword">def</span> <span class="token function">travel</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""遍历"""</span>
+        cur <span class="token operator">=</span> self<span class="token punctuation">.</span>__head
+        <span class="token keyword">while</span> cur <span class="token keyword">is</span> <span class="token operator">not</span> None<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>cur<span class="token punctuation">.</span>ele<span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">" "</span><span class="token punctuation">)</span>
+            cur <span class="token operator">=</span> cur<span class="token punctuation">.</span>next
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">add</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> item<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""头部添加"""</span>
+        node <span class="token operator">=</span> Node<span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+        node<span class="token punctuation">.</span>next <span class="token operator">=</span> self<span class="token punctuation">.</span>__head
+        self<span class="token punctuation">.</span>__head <span class="token operator">=</span> node
+        <span class="token keyword">if</span> node<span class="token punctuation">.</span>next<span class="token punctuation">:</span>
+            node<span class="token punctuation">.</span>next<span class="token punctuation">.</span>prev <span class="token operator">=</span> node
+
+    <span class="token keyword">def</span> <span class="token function">append</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> item<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""尾部添加"""</span>
+        node <span class="token operator">=</span> Node<span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>is_empty<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>__head <span class="token operator">=</span> node
+            <span class="token keyword">return</span>
+        cur <span class="token operator">=</span> self<span class="token punctuation">.</span>__head
+        <span class="token keyword">while</span> cur<span class="token punctuation">.</span>next <span class="token keyword">is</span> <span class="token operator">not</span> None<span class="token punctuation">:</span>
+            cur <span class="token operator">=</span> cur<span class="token punctuation">.</span>next
+        node<span class="token punctuation">.</span>prev <span class="token operator">=</span> cur
+        cur<span class="token punctuation">.</span>next <span class="token operator">=</span> node
+
+    <span class="token keyword">def</span> <span class="token function">insert</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> pos<span class="token punctuation">,</span> item<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""插入"""</span>
+        <span class="token keyword">if</span> pos <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>add<span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+        <span class="token keyword">elif</span> pos <span class="token operator">></span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>length<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>append<span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            index <span class="token operator">=</span> <span class="token number">0</span>
+            cur <span class="token operator">=</span> self<span class="token punctuation">.</span>__head
+            <span class="token keyword">while</span> index <span class="token operator">&lt;</span> pos<span class="token punctuation">:</span>
+                cur <span class="token operator">=</span> cur<span class="token punctuation">.</span>next
+                index <span class="token operator">+=</span> <span class="token number">1</span>
+            <span class="token comment" spellcheck="true"># 退出循环的时候 cur 指向 pos 的位置</span>
+            node <span class="token operator">=</span> Node<span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+            node<span class="token punctuation">.</span>next <span class="token operator">=</span> cur
+            node<span class="token punctuation">.</span>prev <span class="token operator">=</span> cur<span class="token punctuation">.</span>prev
+            cur<span class="token punctuation">.</span>prev<span class="token punctuation">.</span>next <span class="token operator">=</span> node
+            cur<span class="token punctuation">.</span>prev <span class="token operator">=</span> node
+
+    <span class="token keyword">def</span> <span class="token function">remove</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> item<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""删除元素"""</span>
+        cur <span class="token operator">=</span> self<span class="token punctuation">.</span>__head
+        <span class="token keyword">while</span> cur <span class="token keyword">is</span> <span class="token operator">not</span> None<span class="token punctuation">:</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>cur<span class="token punctuation">.</span>ele <span class="token operator">==</span> item<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token comment" spellcheck="true"># 头结点就是要删除的元素</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>__head <span class="token operator">==</span> cur<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                    self<span class="token punctuation">.</span>__head <span class="token operator">=</span> cur<span class="token punctuation">.</span>next
+                    <span class="token keyword">if</span> cur<span class="token punctuation">.</span>next<span class="token punctuation">:</span>
+                        <span class="token comment" spellcheck="true"># 判断链表是否只有一个节点</span>
+                        cur<span class="token punctuation">.</span>next<span class="token punctuation">.</span>prev <span class="token operator">=</span> None
+                <span class="token keyword">else</span><span class="token punctuation">:</span>
+                    cur<span class="token punctuation">.</span>prev<span class="token punctuation">.</span>next <span class="token operator">=</span> cur<span class="token punctuation">.</span>next
+                    <span class="token keyword">if</span> cur<span class="token punctuation">.</span>next<span class="token punctuation">:</span>
+                        <span class="token comment" spellcheck="true"># 判断是否为链表的最后一个节点</span>
+                        cur<span class="token punctuation">.</span>next<span class="token punctuation">.</span>prev <span class="token operator">=</span> cur<span class="token punctuation">.</span>prev
+                <span class="token keyword">return</span> <span class="token boolean">True</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                cur <span class="token operator">=</span> cur<span class="token punctuation">.</span>next
+        <span class="token comment" spellcheck="true"># 跳出循环的时候就是最后一项，缺少最后一项</span>
+        <span class="token keyword">return</span> <span class="token boolean">False</span>
+
+    <span class="token keyword">def</span> <span class="token function">search</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> item<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""查看元素是否存在"""</span>
+        cur <span class="token operator">=</span> self<span class="token punctuation">.</span>__head
+        <span class="token keyword">while</span> cur <span class="token operator">!=</span> None<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>cur<span class="token punctuation">.</span>ele <span class="token operator">==</span> item<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> <span class="token boolean">True</span>
+                <span class="token keyword">break</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                cur <span class="token operator">=</span> cur<span class="token punctuation">.</span>next
+        <span class="token keyword">return</span> <span class="token boolean">False</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
+    dll <span class="token operator">=</span> DoubleLinkList<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    dll<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>dll<span class="token punctuation">.</span>is_empty<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>dll<span class="token punctuation">.</span>length<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    dll<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>dll<span class="token punctuation">.</span>is_empty<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>dll<span class="token punctuation">.</span>length<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    dll<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+    dll<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+    dll<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>
+    dll<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+    dll<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span>
+    dll<span class="token punctuation">.</span>add<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+    dll<span class="token punctuation">.</span>add<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span>
+    dll<span class="token punctuation">.</span>add<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>dll<span class="token punctuation">.</span>is_empty<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>dll<span class="token punctuation">.</span>length<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    dll<span class="token punctuation">.</span>travel<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    dll<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'11111'</span><span class="token punctuation">)</span>
+    dll<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'------'</span><span class="token punctuation">)</span>
+    dll<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">13</span><span class="token punctuation">,</span> <span class="token string">'00000'</span><span class="token punctuation">)</span>
+    dll<span class="token punctuation">.</span>travel<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>dll<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    dll<span class="token punctuation">.</span>remove<span class="token punctuation">(</span><span class="token string">'11111'</span><span class="token punctuation">)</span>
+    dll<span class="token punctuation">.</span>travel<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    dll<span class="token punctuation">.</span>remove<span class="token punctuation">(</span><span class="token string">'------'</span><span class="token punctuation">)</span>
+    dll<span class="token punctuation">.</span>travel<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    dll<span class="token punctuation">.</span>remove<span class="token punctuation">(</span><span class="token string">'00000'</span><span class="token punctuation">)</span>
+    dll<span class="token punctuation">.</span>travel<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/02/data-structure/%E5%8D%95%E9%93%BE%E8%A1%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="name" content="吕嘉文">
+      <meta itemprop="description" content="记录生活、工作、学习的点点滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉文小栈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/02/data-structure/%E5%8D%95%E9%93%BE%E8%A1%A8/" class="post-title-link" itemprop="url">单链表</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 14:17:31 / 修改时间：14:18:48" itemprop="dateCreated datePublished" datetime="2020-06-02T14:17:31+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Node</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""节点"""</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> ele<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>ele <span class="token operator">=</span> ele
+        self<span class="token punctuation">.</span>next <span class="token operator">=</span> None
+
+
+<span class="token keyword">class</span> <span class="token class-name">SingleLinkList</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""单链表"""</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> node<span class="token operator">=</span>None<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>__head <span class="token operator">=</span> None
+
+    <span class="token keyword">def</span> <span class="token function">is_empty</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""链表是否为空"""</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>__head <span class="token operator">==</span> None
+
+    <span class="token keyword">def</span> <span class="token function">length</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""链表的长度"""</span>
+        cur <span class="token operator">=</span> self<span class="token punctuation">.</span>__head
+        count <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">while</span> cur <span class="token operator">!=</span> None<span class="token punctuation">:</span>
+            count <span class="token operator">+=</span> <span class="token number">1</span>
+            cur <span class="token operator">=</span> cur<span class="token punctuation">.</span>next
+        <span class="token keyword">return</span> count
+
+    <span class="token keyword">def</span> <span class="token function">travel</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""遍历"""</span>
+        cur <span class="token operator">=</span> self<span class="token punctuation">.</span>__head
+        <span class="token keyword">while</span> cur <span class="token operator">!=</span> None<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>cur<span class="token punctuation">.</span>ele<span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">" "</span><span class="token punctuation">)</span>
+            cur <span class="token operator">=</span> cur<span class="token punctuation">.</span>next
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">add</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> item<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""头部添加"""</span>
+        node <span class="token operator">=</span> Node<span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+        node<span class="token punctuation">.</span>next <span class="token operator">=</span> self<span class="token punctuation">.</span>__head
+        self<span class="token punctuation">.</span>__head <span class="token operator">=</span> node
+
+    <span class="token keyword">def</span> <span class="token function">append</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> item<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""尾部添加"""</span>
+        node <span class="token operator">=</span> Node<span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>is_empty<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>__head <span class="token operator">=</span> node
+            <span class="token keyword">return</span>
+        cur <span class="token operator">=</span> self<span class="token punctuation">.</span>__head
+        <span class="token keyword">while</span><span class="token punctuation">(</span>cur<span class="token punctuation">.</span>next <span class="token operator">!=</span> None<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            cur <span class="token operator">=</span> cur<span class="token punctuation">.</span>next
+        cur<span class="token punctuation">.</span>next <span class="token operator">=</span> node
+
+    <span class="token keyword">def</span> <span class="token function">insert</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> pos<span class="token punctuation">,</span> item<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""插入"""</span>
+        <span class="token keyword">if</span> pos <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>add<span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+        <span class="token keyword">elif</span> pos <span class="token operator">></span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>length<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>append<span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            index <span class="token operator">=</span> <span class="token number">0</span>
+            pre <span class="token operator">=</span> self<span class="token punctuation">.</span>__head
+            node <span class="token operator">=</span> Node<span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+            <span class="token keyword">while</span> index <span class="token operator">&lt;</span> <span class="token punctuation">(</span>pos <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                pre <span class="token operator">=</span> pre<span class="token punctuation">.</span>next
+                index <span class="token operator">+=</span> <span class="token number">1</span>
+            node<span class="token punctuation">.</span>next <span class="token operator">=</span> pre<span class="token punctuation">.</span>next
+            pre<span class="token punctuation">.</span>next <span class="token operator">=</span> node
+
+    <span class="token keyword">def</span> <span class="token function">remove</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> item<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""删除元素"""</span>
+        cur <span class="token operator">=</span> self<span class="token punctuation">.</span>__head
+        pre <span class="token operator">=</span> None
+        <span class="token keyword">while</span> cur <span class="token keyword">is</span> <span class="token operator">not</span> None<span class="token punctuation">:</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>cur<span class="token punctuation">.</span>ele <span class="token operator">==</span> item<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token comment" spellcheck="true"># 头结点就是要删除的元素</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>__head <span class="token operator">==</span> cur<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                    self<span class="token punctuation">.</span>__head <span class="token operator">=</span> cur<span class="token punctuation">.</span>next
+                    <span class="token keyword">return</span> <span class="token boolean">True</span>
+                <span class="token keyword">else</span><span class="token punctuation">:</span>
+                    pre<span class="token punctuation">.</span>next <span class="token operator">=</span> cur<span class="token punctuation">.</span>next
+                    <span class="token keyword">return</span> <span class="token boolean">True</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                pre <span class="token operator">=</span> cur
+                cur <span class="token operator">=</span> cur<span class="token punctuation">.</span>next
+        <span class="token comment" spellcheck="true"># 缺少最后一项</span>
+        <span class="token keyword">return</span> <span class="token boolean">False</span>
+
+    <span class="token keyword">def</span> <span class="token function">search</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> item<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""查看元素是否存在"""</span>
+        cur <span class="token operator">=</span> self<span class="token punctuation">.</span>__head
+        <span class="token keyword">while</span> cur <span class="token operator">!=</span> None<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>cur<span class="token punctuation">.</span>ele <span class="token operator">==</span> item<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> <span class="token boolean">True</span>
+                <span class="token keyword">break</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                cur <span class="token operator">=</span> cur<span class="token punctuation">.</span>next
+        <span class="token keyword">return</span> <span class="token boolean">False</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
+    ll <span class="token operator">=</span> SingleLinkList<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    ll<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+    ll<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    ll<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+    ll<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+    ll<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>
+    ll<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+    ll<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span>
+    ll<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'11111'</span><span class="token punctuation">)</span>
+    ll<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'------'</span><span class="token punctuation">)</span>
+    ll<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">13</span><span class="token punctuation">,</span> <span class="token string">'00000'</span><span class="token punctuation">)</span>
+    ll<span class="token punctuation">.</span>travel<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">print</span><span class="token punctuation">(</span>ll<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    ll<span class="token punctuation">.</span>remove<span class="token punctuation">(</span><span class="token string">'11111'</span><span class="token punctuation">)</span>
+    ll<span class="token punctuation">.</span>travel<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    ll<span class="token punctuation">.</span>remove<span class="token punctuation">(</span><span class="token string">'------'</span><span class="token punctuation">)</span>
+    ll<span class="token punctuation">.</span>travel<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    ll<span class="token punctuation">.</span>remove<span class="token punctuation">(</span><span class="token string">'00000'</span><span class="token punctuation">)</span>
+    ll<span class="token punctuation">.</span>travel<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/02/data-structure/%E4%BA%8C%E5%8F%89%E6%A0%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="name" content="吕嘉文">
+      <meta itemprop="description" content="记录生活、工作、学习的点点滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉文小栈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/02/data-structure/%E4%BA%8C%E5%8F%89%E6%A0%91/" class="post-title-link" itemprop="url">二叉树</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 14:16:01 / 修改时间：14:18:12" itemprop="dateCreated datePublished" datetime="2020-06-02T14:16:01+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>简单搞一个完全二叉树</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># coding:utf-8</span>
+<span class="token keyword">class</span> <span class="token class-name">Node</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> item<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>elem <span class="token operator">=</span> item
+        self<span class="token punctuation">.</span>l_child <span class="token operator">=</span> None
+        self<span class="token punctuation">.</span>r_child <span class="token operator">=</span> None
+
+
+<span class="token keyword">class</span> <span class="token class-name">Tree</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>root <span class="token operator">=</span> None
+
+    <span class="token keyword">def</span> <span class="token function">add</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> item<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 往最后添加，向完全二叉树去努力</span>
+        node <span class="token operator">=</span> Node<span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>root <span class="token keyword">is</span> None<span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>root <span class="token operator">=</span> node
+            <span class="token keyword">return</span>
+        queue <span class="token operator">=</span> <span class="token punctuation">[</span>self<span class="token punctuation">.</span>root<span class="token punctuation">]</span>
+        <span class="token keyword">while</span> queue<span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># 队列不为空就一直可以进行</span>
+            cur_node <span class="token operator">=</span> queue<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> cur_node<span class="token punctuation">.</span>l_child <span class="token keyword">is</span> None<span class="token punctuation">:</span>
+                cur_node<span class="token punctuation">.</span>l_child <span class="token operator">=</span> node
+                <span class="token keyword">return</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                queue<span class="token punctuation">.</span>append<span class="token punctuation">(</span>cur_node<span class="token punctuation">.</span>l_child<span class="token punctuation">)</span>
+
+            <span class="token keyword">if</span> cur_node<span class="token punctuation">.</span>r_child <span class="token keyword">is</span> None<span class="token punctuation">:</span>
+                cur_node<span class="token punctuation">.</span>r_child <span class="token operator">=</span> node
+                <span class="token keyword">return</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                queue<span class="token punctuation">.</span>append<span class="token punctuation">(</span>cur_node<span class="token punctuation">.</span>r_child<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">breadth_travel</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>root <span class="token keyword">is</span> None<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> None
+        queue <span class="token operator">=</span> <span class="token punctuation">[</span>self<span class="token punctuation">.</span>root<span class="token punctuation">]</span>
+        <span class="token keyword">while</span> queue<span class="token punctuation">:</span>
+            cur_node <span class="token operator">=</span> queue<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>cur_node<span class="token punctuation">.</span>elem<span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">" "</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> cur_node<span class="token punctuation">.</span>l_child <span class="token keyword">is</span> <span class="token operator">not</span> None<span class="token punctuation">:</span>
+                queue<span class="token punctuation">.</span>append<span class="token punctuation">(</span>cur_node<span class="token punctuation">.</span>l_child<span class="token punctuation">)</span>
+            <span class="token keyword">if</span> cur_node<span class="token punctuation">.</span>r_child <span class="token keyword">is</span> <span class="token operator">not</span> None<span class="token punctuation">:</span>
+                queue<span class="token punctuation">.</span>append<span class="token punctuation">(</span>cur_node<span class="token punctuation">.</span>r_child<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">pre_order_travel</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> root <span class="token keyword">is</span> None<span class="token punctuation">:</span>
+            <span class="token keyword">return</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>elem<span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">" "</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>pre_order_travel<span class="token punctuation">(</span>root<span class="token punctuation">.</span>l_child<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>pre_order_travel<span class="token punctuation">(</span>root<span class="token punctuation">.</span>r_child<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">mid_order_travel</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> root <span class="token keyword">is</span> None<span class="token punctuation">:</span>
+            <span class="token keyword">return</span>
+        self<span class="token punctuation">.</span>mid_order_travel<span class="token punctuation">(</span>root<span class="token punctuation">.</span>l_child<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>elem<span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">" "</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>mid_order_travel<span class="token punctuation">(</span>root<span class="token punctuation">.</span>r_child<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">rear_order_travel</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> root<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> root <span class="token keyword">is</span> None<span class="token punctuation">:</span>
+            <span class="token keyword">return</span>
+        self<span class="token punctuation">.</span>rear_order_travel<span class="token punctuation">(</span>root<span class="token punctuation">.</span>l_child<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>rear_order_travel<span class="token punctuation">(</span>root<span class="token punctuation">.</span>r_child<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>elem<span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">" "</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
+    tree <span class="token operator">=</span> Tree<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    tree<span class="token punctuation">.</span>add<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+    tree<span class="token punctuation">.</span>add<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    tree<span class="token punctuation">.</span>add<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+    tree<span class="token punctuation">.</span>add<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+    tree<span class="token punctuation">.</span>add<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>
+    tree<span class="token punctuation">.</span>add<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+    tree<span class="token punctuation">.</span>add<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span>
+    tree<span class="token punctuation">.</span>add<span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span>
+    tree<span class="token punctuation">.</span>add<span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span>
+    tree<span class="token punctuation">.</span>add<span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">)</span>
+    tree<span class="token punctuation">.</span>breadth_travel<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'\n--------'</span><span class="token punctuation">)</span>
+    tree<span class="token punctuation">.</span>pre_order_travel<span class="token punctuation">(</span>tree<span class="token punctuation">.</span>root<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'\n--------'</span><span class="token punctuation">)</span>
+    tree<span class="token punctuation">.</span>mid_order_travel<span class="token punctuation">(</span>tree<span class="token punctuation">.</span>root<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'\n--------'</span><span class="token punctuation">)</span>
+    tree<span class="token punctuation">.</span>rear_order_travel<span class="token punctuation">(</span>tree<span class="token punctuation">.</span>root<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'\n--------'</span><span class="token punctuation">)</span>
+
+</code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/02/algorithms/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="name" content="吕嘉文">
+      <meta itemprop="description" content="记录生活、工作、学习的点点滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉文小栈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/02/algorithms/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/" class="post-title-link" itemprop="url">归并排序</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 14:09:46 / 修改时间：14:15:22" itemprop="dateCreated datePublished" datetime="2020-06-02T14:09:46+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># coding:utf-8</span>
+<span class="token comment" spellcheck="true"># coding:utf-8</span>
+<span class="token keyword">def</span> <span class="token function">shell_sort</span><span class="token punctuation">(</span>alist<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span>
+    n <span class="token operator">=</span> len<span class="token punctuation">(</span>alist<span class="token punctuation">)</span>
+    gap <span class="token operator">=</span> n <span class="token operator">//</span> <span class="token number">2</span>
+    <span class="token keyword">while</span> gap <span class="token operator">>=</span> <span class="token number">1</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 希尔排序与普通的插入算法的区别就是步长</span>
+        <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>gap<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            i <span class="token operator">=</span> j
+            <span class="token keyword">while</span> i <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span>
+                <span class="token keyword">if</span> alist<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;</span> alist<span class="token punctuation">[</span>i <span class="token operator">-</span> gap<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                    alist<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> alist<span class="token punctuation">[</span>i <span class="token operator">-</span> gap<span class="token punctuation">]</span> <span class="token operator">=</span> alist<span class="token punctuation">[</span>i <span class="token operator">-</span> gap<span class="token punctuation">]</span><span class="token punctuation">,</span> alist<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+                    i <span class="token operator">-=</span> gap
+                <span class="token keyword">else</span><span class="token punctuation">:</span>
+                    <span class="token keyword">break</span>
+        <span class="token comment" spellcheck="true"># 缩短 gap 步长</span>
+        gap <span class="token operator">//=</span> <span class="token number">2</span>
+    <span class="token keyword">return</span> alist
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    li <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">54</span><span class="token punctuation">,</span> <span class="token number">26</span><span class="token punctuation">,</span> <span class="token number">93</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">77</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">44</span><span class="token punctuation">,</span> <span class="token number">55</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">]</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>shell_sort<span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span>
+    li2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>shell_sort<span class="token punctuation">(</span>li2<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    li3 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>shell_sort<span class="token punctuation">(</span>li3<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    li4 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>shell_sort<span class="token punctuation">(</span>li4<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    li5 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>shell_sort<span class="token punctuation">(</span>li5<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    li6 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>shell_sort<span class="token punctuation">(</span>li6<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/02/algorithms/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="name" content="吕嘉文">
+      <meta itemprop="description" content="记录生活、工作、学习的点点滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉文小栈">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/02/algorithms/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/" class="post-title-link" itemprop="url">归并排序</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 14:09:14 / 修改时间：14:15:26" itemprop="dateCreated datePublished" datetime="2020-06-02T14:09:14+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># coding:utf-8</span>
+<span class="token keyword">def</span> <span class="token function">select_sort</span><span class="token punctuation">(</span>alist<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token string">"选择排序"</span>
+    n <span class="token operator">=</span> len<span class="token punctuation">(</span>alist<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 产生了 n - 2次</span>
+        min <span class="token operator">=</span> i
+        <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>alist<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&lt;</span> alist<span class="token punctuation">[</span>min<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                min <span class="token operator">=</span> j
+        alist<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> alist<span class="token punctuation">[</span>min<span class="token punctuation">]</span> <span class="token operator">=</span> alist<span class="token punctuation">[</span>min<span class="token punctuation">]</span><span class="token punctuation">,</span> alist<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+    <span class="token keyword">return</span> alist
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    li <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">54</span><span class="token punctuation">,</span> <span class="token number">26</span><span class="token punctuation">,</span> <span class="token number">93</span><span class="token punctuation">,</span> <span class="token number">17</span><span class="token punctuation">,</span> <span class="token number">77</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">,</span> <span class="token number">44</span><span class="token punctuation">,</span> <span class="token number">55</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">]</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>select_sort<span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="吕嘉文"
+      src="/images/icon.jpg">
+  <p class="site-author-name" itemprop="name">吕嘉文</p>
+  <div class="site-description" itemprop="description">记录生活、工作、学习的点点滴滴</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">106</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-at"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">吕嘉文</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

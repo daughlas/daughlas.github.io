@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <meta name="msapplication-config" content="/images/browserconfig.xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="http 模块res 属性 res.writeHead(200,{&quot;Content-Type&quot;:&quot;text&#x2F;html;charset&#x3D;UTF8&quot;}) res.write(&quot;&lt;h1&gt;我是一级标题&lt;&#x2F;h1&gt;&quot;) res.end(&quot;&lt;h2&gt;我是二级标题&lt;&#x2F;h2&gt;&quot;) write">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Node.js Http 模块">
+<meta property="og:url" content="http://yoursite.com/2020/06/02/node/Node.js%20Http%20%E6%A8%A1%E5%9D%97/index.html">
+<meta property="og:site_name" content="嘉文小栈">
+<meta property="og:description" content="http 模块res 属性 res.writeHead(200,{&quot;Content-Type&quot;:&quot;text&#x2F;html;charset&#x3D;UTF8&quot;}) res.write(&quot;&lt;h1&gt;我是一级标题&lt;&#x2F;h1&gt;&quot;) res.end(&quot;&lt;h2&gt;我是二级标题&lt;&#x2F;h2&gt;&quot;) write">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-02T02:28:40.200Z">
+<meta property="article:modified_time" content="2020-06-02T06:44:49.244Z">
+<meta property="article:author" content="吕嘉文">
+<meta property="article:tag" content="Node.js">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/06/02/node/Node.js%20Http%20%E6%A8%A1%E5%9D%97/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Node.js Http 模块 | 嘉文小栈</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">嘉文小栈</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">每天进步一点点</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/02/node/Node.js%20Http%20%E6%A8%A1%E5%9D%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="name" content="吕嘉文">
+      <meta itemprop="description" content="记录生活、工作、学习的点点滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉文小栈">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Node.js Http 模块
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 10:28:40 / 修改时间：14:44:49" itemprop="dateCreated datePublished" datetime="2020-06-02T10:28:40+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Node/" itemprop="url" rel="index"><span itemprop="name">Node</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="http-模块"><a href="#http-模块" class="headerlink" title="http 模块"></a>http 模块</h1><h2 id="res-属性"><a href="#res-属性" class="headerlink" title="res 属性"></a>res 属性</h2><ol>
+<li><code>res.writeHead(200,{&quot;Content-Type&quot;:&quot;text/html;charset=UTF8&quot;})</code></li>
+<li><code>res.write(&quot;&lt;h1&gt;我是一级标题&lt;/h1&gt;&quot;)</code></li>
+<li><code>res.end(&quot;&lt;h2&gt;我是二级标题&lt;/h2&gt;&quot;)</code></li>
+<li>write 和 end 之中必须是字符串或者Buffer，别的内容需要<code>.toString()</code>才能输出</li>
+<li>所有的http请求必须要有一个res.end()，否则会一直挂起</li>
+</ol>
+<h2 id="req-的属性"><a href="#req-的属性" class="headerlink" title="req 的属性"></a>req 的属性</h2><ol>
+<li>req.url 属性最重要，所有路由都必须最先拿到它</li>
+<li>req.url 会忽略参数，可以识别？之后查询的参数，但是不能识别页面之内的#这样的</li>
+<li>req.url 是以 “/” 开始的，表示根目录</li>
+<li>识别 URL 用到两个新模块：URL模块和 querystring 模块</li>
+</ol>
+<h3 id="querysting"><a href="#querysting" class="headerlink" title="querysting"></a>querysting</h3><ol>
+<li>querystring.parse 接受一个查询字符串(?后面的东西)，返回一个对象，就是把 <code>&#39;foo=bar&amp;baz=qux&amp;baz=quux&amp;corge&#39;</code>变成<code>{foo:&#39;bar&#39;, bar:[&#39;qux&#39;, &#39;quux&#39;], corge: &#39;&#39;}</code></li>
+<li>querystring.parse 和url.parse 中传入第二个参数true是一样的，所以现在推荐第二种写法，现在querystring现在基本没用了</li>
+</ol>
+<h3 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h3><ol>
+<li>一个完整的请求路径：<code>http://user:pass@host.com:8080/p/a/t/h?query=string#hash</code> 可以划分为<ol>
+<li>protocol：http</li>
+<li>slashes： protocol后面是否有斜线</li>
+<li>host: 主机名</li>
+<li>auth：用户</li>
+<li>hostname: 主机名，host.com</li>
+<li>port: 端口号，8080</li>
+<li>query: 网址的查询部分，可以通过第二个参数是true还是false决定返回的是字符串还是对象</li>
+<li>search: 根没传参数的query是一样的</li>
+<li>pathname: 路径，host之后和query之前的内容，包含最开始的那个斜线，例子中的 “/p/a/t/h”，</li>
+<li>path：pathname和search的合体，是“/p/a/t/h?query=string#hash”</li>
+<li></li>
+<li>hash：页面中的锚点</li>
+<li></li>
+</ol>
+</li>
+<li><code>var url = require(&quot;url&quot;); var path = url.parse(req.url).path</code>，parse可以把url转换为一个对象 </li>
+<li>url.parse 的第二个属性填入true，url 对象中的 query 属性就会得到一个字符串</li>
+</ol>
+<h2 id="实战内容"><a href="#实战内容" class="headerlink" title="实战内容"></a>实战内容</h2><ol>
+<li>可以通过判断用户输入的url最后有没有 . 来判断请求的是文件还是文件夹</li>
+<li>当出现异步的时候，要么把它放在回调函数里面，要么给通用函数设计一个回调函数</li>
+<li>Node.js 不好用的地方<ol>
+<li>实现一个静态的服务器需要写大量的代码，没有 web 容器</li>
+<li>缓存问题，没有 304 ，用cookies打标记，查看last modified</li>
+<li>express 实现静态只需要一行代码</li>
+</ol>
+</li>
+</ol>
+<h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2><ol>
+<li>exports 是 Node.js 穿件的一个对象，挂在上面的属性和方法，将完全付给<code>let a = require(&#39;xxx&#39;)</code> 中的 a 这个变量，a 接受 exports 变量，a 对象就是文件中的exports 对象，一般把变量设置成包的名字，相当于自动增加了一个<strong>顶部命名空间</strong>。</li>
+<li>require 一次相当于增加了一个顶层变量，所有的函数和变量都要为这个顶层变量打点。</li>
+<li>前端代码的暴露，暴露的是个命名空间</li>
+</ol>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    window<span class="token punctuation">.</span>obj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    obj<span class="token punctuation">.</span>info <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<ol start="4">
+<li>可以用一个 Javascript 文件描述一个类，用 <code>module.exports = 构造函数名</code> 的方式暴露一个类，People 是一个构造函数，可以new出新对象</li>
+</ol>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">People</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> sex<span class="token punctuation">,</span> age<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>sex <span class="token operator">=</span> sex<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+People<span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token punctuation">{</span>
+    sayHello <span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">lo</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>sex <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> People<span class="token punctuation">;</span></code></pre>
+<ol start="5">
+<li>综上，有两种js文件写作的方式，一种方式暴露一个类(module.exports = 类名)，第二种是暴露属性和方法（exports.msg = msg）</li>
+<li>不写 ./ 的时候，默认从 node_modules 文件夹引入，node 会逐级遍历指导找到node_modules 文件夹</li>
+<li>package.json 中 main 表示入口文件，每一个模块文件夹中推荐写一个package.json文件，Node 会自动读取它。</li>
+<li>模块就是文件盒文件之间的关系</li>
+</ol>
+<h2 id="POST-请求"><a href="#POST-请求" class="headerlink" title="POST 请求"></a>POST 请求</h2><ol>
+<li>post 请求是怎么玩的</li>
+</ol>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> postData <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+
+req<span class="token punctuation">.</span><span class="token function">addListener</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>chunk<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    postData <span class="token operator">+</span><span class="token operator">=</span> chunk<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+req<span class="token punctuation">.</span><span class="token function">addListener</span><span class="token punctuation">(</span><span class="token string">'end'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> param <span class="token operator">=</span> querystring<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>postData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    res<span class="token punctuation">.</span><span class="token function">writeHead</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token string">"Content-Type"</span><span class="token punctuation">:</span> <span class="token string">"text/html; charset=utf8"</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>param<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<h2 id="ejs-模板"><a href="#ejs-模板" class="headerlink" title="ejs 模板"></a>ejs 模板</h2><ol>
+<li>时代的潮流是，用户访问首页的时候产生静态文件，前端用 ajax 请求数据 json 文件</li>
+<li>underscore 这样的前台模板，请求一个json，后台服务器只输出json，不输出样式</li>
+<li>angular.js 这些就是优雅的把后台的数据变成前端的页面</li>
+<li>ejs 这样的技术，技术要杂糅，前后端分的不够开</li>
+<li>ejs 这个模板引擎的效率并不高，因为它实际上是后台在操作字符串</li>
+</ol>
+<h2 id="jade-模板"><a href="#jade-模板" class="headerlink" title="jade 模板"></a>jade 模板</h2><ol>
+<li>靠的是字符缩进</li>
+<li>效率高，解析快</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Node-js/" rel="tag"># Node.js</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/06/02/node/%E5%AD%A6%E4%B9%A0%20express%20%E6%A1%86%E6%9E%B6/" rel="prev" title="学习 Express 框架">
+      <i class="fa fa-chevron-left"></i> 学习 Express 框架
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/06/02/node/Node.js%20fs%20%E6%A8%A1%E5%9D%97/" rel="next" title="Node.js fs 模块">
+      Node.js fs 模块 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#http-模块"><span class="nav-number">1.</span> <span class="nav-text">http 模块</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#res-属性"><span class="nav-number">1.1.</span> <span class="nav-text">res 属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#req-的属性"><span class="nav-number">1.2.</span> <span class="nav-text">req 的属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#querysting"><span class="nav-number">1.2.1.</span> <span class="nav-text">querysting</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#URL"><span class="nav-number">1.2.2.</span> <span class="nav-text">URL</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实战内容"><span class="nav-number">1.3.</span> <span class="nav-text">实战内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模块"><span class="nav-number">1.4.</span> <span class="nav-text">模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#POST-请求"><span class="nav-number">1.5.</span> <span class="nav-text">POST 请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ejs-模板"><span class="nav-number">1.6.</span> <span class="nav-text">ejs 模板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jade-模板"><span class="nav-number">1.7.</span> <span class="nav-text">jade 模板</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="吕嘉文"
+      src="/images/icon.jpg">
+  <p class="site-author-name" itemprop="name">吕嘉文</p>
+  <div class="site-description" itemprop="description">记录生活、工作、学习的点点滴滴</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">106</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-at"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">吕嘉文</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

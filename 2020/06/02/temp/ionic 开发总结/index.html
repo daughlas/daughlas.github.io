@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <meta name="msapplication-config" content="/images/browserconfig.xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="各种命令ionic serve -lc，ionic提供的浏览器调试 ionic g page xxx，添加模版页面 引入import {NavParams} from &#39;ionic-angular&#39; 跳转时传入参数： this.navCtrl.push(demoPage, {item: &#39;value&#39;}) 跳转后的页面通过get方法获取值: let temp &#x3D; t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ionic 开发总结">
+<meta property="og:url" content="http://yoursite.com/2020/06/02/temp/ionic%20%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="嘉文小栈">
+<meta property="og:description" content="各种命令ionic serve -lc，ionic提供的浏览器调试 ionic g page xxx，添加模版页面 引入import {NavParams} from &#39;ionic-angular&#39; 跳转时传入参数： this.navCtrl.push(demoPage, {item: &#39;value&#39;}) 跳转后的页面通过get方法获取值: let temp &#x3D; t">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-02T07:57:41.749Z">
+<meta property="article:modified_time" content="2020-06-02T07:58:35.132Z">
+<meta property="article:author" content="吕嘉文">
+<meta property="article:tag" content="临时">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/06/02/temp/ionic%20%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>ionic 开发总结 | 嘉文小栈</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">嘉文小栈</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">每天进步一点点</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/02/temp/ionic%20%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="name" content="吕嘉文">
+      <meta itemprop="description" content="记录生活、工作、学习的点点滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉文小栈">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ionic 开发总结
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 15:57:41 / 修改时间：15:58:35" itemprop="dateCreated datePublished" datetime="2020-06-02T15:57:41+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%B4%E6%97%B6/" itemprop="url" rel="index"><span itemprop="name">临时</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h4 id="各种命令"><a href="#各种命令" class="headerlink" title="各种命令"></a>各种命令</h4><p>ionic serve -lc，ionic提供的浏览器调试</p>
+<p>ionic g page xxx，添加模版页面</p>
+<p>引入<code>import {NavParams} from &#39;ionic-angular&#39;</code><br> 跳转时传入参数： <code>this.navCtrl.push(demoPage, {item: &#39;value&#39;})</code><br> 跳转后的页面通过get方法获取值: <code>let temp = this.navParams.get(&#39;item&#39;)</code></p>
+<h4 id="gradle-配置"><a href="#gradle-配置" class="headerlink" title="gradle 配置"></a>gradle 配置</h4><ul>
+<li><code>ionic build android</code>是通过gradle编译，而且会在线下载gradle，墙内基本是下不了的，这就需要手动下载项目需要的gradle版本。 查看android platform下的build.gradle文件，看当前版本需要的gradle version。 下载成功后，放在<code>myApp\platforms\android\gradle</code>文件夹下， 命令行输入<code>set CORDOVA_ANDROID_GRADLE_DISTRIBUTION_URL=../gradle-2.14.1-all.zip</code> </li>
+<li>maven下载失败问题。替换为阿里云镜像：<br> 打开项目\platforms\android\build.gradle修改：</li>
+</ul>
+<h4 id="Ionic2引入第三方js库（未验证）"><a href="#Ionic2引入第三方js库（未验证）" class="headerlink" title="Ionic2引入第三方js库（未验证）"></a>Ionic2引入第三方js库（未验证）</h4><p>应用中想实现一个页面，进入时显示根据设备uuid生成的二维码，虽然barcodescanner可以实现生成二维码，但会打开一个Activity，这样体验不符合需求。于是想到引用第三方的js库，如qrcode.js等。<br> 然而Ionic2使用typescript，ts中是无法直接调用js的。这里网上给出了两种方案。</p>
+<ol>
+<li>引入js文件，通过declarations.d.ts文件声明引用变量。</li>
+<li>通过types库下载qrcode。</li>
+</ol>
+<p>方案2并没有成功，方案1的具体过程以qrcode为例，如下：</p>
+<ol>
+<li>从github下在需要的js文件，<code>jquery.min.js</code>和<code>qrcode.js</code> </li>
+<li>文件复制到项目’/src/assets/js’目录下，js目录是自己新建的</li>
+<li>在index.html中引入：<br> <code>&lt;script src=&quot;assets/js/jquery.min.js&quot;&gt;&lt;/script&gt; &lt;script src=&quot;assets/js/qrcode.min.js&quot;&gt;&lt;/script&gt;</code> </li>
+<li>在src目录下的<code>declarations.d.ts</code>中申明qrcode的方法变量：<br> <code>declare var QRCode;</code> </li>
+<li>完成以上步骤后，就可以在ts中调用qrcode的方法，例如在页面上显示一个文本转换的二维码：<br> <code>&lt;div id=&quot;qrImage&quot; class=&quot;qrcode-image&quot;&gt;&lt;/div&gt;</code><br> <code>let qrImage = document.getElementById(&#39;qrImage&#39;); new QRCode(qrImage, &#39;test&#39;);</code></li>
+</ol>
+<h4 id="修改应用名称"><a href="#修改应用名称" class="headerlink" title="修改应用名称"></a>修改应用名称</h4><p>修改根目录下config.xml文件： <code>&lt;widget id=&quot;com.ionframework.demo&quot;&gt;</code>，id对应应用的包名</p>
+<p> <code>&lt;name&gt;&lt;/name&gt;</code>对应应用名称，直接修改Android的values文件没有效果</p>
+<h4 id="解决Splash后出现短暂白屏问题"><a href="#解决Splash后出现短暂白屏问题" class="headerlink" title="解决Splash后出现短暂白屏问题"></a>解决Splash后出现短暂白屏问题</h4><p>修改config.xml：<br>添加 <code>&lt;preference name=&quot;AutoHideSplashScreen&quot; value=&quot;false&quot;/&gt;</code><br>注释掉 <code>&lt;preference name=&quot;SplashScreenDelay&quot; value=&quot;3000&quot;/&gt;</code></p>
+<h4 id="签名和打包"><a href="#签名和打包" class="headerlink" title="签名和打包"></a>签名和打包</h4><h6 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h6><p>ionic （cordova） build android —prod  -release 打包</p>
+<h6 id="生成密钥"><a href="#生成密钥" class="headerlink" title="生成密钥"></a>生成密钥</h6><p>首先打开终端，cd该路径，输入命令 <code>keytool -genkey -alias demo.keystore -keyalg RSA -validity 40000 -keystore demo.keystore</code> </p>
+<p>参数解释：<code>-genkey</code> 产生密钥，<code>-alias demo.keystore</code> 别名 demo.keystore，<code>-keyalg RSA</code> 使用RSA算法对签名加密，<code>-validity 40000</code> 有效期限4000天，-keystore demo.keystore</p>
+<h6 id="签名"><a href="#签名" class="headerlink" title="签名"></a>签名</h6><p>这里有两种方案，一个是通过jarsigner工具，另一个是通过Ionic自动签名。这里笔者使用第二种。</p>
+<p> 在项目的/platforms/android/目录下新建<code>release-signing.properties</code>文件，添加内容：</p>
+<pre><code>storeFile=path to keystore
+keyAlias=your key alias
+storePassword=your store password
+keyPassword=you key password</code></pre><p>####获取设备分辨率</p>
+<p><code>window.screen.width * window.devicePixelRatio; window.screen.height * window.devicePixelRatio;</code></p>
+<h4 id="页面间的参数传递"><a href="#页面间的参数传递" class="headerlink" title="页面间的参数传递"></a>页面间的参数传递</h4><p>引入<code>import {NavParams} from &#39;ionic-angular&#39;</code><br> 跳转时传入参数： <code>this.navCtrl.push(demoPage, {item: &#39;value&#39;})</code><br> 跳转后的页面通过get方法获取值: <code>let temp = this.navParams.get(&#39;item&#39;)</code></p>
+<h4 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h4><table>
+<thead>
+<tr>
+<th>事件名称</th>
+<th>事件说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ionViewDidLoad</td>
+<td>页面加载完毕出发。页面被创建DOM的时候触发，如果页面被缓存，就不会再次出发了。可以放置一些初始化页面的事件。</td>
+</tr>
+<tr>
+<td>ionViewWillEnter</td>
+<td>即将进入一个页面变成当前激活页面的时候执行</td>
+</tr>
+<tr>
+<td>ionViewDidEnter</td>
+<td>进入了一个页面，并且页面变成了当前激活的页面，不管第一次进入页面还是缓存后进入都会执行</td>
+</tr>
+<tr>
+<td>ionViewWillLeave</td>
+<td>将要离开页面的时候执行</td>
+</tr>
+<tr>
+<td>ionViewDidLeave</td>
+<td>完成离开页面之后执行</td>
+</tr>
+<tr>
+<td>ionViewWillUnload</td>
+<td>页面销毁和页面中所有元素移除之前执行</td>
+</tr>
+<tr>
+<td>ionViewDidUnload</td>
+<td>页面销毁和页面中有元素移除之后执行的事件</td>
+</tr>
+</tbody></table>
+<h3 id="热更新的方法"><a href="#热更新的方法" class="headerlink" title="热更新的方法"></a>热更新的方法</h3><ol>
+<li><p>安装 cordova-hot-code-push-cli,执行命令 <code>npm install -g cordova-hot-code-push-cli</code>，作用是使用该命令行生成检测配置文件，通常是在 <code>www</code> 目录下动态生成 <code>chcp.json</code>和 <code>chcp.manifest</code> 生成两个文件</p>
+</li>
+<li><p>进入项目目录</p>
+</li>
+<li><p>安装热更新插件，执行命令(cordova或ionic都可以)：<code>cordova/ionic plugin add cordova-hot-code-push-plugin</code></p>
+</li>
+<li><p><strong>创建cordova-hcp.json模板</strong></p>
+<p>在cordova项目根目录下创建一个 cordova-hcp.json模板文件。 cordova-hcp.json内容如下：</p>
+<pre><code>{
+  &quot;autogenerated&quot;: true,
+  &quot;name&quot;: &quot;bankapp&quot;,
+  &quot;min_native_interface&quot;: 1, //最小支持的外壳app版本
+  &quot;content_url&quot;: &quot;http://192.168.1.101:9999/www&quot;,
+  &quot;ios_identifier&quot;:&quot;https://itues.apple.com/cn/***&quot;, //打版提交App Store下载的地址
+  &quot;update&quot;: &quot;now&quot;
+}</code></pre><p><strong>&amp;注意</strong> ：content_url：是你服务器上要更新的文件地址，执行： <code>$ cordova-hcp build</code>，就会利用这个模板自动在<code>www</code>文件夹下生成新的 chcp.json和chcp.manifest文件，而不用手动更改 www/chcp.json了。</p>
+<p>解析下：</p>
+<ul>
+<li>min_native_interface: 记录当前App的外壳版本值</li>
+<li>chcp.manifest文件记录版本的hash值</li>
+<li>ios_identifier:记录App在苹果商店上的位置，就是外壳地址</li>
+<li>release：内壳时间戳版本，根据时间戳来更新的。</li>
+<li>content_url: 是你服务器内更新的文件地址。此处建议设为www文件夹，因为我们改动代码后要把www文件进行更新，可以直接将改动后的www文件夹把服务器上旧的的www替换掉。</li>
+</ul>
+</li>
+<li><p>配置config.xml文件</p>
+<p>在config.xml文件中添加以下代码: </p>
+<pre><code>&lt;chcp&gt; &lt;native-interface version=&quot;1&quot; /&gt; &lt;config-file url=&quot;http://192.168.1.101:9999/www/chcp.json&quot; /&gt; &lt;/chcp&gt;</code></pre><p><strong>&amp;注意：</strong>url为你服务器中更新文件的地址/ chcp.json</p>
+<p><strong>&amp;注意：</strong>内壳更新 要把cordova-hcp.json和config.xml中的 版本号设置为一样的</p>
+</li>
+<li><p><strong>完成以上准备，开始测试 热更新(html、css或js等资源的动态更新，即内壳更新）</strong></p>
+</li>
+<li><p>更改文件以后运行 <code>$ cordova-hcp build</code>，再次将更改后的www的文件拷贝到服务器中，把原来旧的www文件替换即可</p>
+</li>
+</ol>
+<p>参考资料： <a href="https://www.jianshu.com/p/2f356e3276b8" target="_blank" rel="noopener">https://www.jianshu.com/p/2f356e3276b8</a></p>
+<h4 id="外壳更新-（从网上抄的）"><a href="#外壳更新-（从网上抄的）" class="headerlink" title="外壳更新 （从网上抄的）"></a>外壳更新 （从网上抄的）</h4><h4 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h4><p>这个外壳更新有点强制化，比如你在使用应用时，突然弹出个pop,提示你有新的版本更新了，人性化点的还有个取消按钮；强制性的就确定后直接跳转到AppStore了。这在你自己怎么设置了。<br> 像原生的版本更新就没有强制；如你打版提交审核上架了，客户端也就仅在appStore商店有个更新提醒，更不更在客户了。</p>
+<h4 id="外壳更新配置"><a href="#外壳更新配置" class="headerlink" title="外壳更新配置"></a>外壳更新配置</h4><p>上面的内壳更新整好后，这就比较简单了，因该配的已配置好，只在这改改某些属性就可以</p>
+<h5 id="通过min-native-interface监控app是否提示更新"><a href="#通过min-native-interface监控app是否提示更新" class="headerlink" title="通过min_native_interface监控app是否提示更新"></a>通过min_native_interface监控app是否提示更新</h5><p>所需最小的外壳app版本. 这是app的build版本号，是个整型数字, 不是应用商店中看到的形如”1.0.0”字符串。</p>
+<p>在 config.xml中，这样指定build版本号，例如：app外壳里的config.xml是这样的：</p>
+<pre><code>    &lt;chcp&gt;
+        &lt;native-interface version=&quot;1&quot; /&gt;
+        &lt;config-file url=&quot;http://192.168.191.2:9999/www/chcp.json&quot; /&gt;
+    &lt;/chcp&gt;</code></pre><p>与www目录下的cordova-hcp.json/chcp.json里面的min_native_interface数值相对应，</p>
+<blockquote>
+<p>若服务器里的min_native_interface也对应是1，就不会出现提示用户升级版本的状态（即外壳更新），正常修改www目录的内容通过更新release值，和客户端进行对比，可实现热更新（即内壳更新）。</p>
+</blockquote>
+<pre><code>{
+  &quot;autogenerated&quot;: true,
+  &quot;name&quot;: &quot;bankapp&quot;,
+  &quot;min_native_interface&quot;: 1, //最小内核版本号
+  &quot;content_url&quot;: &quot;http://192.168.191.2:9999/www&quot;,
+  &quot;ios_identifier&quot;: &quot;https://itues.apple.com/cn/***&quot;, //打版提交App Store下载的地址
+  &quot;update&quot;: &quot;now&quot;,
+  &quot;release&quot;: &quot;2017.02.23-12.53.32&quot;
+}</code></pre><p>假设你的外壳app加了个新的插件或文件，应该会更新外壳app。为了防止用户通过热更新下载了不适合他现有外壳app的web内容，应该设置下 min_native_interface 的值<br> 下面我们将 min_native_interface 的值改为 2</p>
+<pre><code>{
+  &quot;autogenerated&quot;: true,
+  &quot;name&quot;: &quot;bankapp&quot;,
+  &quot;min_native_interface&quot;: 2, //最小支持的外壳app版本
+  &quot;content_url&quot;: &quot;http://192.168.191.2:9999/www&quot;,
+  &quot;ios_identifier&quot;: &quot;https://itues.apple.com/cn/***&quot;, //打版提交App Store下载的地址
+  &quot;update&quot;: &quot;now&quot;,
+  &quot;release&quot;: &quot;2017.02.23-12.53.32&quot;
+}</code></pre><p>热更新插件加载到这段json的时候, 发现 min_native_interface 比当前外壳app的build号要大，便不会下载web内容。而是触发一个chcp_updateLoadFailed 错误通知, 告诉用户需要升级外壳app版本了。</p>
+<p>此属性将与config.xml中的native-interface进行对比，如果发现两者不同时，将会触发相应的事件，比如，手机端app中config.xml的<code>native-interface</code>值比服务器上的chcp.json文件中的<code>min_native_interface</code>值小时，将会触发<code>’chcp_updateLoadFailed’</code>事件，同时，错误代码为：<br> <code>chcp.error.APPLICATION_BUILD_VERSION_TOO_LOW</code> 通过这个错误码调用js端监听相应事件通过弹窗提示用户去升级，跳转到AppStore或下载新安装包。</p>
+<blockquote>
+<h4 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h4><p>1、导入插件。外壳（版本号）的更新需要导入另外3个插件<br> <a href="https://link.jianshu.com?t=https://github.com/apache/cordova-plugin-file" target="_blank" rel="noopener">cordova-plugin-file</a>、<a href="https://link.jianshu.com?t=https://github.com/apache/cordova-plugin-file-transfer" target="_blank" rel="noopener">cordova-plugin-file-transfer</a>、<a href="https://link.jianshu.com?t=https://github.com/pwlin/cordova-plugin-file-opener2" target="_blank" rel="noopener">cordova-plugin-file-opener2</a></p>
+</blockquote>
+<blockquote>
+<p>导入命令：```<br> $ cordova plugin add cordova-plugin-file<br> $ cordova plugin add cordova-plugin-file-transfer<br> $ cordova plugin add cordova-plugin-file-opener2</p>
+</blockquote>
+<pre><code>&gt; 2、添加代码-弹框-跳转至商店更新 **&amp; ios_identifier为要跳转的地址**
+&gt; 将下面的代码放到 .run function中启动时就调用（看自己怎么封装的，我封到router中了）如图:
+&gt; ![](http://upload-images.jianshu.io/upload_images/4665802-c8d20aa8c0413f8c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+ `min_native-interface`将与config.xml中的`native-interface`进行对比、如果两者不同、将会触发`&#39;chcp_updateLoadFailed&#39;`事件。同时、错误代码为：
+`chcp.error.APPLICATION_BUILD_VERSION_TOO_LOW`，返回值为-2，那么就会执行下面的代码，弹框提示更新了。
+
+&gt;  ```
+var appUpdate = {
+        // Application Constructor
+        initialize: function() {
+            this.bindEvents();
+        },
+        // Bind any events that are required.
+        // Usually you should subscribe on &#39;deviceready&#39; event to know, when you can start calling cordova modules
+        bindEvents: function() {
+            document.addEventListener(&#39;deviceready&#39;, this.onDeviceReady, false);
+            document.addEventListener(&#39;chcp_updateLoadFailed&#39;, this.onUpdateLoadError, false);
+        },
+        // deviceready Event Handler
+        onDeviceReady: function() {
+        },
+        onUpdateLoadError: function(eventData) {
+            var error = eventData.detail.error;
+
+            // 当检测出外核版本有更新，// 针对不同平台进行相应更新操作
+            if (error &amp;&amp; error.code == chcp.error.APPLICATION_BUILD_VERSION_TOO_LOW) {
+                var dialogMessage = &#39;有新的版本,请下载更新&#39;;
+
+                // iOS端 直接弹窗提示升级，点击ok后自动跳转
+                if(ionic.Platform.isIOS()){
+                    chcp.requestApplicationUpdate(dialogMessage, this.userWentToStoreCallback, this.userDeclinedRedirectCallback);
+                //Android端 提示升级下载最新APK文件 
+                } else if(ionic.Platform.isAndroid()){
+                    //这儿放Android端更新代码...，在下面👇
+                }
+            }
+        },
+        userWentToStoreCallback: function() {
+            // user went to the store from the dialog
+        },
+        userDeclinedRedirectCallback: function() {
+            // User didn&#39;t want to leave the app.
+            // Maybe he will update later.
+        }
+    };
+    appUpdate.initialize();</code></pre><p><strong>Android端添加代码👆 提示升级下载最新APK文件</strong></p>
+<blockquote>
+</blockquote>
+<pre><code>var confirmPopup = $ionicPopup.confirm({
+  template: &#39;有新的版本,请下载更新&#39;,
+  cssClass: &#39;popup&#39;,
+  cancelText:&#39;取消&#39;,
+  okText:&#39;升级&#39;
+});
+confirmPopup.then(function (res) {
+  if (res) {
+    $ionicLoading.show({
+      template: &quot;已经下载：0%&quot;
+    });
+    window.resolveLocalFileSystemURL(cordova.file.externalRootDirectory, function(fileEntry) {
+      fileEntry.getDirectory(&quot;***(app名称)&quot;, { create: true, exclusive: false }, function (fileEntry) {
+        //下载代码
+        var fileTransfer = new FileTransfer();
+        fileTransfer.download(&quot;app下载地址&quot;, fileEntry.toInternalURL()+&quot;***(app名称).apk&quot;, function(entry) {
+          // 打开下载下来的APP
+          cordova.plugins.fileOpener2.open(
+            entry.toInternalURL(),//下载文件保存地址
+            &#39;application/vnd.android.package-archive&#39;, {//以APK文件方式打开
+              error: function(err) {
+              },
+              success: function() {}
+            });
+        }, function(err) {
+        },true);
+        fileTransfer.onprogress = function(progressEvent) {
+          $timeout(function () {
+            var downloadProgress = (progressEvent.loaded / progressEvent.total) * 100;
+            $ionicLoading.show({
+              template: &quot;已经下载：&quot; + Math.floor(downloadProgress) + &quot;%&quot;
+            });
+            if (downloadProgress &gt; 99) {
+              $ionicLoading.hide();
+            }
+          });
+        };
+      },function(err){alert(&quot;创建失败&quot;)});
+    });
+  }
+});</code></pre><h5 id="chcp-json中update字段含义"><a href="#chcp-json中update字段含义" class="headerlink" title="chcp.json中update字段含义"></a>chcp.json中update字段含义</h5><p>指定了什么时候安装web内容更新，支持的值有：</p>
+<blockquote>
+<p>start  - app启动时安装更新，默认值<br> resume - app从后台切换过来的时候安装更新<br> now    - web内容下载完毕即安装更新</p>
+</blockquote>
+<p>好了，先总结这么多，可能会有些细节落下，望大家参考时，给我提下，我在继续补充。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E4%B8%B4%E6%97%B6/" rel="tag"># 临时</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/06/02/design-pattern/%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F/" rel="prev" title="装饰器模式">
+      <i class="fa fa-chevron-left"></i> 装饰器模式
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/06/02/design-pattern/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/" rel="next" title="适配器模式">
+      适配器模式 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#各种命令"><span class="nav-number">1.</span> <span class="nav-text">各种命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#gradle-配置"><span class="nav-number">2.</span> <span class="nav-text">gradle 配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Ionic2引入第三方js库（未验证）"><span class="nav-number">3.</span> <span class="nav-text">Ionic2引入第三方js库（未验证）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改应用名称"><span class="nav-number">4.</span> <span class="nav-text">修改应用名称</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决Splash后出现短暂白屏问题"><span class="nav-number">5.</span> <span class="nav-text">解决Splash后出现短暂白屏问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#签名和打包"><span class="nav-number">6.</span> <span class="nav-text">签名和打包</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#打包"><span class="nav-number">6.0.1.</span> <span class="nav-text">打包</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#生成密钥"><span class="nav-number">6.0.2.</span> <span class="nav-text">生成密钥</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#签名"><span class="nav-number">6.0.3.</span> <span class="nav-text">签名</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#页面间的参数传递"><span class="nav-number">7.</span> <span class="nav-text">页面间的参数传递</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生命周期"><span class="nav-number">8.</span> <span class="nav-text">生命周期</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#热更新的方法"><span class="nav-number"></span> <span class="nav-text">热更新的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#外壳更新-（从网上抄的）"><span class="nav-number">1.</span> <span class="nav-text">外壳更新 （从网上抄的）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#描述"><span class="nav-number">2.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#外壳更新配置"><span class="nav-number">3.</span> <span class="nav-text">外壳更新配置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#通过min-native-interface监控app是否提示更新"><span class="nav-number">3.1.</span> <span class="nav-text">通过min_native_interface监控app是否提示更新</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#具体步骤"><span class="nav-number">4.</span> <span class="nav-text">具体步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#chcp-json中update字段含义"><span class="nav-number">4.1.</span> <span class="nav-text">chcp.json中update字段含义</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="吕嘉文"
+      src="/images/icon.jpg">
+  <p class="site-author-name" itemprop="name">吕嘉文</p>
+  <div class="site-description" itemprop="description">记录生活、工作、学习的点点滴滴</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">106</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-at"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">吕嘉文</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <meta name="msapplication-config" content="/images/browserconfig.xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="8 行为型：策略模式策略模式之掘金小册策略模式和状态模式属于本书”彩蛋“性质的附加小节。这两种模式理解难度都不大，在面试中也几乎没有什么权重，但是却对大家培养良好的编码习惯和重构意识却大有裨益。 定义一系列的算法,把它们一个个封装起来, 并且使它们可相互替换。 手实现了算法提取、算法封装、分发优化的整个一条龙的操作流。 业务场景有一天，产品经理韩梅梅找到李雷，给李雷提了这么个需求：马上大促要来了，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="策略模式">
+<meta property="og:url" content="http://yoursite.com/2020/06/02/design-pattern/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/index.html">
+<meta property="og:site_name" content="嘉文小栈">
+<meta property="og:description" content="8 行为型：策略模式策略模式之掘金小册策略模式和状态模式属于本书”彩蛋“性质的附加小节。这两种模式理解难度都不大，在面试中也几乎没有什么权重，但是却对大家培养良好的编码习惯和重构意识却大有裨益。 定义一系列的算法,把它们一个个封装起来, 并且使它们可相互替换。 手实现了算法提取、算法封装、分发优化的整个一条龙的操作流。 业务场景有一天，产品经理韩梅梅找到李雷，给李雷提了这么个需求：马上大促要来了，">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-02T08:01:11.675Z">
+<meta property="article:modified_time" content="2020-06-02T08:01:41.370Z">
+<meta property="article:author" content="吕嘉文">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/06/02/design-pattern/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>策略模式 | 嘉文小栈</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">嘉文小栈</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">每天进步一点点</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/02/design-pattern/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="name" content="吕嘉文">
+      <meta itemprop="description" content="记录生活、工作、学习的点点滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉文小栈">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          策略模式
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 16:01:11 / 修改时间：16:01:41" itemprop="dateCreated datePublished" datetime="2020-06-02T16:01:11+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="8-行为型：策略模式"><a href="#8-行为型：策略模式" class="headerlink" title="8 行为型：策略模式"></a>8 行为型：策略模式</h2><h3 id="策略模式之掘金小册"><a href="#策略模式之掘金小册" class="headerlink" title="策略模式之掘金小册"></a>策略模式之掘金小册</h3><p>策略模式和状态模式属于本书”彩蛋“性质的附加小节。这两种模式理解难度都不大，在面试中也几乎没有什么权重，但是却对大家培养良好的编码习惯和重构意识却大有裨益。</p>
+<p>定义一系列的算法,把它们一个个封装起来, 并且使它们可相互替换。</p>
+<p>手实现了算法提取、算法封装、分发优化的整个一条龙的操作流。</p>
+<h4 id="业务场景"><a href="#业务场景" class="headerlink" title="业务场景"></a>业务场景</h4><p>有一天，产品经理韩梅梅找到李雷，给李雷提了这么个需求：<br>马上大促要来了，我们本次大促要做差异化询价。啥是差异化询价？就是说同一个商品，我通过在后台给它设置不同的价格类型，可以让它展示不同的价格。具体的逻辑如下：</p>
+<ul>
+<li>当价格类型为“预售价”时，满 100 - 20，不满 100 打 9 折</li>
+<li>当价格类型为“大促价”时，满 100 - 30，不满 100 打 8 折</li>
+<li>当价格类型为“返场价”时，满 200 - 50，不叠加</li>
+<li>当价格类型为“尝鲜价”时，直接打 5 折</li>
+</ul>
+<h4 id="if-else-大侠"><a href="#if-else-大侠" class="headerlink" title="if-else 大侠"></a>if-else 大侠</h4><p>李雷扫了一眼 prd，立刻来了主意。他首先将四种价格做了标签化：</p>
+<pre><code>预售价 - pre
+大促价 - onSale
+返场价 - back
+尝鲜价 - fresh</code></pre><pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 询价方法，接受价格标签和原价为入参</span>
+<span class="token keyword">function</span> <span class="token function">askPrice</span><span class="token punctuation">(</span>tag<span class="token punctuation">,</span> originPrice<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+  <span class="token comment" spellcheck="true">// 处理预热价</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>tag <span class="token operator">===</span> <span class="token string">'pre'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>originPrice <span class="token operator">>=</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> originPrice <span class="token operator">-</span> <span class="token number">20</span>
+    <span class="token punctuation">}</span> 
+    <span class="token keyword">return</span> originPrice <span class="token operator">*</span> <span class="token number">0.9</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment" spellcheck="true">// 处理大促价</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>tag <span class="token operator">===</span> <span class="token string">'onSale'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>originPrice <span class="token operator">>=</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> originPrice <span class="token operator">-</span> <span class="token number">30</span>
+    <span class="token punctuation">}</span> 
+    <span class="token keyword">return</span> originPrice <span class="token operator">*</span> <span class="token number">0.8</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment" spellcheck="true">// 处理返场价</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>tag <span class="token operator">===</span> <span class="token string">'back'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>originPrice <span class="token operator">>=</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> originPrice <span class="token operator">-</span> <span class="token number">50</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> originPrice
+  <span class="token punctuation">}</span>
+
+  <span class="token comment" spellcheck="true">// 处理尝鲜价</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>tag <span class="token operator">===</span> <span class="token string">'fresh'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     <span class="token keyword">return</span> originPrice <span class="token operator">*</span> <span class="token number">0.5</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h4 id="if-else-侠，人人喊打"><a href="#if-else-侠，人人喊打" class="headerlink" title="if-else 侠，人人喊打"></a>if-else 侠，人人喊打</h4><p>问题：</p>
+<ul>
+<li>首先，它违背了“单一功能”原则。一个 function 里面，它竟然处理了四坨逻辑<ul>
+<li>万一其中一行代码出了 Bug，那么整个询价逻辑都会崩坏</li>
+<li>与此同时出了 Bug 你很难定位到底是哪个代码块坏了事</li>
+<li>单个能力很难被抽离复用</li>
+<li>见到胖逻辑，我们的第一反应，就是一个字——拆！</li>
+</ul>
+</li>
+<li>不仅如此，它还违背了“开放封闭”原则。假如有一天韩梅梅再次找到李雷，要他加一个满 100 - 50 的“新人价”怎么办？他只能继续 if-else：</li>
+</ul>
+<pre class=" language-javascript"><code class="language-javascript"> <span class="token comment" spellcheck="true">// 处理新人价</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>tag <span class="token operator">===</span> <span class="token string">'newUser'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>originPrice <span class="token operator">>=</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> originPrice <span class="token operator">-</span> <span class="token number">50</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> originPrice
+  <span class="token punctuation">}</span></code></pre>
+<h4 id="重构询价逻辑"><a href="#重构询价逻辑" class="headerlink" title="重构询价逻辑"></a>重构询价逻辑</h4><h5 id="单一功能改造"><a href="#单一功能改造" class="headerlink" title="单一功能改造"></a>单一功能改造</h5><pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 处理预热价</span>
+<span class="token keyword">function</span> <span class="token function">prePrice</span><span class="token punctuation">(</span>originPrice<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>originPrice <span class="token operator">>=</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> originPrice <span class="token operator">-</span> <span class="token number">20</span>
+  <span class="token punctuation">}</span> 
+  <span class="token keyword">return</span> originPrice <span class="token operator">*</span> <span class="token number">0.9</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// 处理大促价</span>
+<span class="token keyword">function</span> <span class="token function">onSalePrice</span><span class="token punctuation">(</span>originPrice<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>originPrice <span class="token operator">>=</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> originPrice <span class="token operator">-</span> <span class="token number">30</span>
+  <span class="token punctuation">}</span> 
+  <span class="token keyword">return</span> originPrice <span class="token operator">*</span> <span class="token number">0.8</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// 处理返场价</span>
+<span class="token keyword">function</span> <span class="token function">backPrice</span><span class="token punctuation">(</span>originPrice<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>originPrice <span class="token operator">>=</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> originPrice <span class="token operator">-</span> <span class="token number">50</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> originPrice
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// 处理尝鲜价</span>
+<span class="token keyword">function</span> <span class="token function">freshPrice</span><span class="token punctuation">(</span>originPrice<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> originPrice <span class="token operator">*</span> <span class="token number">0.5</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">askPrice</span><span class="token punctuation">(</span>tag<span class="token punctuation">,</span> originPrice<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// 处理预热价</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>tag <span class="token operator">===</span> <span class="token string">'pre'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">prePrice</span><span class="token punctuation">(</span>originPrice<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment" spellcheck="true">// 处理大促价</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>tag <span class="token operator">===</span> <span class="token string">'onSale'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">onSalePrice</span><span class="token punctuation">(</span>originPrice<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment" spellcheck="true">// 处理返场价</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>tag <span class="token operator">===</span> <span class="token string">'back'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">backPrice</span><span class="token punctuation">(</span>originPrice<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment" spellcheck="true">// 处理尝鲜价</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>tag <span class="token operator">===</span> <span class="token string">'fresh'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     <span class="token keyword">return</span> <span class="token function">freshPrice</span><span class="token punctuation">(</span>originPrice<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>OK，我们现在至少做到了一个函数只做一件事。现在每个函数都有了自己明确的、单一的分工。如此一来，我们在遇到 Bug 时，就可以做到“头痛医头，脚痛医脚”，而不必在庞大的逻辑海洋里费力去定位到底是哪块不对。</p>
+<p>同时，如果我在另一个函数里也想使用某个询价能力，比如说我想询预热价，那我直接把 prePrice 这个函数拿去调用就是了，而不必在 askPrice 肥胖的身躯里苦苦寻觅、然后掏出这块逻辑、最后再复制粘贴到另一个函数去——更何况万一哪天 askPrice 里的预热价逻辑改了，你还得再复制粘贴一次，扎心啊老铁！</p>
+<h5 id="开放封闭改造"><a href="#开放封闭改造" class="headerlink" title="开放封闭改造"></a>开放封闭改造</h5><p>那个新人价的问题——这会儿我要想给 askPrice 增加新人询价逻辑，我该咋整？我只能这么来：</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 添加一个函数</span>
+<span class="token comment" spellcheck="true">// 处理新人价</span>
+<span class="token keyword">function</span> <span class="token function">newUserPrice</span><span class="token punctuation">(</span>originPrice<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>originPrice <span class="token operator">>=</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> originPrice <span class="token operator">-</span> <span class="token number">50</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> originPrice
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// 在 askPrice 之中，添加一段代码</span>
+<span class="token comment" spellcheck="true">// 处理新人价</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span>tag <span class="token operator">===</span> <span class="token string">'newUser'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">newUserPrice</span><span class="token punctuation">(</span>originPrice<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<p>在外层，我们编写一个 newUser 函数用于处理新人价逻辑；在 askPrice 里面，我们新增了一个 if-else 判断。可以看出，这样其实还是在修改 askPrice 的函数体，没有实现“对扩展开放，对修改封闭”的效果。</p>
+<h5 id="最终版本"><a href="#最终版本" class="headerlink" title="最终版本"></a>最终版本</h5><pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 处理预热价</span>
+<span class="token keyword">function</span> <span class="token function">prePrice</span><span class="token punctuation">(</span>originPrice<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>originPrice <span class="token operator">>=</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> originPrice <span class="token operator">-</span> <span class="token number">20</span>
+  <span class="token punctuation">}</span> 
+  <span class="token keyword">return</span> originPrice <span class="token operator">*</span> <span class="token number">0.9</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// 处理大促价</span>
+<span class="token keyword">function</span> <span class="token function">onSalePrice</span><span class="token punctuation">(</span>originPrice<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>originPrice <span class="token operator">>=</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> originPrice <span class="token operator">-</span> <span class="token number">30</span>
+  <span class="token punctuation">}</span> 
+  <span class="token keyword">return</span> originPrice <span class="token operator">*</span> <span class="token number">0.8</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// 处理返场价</span>
+<span class="token keyword">function</span> <span class="token function">backPrice</span><span class="token punctuation">(</span>originPrice<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>originPrice <span class="token operator">>=</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> originPrice <span class="token operator">-</span> <span class="token number">50</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> originPrice
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// 处理尝鲜价</span>
+<span class="token keyword">function</span> <span class="token function">freshPrice</span><span class="token punctuation">(</span>originPrice<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> originPrice <span class="token operator">*</span> <span class="token number">0.5</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> priceProcessor <span class="token operator">=</span> <span class="token punctuation">{</span>
+    pre<span class="token punctuation">:</span> prePrice<span class="token punctuation">,</span>
+    onSale<span class="token punctuation">:</span> onSalePrice<span class="token punctuation">,</span>
+    back<span class="token punctuation">:</span> backPrice<span class="token punctuation">,</span>
+    fresh<span class="token punctuation">:</span> freshPrice
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">askPrice</span><span class="token punctuation">(</span>tag<span class="token punctuation">,</span> originPrice<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> priceProcessor<span class="token punctuation">[</span>tag<span class="token punctuation">]</span><span class="token punctuation">(</span>originPrice<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="策略模式之慕课网"><a href="#策略模式之慕课网" class="headerlink" title="策略模式之慕课网"></a>策略模式之慕课网</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><ul>
+<li>不同策略分开处理</li>
+<li>避免出现大量 if else 或者 switch case</li>
+<li>JS 未找到经典应用场景，因为主要跟业务有关</li>
+</ul>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
+    <span class="token function">constructor</span><span class="token punctuation">(</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>type <span class="token operator">=</span> type
+    <span class="token punctuation">}</span>
+
+    <span class="token function">buy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>type <span class="token operator">===</span> <span class="token string">'ordinary'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'普通用户购买'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>type <span class="token operator">===</span> <span class="token string">'memeber'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'会员用户购买'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>type <span class="token operator">===</span> <span class="token string">'vip'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'VIP 用户购买'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> u1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token string">'ordinary'</span><span class="token punctuation">)</span>
+u1<span class="token punctuation">.</span><span class="token function">buy</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> u2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token string">'member'</span><span class="token punctuation">)</span>
+u1<span class="token punctuation">.</span><span class="token function">buy</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> u3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token string">'vip'</span><span class="token punctuation">)</span>
+u1<span class="token punctuation">.</span><span class="token function">buy</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">OrdinaryUser</span> <span class="token punctuation">{</span>
+    <span class="token function">buy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'普通用户购买'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">MemberUser</span> <span class="token punctuation">{</span>
+    <span class="token function">buy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'会员用户购买'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">VipUser</span> <span class="token punctuation">{</span>
+    <span class="token function">buy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'VIP 用户购买'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> u1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">OrdinaryUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+u1<span class="token punctuation">.</span><span class="token function">buy</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> u2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MemberUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+u1<span class="token punctuation">.</span><span class="token function">buy</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> u3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VipUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+u1<span class="token punctuation">.</span><span class="token function">buy</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<h4 id="设计原则验证"><a href="#设计原则验证" class="headerlink" title="设计原则验证"></a>设计原则验证</h4><ul>
+<li>不同策略，分开处理，而不是混合在一起</li>
+<li>符合开放封闭原则</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/06/02/design-pattern/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" rel="prev" title="代理模式">
+      <i class="fa fa-chevron-left"></i> 代理模式
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/06/02/design-pattern/%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/" rel="next" title="状态模式">
+      状态模式 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#8-行为型：策略模式"><span class="nav-number">1.</span> <span class="nav-text">8 行为型：策略模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#策略模式之掘金小册"><span class="nav-number">1.1.</span> <span class="nav-text">策略模式之掘金小册</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#业务场景"><span class="nav-number">1.1.1.</span> <span class="nav-text">业务场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#if-else-大侠"><span class="nav-number">1.1.2.</span> <span class="nav-text">if-else 大侠</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#if-else-侠，人人喊打"><span class="nav-number">1.1.3.</span> <span class="nav-text">if-else 侠，人人喊打</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重构询价逻辑"><span class="nav-number">1.1.4.</span> <span class="nav-text">重构询价逻辑</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#单一功能改造"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">单一功能改造</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#开放封闭改造"><span class="nav-number">1.1.4.2.</span> <span class="nav-text">开放封闭改造</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#最终版本"><span class="nav-number">1.1.4.3.</span> <span class="nav-text">最终版本</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#策略模式之慕课网"><span class="nav-number">1.2.</span> <span class="nav-text">策略模式之慕课网</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概念"><span class="nav-number">1.2.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#示例"><span class="nav-number">1.2.2.</span> <span class="nav-text">示例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设计原则验证"><span class="nav-number">1.2.3.</span> <span class="nav-text">设计原则验证</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="吕嘉文"
+      src="/images/icon.jpg">
+  <p class="site-author-name" itemprop="name">吕嘉文</p>
+  <div class="site-description" itemprop="description">记录生活、工作、学习的点点滴滴</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">106</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-at"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">吕嘉文</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

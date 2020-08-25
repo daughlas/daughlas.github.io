@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <meta name="msapplication-config" content="/images/browserconfig.xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="摘要：简单介绍一下 dart 的一些特性，并利用这些特性，逐步优化一个购物车功能，使其逐步转化为 dart 风格的简介代码。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="利用 dart 特性实现一个购物车">
+<meta property="og:url" content="http://yoursite.com/2019/07/20/languages/%E5%88%A9%E7%94%A8%20dart%20%E7%89%B9%E6%80%A7%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E8%B4%AD%E7%89%A9%E8%BD%A6/index.html">
+<meta property="og:site_name" content="嘉文小栈">
+<meta property="og:description" content="摘要：简单介绍一下 dart 的一些特性，并利用这些特性，逐步优化一个购物车功能，使其逐步转化为 dart 风格的简介代码。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-07-20T01:25:33.000Z">
+<meta property="article:modified_time" content="2020-08-25T04:49:36.259Z">
+<meta property="article:author" content="吕嘉文">
+<meta property="article:tag" content="编程语言">
+<meta property="article:tag" content="Dart">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2019/07/20/languages/%E5%88%A9%E7%94%A8%20dart%20%E7%89%B9%E6%80%A7%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E8%B4%AD%E7%89%A9%E8%BD%A6/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>利用 dart 特性实现一个购物车 | 嘉文小栈</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">嘉文小栈</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">每天进步一点点</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/20/languages/%E5%88%A9%E7%94%A8%20dart%20%E7%89%B9%E6%80%A7%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E8%B4%AD%E7%89%A9%E8%BD%A6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/icon.jpg">
+      <meta itemprop="name" content="吕嘉文">
+      <meta itemprop="description" content="记录生活、工作、学习的点点滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉文小栈">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          利用 dart 特性实现一个购物车
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-07-20 09:25:33" itemprop="dateCreated datePublished" datetime="2019-07-20T09:25:33+08:00">2019-07-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-25 12:49:36" itemprop="dateModified" datetime="2020-08-25T12:49:36+08:00">2020-08-25</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">编程语言</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>摘要：简单介绍一下 dart 的一些特性，并利用这些特性，逐步优化一个购物车功能，使其逐步转化为 dart 风格的简介代码。</p>
+</blockquote>
+<a id="more"></a>
+
+<p>不同于 java 的重载方法，Dart 认为重载会导致混乱，因此从设计之初就不支持重载，而是提供了可选命名参数和可选参数。</p>
+<p>具体方式是，在声明函数是：</p>
+<ul>
+<li>给参数增加{}，以 paramName: value 的方式指定调用参数，也就是可选命名参数；</li>
+<li>给参数增加 []，则意味着这些参数是可以忽略的，也就是可选参数。</li>
+</ul>
+<p>在使用这两种方式定义函数时，我们还可以在参数未传递时设置默认值。我以一个只有两个参数的简单函数为例，来和你说明这两种方式的具体用法：</p>
+<pre class=" language-dart"><code class="language-dart">
+<span class="token comment" spellcheck="true">//要达到可选命名参数的用法，那就在定义函数的时候给参数加上 {}</span>
+<span class="token keyword">void</span> <span class="token function">enableFlags</span><span class="token punctuation">(</span><span class="token punctuation">{</span>bool bold<span class="token punctuation">,</span> bool hidden<span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"$bold , $hidden"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//定义可选命名参数时增加默认值</span>
+<span class="token keyword">void</span> <span class="token function">enable1Flags</span><span class="token punctuation">(</span><span class="token punctuation">{</span>bool bold <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">,</span> bool hidden <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"$bold ,$hidden"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//可忽略的参数在函数定义时用[]符号指定</span>
+<span class="token keyword">void</span> <span class="token function">enable3Flags</span><span class="token punctuation">(</span>bool bold<span class="token punctuation">,</span> <span class="token punctuation">[</span>bool hidden<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"$bold ,$hidden"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//定义可忽略参数时增加默认值</span>
+<span class="token keyword">void</span> <span class="token function">enable4Flags</span><span class="token punctuation">(</span>bool bold<span class="token punctuation">,</span> <span class="token punctuation">[</span>bool hidden <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"$bold ,$hidden"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//可选命名参数函数调用</span>
+<span class="token function">enable1Flags</span><span class="token punctuation">(</span>bold<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> hidden<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//true, false</span>
+<span class="token function">enable1Flags</span><span class="token punctuation">(</span>bold<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//true, null</span>
+<span class="token function">enable2Flags</span><span class="token punctuation">(</span>bold<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//false, false</span>
+
+<span class="token comment" spellcheck="true">//可忽略参数函数调用</span>
+<span class="token function">enable3Flags</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//true, false</span>
+<span class="token function">enable3Flags</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//true, null</span>
+<span class="token function">enable4Flags</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//true, false</span>
+<span class="token function">enable4Flags</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true, true</span></code></pre>
+<h2 id="dart-语言简化代码的一个例子"><a href="#dart-语言简化代码的一个例子" class="headerlink" title="dart 语言简化代码的一个例子"></a>dart 语言简化代码的一个例子</h2><p>使得 Dart 能够写出更简介代码特性主要有以下三个：</p>
+<ul>
+<li>命名构造函数</li>
+<li>与 C++ 类似，Dart 支持初始化列表</li>
+<li>super(key: key)</li>
+</ul>
+<p>下面我们会逐步改造一个例子，来看看 dart 究竟是如何简化开发的。例子很简单，实现的功能就是向购物车中添加商品，然后打印出购物车种的商品。</p>
+<p>首先我们可以不利用 dart 的独特特性，用跟其他语言差不多的方式来实现这个功能，代码如下：</p>
+<pre class=" language-dart"><code class="language-dart"><span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  ShoppingCart sc <span class="token operator">=</span> <span class="token function">ShoppingCart</span><span class="token punctuation">(</span><span class="token string">'张三'</span><span class="token punctuation">,</span> <span class="token string">'123456'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  sc<span class="token punctuation">.</span>bookings <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token function">Item</span><span class="token punctuation">(</span><span class="token string">'苹果'</span><span class="token punctuation">,</span> <span class="token number">10.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">Item</span><span class="token punctuation">(</span><span class="token string">'香蕉'</span><span class="token punctuation">,</span> <span class="token number">20.0</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token function">print</span><span class="token punctuation">(</span>sc<span class="token punctuation">.</span><span class="token function">getInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Item</span> <span class="token punctuation">{</span>
+  double price<span class="token punctuation">;</span>
+  String name<span class="token punctuation">;</span>
+  <span class="token function">Item</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> price<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>price <span class="token operator">=</span> price<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">ShoppingCart</span> <span class="token punctuation">{</span>
+  String name<span class="token punctuation">;</span>
+  DateTime date<span class="token punctuation">;</span>
+  String code<span class="token punctuation">;</span>
+  List<span class="token operator">&lt;</span>Item<span class="token operator">></span> bookings<span class="token punctuation">;</span>
+
+  <span class="token function">price</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    double sum <span class="token operator">=</span> <span class="token number">0.0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token keyword">in</span> bookings<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      sum <span class="token operator">+=</span> i<span class="token punctuation">.</span>price<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> sum<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">ShoppingCart</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> code<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>code <span class="token operator">=</span> code<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>date <span class="token operator">=</span> DateTime<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">getInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token string">""</span> <span class="token operator">+</span>
+      <span class="token string">"购物车信息："</span> <span class="token operator">+</span> 
+      <span class="token string">"\n---------------------"</span>
+      <span class="token string">"\n用户名："</span> <span class="token operator">+</span> name <span class="token operator">+</span>
+      <span class="token string">"\n总价："</span> <span class="token operator">+</span> <span class="token function">price</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+      <span class="token string">"\n日期："</span> <span class="token operator">+</span> date<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+      <span class="token string">"\n---------------------"</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>下面，我们对这个例子的初始化过程进行优化，其他代码不变，利用 语法糖和初始化列表来简化初始化的过程，改变之后的部分代码如下：</p>
+<pre class=" language-dart"><code class="language-dart"><span class="token comment" spellcheck="true">// ...</span>
+<span class="token keyword">class</span> <span class="token class-name">Item</span><span class="token punctuation">{</span>
+    double price<span class="token punctuation">;</span>
+    String name<span class="token punctuation">;</span>
+    <span class="token function">Item</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>price<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">ShoppingCart</span> <span class="token punctuation">{</span>
+    String name<span class="token punctuation">;</span>
+    DateTime date<span class="token punctuation">;</span>
+    String code<span class="token punctuation">;</span>
+    <span class="token function">ShoppingCart</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>code<span class="token punctuation">)</span> <span class="token punctuation">:</span> date <span class="token operator">=</span> DateTime<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// ...</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">// ...</span></code></pre>
+<p>因为 ShoppingCart 和 Item 都有 name 和 price 属性，可以抽象成一个 Meta 类</p>
+<pre class=" language-dart"><code class="language-dart"><span class="token comment" spellcheck="true">// ...</span>
+<span class="token keyword">class</span> <span class="token class-name">Meta</span> <span class="token punctuation">{</span>
+    double price<span class="token punctuation">;</span>
+    String name<span class="token punctuation">;</span>
+    <span class="token function">Meta</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>price<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Item</span> <span class="token keyword">extends</span> <span class="token class-name">Meta</span> <span class="token punctuation">{</span>
+    <span class="token function">Item</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> price<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">super</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> price<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">ShoppingCart</span> <span class="token keyword">extends</span> <span class="token class-name">meta</span> <span class="token punctuation">{</span>
+    DateTime date<span class="token punctuation">;</span>
+    String code<span class="token punctuation">;</span>
+    List<span class="token operator">&lt;</span>Item<span class="token operator">></span> bookings<span class="token punctuation">;</span>
+
+  <span class="token comment" spellcheck="true">// ...</span>
+
+    <span class="token function">ShoppingCart</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>code<span class="token punctuation">)</span> <span class="token punctuation">:</span> date <span class="token operator">=</span> DateTime<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">super</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment" spellcheck="true">// ...</span>
+<span class="token punctuation">}</span></code></pre>
+<p>dart 语言还可让我们重载运算符，这样 ShoppingCart 中的 get price 方法就可以重写</p>
+<pre class=" language-dart"><code class="language-dart"><span class="token comment" spellcheck="true">// ...</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Item</span> <span class="token keyword">extends</span> <span class="token class-name">Meta</span> <span class="token punctuation">{</span>
+    <span class="token function">Item</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> price<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">super</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> price<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Item <span class="token keyword">operator</span> <span class="token operator">+</span> <span class="token punctuation">(</span>Item item<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token function">Item</span><span class="token punctuation">(</span>name <span class="token operator">+</span> item<span class="token punctuation">.</span>name<span class="token punctuation">,</span> price <span class="token operator">+</span> item<span class="token punctuation">.</span>price<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">ShoppingCart</span> <span class="token keyword">extends</span> <span class="token class-name">meta</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// 重载了 + 之后，可以对 Item 的列表进行 reduce 操作了</span>
+    double <span class="token keyword">get</span> price <span class="token operator">=</span><span class="token operator">></span> bookings<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span> element<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> value <span class="token operator">+</span> element<span class="token punctuation">)</span><span class="token punctuation">.</span>price<span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">// ...</span>
+<span class="token punctuation">}</span></code></pre>
+<p>最后修改一下 getInfo 方法，使用多行字符串简化字符串拼接，使用 ?? 运算符代替三元表达式，完整的例子代码就变成了下面这样。</p>
+<pre class=" language-dart"><code class="language-dart"><span class="token keyword">class</span> <span class="token class-name">Meta</span> <span class="token punctuation">{</span>
+    double price<span class="token punctuation">;</span>
+    String name<span class="token punctuation">;</span>
+    <span class="token function">Meta</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>price<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Item</span> <span class="token keyword">extends</span> <span class="token class-name">Meta</span> <span class="token punctuation">{</span>
+    <span class="token function">Item</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> price<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">super</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> price<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Item <span class="token keyword">operator</span> <span class="token operator">+</span> <span class="token punctuation">(</span>Item item<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token function">Item</span><span class="token punctuation">(</span>name <span class="token operator">+</span> item<span class="token punctuation">.</span>name<span class="token punctuation">,</span> price <span class="token operator">+</span> item<span class="token punctuation">.</span>price<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">ShoppingCart</span> <span class="token keyword">extends</span> <span class="token class-name">Meta</span> <span class="token punctuation">{</span>
+    DateTime date<span class="token punctuation">;</span>
+    String code<span class="token punctuation">;</span>
+    List<span class="token operator">&lt;</span>Item<span class="token operator">></span> bookings<span class="token punctuation">;</span>
+
+    double <span class="token keyword">get</span> price <span class="token operator">=</span><span class="token operator">></span> bookings<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span> element<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> value <span class="token operator">+</span> element<span class="token punctuation">)</span><span class="token punctuation">.</span>price<span class="token punctuation">;</span>
+
+  <span class="token function">ShoppingCart</span><span class="token punctuation">(</span><span class="token punctuation">{</span>name<span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">withCode</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span> name<span class="token punctuation">,</span> code<span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  ShoppingCart<span class="token punctuation">.</span><span class="token function">withCode</span><span class="token punctuation">(</span><span class="token punctuation">{</span>name<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>code<span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> date <span class="token operator">=</span> DateTime<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">super</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">getInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token string">'''
+        购物车信息:
+        -----------------------------
+        用户名: $name
+        优惠码: ${code??"没有"}
+        总价: $price
+        Date: $date
+        -----------------------------
+    '''</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  ShoppingCart sc <span class="token operator">=</span> ShoppingCart<span class="token punctuation">.</span><span class="token function">withCode</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span><span class="token string">'张三'</span><span class="token punctuation">,</span> code<span class="token punctuation">:</span> <span class="token string">'123'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  sc<span class="token punctuation">.</span>bookings <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token function">Item</span><span class="token punctuation">(</span><span class="token string">'苹果'</span><span class="token punctuation">,</span> <span class="token number">10.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">Item</span><span class="token punctuation">(</span><span class="token string">'香蕉'</span><span class="token punctuation">,</span> <span class="token number">20.0</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token function">print</span><span class="token punctuation">(</span>sc<span class="token punctuation">.</span><span class="token function">getInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  ShoppingCart sc2 <span class="token operator">=</span> <span class="token function">ShoppingCart</span><span class="token punctuation">(</span>name<span class="token punctuation">:</span><span class="token string">'李四'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  sc2<span class="token punctuation">.</span>bookings <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token function">Item</span><span class="token punctuation">(</span><span class="token string">'火龙果'</span><span class="token punctuation">,</span> <span class="token number">100.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">Item</span><span class="token punctuation">(</span><span class="token string">'榴莲'</span><span class="token punctuation">,</span> <span class="token number">200.0</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token function">print</span><span class="token punctuation">(</span>sc2<span class="token punctuation">.</span><span class="token function">getInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<blockquote>
+<p>参考资料：极客时间：Flutter核心技术与实战</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" rel="tag"># 编程语言</a>
+              <a href="/tags/Dart/" rel="tag"># Dart</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/03/20/languages/ES5%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" rel="prev" title="ES5 面向对象">
+      <i class="fa fa-chevron-left"></i> ES5 面向对象
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/08/01/languages/ES6%20-%208%20%E6%96%B0%E7%89%B9%E6%80%A7/" rel="next" title="EcmaScript 6 - 8 新特性">
+      EcmaScript 6 - 8 新特性 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#dart-语言简化代码的一个例子"><span class="nav-number">1.</span> <span class="nav-text">dart 语言简化代码的一个例子</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="吕嘉文"
+      src="/images/icon.jpg">
+  <p class="site-author-name" itemprop="name">吕嘉文</p>
+  <div class="site-description" itemprop="description">记录生活、工作、学习的点点滴滴</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">106</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-at"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">吕嘉文</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
